@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Laravel</title>
-        <link rel="icon" href="assets/images/items/1.jpg" type="image/x-icon"/>
+        <title>IKSPB</title>
+        <link rel="icon" href="assets/images/Pahang.png" type="image/x-icon"/>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
        <!-- Custom styles for this template -->

@@ -84,7 +84,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <!-- Brand Logo -->
       <a href="/welcome" class="brand-link">
         <div class="text-center">
-        <img src="{{ asset('/assets/images/product bg.jpg') }}" alt="AdminLTE Logo" class="brand-image-center img-circle elevation-3" style="width:20%;"><br>
+        <img src="{{ asset('assets/images/Pahang.png') }}" alt="AdminLTE Logo" class="brand-image-center img-circle elevation-3" style="width:20%;"><br>
         <span class="brand-text font-weight-light">e-Pasar IKSPB</span></div>
       </a>
 
@@ -137,7 +137,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <a href="/pelancongan/updateTempatMenarik" >
                
                 <p> <i class="nav-icon fas fa-book"></i>
-                  Kemasikini Tempat Menarik
+                  Kemaskini Tempat Menarik
                   <span class="right badge badge-danger"></span>
                 </p>
               </a>

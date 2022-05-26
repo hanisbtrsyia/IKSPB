@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\TempatMenarikController;
+use App\Http\Controllers\TempatPenginapanController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
@@ -21,7 +23,12 @@ use Illuminate\Support\Facades\Auth;
     return view('auth.login');
 });*/
 
-Route::post('addProd',[ProdukController::class, 'addProd'])->name('addProd');
+//Route::post('addProd',[ProdukController::class, 'addProd'])->name('addProd');
+Route::resource('addproduk', ProdukController::class)->except(['edit']);
+
+Route::resource('addTempatMenarik', TempatMenarikController::class)->except(['edit']);
+
+Route::resource('addTempatPenginapan', TempatPenginapanController::class)->except(['edit']);
 
 Route::get('/', function () {
     return view('welcome');

@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Produk;
+use App\Models\InformasiTempatMenarik;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class ProdukController extends Controller
+class TempatMenarikController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,8 +27,8 @@ class ProdukController extends Controller
      */
     public function create()
     {
-        $produk = Produk::all();
-        return view('belibelah.addproduk',compact('produk','produk'));
+        $temMenarik = InformasiTempatMenarik::all();
+        return view('pelancongan.addTempatMenarik',compact('temMenarik','temMenarik'));
 
     }
 
@@ -40,7 +40,7 @@ class ProdukController extends Controller
      */
     public function store(Request $request)
     {
-        $produk = new Produk();
+        $temMenarik = new InformasiTempatMenarik();
         $files = [];
 
        // if ($request->hasFile('GambarProduk')) {
@@ -64,26 +64,23 @@ class ProdukController extends Controller
        // $produk->GambarProduk = $request->file('GambarProduk');
 
        $request->validate([
-        'GambarProduk' => 'required',
+        'gambar' => 'required',
 
     ]);
    
-    if ($request->hasFile('GambarProduk')) {
-        $path = $request->file('GambarProduk')->store('public/assets/images');
-        $produk->produk_image = $path;
+    if ($request->hasFile('gambar')) {
+        $path = $request->file('gambar')->store('public/assets/images');
+        $temMenarik->temMenarik_image = $path;
     }
 
-        Produk::create([
-            'NamaKategori' => $request->NamaKategori,
-            'NamaProduk' => $request->NamaProduk,
-            'Harga' => $request->Harga,
+    InformasiTempatMenarik::create([
+            'NamaTempat' => $request->NamaTempat,
+            'gambar' => $request->file('gambar'),
+            'Lokasi' => $request->Lokasi,
             'penerangan' => $request->penerangan,
-            'GambarProduk' => $request->file('GambarProduk'),
-            'Unit' => $request->Unit,
-            'Berat' => $request->Berat,
             'created_at' => now(),
         ]);
-        return redirect()->route('addproduk.create')->with('success','Produk sudah ditambah');
+        return redirect()->route('addTempatMenarik.create')->with('success','Tempat Menarik sudah ditambah');
     }
 
     /**
@@ -94,7 +91,7 @@ class ProdukController extends Controller
      */
     public function show($id)
     {
-        return view('belibelah.addproduk');
+        return view('pelancongan.addTempatMenarik');
     }
 
     /**

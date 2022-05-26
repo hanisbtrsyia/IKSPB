@@ -9,7 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'IKSPB') }}</title>
-    <link rel="shortcut icon" type="image/png" href="{{ asset('images/logoparkir2.png') }}">
+    <link rel="shortcut icon" type="image/png" href="{{ asset('assets/images/Pahang.png') }}">
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 

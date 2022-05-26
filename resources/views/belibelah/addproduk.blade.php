@@ -26,7 +26,7 @@
           @endforeach
         </div>
         @endif
-        <form action="{{ route('addProd') }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('addproduk.store') }}" method="post" enctype="multipart/form-data">
           @csrf
           <fieldset>
             <div class="card card-info">
@@ -60,14 +60,25 @@
                     <input type="text" name="penerangan" id="penerangan" class="form-control" placeholder="">
                   </div>
                 <div>
-                  <label for="exampleInputFile">Gambar</label>
+                 <!-- <label for="exampleInputFile">Gambar</label>
                   <div class="text-center">
                     <img class="img-fluid" src="" id='image_preview'>
                   </div><br>
                   <div class="custom-file">
                     <input type="file" accept="image/*" name="GambarProduk" id="GambarProduk" onchange="loadFile(event);" />
                   </div>
+                </div>-->
+                
+                <label for="exampleInputFile">Gambar</label>
+                <div class="text-center">
+                  <img class="img-fluid" src="" id='image_preview'>
                 </div>
+                  <div class="form-group">
+                    <div class="custom-file text-center">
+                      <input type="file" accept="image/*" name="GambarProduk" id="GambarProduk" onchange="loadFile(event)" />
+                    </div>
+                  </div>
+                  
                 <div class="text-center">
                   <input type="submit" value="Submit" class="btn btn-warning">
                 </div>

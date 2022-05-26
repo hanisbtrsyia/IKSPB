@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Laravel</title>
-        <link rel="icon" href="assets/images/items/1.jpg" type="image/x-icon"/>
+        <title>IKSPB</title>
+        <link rel="icon" href="assets/images/Pahang.png" type="image/x-icon"/>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
        <!-- Custom styles for this template -->
@@ -223,7 +223,7 @@
           </ul>
           <span class="label-rating text-muted"> 34 reviws</span>
         </div>
-        <div class="price mt-1">$280.00</div> <!-- price-wrap.// -->
+        <div class="price mt-1">RM 28</div> <!-- price-wrap.// -->
       </figcaption>
     </div>
   </div> <!-- col.// -->
@@ -244,7 +244,7 @@
           </ul>
           <span class="label-rating text-muted"> 34 reviws</span>
         </div>
-        <div class="price mt-1">$56.00</div> <!-- price-wrap.// -->
+        <div class="price mt-1">RM 20</div> <!-- price-wrap.// -->
       </figcaption>
     </div>
   </div> <!-- col.// -->
@@ -265,7 +265,7 @@
           </ul>
           <span class="label-rating text-muted"> 34 reviws</span>
         </div>
-        <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
+        <div class="price mt-1">RM 17</div> <!-- price-wrap.// -->
       </figcaption>
     </div>
   </div> <!-- col.// -->

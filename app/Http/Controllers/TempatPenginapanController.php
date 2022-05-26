@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Produk;
+use App\Models\InformasiTempatPenginapan;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class ProdukController extends Controller
+class TempatPenginapanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,8 +27,8 @@ class ProdukController extends Controller
      */
     public function create()
     {
-        $produk = Produk::all();
-        return view('belibelah.addproduk',compact('produk','produk'));
+        $temPenginapan = InformasiTempatPenginapan::all();
+        return view('pelancongan.addTempatPenginapan',compact('temPenginapan','temPenginapan'));
 
     }
 
@@ -40,7 +40,7 @@ class ProdukController extends Controller
      */
     public function store(Request $request)
     {
-        $produk = new Produk();
+        $temPenginapan = new InformasiTempatPenginapan();
         $files = [];
 
        // if ($request->hasFile('GambarProduk')) {
@@ -64,26 +64,27 @@ class ProdukController extends Controller
        // $produk->GambarProduk = $request->file('GambarProduk');
 
        $request->validate([
-        'GambarProduk' => 'required',
+        'gambar' => 'required',
 
     ]);
    
-    if ($request->hasFile('GambarProduk')) {
-        $path = $request->file('GambarProduk')->store('public/assets/images');
-        $produk->produk_image = $path;
+    if ($request->hasFile('gambar')) {
+        $path = $request->file('gambar')->store('public/assets/images');
+        $temPenginapan->temPenginapan_image = $path;
     }
 
-        Produk::create([
-            'NamaKategori' => $request->NamaKategori,
-            'NamaProduk' => $request->NamaProduk,
-            'Harga' => $request->Harga,
+    InformasiTempatPenginapan::create([
+            'NamaTempat' => $request->NamaTempat,
+            'NamaHos' => $request->NamaHos,
+            'NoTel' => $request->NoTel,
+            'Lokasi' => $request->Lokasi,
             'penerangan' => $request->penerangan,
-            'GambarProduk' => $request->file('GambarProduk'),
-            'Unit' => $request->Unit,
-            'Berat' => $request->Berat,
+            'gambar' => $request->file('gambar'),
+            'HargaPerMalam' => $request->HargaPerMalam,
+            'Kemudahan' => $request->Kemudahan,
             'created_at' => now(),
         ]);
-        return redirect()->route('addproduk.create')->with('success','Produk sudah ditambah');
+        return redirect()->route('addTempatPenginapan.create')->with('success','Tempat Penginapan sudah ditambah');
     }
 
     /**
@@ -94,7 +95,7 @@ class ProdukController extends Controller
      */
     public function show($id)
     {
-        return view('belibelah.addproduk');
+        return view('pelancongan.addTempatPenginapan');
     }
 
     /**

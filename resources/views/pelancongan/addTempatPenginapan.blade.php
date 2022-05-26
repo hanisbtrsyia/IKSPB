@@ -26,7 +26,7 @@
           @endforeach
         </div>
         @endif
-        <form action="" method="post" enctype="multipart/form-data">
+        <form action="{{ route('addTempatPenginapan.store') }}" method="post" enctype="multipart/form-data">
           @csrf
           <fieldset>
             <div class="card card-info">
@@ -34,9 +34,7 @@
                 <h3 class="card-title">Tambah Tempat Penginapan</h3>
               </div>
               <div class="card-body">
-                <div class="form-group">
-                  <input type="hidden" name="id_tempatPenginapan" id="id" class="form-control">
-                </div>
+                
                 <div class="form-group">
                   <label for="NamaTempat">Nama Tempat:</label>
                   <input type="text" name="NamaTempat" id="NamaTempat" class="form-control" placeholder="">
@@ -72,7 +70,7 @@
                     <img class="img-fluid" src="" id='image_preview'>
                   </div><br>
                   <div class="custom-file">
-                    <input type="file" accept="image/*" name="fileToUpload" id="inputImage" onchange="loadFile(event);" />
+                    <input type="file" accept="image/*" name="gambar" id="gambar" onchange="loadFile(event);" />
                   </div>
                 </div>
                 <div class="text-center">

@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Laravel</title>
-        <link rel="icon" href="../assets/images/items/1.jpg" type="image/x-icon"/>
+        <title>IKSPB</title>
+        <link rel="icon" href="../assets/images/Pahang.png" type="image/x-icon"/>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
        <!-- Custom styles for this template -->
@@ -70,7 +70,7 @@
   <div class="col-lg-4 col-sm-6 col-12">
     <div class="widgets-wrap float-md-right">
       <div class="widget-header  mr-3">
-        <a href="#" class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></a>
+        <a href="/belibelah/addtocart" class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></a>
         <span class="badge badge-pill badge-danger notify">0</span>
       </div>
       <div class="widget-header icontext">

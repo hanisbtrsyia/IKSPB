@@ -10,8 +10,7 @@ use Illuminate\Database\QueryException;
 class Produk extends Model
 {
     use HasFactory;
-    protected $primaryKey = 'id_produk';
-    public $incrementing = true;
+    protected $table = 'produks';
 
     protected $fillable = [
         'id_produk',
@@ -23,6 +22,36 @@ class Produk extends Model
         'Unit',
         'Berat',
     ];
+
+    protected $primaryKey = 'id_produk';
+    public $incrementing = false;
+    protected $keyType = 'string';
+
+    public static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($produk) {
+            if (!$produk->id_produk) {
+                while (true) {
+                    try {
+                        $latest = Produk::latest('id_produk')->first();
+                        $uid=1000;
+
+                        if ($latest != null && $latest->exists()) {
+                            $uid = random_int(1000, 9999);
+                        }
+
+                        $produk->id_produk = 'P' . $uid;
+                        break;
+                    } catch (QueryException $exception) {
+                        continue;
+                    }
+                }
+                // $user->save();
+            }
+        });
+    }
 
 
 public function setPictureAttribute($value){

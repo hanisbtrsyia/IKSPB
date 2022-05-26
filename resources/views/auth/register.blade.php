@@ -4,7 +4,8 @@
 	<meta charset="utf-8">
 	<meta name="author" content="Kodinger">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>Register page</title>
+	<title>IKSPB</title>
+        <link rel="icon" href="assets/images/Pahang.png" type="image/x-icon"/>
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/my-login.css">
 </head>
