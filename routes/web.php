@@ -25,7 +25,7 @@ use Illuminate\Support\Facades\Auth;
 
 //Route::post('addProd',[ProdukController::class, 'addProd'])->name('addProd');
 
-//Route::resource('addproduk', ProdukController::class)->except(['edit']); //Produk
+Route::resource('addproduk', ProdukController::class)->except(['edit']); //Produk
 Route::get('produk/ProductDetails/{id_produk}', [ProdukController::class, 'index'])->name('produk.details'); 
 
 Route::resource('addTempatMenarik', TempatMenarikController::class)->except(['edit']);
@@ -38,6 +38,10 @@ Route::get('/', function () {
 
 Route::get('/welcome', function () {
     return view('/welcome');
+});
+
+Route::get('/layouts/homepage', function () {
+    return view('/layouts/homepage');
 });
 
 Route::get('/homepelancongan', function () {
