@@ -61,4 +61,9 @@ public function setPictureAttribute($value){
 public function getPictureAttribute($value){
     return json_decode($value);
 }
+
+public function getRouteKeyName()
+    {
+        return 'id_produk';
+    }
 }

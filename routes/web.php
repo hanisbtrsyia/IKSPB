@@ -24,7 +24,9 @@ use Illuminate\Support\Facades\Auth;
 });*/
 
 //Route::post('addProd',[ProdukController::class, 'addProd'])->name('addProd');
-Route::resource('addproduk', ProdukController::class)->except(['edit']);
+
+//Route::resource('addproduk', ProdukController::class)->except(['edit']); //Produk
+Route::get('produk/ProductDetails/{id_produk}', [ProdukController::class, 'index'])->name('produk.details'); 
 
 Route::resource('addTempatMenarik', TempatMenarikController::class)->except(['edit']);
 
@@ -42,9 +44,7 @@ Route::get('/homepelancongan', function () {
     return view('/homepelancongan');
 });
 
-Route::get('/homebelibelah', function () {
-    return view('/homebelibelah');
-});
+Route::get('/homebelibelah', [ProdukController::class, 'homebelibelah']); 
 
 Route::get('/homeTempatMenarik', function () {
     return view('/homeTempatMenarik');
@@ -94,9 +94,7 @@ Route::get('/pelancongan/peniaga/homebelibelah', function () {
     return view('/pelancongan/peniaga/homebelibelah');
 });
 
-Route::get('/produk/ProductDetails', function () {
-    return view('/produk/ProductDetails');
-});
+
 
 Route::get('/belibelah/addtocart', function () {
     return view('/belibelah/addtocart');

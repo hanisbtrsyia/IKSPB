@@ -189,8 +189,10 @@
     <div href="#" class="card card-product-grid">
       <a href="#" class="img-wrap"> <img src="assets/images/produk/peria.jpg"> </a>
       <figcaption class="info-wrap">
-        <a href="/produk/ProductDetails" class="title">Kerepek Peria Wanz Bitez</a>
-        
+        @foreach ($produk as $prod)
+            
+        <a type="button" href="{{route("produk.details", $prod->id_produk)}}" class="title">Kerepek Peria Wanz Bitez</a>
+        @endforeach
         <div class="rating-wrap">
           <ul class="rating-stars">
             <li style="width:80%" class="stars-active"> 

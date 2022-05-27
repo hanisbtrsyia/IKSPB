@@ -14,10 +14,18 @@ class ProdukController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id_produk)
     {
-        //
-       
+        $produk = Produk::find($id_produk);
+        //dd($produk);
+        return view('produk.ProductDetails',compact('produk'));
+    }
+
+    public function homebelibelah()
+    {
+        $produk = Produk::all();
+        //dd($produk);
+        return view('homebelibelah',compact('produk'));
     }
 
     /**
@@ -94,7 +102,8 @@ class ProdukController extends Controller
      */
     public function show($id)
     {
-        return view('belibelah.addproduk');
+        return view('produk.ProductDetails');
+
     }
 
     /**

@@ -16,7 +16,8 @@ class TempatMenarikController extends Controller
      */
     public function index()
     {
-        //
+        $temMenarik = InformasiTempatMenarik::all();
+        return view('pelancongan.pelanggan.infoTempatMenarik',compact('temMenarik','temMenarik'));
        
     }
 
@@ -91,6 +92,7 @@ class TempatMenarikController extends Controller
      */
     public function show($id)
     {
+        return view('pelancongan.addTempatMenarik');
         return view('pelancongan.addTempatMenarik');
     }
 
