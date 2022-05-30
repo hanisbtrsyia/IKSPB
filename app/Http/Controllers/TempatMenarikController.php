@@ -14,13 +14,19 @@ class TempatMenarikController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id_tempatMenarik)
     {
-        $temMenarik = InformasiTempatMenarik::all();
-        return view('pelancongan.pelanggan.infoTempatMenarik',compact('temMenarik','temMenarik'));
+        $temMenarik = InformasiTempatMenarik::find($id_tempatMenarik);
+        return view('pelancongan.pelanggan.infoTempatMenarik',compact('temMenarik'));
        
     }
 
+    public function homeTempatMenarik()
+    {
+        $temMenarik = InformasiTempatMenarik::all();
+        //dd($produk);
+        return view('homeTempatMenarik',compact('temMenarik'));
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -92,8 +98,8 @@ class TempatMenarikController extends Controller
      */
     public function show($id)
     {
-        return view('pelancongan.addTempatMenarik');
-        return view('pelancongan.addTempatMenarik');
+        return view('pelancongan.pelanggan.infoTempatMenarik');
+        
     }
 
     /**

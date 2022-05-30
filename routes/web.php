@@ -29,6 +29,7 @@ Route::resource('addproduk', ProdukController::class)->except(['edit']); //Produ
 Route::get('produk/ProductDetails/{id_produk}', [ProdukController::class, 'index'])->name('produk.details'); 
 
 Route::resource('addTempatMenarik', TempatMenarikController::class)->except(['edit']);
+Route::get('pelancongan/pelanggan/infoTempatMenarik/{id_tempatMenarik}', [TempatMenarikController::class, 'index'])->name('TempatMenarik.info'); 
 
 Route::resource('addTempatPenginapan', TempatPenginapanController::class)->except(['edit']);
 
@@ -44,15 +45,18 @@ Route::get('/layouts/homepage', function () {
     return view('/layouts/homepage');
 });
 
+Route::get('/layouts/homeInfo', function () {
+    return view('/layouts/homeInfo');
+});
+
 Route::get('/homepelancongan', function () {
     return view('/homepelancongan');
 });
 
 Route::get('/homebelibelah', [ProdukController::class, 'homebelibelah']); 
 
-Route::get('/homeTempatMenarik', function () {
-    return view('/homeTempatMenarik');
-});
+Route::get('/homeTempatMenarik', [TempatMenarikController::class, 'homeTempatMenarik']); 
+
 
 Route::get('/homeTempatPenginapan', function () {
     return view('/homeTempatPenginapan');
