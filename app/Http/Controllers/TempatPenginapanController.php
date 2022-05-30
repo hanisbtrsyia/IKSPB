@@ -14,12 +14,19 @@ class TempatPenginapanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id_tempatPenginapan)
     {
-        //
-       
+        $temPenginapan = InformasiTempatPenginapan::find($id_tempatPenginapan);
+        return view('pelancongan.pelanggan.infoTempatPenginapan',compact('temPenginapan'));
+              
     }
 
+    public function homeTempatPenginapan()
+    {
+        $temPenginapan = InformasiTempatPenginapan::all();
+        //dd($produk);
+        return view('homeTempatPenginapan',compact('temPenginapan'));
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -95,7 +102,7 @@ class TempatPenginapanController extends Controller
      */
     public function show($id)
     {
-        return view('pelancongan.addTempatPenginapan');
+        return view('pelancongan.pelanggan.infoTempatPenginapan');
     }
 
     /**

@@ -32,6 +32,7 @@ Route::resource('addTempatMenarik', TempatMenarikController::class)->except(['ed
 Route::get('pelancongan/pelanggan/infoTempatMenarik/{id_tempatMenarik}', [TempatMenarikController::class, 'index'])->name('TempatMenarik.info'); 
 
 Route::resource('addTempatPenginapan', TempatPenginapanController::class)->except(['edit']);
+Route::get('pelancongan/pelanggan/infoTempatPenginapan/{id_tempatPenginapan}', [TempatPenginapanController::class, 'index'])->name('TempatPenginapan.info'); 
 
 Route::get('/', function () {
     return view('welcome');
@@ -57,10 +58,7 @@ Route::get('/homebelibelah', [ProdukController::class, 'homebelibelah']);
 
 Route::get('/homeTempatMenarik', [TempatMenarikController::class, 'homeTempatMenarik']); 
 
-
-Route::get('/homeTempatPenginapan', function () {
-    return view('/homeTempatPenginapan');
-});
+Route::get('/homeTempatPenginapan', [TempatPenginapanController::class, 'homeTempatPenginapan']); 
 
 Route::get('/pelancongan/addTempatMenarik', function () {
     return view('/pelancongan/addTempatMenarik');
