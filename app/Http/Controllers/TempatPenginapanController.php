@@ -76,8 +76,11 @@ class TempatPenginapanController extends Controller
     ]);
    
     if ($request->hasFile('gambar')) {
-        $path = $request->file('gambar')->store('public/assets/images');
-        $temPenginapan->temPenginapan_image = $path;
+        $file = $request->file('gambar');
+        $img_name = time().rand(1,100).'.'.$file->getClientOriginalExtension();
+        $file->move('assets/images/penginapan',$img_name);
+        //$path = $request->file('gambar')->store('public/assets/images/penginapan');
+        //$temPenginapan->temPenginapan_image = $path;
     }
 
     InformasiTempatPenginapan::create([
@@ -86,7 +89,7 @@ class TempatPenginapanController extends Controller
             'NoTel' => $request->NoTel,
             'Lokasi' => $request->Lokasi,
             'penerangan' => $request->penerangan,
-            'gambar' => $request->file('gambar'),
+            'gambar' => $img_name,
             'HargaPerMalam' => $request->HargaPerMalam,
             'Kemudahan' => $request->Kemudahan,
             'created_at' => now(),
@@ -105,22 +108,39 @@ class TempatPenginapanController extends Controller
         return view('pelancongan.pelanggan.infoTempatPenginapan');
     }
 
+    public function edit($id_tempatPenginapan)
+    {
+        $temPenginapan = InformasiTempatPenginapan::find($id_tempatPenginapan);
+        return view('pelancongan.updateTempatPenginapan',compact('temPenginapan'));
+    }
+
+    public function PeniagaUpdate()
+    {
+        $temPenginapan = InformasiTempatPenginapan::all();
+        //dd($produk);
+        return view('pelancongan.peniaga.ListTempatPenginapan',compact('temPenginapan'));
+    }
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request, $id)
+    public function update(Request $request, $id)
     {
         $request->validate([
             'gambar' => 'required',
 
         ]);
         $updateTemPen = InformasiTempatPenginapan::find($id);
+        
         if ($request->hasFile('gambar')) {
-            $path = $request->file('gambar')->store('public/assets/images/penginapan');
-            $updateTemPen->gambar = $path;
+            unlink("assets/images/penginapan/".$updateTemPen->gambar);
+            $file = $request->file('gambar');
+            $img_name = time().rand(1,100).'.'.$file->getClientOriginalExtension();
+            $file->move('assets/images/penginapan',$img_name);
+            //$path = $request->file('gambar')->store('public/assets/images/penginapan');
+            //$temPenginapan->temPenginapan_image = $path;
         }
         
         $updateTemPen->NamaTempat = $request->input('NamaTempat');
@@ -130,10 +150,12 @@ class TempatPenginapanController extends Controller
         $updateTemPen->penerangan = $request->input('penerangan');
         $updateTemPen->HargaPerMalam = $request->input('HargaPerMalam');
         $updateTemPen->Kemudahan = $request->input('Kemudahan');
+        $updateTemPen->gambar = $img_name;
+       
        
         $updateTemPen->update();
 
-        return redirect()->route('pelancongan.updateTempatPenginapan')->with('success', 'Tempat Penginapan sudah dikemaskini.');
+        return redirect()->route('TempatPenginapan.list')->with('success', 'Tempat Penginapan sudah dikemaskini.');
        
     }
 

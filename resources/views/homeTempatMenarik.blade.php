@@ -146,7 +146,7 @@
                     <div class="col-md-3">
                         <div href="#" class="card card-product-grid">
                             <a href="{{ route('TempatMenarik.info', $temMen->id_tempatMenarik) }}"
-                                class="img-wrap"> <img src="assets/images/attractions/Cameron.jpg"> </a>
+                                class="img-wrap"> <img src="{{ asset('assets/images/attractions/'.$temMen->gambar)}}" style="width:278px; height:250px;"> </a>
                             <figcaption class="info-wrap">
                                 <a type="button" href="{{ route('TempatMenarik.info', $temMen->id_tempatMenarik) }}"
                                     class="title">{{ $temMen->NamaTempat }}</a>

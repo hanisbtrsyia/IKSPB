@@ -33,7 +33,9 @@ Route::get('pelancongan/pelanggan/infoTempatMenarik/{id_tempatMenarik}', [Tempat
 
 Route::resource('addTempatPenginapan', TempatPenginapanController::class)->except(['edit']);
 Route::get('pelancongan/pelanggan/infoTempatPenginapan/{id_tempatPenginapan}', [TempatPenginapanController::class, 'index'])->name('TempatPenginapan.info'); 
-Route::get('pelancongan/updateTempatPenginapan/{id_tempatPenginapan}', [TempatPenginapanController::class, 'index'])->name('TempatPenginapan.update'); 
+Route::get('pelancongan/peniaga/ListTempatPenginapan', [TempatPenginapanController::class, 'PeniagaUpdate'])->name('TempatPenginapan.list'); 
+Route::get('pelancongan/updateTempatPenginapan/{id_tempatPenginapan}', [TempatPenginapanController::class, 'edit'])->name('TempatPenginapan.edit'); 
+Route::post('pelancongan/editTempatPenginapan/{id_tempatPenginapan}',[TempatPenginapanController::class, 'update'])->name('TempatPenginapan.update'); 
 
 Route::get('/', function () {
     return view('welcome');
@@ -60,7 +62,8 @@ Route::get('/homebelibelah', [ProdukController::class, 'homebelibelah']);
 Route::get('/homeTempatMenarik', [TempatMenarikController::class, 'homeTempatMenarik']); 
 
 Route::get('/homeTempatPenginapan', [TempatPenginapanController::class, 'homeTempatPenginapan']); 
-Route::get('/pelancongan/updateTempatPenginapan', [TempatPenginapanController::class, 'pelancongan.updateTempatPenginapan']); 
+//Route::get('/pelancongan/updateTempatPenginapan', [TempatPenginapanController::class, 'pelancongan.updateTempatPenginapan']); 
+//Route::get('/pelancongan/peniaga/ListTempatPenginapan', [TempatPenginapanController::class, 'pelancongan.peniaga.ListTempatPenginapan']); 
 
 Route::get('/pelancongan/addTempatMenarik', function () {
     return view('/pelancongan/addTempatMenarik');
@@ -74,13 +77,17 @@ Route::get('/dashboards/peniaga/profile', function () {
     return view('/dashboards/peniaga/profile');
 });
 
+//Route::get('/pelancongan/peniaga/ListTempatPenginapan', function () {
+//    return view('/pelancongan/peniaga/ListTempatPenginapan');
+//});
+
 Route::get('/pelancongan/addTempatPenginapan', function () {
     return view('/pelancongan/addTempatPenginapan');
 });
 
-Route::get('/pelancongan/updateTempatPenginapan', function () {
-    return view('/pelancongan/updateTempatPenginapan');
-});
+//Route::get('/pelancongan/updateTempatPenginapan', function () {
+//    return view('/pelancongan/updateTempatPenginapan');
+//});
 
 Route::get('/belibelah/addproduk', function () {
     return view('/belibelah/addproduk');
@@ -120,9 +127,9 @@ Route::get('/pelancongan/pelanggan/infoTempatMenarik', function () {
     return view('/pelancongan/pelanggan/infoTempatMenarik');
 });
 
-Route::get('/pelancongan/pelanggan/infoTempatPenginapan', function () {
-    return view('/pelancongan/pelanggan/infoTempatPenginapan');
-});
+//Route::get('/pelancongan/pelanggan/infoTempatPenginapan', function () {
+//    return view('/pelancongan/pelanggan/infoTempatPenginapan');
+//});
 
 Route::middleware(['middleware'=>'PreventBackHistory'])->group(function () {
     Auth::routes();

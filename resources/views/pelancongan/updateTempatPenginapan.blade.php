@@ -26,7 +26,7 @@
           @endforeach
         </div>
         @endif
-        <form action="{{ route('addTempatPenginapan.store') }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('TempatPenginapan.update', $temPenginapan->id_tempatPenginapan) }}" method="post" enctype="multipart/form-data">
           @csrf
           <fieldset>
             <div class="card card-info">
@@ -43,36 +43,36 @@
                 </div>
                 <div class="form-group">
                     <label for="Lokasi">Nama Hos:</label>
-                    <input type="text" name="NamaHos" id="NamaHos" class="form-control" placeholder="">
+                    <input type="text" name="NamaHos" id="NamaHos" class="form-control" placeholder=""  value="{{ $temPenginapan->NamaHos }}">
                   </div>
                   <div class="form-group">
                     <label for="inputSkills" class="col-sm-3 col-form-label">Nombor Telefon</label>
-                      <input type="text" class="form-control" id="inputSkills" name="NoTel" value="" placeholder="+601-####-####">
+                      <input type="text" class="form-control" id="inputSkills" name="NoTel" value="{{ $temPenginapan->NoTel }}" placeholder="+601-####-####">
                    
                   </div>
                 <div class="form-group">
                   <label for="Lokasi">Lokasi:</label>
-                  <input type="text" name="Lokasi" id="Lokasi" class="form-control" placeholder="">
+                  <input type="text" name="Lokasi" id="Lokasi" class="form-control" value="{{ $temPenginapan->Lokasi }}" placeholder="">
                 </div>
                 <div class="form-group">
                   <label for="penerangan">Penerangan:</label>
-                  <input type="text" name="penerangan" id="penerangan" class="form-control" placeholder="">
+                  <input type="text" name="penerangan" id="penerangan" class="form-control" value="{{ $temPenginapan->penerangan }}" placeholder="">
                 </div>
                 <div class="form-group">
                     <label for="HargaPerMalam">Harga per malam:</label>
-                    <input type="text" name="HargaPerMalam" id="HargaPerMalam" class="form-control" placeholder="">
+                    <input type="text" name="HargaPerMalam" id="HargaPerMalam" class="form-control" value="{{ $temPenginapan->HargaPerMalam }}" placeholder="">
                   </div>
                   <div class="form-group">
                     <label for="Kemudahan">Kemudahan:</label>
-                    <input type="text" name="Kemudahan" id="Kemudahan" class="form-control" placeholder="">
+                    <input type="text" name="Kemudahan" id="Kemudahan" class="form-control" value="{{ $temPenginapan->Kemudahan }}" placeholder="">
                   </div>
                 <div>
                   <label for="exampleInputFile">Gambar</label>
                   <div class="text-center">
-                    <img class="img-fluid" src="" id='image_preview'>
+                    <img class="img-fluid" src="{{ asset('assets/images/penginapan/'.$temPenginapan->gambar)}}" id='image_preview'>
                   </div><br>
                   <div class="custom-file">
-                    <input type="file" accept="image/*" name="fileToUpload" id="inputImage" onchange="loadFile(event);" />
+                    <input type="file" accept="image/*" name="gambar" id="inputImage" onchange="loadFile(event);" />
                   </div>
                 </div>
                 <div class="text-center">

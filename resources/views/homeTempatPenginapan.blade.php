@@ -150,7 +150,7 @@
                     <div class="col-md-3">
                         <div href="#" class="card card-product-grid">
                             <a href="{{ route('TempatPenginapan.info', $temPeng->id_tempatPenginapan) }}"
-                                class="img-wrap"> <img src="assets/images/penginapan/neyo1.webp"> </a>
+                                class="img-wrap"> <img src="{{ asset('assets/images/penginapan/'.$temPeng->gambar)}}" style="width:278px; height:250px;"> </a>
                             <figcaption class="info-wrap">
                                 <a type="button"
                                     href="{{ route('TempatPenginapan.info', $temPeng->id_tempatPenginapan) }}"
@@ -171,7 +171,7 @@
                                     </ul>
                                     <span class="label-rating text-muted"> 34 reviws</span>
                                 </div>
-                                <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
+                                <div class="price mt-1">RM 179.00</div> <!-- price-wrap.// -->
                             </figcaption>
                         </div>
                     </div> <!-- col.// -->
