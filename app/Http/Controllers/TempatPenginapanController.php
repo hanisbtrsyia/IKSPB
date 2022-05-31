@@ -111,9 +111,29 @@ class TempatPenginapanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id,$name)
+    public function edit(Request $request, $id)
     {
-        //
+        $request->validate([
+            'gambar' => 'required',
+
+        ]);
+        $updateTemPen = InformasiTempatPenginapan::find($id);
+        if ($request->hasFile('gambar')) {
+            $path = $request->file('gambar')->store('public/assets/images/penginapan');
+            $updateTemPen->gambar = $path;
+        }
+        
+        $updateTemPen->NamaTempat = $request->input('NamaTempat');
+        $updateTemPen->NamaHos = $request->input('NamaHos');
+        $updateTemPen->NoTel = $request->input('NoTel');
+        $updateTemPen->Lokasi = $request->input('Lokasi');
+        $updateTemPen->penerangan = $request->input('penerangan');
+        $updateTemPen->HargaPerMalam = $request->input('HargaPerMalam');
+        $updateTemPen->Kemudahan = $request->input('Kemudahan');
+       
+        $updateTemPen->update();
+
+        return redirect()->route('pelancongan.updateTempatPenginapan')->with('success', 'Tempat Penginapan sudah dikemaskini.');
        
     }
 

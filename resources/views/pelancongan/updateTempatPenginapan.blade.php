@@ -26,7 +26,7 @@
           @endforeach
         </div>
         @endif
-        <form action="" method="post" enctype="multipart/form-data">
+        <form action="{{ route('addTempatPenginapan.store') }}" method="post" enctype="multipart/form-data">
           @csrf
           <fieldset>
             <div class="card card-info">
@@ -39,7 +39,7 @@
                 </div>
                 <div class="form-group">
                   <label for="NamaTempat">Nama Tempat:</label>
-                  <input type="text" name="NamaTempat" id="NamaTempat" class="form-control" placeholder="">
+                  <input type="text" name="NamaTempat" id="NamaTempat" class="form-control" placeholder="" value="{{ $temPenginapan->NamaTempat }}">
                 </div>
                 <div class="form-group">
                     <label for="Lokasi">Nama Hos:</label>
