@@ -76,13 +76,17 @@ class TempatMenarikController extends Controller
     ]);
    
     if ($request->hasFile('gambar')) {
-        $path = $request->file('gambar')->store('public/assets/images');
-        $temMenarik->temMenarik_image = $path;
+        $file = $request->file('gambar');
+        $img_name = time().rand(1,100).'.'.$file->getClientOriginalExtension();
+        $file->move('assets/images/attractions',$img_name);
+        
+        //$path = $request->file('gambar')->store('public/assets/images');
+        //$temMenarik->temMenarik_image = $path;
     }
 
     InformasiTempatMenarik::create([
             'NamaTempat' => $request->NamaTempat,
-            'gambar' => $request->file('gambar'),
+            'gambar' => $img_name,
             'Lokasi' => $request->Lokasi,
             'penerangan' => $request->penerangan,
             'created_at' => now(),
@@ -108,9 +112,46 @@ class TempatMenarikController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id,$name)
+    public function edit($id_tempatMenarik)
     {
-        //
+        $temMenarik = InformasiTempatMenarik::find($id_tempatMenarik);
+        return view('pelancongan.updateTempatMenarik',compact('temMenarik'));
+       
+    }
+
+    public function AdminUpdate()
+    {
+        $temMenarik = InformasiTempatMenarik::all();
+        //dd($produk);
+        return view('pelancongan.admin.ListTempatMenarik',compact('temMenarik'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'gambar' => 'required',
+
+        ]);
+        $updateTemMen = InformasiTempatMenarik::find($id);
+        
+        if ($request->hasFile('gambar')) {
+            unlink("assets/images/attractions/".$updateTemMen->gambar);
+            $file = $request->file('gambar');
+            $img_name = time().rand(1,100).'.'.$file->getClientOriginalExtension();
+            $file->move('assets/images/attractions',$img_name);
+            //$path = $request->file('gambar')->store('public/assets/images/penginapan');
+            //$temPenginapan->temPenginapan_image = $path;
+        }
+        
+        $updateTemMen->NamaTempat = $request->input('NamaTempat');
+        $updateTemMen->gambar = $img_name;
+        $updateTemMen->Lokasi = $request->input('Lokasi');
+        $updateTemMen->penerangan = $request->input('penerangan');
+        
+       
+        $updateTemMen->update();
+
+        return redirect()->route('TempatMenarik.list')->with('success', 'Tempat Menarik sudah dikemaskini.');
        
     }
 

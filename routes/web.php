@@ -30,6 +30,10 @@ Route::get('produk/ProductDetails/{id_produk}', [ProdukController::class, 'index
 
 Route::resource('addTempatMenarik', TempatMenarikController::class)->except(['edit']);
 Route::get('pelancongan/pelanggan/infoTempatMenarik/{id_tempatMenarik}', [TempatMenarikController::class, 'index'])->name('TempatMenarik.info'); 
+Route::get('pelancongan/admin/ListTempatMenarik', [TempatMenarikController::class, 'AdminUpdate'])->name('TempatMenarik.list'); 
+Route::get('pelancongan/updateTempatMenarik/{id_tempatMenarik}', [TempatMenarikController::class, 'edit'])->name('TempatMenarik.edit'); 
+Route::post('pelancongan/editTempatMenarik/{id_tempatMenarik}',[TempatMenarikController::class, 'update'])->name('TempatMenarik.update'); 
+
 
 Route::resource('addTempatPenginapan', TempatPenginapanController::class)->except(['edit']);
 Route::get('pelancongan/pelanggan/infoTempatPenginapan/{id_tempatPenginapan}', [TempatPenginapanController::class, 'index'])->name('TempatPenginapan.info'); 
@@ -69,9 +73,9 @@ Route::get('/pelancongan/addTempatMenarik', function () {
     return view('/pelancongan/addTempatMenarik');
 });
 
-Route::get('/pelancongan/updateTempatMenarik', function () {
-    return view('/pelancongan/updateTempatMenarik');
-});
+//Route::get('/pelancongan/updateTempatMenarik', function () {
+//    return view('/pelancongan/updateTempatMenarik');
+//});
 
 Route::get('/dashboards/peniaga/profile', function () {
     return view('/dashboards/peniaga/profile');

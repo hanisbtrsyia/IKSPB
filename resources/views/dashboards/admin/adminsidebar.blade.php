@@ -134,7 +134,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </a>
             </li>
             <li class="nav-item">
-              <a href="/pelancongan/updateTempatMenarik" >
+              <a href="/pelancongan/admin/ListTempatMenarik" >
                
                 <p> <i class="nav-icon fas fa-book"></i>
                   Kemaskini Tempat Menarik
