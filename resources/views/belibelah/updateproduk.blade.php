@@ -26,7 +26,7 @@
           @endforeach
         </div>
         @endif
-        <form action="" method="post" enctype="multipart/form-data">
+        <form action="{{ route('produk.update', $produk->id_produk) }}" method="post" enctype="multipart/form-data">
           @csrf
           <fieldset>
             <div class="card card-info">
@@ -39,35 +39,35 @@
                 </div>
                 <div class="form-group">
                   <label for="NamaKategori">Nama Kategori:</label>
-                  <input type="text" name="NamaKategori" id="NamaKategori" class="form-control" placeholder="">
+                  <input type="text" name="NamaKategori" id="NamaKategori" class="form-control" placeholder="" value="{{ $produk->NamaKategori }}">
                 </div>
                 <div class="form-group">
                   <label for="NamaProduk">Nama Produk:</label>
-                  <input type="text" name="NamaProduk" id="NamaProduk" class="form-control" placeholder="">
+                  <input type="text" name="NamaProduk" id="NamaProduk" class="form-control" placeholder="" value="{{ $produk->NamaProduk }}">
                 </div>
                 <div class="form-group">
                   <label for="Harga">Harga:</label>
-                  <input type="text" name="Harga" id="Harga" class="form-control" placeholder="">
+                  <input type="text" name="Harga" id="Harga" class="form-control" placeholder="" value="{{ $produk->Harga }}">
                 </div>
                 <div class="form-group">
                     <label for="Unit">Unit:</label>
-                    <input type="text" name="Unit" id="Unit" class="form-control" placeholder="">
+                    <input type="text" name="Unit" id="Unit" class="form-control" placeholder="" value="{{ $produk->Unit }}">
                   </div>
                   <div class="form-group">
                     <label for="Berat">Berat:</label>
-                    <input type="text" name="Berat" id="Berat" class="form-control" placeholder="">
+                    <input type="text" name="Berat" id="Berat" class="form-control" placeholder="" value="{{ $produk->Berat }}">
                   </div>
                 <div class="form-group">
                     <label for="penerangan">Penerangan:</label>
-                    <input type="text" name="penerangan" id="penerangan" class="form-control" placeholder="">
+                    <input type="text" name="penerangan" id="penerangan" class="form-control" placeholder="" value="{{ $produk->penerangan }}">
                   </div>
                 <div>
                   <label for="exampleInputFile">Gambar</label>
                   <div class="text-center">
-                    <img class="img-fluid" src="" id='image_preview'>
+                    <img class="img-fluid" src="{{ asset('assets/images/produk/'.$produk->GambarProduk)}}" id='image_preview'>
                   </div><br>
                   <div class="custom-file">
-                    <input type="file" accept="image/*" name="fileToUpload" id="inputImage" onchange="loadFile(event);" />
+                    <input type="file" accept="image/*" name="GambarProduk" id="inputImage" onchange="loadFile(event);" />
                   </div>
                 </div>
                 <div class="text-center">

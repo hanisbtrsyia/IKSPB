@@ -160,7 +160,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="/belibelah/updateproduk" class="nav-link">
+                                <a href="/pelancongan/peniaga/ListProduk" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Kemaskini Produk</p>
                                 </a>

@@ -27,6 +27,10 @@ use Illuminate\Support\Facades\Auth;
 
 Route::resource('addproduk', ProdukController::class)->except(['edit']); //Produk
 Route::get('produk/ProductDetails/{id_produk}', [ProdukController::class, 'index'])->name('produk.details'); 
+Route::get('pelancongan/peniaga/ListProduk', [ProdukController::class, 'PeniagaUpdate'])->name('produk.list'); 
+Route::get('belibelah/updateproduk/{id_produk}', [ProdukController::class, 'edit'])->name('produk.edit'); 
+Route::post('belibelah/editProduk/{id_produk}',[ProdukController::class, 'update'])->name('produk.update'); 
+
 
 Route::resource('addTempatMenarik', TempatMenarikController::class)->except(['edit']);
 Route::get('pelancongan/pelanggan/infoTempatMenarik/{id_tempatMenarik}', [TempatMenarikController::class, 'index'])->name('TempatMenarik.info'); 
@@ -97,9 +101,9 @@ Route::get('/belibelah/addproduk', function () {
     return view('/belibelah/addproduk');
 });
 
-Route::get('/belibelah/updateproduk', function () {
-    return view('/belibelah/updateproduk');
-});
+//Route::get('/belibelah/updateproduk', function () {
+//    return view('/belibelah/updateproduk');
+//});
 
 Route::get('/pelancongan/admin/homeTempatMenarik', function () {
     return view('/pelancongan/admin/homeTempatMenarik');

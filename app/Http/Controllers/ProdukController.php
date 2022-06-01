@@ -77,8 +77,11 @@ class ProdukController extends Controller
     ]);
    
     if ($request->hasFile('GambarProduk')) {
-        $path = $request->file('GambarProduk')->store('public/assets/images');
-        $produk->produk_image = $path;
+        $file = $request->file('GambarProduk');
+        $img_name = time().rand(1,100).'.'.$file->getClientOriginalExtension();
+        $file->move('assets/images/produk',$img_name);
+        //$path = $request->file('GambarProduk')->store('public/assets/images');
+        //$produk->produk_image = $path;
     }
 
         Produk::create([
@@ -86,7 +89,7 @@ class ProdukController extends Controller
             'NamaProduk' => $request->NamaProduk,
             'Harga' => $request->Harga,
             'penerangan' => $request->penerangan,
-            'GambarProduk' => $request->file('GambarProduk'),
+            'GambarProduk' => $img_name,
             'Unit' => $request->Unit,
             'Berat' => $request->Berat,
             'created_at' => now(),
@@ -112,9 +115,48 @@ class ProdukController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id,$name)
+    public function edit($id_produk)
     {
-        //
+        $produk = Produk::find($id_produk);
+        return view('belibelah.updateproduk',compact('produk'));
+       
+    }
+
+    public function PeniagaUpdate()
+    {
+        $produk = Produk::all();
+        //dd($produk);
+        return view('pelancongan.peniaga.ListProduk',compact('produk'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'GambarProduk' => 'required',
+
+        ]);
+        $updateProduk = Produk::find($id);
+        
+        if ($request->hasFile('GambarProduk')) {
+            unlink("assets/images/produk/".$updateProduk->GambarProduk);
+            $file = $request->file('GambarProduk');
+            $img_name = time().rand(1,100).'.'.$file->getClientOriginalExtension();
+            $file->move('assets/images/produk',$img_name);
+            //$path = $request->file('gambar')->store('public/assets/images/penginapan');
+            //$temPenginapan->temPenginapan_image = $path;
+        }
+        
+        $updateProduk->NamaKategori = $request->input('NamaKategori');
+        $updateProduk->NamaProduk = $request->input('NamaProduk');
+        $updateProduk->Harga = $request->input('Harga');
+        $updateProduk->penerangan = $request->input('penerangan');
+        $updateProduk->GambarProduk = $img_name;
+        $updateProduk->Unit = $request->input('Unit');
+        $updateProduk->Berat = $request->input('Berat');
+                   
+        $updateProduk->update();
+
+        return redirect()->route('produk.list')->with('success', 'Produk sudah dikemaskini.');
        
     }
 

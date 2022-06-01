@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title','Tempat Menarik')
+@section('title','Produk')
 @section('content')
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
