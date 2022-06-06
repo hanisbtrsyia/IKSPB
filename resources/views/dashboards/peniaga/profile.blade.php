@@ -33,7 +33,8 @@
           <img class="img-fluid img-circle" src="" style="width: 180px; height:180px" id='image_preview' alt="User profile picture">
         </div>
         <br>
-        <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+        @foreach ($profile as $prof)
+        <form class="form-horizontal" action="{{ route('profile.store', $prof->id_peniaga) }}" method="post" enctype="multipart/form-data">
           @csrf
           @method('PUT')
           <div class="form-group">
@@ -44,19 +45,19 @@
           <div class="form-group row">
             <label for="NamaPengguna" class="col-sm-3 col-form-label">Nama Pengguna</label>
             <div class="col-sm-9">
-              <input type="NamaPengguna" class="form-control" name="id" id="NamaPengguna" value="" placeholder="" >
+              <input type="NamaPengguna" class="form-control" name="id" id="NamaPengguna" value="" placeholder="{{$prof->NamaPengguna}}" >
             </div>
           </div>
           <div class="form-group row">
             <label for="Emel" class="col-sm-3 col-form-label">Emel</label>
             <div class="col-sm-9">
-              <input type="Emel" class="form-control" id="Emel" value="" placeholder="" >
+              <input type="Emel" class="form-control" id="Emel" value="" placeholder="{{$prof->Emel}}" >
             </div>
           </div>
           <div class="form-group row">
             <label for="inputSkills" class="col-sm-3 col-form-label">Nombor Telefon</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" id="inputSkills" name="NoTel" value="" placeholder="+601-####-####">
+              <input type="text" class="form-control" id="inputSkills" name="NoTel" value="" placeholder="">
             </div>
           </div>
           <div class="form-group row">
@@ -86,6 +87,7 @@
     </div>
   </div>
 </div>
+@endforeach
 @endsection
 @push('scripts')
 <script type="text/javascript">

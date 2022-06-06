@@ -10,13 +10,13 @@
         <section class="section-content">
             <div class="container">
                 <header class="section-heading">
-                    <h3 class="section-title">Cameron Highlands</h3>
+                    <h3 class="section-title">{{ $temMenarik->NamaTempat }}</h3>
                 </header><!-- sect-heading -->
 
                 <section class="section-intro padding-y-sm">
                     <div class="container">
                         <div class="intro-banner-wrap">
-                            <img src="../../../assets/images/attractions/Cameron.jpg" class="img-fluid center"
+                            <img src="{{ asset('assets/images/attractions/' . $temMenarik->gambar) }}" class="img-fluid center"
                                 style="height:50%; width:70%;">
                         </div>
                     </div> <!-- container //  -->

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
+use App\Models\Peniaga;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -52,9 +53,11 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'NamaPengguna' => ['required', 'string', 'max:255'],
+            'Emel' => ['required', 'string', 'email', 'max:255'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            
+                        
         ]);
     }
 
@@ -78,20 +81,29 @@ class RegisterController extends Controller
     function register(Request $request){
 
          $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'NamaPengguna' => ['required', 'string', 'max:255'],
+            'Emel' => ['required', 'string', 'email', 'max:255'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            
          ]);
 
          $user = new User();
-         $user->name = $request->name;
-         $user->email = $request->email;
-         $user->role = 2;
+         $user->name = $request->NamaPengguna;
+         $user->email = $request->Emel;
+         $user->password = Hash::make($request->password);
+         $user->role = "peniaga";
+         $user->save();
+
+         $peniaga = new Peniaga();
+         $peniaga->id_peniaga = $user->id;
+         $peniaga->NamaPengguna = $request->NamaPengguna;
+         $peniaga->Emel = $request->Emel;
+        // $peniaga->role = 2;
         
          //$user->picture = $picture; 
-         $user->password = Hash::make($request->password);
+         $peniaga->KataLaluan = Hash::make($request->password);
 
-         if( $user->save() ){
+         if( $peniaga->save() ){
 
             return redirect()->back()->with('success','You are now successfully registerd');
          }else{

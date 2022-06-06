@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\TempatMenarikController;
 use App\Http\Controllers\TempatPenginapanController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
@@ -24,6 +25,15 @@ use Illuminate\Support\Facades\Auth;
 });*/
 
 //Route::post('addProd',[ProdukController::class, 'addProd'])->name('addProd');
+
+//Route::get('/profile/{id}/edit/{name}/{lotno}', [ProfileController::class, 'edit'])->name('profile.edit');
+//Route::resource('profile', ProfileController::class)->except(['edit']);
+
+Route::resource('profile', ProfileController::class)->except(['edit']); //Profile
+Route::get('dashboards/peniaga/profile/{id_peniaga}', [ProfileController::class, 'index'])->name('profile.details'); 
+Route::get('dashboards/peniaga/profile/{id_peniaga}', [ProfileController::class, 'edit'])->name('profile.edit'); 
+Route::post('dashboards/peniaga/profile/{id_peniaga}',[ProfileController::class, 'update'])->name('profile.update'); 
+
 
 Route::resource('addproduk', ProdukController::class)->except(['edit']); //Produk
 Route::get('produk/ProductDetails/{id_produk}', [ProdukController::class, 'index'])->name('produk.details'); 
@@ -81,9 +91,9 @@ Route::get('/pelancongan/addTempatMenarik', function () {
 //    return view('/pelancongan/updateTempatMenarik');
 //});
 
-Route::get('/dashboards/peniaga/profile', function () {
-    return view('/dashboards/peniaga/profile');
-});
+//Route::get('/dashboards/peniaga/profile', function () {
+//    return view('/dashboards/peniaga/profile');
+//});
 
 //Route::get('/pelancongan/peniaga/ListTempatPenginapan', function () {
 //    return view('/pelancongan/peniaga/ListTempatPenginapan');

@@ -17,7 +17,7 @@
 				
 					<div class="cardx fat mt-4">
 						<div class="card-body">
-							<h4 class="card-title">Register</h4>
+							<h4 class="card-title">Daftar Masuk</h4>
 							<form method="POST" class="my-login-validation" autocomplete="off" action="{{ route('register') }}">
 
 								@if ( Session::get('success'))
@@ -32,25 +32,29 @@
 								@endif
                                 @csrf
 								<div class="form-group">
-									<label for="name">Name</label>
-									<input id="name" type="text" class="form-control" name="name"  autofocus placeholder="Enter name" value="{{ old('name') }}">
-									<span class="text-danger">@error('name'){{ $message }}@enderror</span>
+									<input type="hidden" name="id_peniaga" id="id_peniaga" class="form-control">
+								  </div>
+								<div class="form-group">
+									<label for="NamaPengguna">Nama Pengguna</label>
+									<input id="NamaPengguna" type="text" class="form-control" name="NamaPengguna"  autofocus placeholder="Masukkan nama pengguna" required>
+									<span class="text-danger">@error('NamaPengguna'){{ $message }}@enderror</span>
 								</div>
 
 								<div class="form-group">
-									<label for="email">E-Mail Address</label>
-									<input id="email" type="email" class="form-control" name="email"  placeholder="Enter email" value="{{ old('email') }}">
-									<span class="text-danger">@error('email'){{ $message }}@enderror</span>
+									<label for="Emel">Emel</label>
+									<input id="Emel" type="email" class="form-control" name="Emel"  placeholder="Masukkan emel" required>
+									<span class="text-danger">@error('Emel'){{ $message }}@enderror</span>
 								</div>
 
 								<div class="form-group">
-									<label for="password">Password</label>
-									<input id="password" type="password" class="form-control" name="password"  data-eye placeholder="Enter password">
-									<span class="text-danger">@error('password'){{ $message }}@enderror</span>
+									<label for="KataLaluan">Kata Laluan</label>
+									<input id="KataLaluan" type="password" class="form-control" name="password"  data-eye placeholder="Masukkan kata laluan" required>
+									<span class="text-danger">@error('KataLaluan'){{ $message }}@enderror</span>
 								</div>
+
                                 <div class="form-group">
-									<label for="password-confirm">Confirm Password</label>
-									<input id="password-confirm" type="password" class="form-control" name="password_confirmation" required data-eye placeholder="Enter confirm password">
+									<label for="password-confirm">Sahkan Kata Laluan</label>
+									<input id="password-confirm" type="password" class="form-control" name="password_confirmation" required data-eye placeholder="Masukkan kata laluan yang sah">
 									<span class="text-danger">@error('password_confirmation'){{ $message }}@enderror</span>
                                     
 								</div>
@@ -59,20 +63,20 @@
 								<div class="form-group">
 									<div class="custom-checkbox custom-control">
 										<input type="checkbox" name="agree" id="agree" class="custom-control-input">
-										<label for="agree" class="custom-control-label">I agree to the <a href="#">Terms and Conditions</a></label>
+										<label for="agree" class="custom-control-label">Saya setuju dengan <a href="#">Terma dan Syarat</a></label>
 										<div class="invalid-feedback">
-											You must agree with our Terms and Conditions
+											Anda perlu setuju dengan Terma dan Syarat
 										</div>
 									</div>
 								</div>
 
 								<div class="form-group m-0">
 									<button type="submit" class="btn btn-warning btn-block">
-										Register
+										Daftar
 									</button>
 								</div>
 								<div class="mt-4 text-center">
-									Already have an account? <a href="{{route('login')}}">Login</a>
+									Sudah ada akaun? <a href="{{route('login')}}">Log Masuk</a>
 								</div>
 							</form>
 						</div>

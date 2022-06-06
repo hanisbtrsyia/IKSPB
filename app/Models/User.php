@@ -6,11 +6,12 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\QueryException;
 
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
-
+    public $incrementing=false;
     /**
      * The attributes that are mass assignable.
      *
@@ -42,6 +43,33 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($user) {
+            if (!$user->id) {
+                while (true) {
+                    try {
+                        $latest = User::where('role', $user->role)->latest('id')->first();
+
+                        $uid = 1000;
+
+                        if ($latest != null && $latest->exists()) {
+                            $uid = random_int(1001, 9999);
+                        }
+                        $user->id = 'S'.$uid;
+
+                        break;
+
+                    } catch (QueryException $exception) {
+                        continue;
+                    }
+                }
+            }
+        });
+    }
 
 
     public function getPictureAttribute($value){
