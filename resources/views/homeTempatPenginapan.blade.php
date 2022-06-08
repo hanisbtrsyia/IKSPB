@@ -150,7 +150,9 @@
                     <div class="col-md-3">
                         <div href="#" class="card card-product-grid">
                             <a href="{{ route('TempatPenginapan.info', $temPeng->id_tempatPenginapan) }}"
-                                class="img-wrap"> <img src="{{ asset('assets/images/penginapan/'.$temPeng->gambar)}}" style="width:278px; height:250px;"> </a>
+                                class="img-wrap"> <img
+                                    src="{{ asset('assets/images/penginapan/' . $temPeng->gambar) }}"
+                                    style="width:278px; height:250px;"> </a>
                             <figcaption class="info-wrap">
                                 <a type="button"
                                     href="{{ route('TempatPenginapan.info', $temPeng->id_tempatPenginapan) }}"
@@ -175,82 +177,8 @@
                             </figcaption>
                         </div>
                     </div> <!-- col.// -->
-                    @endforeach
-                    <div class="col-md-3">
-                        <div href="#" class="card card-product-grid">
-                            <a href="#" class="img-wrap"> <img src="assets/images/penginapan/quintet.webp"> </a>
-                            <figcaption class="info-wrap">
-                                <a href="#" class="title">Highland Green di Quintet</a>
+                @endforeach
 
-                                <div class="rating-wrap">
-                                    <ul class="rating-stars">
-                                        <li style="width:80%" class="stars-active">
-                                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i>
-                                        </li>
-                                    </ul>
-                                    <span class="label-rating text-muted"> 34 reviws</span>
-                                </div>
-                                <div class="price mt-1">$280.00</div> <!-- price-wrap.// -->
-                            </figcaption>
-                        </div>
-                    </div> <!-- col.// -->
-                    <div class="col-md-3">
-                        <div href="#" class="card card-product-grid">
-                            <a href="#" class="img-wrap"> <img src="assets/images/penginapan/cottage.webp"> </a>
-                            <figcaption class="info-wrap">
-                                <a href="#" class="title">The Fairy's Cottage @ 梦の屋</a>
-
-                                <div class="rating-wrap">
-                                    <ul class="rating-stars">
-                                        <li style="width:80%" class="stars-active">
-                                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i>
-                                        </li>
-                                    </ul>
-                                    <span class="label-rating text-muted"> 34 reviws</span>
-                                </div>
-                                <div class="price mt-1">$56.00</div> <!-- price-wrap.// -->
-                            </figcaption>
-                        </div>
-                    </div> <!-- col.// -->
-                    <div class="col-md-3">
-                        <div href="#" class="card card-product-grid">
-                            <a href="#" class="img-wrap"> <img src="assets/images/penginapan/colour.webp"> </a>
-                            <figcaption class="info-wrap">
-                                <a href="#" class="title">2B2 The Colour of Cameron</a>
-
-                                <div class="rating-wrap">
-                                    <ul class="rating-stars">
-                                        <li style="width:80%" class="stars-active">
-                                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i>
-                                        </li>
-                                    </ul>
-                                    <span class="label-rating text-muted"> 34 reviws</span>
-                                </div>
-                                <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
-                            </figcaption>
-                        </div>
-                    </div> <!-- col.// -->
             </div> <!-- row.// -->
         </div> <!-- container .//  -->
     </section>
