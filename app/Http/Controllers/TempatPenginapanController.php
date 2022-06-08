@@ -152,7 +152,6 @@ class TempatPenginapanController extends Controller
         $updateTemPen->Kemudahan = $request->input('Kemudahan');
         $updateTemPen->gambar = $img_name;
        
-       
         $updateTemPen->update();
 
         return redirect()->route('TempatPenginapan.list')->with('success', 'Tempat Penginapan sudah dikemaskini.');
@@ -174,8 +173,12 @@ class TempatPenginapanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id_tempatPenginapan)
     {
-        //
+        $temPenginapan = InformasiTempatPenginapan::find($id_tempatPenginapan);
+        $temPenginapan->delete();
+        return redirect()->route('TempatPenginapan.show',$temPenginapan)
+            ->with('success', 'Tempat Penginapan has been deleted successfully');
+   
     }
 }
