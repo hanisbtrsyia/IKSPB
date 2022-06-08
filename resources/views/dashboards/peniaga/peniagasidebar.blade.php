@@ -107,7 +107,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                with font-awesome or any other icon font library -->
 
                         <li class="nav-item">
-                            <a href="/dashboards/peniaga/profile">
+                            <a href="{{route('profile.edit')}}">
                                 <p> <i class="nav-icon fas fa-bell"></i>
                                     Profile
                                     <span class="right badge badge-danger"></span>

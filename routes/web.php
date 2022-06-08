@@ -24,8 +24,10 @@ use Illuminate\Support\Facades\Auth;
 //Route::get('/profile/{id}/edit/{name}/{lotno}', [ProfileController::class, 'edit'])->name('profile.edit');
 //Route::resource('profile', ProfileController::class)->except(['edit']);
 
-Route::resource('profile', ProfileController::class)->except(['edit']); //Profile
-Route::get('dashboards/peniaga/profile/{id_peniaga}', [ProfileController::class, 'edit'])->name('profile.edit'); 
+
+Route::get('dashboards/peniaga/profile', [ProfileController::class, 'edit'])->name('profile.edit'); 
+Route::post('dashboards/peniaga/profile_update', [ProfileController::class, 'update'])->name('profile.update'); 
+
 
 Route::resource('addproduk', ProdukController::class)->except(['edit']); //Produk
 Route::get('produk/ProductDetails/{id_produk}', [ProdukController::class, 'index'])->name('produk.details'); 
@@ -46,6 +48,8 @@ Route::get('pelancongan/pelanggan/infoTempatPenginapan/{id_tempatPenginapan}', [
 Route::get('pelancongan/peniaga/ListTempatPenginapan', [TempatPenginapanController::class, 'PeniagaUpdate'])->name('TempatPenginapan.list'); 
 Route::get('pelancongan/updateTempatPenginapan/{id_tempatPenginapan}', [TempatPenginapanController::class, 'edit'])->name('TempatPenginapan.edit'); 
 Route::post('pelancongan/editTempatPenginapan/{id_tempatPenginapan}',[TempatPenginapanController::class, 'update'])->name('TempatPenginapan.update'); 
+
+Route::post('deleteTemPeng', [TempatPenginapanController::class, 'deleteTemPeng'])->name('TempatPenginapan.deleteTemPeng');
 
 Route::get('/', function () {
     return view('welcome');

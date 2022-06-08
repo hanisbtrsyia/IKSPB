@@ -92,10 +92,10 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id_peniaga)
+    public function edit()
     {
         //
-        $profile = Peniaga::find($id_peniaga);
+        $profile = Peniaga::find(Auth::user()->id);
         return view('dashboards.peniaga.profile',compact('profile'));
        
     }
@@ -107,35 +107,29 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
-        $request->validate([
-            'GambarProfil' => 'required',
-
-        ]);
-        $updateProfil = Peniaga::find($id);
+              
+        $updateProfil = Peniaga::find(Auth::user()->id);
         
         if ($request->hasFile('GambarProfil')) {
-            unlink("assets/images/".$updateProfil->GambarProfil);
+            //unlink("assets/images/profile/".$updateProfil->GambarProfil);
             $file = $request->file('GambarProfil');
             $img_name = time().rand(1,100).'.'.$file->getClientOriginalExtension();
-            $file->move('assets/images',$img_name);
-           
+            $file->move('assets/images/profile',$img_name);
+            $updateProfil->GambarProfil = $img_name;
         }
         
         $updateProfil->NamaPengguna = $request->input('NamaPengguna');
-        $updateProfil->KataLaluan = $request->input('KataLaluan');
         $updateProfil->Emel = $request->input('Emel');
         $updateProfil->NoTel = $request->input('NoTel');
-        $updateProfil->GambarProfil = $img_name;
         $updateProfil->NamaKedai = $request->input('NamaKedai');
         $updateProfil->Alamat = $request->input('Alamat');
         $updateProfil->NoAkaun = $request->input('NoAkaun');
                    
-        $updateProfil->save();
+        $updateProfil->update();
 
-        return redirect()->route('profile.edit',$updateProfil->id_peniaga)->with('success', 'Profil sudah dikemaskini.');
+        return redirect()->route('profile.edit')->with('success', 'Profil sudah dikemaskini.');
        
     }
 

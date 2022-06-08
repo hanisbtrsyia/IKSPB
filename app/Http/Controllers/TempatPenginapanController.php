@@ -128,10 +128,7 @@ class TempatPenginapanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'gambar' => 'required',
-
-        ]);
+        
         $updateTemPen = InformasiTempatPenginapan::find($id);
         
         if ($request->hasFile('gambar')) {
@@ -141,6 +138,7 @@ class TempatPenginapanController extends Controller
             $file->move('assets/images/penginapan',$img_name);
             //$path = $request->file('gambar')->store('public/assets/images/penginapan');
             //$temPenginapan->temPenginapan_image = $path;
+            $updateTemPen->gambar = $img_name;
         }
         
         $updateTemPen->NamaTempat = $request->input('NamaTempat');
@@ -150,7 +148,7 @@ class TempatPenginapanController extends Controller
         $updateTemPen->penerangan = $request->input('penerangan');
         $updateTemPen->HargaPerMalam = $request->input('HargaPerMalam');
         $updateTemPen->Kemudahan = $request->input('Kemudahan');
-        $updateTemPen->gambar = $img_name;
+        
        
         $updateTemPen->update();
 
@@ -175,10 +173,18 @@ class TempatPenginapanController extends Controller
      */
     public function destroy($id_tempatPenginapan)
     {
+        //$temPenginapan = InformasiTempatPenginapan::find($id_tempatPenginapan);
+        //$temPenginapan->delete();
+        //return redirect()->route('TempatPenginapan.show',$temPenginapan)
+          //  ->with('success', 'Tempat Penginapan has been deleted successfully');
+   
+    }
+
+    public function deleteTemPeng(Request $request)
+    {
+        $id_tempatPenginapan = $request->input('id_tempatPenginapan');
         $temPenginapan = InformasiTempatPenginapan::find($id_tempatPenginapan);
         $temPenginapan->delete();
-        return redirect()->route('TempatPenginapan.show',$temPenginapan)
-            ->with('success', 'Tempat Penginapan has been deleted successfully');
-   
+        return redirect()->route('TempatPenginapan.list')->with('success', 'Tempat Penginapan has been deleted successfully');
     }
 }
