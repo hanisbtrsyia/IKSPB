@@ -34,7 +34,6 @@
                                     <h3 class="card-title">Tambah Produk</h3>
                                 </div>
                                 <div class="card-body">
-
                                     <label for="NamaKategori">Nama Kategori:</label>
                                     <select class="form-select" name="NamaKategori" id="NamaKategori"
                                         aria-label="Default select example">
@@ -67,23 +66,20 @@
                                     </div>
                                     <div>
                                         <!-- <label for="exampleInputFile">Gambar</label>
-                          <div class="text-center">
-                            <img class="img-fluid" src="" id='image_preview'>
-                          </div><br>
-                          <div class="custom-file">
-                            <input type="file" accept="image/*" name="GambarProduk" id="GambarProduk" onchange="loadFile(event);" />
-                          </div>
-                        </div>-->
+                                      <div class="text-center">
+                                        <img class="img-fluid" src="" id='image_preview'>
+                                      </div><br>
+                                      <div class="custom-file">
+                                        <input type="file" accept="image/*" name="GambarProduk" id="GambarProduk" onchange="loadFile(event);" />
+                                      </div>
+                                    </div>-->
 
                                         <label for="exampleInputFile">Gambar</label>
                                         <div class="text-center">
                                             <img class="img-fluid" src="" id='image_preview'>
                                         </div>
-                                        <div class="form-group">
-                                            <div class="custom-file text-center">
-                                                <input type="file" accept="image/*" name="GambarProduk" id="GambarProduk"
-                                                    onchange="loadFile(event)" />
-                                            </div>
+                                        <div class="custom-file text-center" type="button"><input type="file"
+                                                accept="images/*" name="GambarProduk[]" multiple id="inputImage" />
                                         </div>
 
                                         <div class="text-center">

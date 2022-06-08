@@ -51,49 +51,42 @@ class ProdukController extends Controller
         $produk = new Produk();
         $files = [];
 
-       // if ($request->hasFile('GambarProduk')) {
+        if ($request->hasFile('GambarProduk')) {
+            $request->validate([
+            'GambarProduk' => 'required',
 
-    //     $request->validate([
-       //         'GambarProduk.*' => 'image'
-      //      ]);
-
-       //     foreach ($request->file('GambarProduk') as $file) {
-        //        $imgname = time() . rand(1, 100) . '.' . $file->getClientOriginalExtension();
-        //        $file->move('img', $imgname);
-         //       $files[] = $imgname;
-        //    }
-       // }
-
-      //  $request->validate([
-      //      'GambarProduk' => 'required|max:5',
-           
-      //  ]);
-
-       // $produk->GambarProduk = $request->file('GambarProduk');
-
-       $request->validate([
-        'GambarProduk' => 'required',
-
-    ]);
+        ]);
    
-    if ($request->hasFile('GambarProduk')) {
-        $file = $request->file('GambarProduk');
-        $img_name = time().rand(1,100).'.'.$file->getClientOriginalExtension();
-        $file->move('assets/images/produk',$img_name);
-        //$path = $request->file('GambarProduk')->store('public/assets/images');
-        //$produk->produk_image = $path;
-    }
+        foreach ($request->file('GambarProduk') as $file) {
+            $imgname = time() . rand(1, 100) . '.' . $file->getClientOriginalExtension();
+            $file->move('img', $imgname);
+            $files[] = $imgname;
+    //if ($request->hasFile('GambarProduk')) {
+    //    $file = $request->file('GambarProduk');
+    //    $img_name = time().rand(1,100).'.'.$file->getClientOriginalExtension();
+    //    $file->move('assets/images/produk',$img_name);
+       
+        }
+        }
 
         Produk::create([
             'NamaKategori' => $request->NamaKategori,
             'NamaProduk' => $request->NamaProduk,
             'Harga' => $request->Harga,
             'penerangan' => $request->penerangan,
-            'GambarProduk' => $img_name,
+            //'GambarProduk' => $img_name,
             'Unit' => $request->Unit,
             'Berat' => $request->Berat,
             'created_at' => now(),
         ]);
+
+        $request->validate([
+            'GambarProduk' => 'required|max:5',
+        ]);
+
+        $produk->GambarProduk=$files;
+
+        $produk->save();
         return redirect()->route('addproduk.create')->with('success','Produk sudah ditambah');
     }
 

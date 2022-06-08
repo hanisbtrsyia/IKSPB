@@ -118,7 +118,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
             <li class="nav-item">
-              <a href="/pelancongan/admin/homeTempatMenarik" >               
+              <a href="/pelancongan/admin/ListTempatMenarik" >               
                 <p> <i class="nav-icon fas fa-bell"></i>
                   Tempat Menarik
                   <span class="right badge badge-danger"></span>
