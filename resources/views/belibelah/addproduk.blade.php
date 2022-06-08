@@ -35,11 +35,14 @@
                                 </div>
                                 <div class="card-body">
 
-                                    <div class="form-group">
-                                        <label for="NamaKategori">Nama Kategori:</label>
-                                        <input type="text" name="NamaKategori" id="NamaKategori" class="form-control"
-                                            placeholder="">
-                                    </div>
+                                    <label for="NamaKategori">Nama Kategori:</label>
+                                    <select class="form-select" name="NamaKategori" id="NamaKategori"
+                                        aria-label="Default select example">
+                                        <option selected>Pilih Kategori</option>
+                                        <option value="Kerepek">Kerepek</option>
+                                        <option value="Sambal">Sambal</option>
+                                        <option value="Makanan Sejuk Beku">Makanan Sejuk Beku</option>
+                                    </select>
                                     <div class="form-group">
                                         <label for="NamaProduk">Nama Produk:</label>
                                         <input type="text" name="NamaProduk" id="NamaProduk" class="form-control"
@@ -64,13 +67,13 @@
                                     </div>
                                     <div>
                                         <!-- <label for="exampleInputFile">Gambar</label>
-                      <div class="text-center">
-                        <img class="img-fluid" src="" id='image_preview'>
-                      </div><br>
-                      <div class="custom-file">
-                        <input type="file" accept="image/*" name="GambarProduk" id="GambarProduk" onchange="loadFile(event);" />
-                      </div>
-                    </div>-->
+                          <div class="text-center">
+                            <img class="img-fluid" src="" id='image_preview'>
+                          </div><br>
+                          <div class="custom-file">
+                            <input type="file" accept="image/*" name="GambarProduk" id="GambarProduk" onchange="loadFile(event);" />
+                          </div>
+                        </div>-->
 
                                         <label for="exampleInputFile">Gambar</label>
                                         <div class="text-center">

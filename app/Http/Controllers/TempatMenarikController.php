@@ -128,10 +128,7 @@ class TempatMenarikController extends Controller
 
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'gambar' => 'required',
-
-        ]);
+       
         $updateTemMen = InformasiTempatMenarik::find($id);
         
         if ($request->hasFile('gambar')) {
@@ -139,12 +136,10 @@ class TempatMenarikController extends Controller
             $file = $request->file('gambar');
             $img_name = time().rand(1,100).'.'.$file->getClientOriginalExtension();
             $file->move('assets/images/attractions',$img_name);
-            //$path = $request->file('gambar')->store('public/assets/images/penginapan');
-            //$temPenginapan->temPenginapan_image = $path;
+            $updateTemMen->gambar = $img_name;
         }
         
         $updateTemMen->NamaTempat = $request->input('NamaTempat');
-        $updateTemMen->gambar = $img_name;
         $updateTemMen->Lokasi = $request->input('Lokasi');
         $updateTemMen->penerangan = $request->input('penerangan');
         
@@ -173,5 +168,13 @@ class TempatMenarikController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function deleteTemMen(Request $request)
+    {
+        $id_tempatMenarik = $request->input('id_tempatMenarik');
+        $temMenarik = InformasiTempatMenarik::find($id_tempatMenarik);
+        $temMenarik->delete();
+        return redirect()->route('TempatMenarik.list')->with('success', 'Tempat Menarik has been deleted successfully');
     }
 }

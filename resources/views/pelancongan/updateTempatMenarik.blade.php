@@ -70,6 +70,12 @@
                     </div>
                 </fieldset>
             </form>
+            <form method="POST" class="form-horizontal" action="{{ route('TempatMenarik.deleteTemMen') }}"
+                enctype="multipart/form-data">
+                @csrf
+                <input type="hidden" value="{{ $temMenarik->id_tempatMenarik }}" name="id_tempatMenarik">
+                <input type="submit" value="Delete" class="btn btn-danger">
+            </form>
         </div>
         </section>
     </div>

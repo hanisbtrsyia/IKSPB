@@ -131,10 +131,7 @@ class ProdukController extends Controller
 
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'GambarProduk' => 'required',
-
-        ]);
+       
         $updateProduk = Produk::find($id);
         
         if ($request->hasFile('GambarProduk')) {
@@ -142,15 +139,13 @@ class ProdukController extends Controller
             $file = $request->file('GambarProduk');
             $img_name = time().rand(1,100).'.'.$file->getClientOriginalExtension();
             $file->move('assets/images/produk',$img_name);
-            //$path = $request->file('gambar')->store('public/assets/images/penginapan');
-            //$temPenginapan->temPenginapan_image = $path;
+            $updateProduk->GambarProduk = $img_name;
         }
         
         $updateProduk->NamaKategori = $request->input('NamaKategori');
         $updateProduk->NamaProduk = $request->input('NamaProduk');
         $updateProduk->Harga = $request->input('Harga');
         $updateProduk->penerangan = $request->input('penerangan');
-        $updateProduk->GambarProduk = $img_name;
         $updateProduk->Unit = $request->input('Unit');
         $updateProduk->Berat = $request->input('Berat');
                    
@@ -178,5 +173,13 @@ class ProdukController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function deleteProd(Request $request)
+    {
+        $id_produk = $request->input('id_produk');
+        $produk = Produk::find($id_produk);
+        $produk->delete();
+        return redirect()->route('produk.list')->with('success', 'Produk has been deleted successfully');
     }
 }

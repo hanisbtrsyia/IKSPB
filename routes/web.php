@@ -34,13 +34,14 @@ Route::get('produk/ProductDetails/{id_produk}', [ProdukController::class, 'index
 Route::get('pelancongan/peniaga/ListProduk', [ProdukController::class, 'PeniagaUpdate'])->name('produk.list'); 
 Route::get('belibelah/updateproduk/{id_produk}', [ProdukController::class, 'edit'])->name('produk.edit'); 
 Route::post('belibelah/editProduk/{id_produk}',[ProdukController::class, 'update'])->name('produk.update'); 
-
+Route::post('deleteProd', [ProdukController::class, 'deleteProd'])->name('produk.deleteProd');
 
 Route::resource('addTempatMenarik', TempatMenarikController::class)->except(['edit']);
 Route::get('pelancongan/pelanggan/infoTempatMenarik/{id_tempatMenarik}', [TempatMenarikController::class, 'index'])->name('TempatMenarik.info'); 
 Route::get('pelancongan/admin/ListTempatMenarik', [TempatMenarikController::class, 'AdminUpdate'])->name('TempatMenarik.list'); 
 Route::get('pelancongan/updateTempatMenarik/{id_tempatMenarik}', [TempatMenarikController::class, 'edit'])->name('TempatMenarik.edit'); 
 Route::post('pelancongan/editTempatMenarik/{id_tempatMenarik}',[TempatMenarikController::class, 'update'])->name('TempatMenarik.update'); 
+Route::post('deleteTemMen', [TempatMenarikController::class, 'deleteTemMen'])->name('TempatMenarik.deleteTemMen');
 
 
 Route::resource('addTempatPenginapan', TempatPenginapanController::class)->except(['edit']);

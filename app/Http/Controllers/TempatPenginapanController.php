@@ -148,7 +148,6 @@ class TempatPenginapanController extends Controller
         $updateTemPen->penerangan = $request->input('penerangan');
         $updateTemPen->HargaPerMalam = $request->input('HargaPerMalam');
         $updateTemPen->Kemudahan = $request->input('Kemudahan');
-        
        
         $updateTemPen->update();
 
