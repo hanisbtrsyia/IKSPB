@@ -143,7 +143,9 @@
                             <div class="col-md-3">
                                 <div href="#" class="card card-product-grid">
                                     <a href="{{ route('TempatPenginapan.edit', $temPeng->id_tempatPenginapan) }}"
-                                         class="img-wrap"> <img src="{{ asset('assets/images/penginapan/'.$temPeng->gambar)}}" style="width:261px; height:200px;"> </a>
+                                        class="img-wrap"> <img
+                                            src="{{ asset('assets/images/penginapan/' . $temPeng->gambar) }}"
+                                            style="width:261px; height:200px;"> </a>
                                     <figcaption class="info-wrap">
                                         <a type="button"
                                             href="{{ route('TempatPenginapan.edit', $temPeng->id_tempatPenginapan) }}"
@@ -161,14 +163,16 @@
                                                         class="fa fa-star"></i>
                                                 </li>
                                             </ul>
-                                            <span class="label-rating text-muted"> 34 reviws</span>
+                                            <span class="label-rating text-muted"> 34 reviews</span>
                                         </div>
                                         <div class="price mt-1">RM 179.00</div> <!-- price-wrap.// -->
+
+
                                     </figcaption>
                                 </div>
                             </div> <!-- col.// -->
                         @endforeach
-                       
+
                     </div> <!-- row.// -->
                 </div> <!-- container .//  -->
             </section>

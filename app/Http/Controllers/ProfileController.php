@@ -21,6 +21,7 @@ class ProfileController extends Controller
         //
         $profile = Peniaga::find($id_peniaga);
         return view('dashboards.peniaga.profile',compact('profile'));
+        
     }
 
     /**
@@ -132,9 +133,9 @@ class ProfileController extends Controller
         $updateProfil->Alamat = $request->input('Alamat');
         $updateProfil->NoAkaun = $request->input('NoAkaun');
                    
-        $updateProfil->update();
+        $updateProfil->save();
 
-        return redirect()->route('profile.new')->with('success', 'Profil sudah dikemaskini.');
+        return redirect()->route('profile.edit',$updateProfil->id_peniaga)->with('success', 'Profil sudah dikemaskini.');
        
     }
 

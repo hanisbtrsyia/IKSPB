@@ -20,20 +20,12 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-/*Route::get('/', function () {
-    return view('auth.login');
-});*/
-
-//Route::post('addProd',[ProdukController::class, 'addProd'])->name('addProd');
 
 //Route::get('/profile/{id}/edit/{name}/{lotno}', [ProfileController::class, 'edit'])->name('profile.edit');
 //Route::resource('profile', ProfileController::class)->except(['edit']);
 
 Route::resource('profile', ProfileController::class)->except(['edit']); //Profile
-Route::get('dashboards/peniaga/profile/{id_peniaga}', [ProfileController::class, 'index'])->name('profile.details'); 
 Route::get('dashboards/peniaga/profile/{id_peniaga}', [ProfileController::class, 'edit'])->name('profile.edit'); 
-Route::post('dashboards/peniaga/profile/{id_peniaga}',[ProfileController::class, 'update'])->name('profile.update'); 
-
 
 Route::resource('addproduk', ProdukController::class)->except(['edit']); //Produk
 Route::get('produk/ProductDetails/{id_produk}', [ProdukController::class, 'index'])->name('produk.details'); 

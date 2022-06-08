@@ -33,8 +33,8 @@
           <img class="img-fluid img-circle" src="" style="width: 180px; height:180px" id='image_preview' alt="User profile picture">
         </div>
         <br>
-        @foreach ($profile as $prof)
-        <form class="form-horizontal" action="{{ route('profile.store', $prof->id_peniaga) }}" method="post" enctype="multipart/form-data">
+        
+        <form class="form-horizontal" action="{{ route('profile.update',$profile->id_peniaga) }}" method="post" enctype="multipart/form-data">
           @csrf
           @method('PUT')
           <div class="form-group">
@@ -45,13 +45,13 @@
           <div class="form-group row">
             <label for="NamaPengguna" class="col-sm-3 col-form-label">Nama Pengguna</label>
             <div class="col-sm-9">
-              <input type="NamaPengguna" class="form-control" name="id" id="NamaPengguna" value="" placeholder="{{$prof->NamaPengguna}}" >
+              <input type="NamaPengguna" class="form-control" name="NamaPengguna" id="NamaPengguna" value="" placeholder="" >
             </div>
           </div>
           <div class="form-group row">
             <label for="Emel" class="col-sm-3 col-form-label">Emel</label>
             <div class="col-sm-9">
-              <input type="Emel" class="form-control" id="Emel" value="" placeholder="{{$prof->Emel}}" >
+              <input type="Emel" class="form-control" id="Emel" value="" placeholder="" >
             </div>
           </div>
           <div class="form-group row">
@@ -87,7 +87,7 @@
     </div>
   </div>
 </div>
-@endforeach
+
 @endsection
 @push('scripts')
 <script type="text/javascript">

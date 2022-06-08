@@ -75,9 +75,11 @@
                     <input type="file" accept="image/*" name="gambar" id="inputImage" onchange="loadFile(event);" />
                   </div>
                 </div>
-                <div class="text-center">
+                <div class="text-right">
                     <input type="submit" value="Update" class="btn btn-warning">
+                    <input type="submit" value="Delete" class="btn btn-danger">
                   </div>
+                 
               </div>
             </div>
           </fieldset>
