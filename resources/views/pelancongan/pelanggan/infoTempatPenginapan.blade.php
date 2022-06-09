@@ -8,14 +8,15 @@
         <h3 style="text-align: center"><strong>{{ $temPenginapan->NamaTempat }}</strong></h3>
         <div class="container gallery-container">
 
-            <div id="carouselExampleIndicators" class="carousel slide"  style="height:50%; width:70%;  margin: auto;" data-ride="carousel">
+            <div id="carouselExampleIndicators" class="carousel slide" style="height:50%; width:70%;  margin: auto;"
+                data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                 </ol>
-               
-                  <div class="carousel-inner">
+
+                <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img class="d-block w-100" src="../../../assets/images/infopenginapan/2.webp" alt="First slide">
                     </div>
@@ -36,127 +37,79 @@
                 </a>
             </div>
         </div>
+        <section class="section-content">
+        <div class="container">
+            <br>
+            <div class="row">
+                <div class="col-8">
+                    <h4><strong>{{ $temPenginapan->NamaTempat }}</strong></h4>
+                    <p>Dihoskan oleh {{ $temPenginapan->NamaHos }}</p>
+                    <hr>
+                    <p>{{ $temPenginapan->penerangan }}</p>
+                </div>
+                <div class="col-4">
+                    <div class="card text-center" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-text">RM {{ $temPenginapan->HargaPerMalam }} / malam</h5>
+                            <p class="card-text">{{ $temPenginapan->NamaHos }}</p>
+                            <a href="#" class="btn " style="color: black; background-color:#FFB923;">Hubungi
+                                Kami</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <h4><strong> Kemudahan di penginapan ini</strong></h4>
+            <br>
+            <!-- ./col -->
+
+            <div class="row">
+                <br>
+                <div class="col-3">
+                    <!-- small box -->
+                    <div class="card text" style="max-width: 15rem; background-color:#E5E5E5;">
+                        <div class="card-header">Parking</div>
+                        <div class="card-body">
+                            <h5 class="card-title">Primary card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the
+                                bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card text" style="max-width: 15rem; background-color:#FFB338;">
+                        <div class="card-header">Wi-Fi</div>
+                        <div class="card-body">
+                            <h5 class="card-title">Secondary card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the
+                                bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card text" style="max-width: 15rem; background-color:#E5E5E5;">
+                        <div class="card-header">Header</div>
+                        <div class="card-body">
+                            <h5 class="card-title">Success card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the
+                                bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card text" style="max-width: 15rem; background-color:#FFB338;">
+                        <div class="card-header">Header</div>
+                        <div class="card-body">
+                            <h5 class="card-title">Secondary card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the
+                                bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
         <br>
-        <div style="text-align: center" class="row">
-            <div class="col-8">
-                <h5><strong>{{ $temPenginapan->NamaTempat }}</strong></h5>
-                <h6>{{ $temPenginapan->penerangan }}</h6>
-            </div>
-            <div class="col-4">
-                <div class="card" style="width: 30rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Hubungi Kami</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">{{ $temPenginapan->NoTel }}</h6>
-                        <p class="card-text">{{ $temPenginapan->NamaHos }}</p>
-                        <button type="button" class="btn btn-block btn-warning">Warning</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <br>
-        <div class="row">
-            <div class="col-md-12">
-                <h4><strong> Kemudahan di penginapan ini</strong></h4>
-                <!-- ./col -->
-                <div class="col-md-3">
-                    <!-- small box -->
-                    <div class="small-box bg-success">
-                        <div class="inner">
-                            <input type="hidden" id="id" value="1" class="form-control">
-                            <input type="hidden" id="id" value="2" class="form-control">
-                            <input type="hidden" id="id" value="3" class="form-control">
-                            <h3>3<sup style="font-size: 20px"></sup></h3>
-                            <input type="hidden" id="id" value="0" class="form-control">
-                            <p>Wi-Fi</p>
-                        </div>
-                        <div class="icon">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                        <a href="" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-
-
-
-                <!-- /.card -->
-                <!-- ./col -->
-
-                <div class="col-md-3">
-                    <!-- small box -->
-                    <div class="small-box bg-warning">
-                        <div class="inner">
-                            <input type="hidden" id="id" value="1" class="form-control">
-                            <h3>1<sup style="font-size: 20px"></sup></h3>
-                            <input type="hidden" id="id" value="0" class="form-control">
-                            <p>Sarapan Pagi</p>
-                        </div>
-                        <div class="icon">
-                            <i class="fas fa-user-plus"></i>
-                        </div>
-                        <a href="" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- ./col -->
-
-                <div class="col-md-3">
-                    <!-- small box -->
-                    <div class="small-box bg-danger">
-                        <div class="inner">
-                            <input type="hidden" id="id" value="1" class="form-control">
-
-                            <h3>1<sup style="font-size: 20px"></sup></h3>
-                            <input type="hidden" id="id" value="0" class="form-control">
-                            <p>Basikal</p>
-                        </div>
-                        <div class="icon">
-                            <i class="fas fa-times-circle"></i>
-                        </div>
-                        <a href="" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <!-- small box -->
-                    <div class="small-box bg-warning">
-                        <div class="inner">
-                            <input type="hidden" id="id" value="1" class="form-control">
-
-                            <h3>1<sup style="font-size: 20px"></sup></h3>
-                            <input type="hidden" id="id" value="0" class="form-control">
-                            <p>Tempat Letak Kenderaan</p>
-                        </div>
-                        <div class="icon">
-                            <i class="fas fa-times-circle"></i>
-                        </div>
-                        <a href="" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
-        <script>
-            baguetteBox.run('.tz-gallery');
-        </script>
-        <div role="dialog" id="baguetteBox-overlay">
-            <div id="baguetteBox-slider"></div><button type="button" id="previous-button" aria-label="Previous"
-                class="baguetteBox-button"><svg width="44" height="60">
-                    <polyline points="30 10 10 30 30 50" stroke="rgba(255,255,255,0.5)" stroke-width="4"
-                        stroke-linecap="butt" fill="none" stroke-linejoin="round"></polyline>
-                </svg></button><button type="button" id="next-button" aria-label="Next" class="baguetteBox-button"><svg
-                    width="44" height="60">
-                    <polyline points="14 10 34 30 14 50" stroke="rgba(255,255,255,0.5)" stroke-width="4"
-                        stroke-linecap="butt" fill="none" stroke-linejoin="round"></polyline>
-                </svg></button><button type="button" id="close-button" aria-label="Close" class="baguetteBox-button"><svg
-                    width="30" height="30">
-                    <g stroke="rgb(160,160,160)" stroke-width="4">
-                        <line x1="5" y1="5" x2="25" y2="25"></line>
-                        <line x1="5" y1="25" x2="25" y2="5"></line>
-                    </g>
-                </svg></button>
-        </div>
 
         <footer class="section-footer border-top bg">
             <div class="container">
@@ -213,8 +166,9 @@
                 </section> <!-- footer-top.// -->
 
             </div><!-- //container -->
+
+        </footer>
     </div>
-    </footer>
     <!-- ========================= FOOTER END // ========================= -->
     </body>
 
