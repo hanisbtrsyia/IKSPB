@@ -105,152 +105,206 @@
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <title>Basket</title>
         </head>
-        @php $total = 0 @endphp
-        @if (session('cart'))
-            @foreach (session('cart') as $id => $details)
-                @php $total += $details['Harga'] * $details['Kuantiti'] @endphp
 
-                <body>
-                    <main>
-                        <div class="basket">
-                            <div class="basket-module">
-                                <label for="promo-code">Enter a promotional code</label>
-                                <input id="promo-code" type="text" name="promo-code" maxlength="5"
-                                    class="promo-code-field">
-                                <button class="promo-code-cta">Apply</button>
+        <body>
+            <main>
+                <div class="basket">
+                    <div class="basket-module">
+                        <label for="promo-code">Enter a promotional code</label>
+                        <input id="promo-code" type="text" name="promo-code" maxlength="5" class="promo-code-field">
+                        <button class="promo-code-cta">Apply</button>
+                    </div>
+                    <div class="basket-labels">
+                        <ul>
+                            <li class="item item-heading"></li>
+                            <li class="Harga"></li>
+                            <li class="Kuantiti"></li>
+                            <li class="JumlahBayaranItem"></li>
+                        </ul>
+                    </div>
+                    <div class="basket-product">
+                        <div class="item">
+                            <div class="product-image">
+                                <img src="" alt="Placholder Image 2" class="product-frame">
                             </div>
-                            <div class="basket-labels">
-                                <ul>
-                                    <li class="item item-heading">{{ $details['NamaProduk'] }}</li>
-                                    <li class="Harga">{{ $details['Harga'] }}</li>
-                                    <li class="Kuantiti">{{ $details['Kuantiti'] }}</li>
-                                    <li class="JumlahBayaranItem">{{ $details['JumlahBayaranItem'] }}</li>
-                                </ul>
-                            </div>
-                            <div class="basket-product">
-                                <div class="item">
-                                    <div class="product-image">
-                                        <img src="{{ $details['GambarProduk'] }}" alt="Placholder Image 2"
-                                            class="product-frame">
-                                    </div>
-                                    <div class="product-details">
-                                        <h1><strong><span class="item-quantity">4</span> x Eliza J</strong> Kerepek
-                                            Peria Wanz
-                                            Bitez</h1>
-                                        <p><strong>Navy, Size 18</strong></p>
-                                        <p>Product Code - 232321939</p>
-                                    </div>
-                                </div>
-                                <div class="price">26.00</div>
-                                <div class="quantity">
-                                    <input type="number" value="4" min="1" class="quantity-field">
-                                </div>
-                                <div class="subtotal">104.00</div>
-                                <div class="remove">
-                                    <button>Remove</button>
-                                </div>
-                            </div>
-                            <div class="basket-product">
-                                <div class="item">
-                                    <div class="product-image">
-                                        <img src="../assets/images/produk/ubi.jfif" alt="Placholder Image 2"
-                                            class="product-frame">
-                                    </div>
-                                    <div class="product-details">
-                                        <h1><strong><span class="item-quantity">1</span> x Whistles</strong> Kerepek
-                                            Ubi Kari
-                                            Adrianna Anissa</h1>
-                                        <p><strong>Navy, Size 10</strong></p>
-                                        <p>Product Code - 232321939</p>
-                                    </div>
-                                </div>
-                                <div class="price">26.00</div>
-                                <div class="quantity">
-                                    <input type="number" value="1" min="1" class="quantity-field">
-                                </div>
-                                <div class="subtotal">26.00</div>
-                                <div class="remove">
-                                    <button>Remove</button>
-                                </div>
+                            <div class="product-details">
+                                <h1><strong><span class="item-quantity">4</span> x Eliza J</strong> Kerepek
+                                    Peria Wanz
+                                    Bitez</h1>
+                                <p><strong>Navy, Size 18</strong></p>
+                                <p>Product Code - 232321939</p>
                             </div>
                         </div>
-                        <aside>
-                            <div class="summary">
-                                <div class="summary-total-items"><span class="total-items"></span> Items in your Bag
-                                </div>
-                                <div class="summary-subtotal">
-                                    <div class="subtotal-title">Subtotal</div>
-                                    <div class="subtotal-value final-value" id="basket-subtotal">130.00</div>
-                                    <div class="summary-promo hide">
-                                        <div class="promo-title">Promotion</div>
-                                        <div class="promo-value final-value" id="basket-promo"></div>
-                                    </div>
-                                </div>
-                                <div class="summary-delivery">
-                                    <select name="delivery-collection" class="summary-delivery-selection">
-                                        <option value="0" selected="selected">Select Collection or Delivery</option>
-                                        <option value="collection">Collection</option>
-                                        <option value="first-class">Royal Mail 1st Class</option>
-                                        <option value="second-class">Royal Mail 2nd Class</option>
-                                        <option value="signed-for">Royal Mail Special Delivery</option>
-                                    </select>
-                                </div>
-                                <div class="summary-total">
-                                    <div class="total-title">Total</div>
-                                    <div class="total-value final-value" id="basket-total">130.00</div>
-                                </div>
-                                <div class="summary-checkout">
-                                    <a href="/belibelah/membuatpesanan"><button class="checkout-cta">Go to Secure
-                                            Checkout</button></a>
-                                </div>
+                        <div class="price">26.00</div>
+                        <div class="quantity">
+                            <input type="number" value="4" min="1" class="quantity-field">
+                        </div>
+                        <div class="subtotal">104.00</div>
+                        <div class="remove">
+                            <button>Remove</button>
+                        </div>
+                    </div>
+                    <div class="basket-product">
+                        <div class="item">
+                            <div class="product-image">
+                                <img src="../assets/images/produk/ubi.jfif" alt="Placholder Image 2"
+                                    class="product-frame">
                             </div>
-                        </aside>
-                    </main>
-                    @section('scripts')
-                        <script type="text/javascript">
-                            $(".update-cart").change(function(e) {
-                                e.preventDefault();
+                            <div class="product-details">
+                                <h1><strong><span class="item-quantity">1</span> x Whistles</strong> Kerepek
+                                    Ubi Kari
+                                    Adrianna Anissa</h1>
+                                <p><strong>Navy, Size 10</strong></p>
+                                <p>Product Code - 232321939</p>
+                            </div>
+                        </div>
+                        <div class="price">26.00</div>
+                        <div class="quantity">
+                            <input type="number" value="1" min="1" class="quantity-field">
+                        </div>
+                        <div class="subtotal">26.00</div>
+                        <div class="remove">
+                            <button>Remove</button>
+                        </div>
+                    </div>
+                </div>
+                <!--<aside>
+                    <div class="summary">
+                        <div class="summary-total-items"><span class="total-items"></span> Items in your Bag
+                        </div>
+                        <div class="summary-subtotal">
+                            <div class="subtotal-title">Subtotal</div>
+                            <div class="subtotal-value final-value" id="basket-subtotal">130.00</div>
+                            <div class="summary-promo hide">
+                                <div class="promo-title">Promotion</div>
+                                <div class="promo-value final-value" id="basket-promo"></div>
+                            </div>
+                        </div>
+                        <div class="summary-delivery">
+                            <select name="delivery-collection" class="summary-delivery-selection">
+                                <option value="0" selected="selected">Select Collection or Delivery</option>
+                                <option value="collection">Collection</option>
+                                <option value="first-class">Royal Mail 1st Class</option>
+                                <option value="second-class">Royal Mail 2nd Class</option>
+                                <option value="signed-for">Royal Mail Special Delivery</option>
+                            </select>
+                        </div>
+                        <div class="summary-total">
+                            <div class="total-title">Total</div>
+                            <div class="total-value final-value" id="basket-total">130.00</div>
+                        </div>
+                        <div class="summary-checkout">
+                            <a href="/belibelah/membuatpesanan"><button class="checkout-cta">Go to Secure
+                                    Checkout</button></a>
+                        </div>
+                    </div>
+                </aside>-->
+            </main>
 
-                                var ele = $(this);
+            <table id="cart" class="table table-hover table-condensed">
+                <thead>
+                    <tr>
+                        <th style="width:50%">Product</th>
+                        <th style="width:10%">Price</th>
+                        <th style="width:8%">Quantity</th>
+                        <th style="width:22%" class="text-center">Subtotal</th>
+                        <th style="width:10%"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @php $total = 0 @endphp
+                    @if (session('cart'))
+                        @foreach (session('cart') as $id_produk => $details)
+                            @php $total += $details['Harga'] * $details['Kuantiti'] @endphp
+                            <tr data-id="{{ $id_produk }}">
+                                <td data-th="Product">
+                                    <div class="row">
+                                        <div class="col-sm-3 hidden-xs"><img src="" width="100" height="100"
+                                                class="img-responsive" /></div>
+                                        <div class="col-sm-9">
+                                            <h4 class="nomargin">{{ $details['NamaProduk'] }}</h4>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td data-th="Harga">RM {{ $details['Harga'] }}</td>
+                                <td data-th="quantity">
+                                    <input type="number" value="{{ $details['Kuantiti'] }}" min="1" class="quantity-field">
+                                   <!-- <input type="number" value="{{ $details['Kuantiti'] }}"
+                                        class="form-control quantity update-cart" />-->
+                                </td>
 
-                                $.ajax({
-                                    url: '{{ route('updateCart.cart') }}',
-                                    method: "patch",
-                                    data: {
-                                        _token: '{{ csrf_token() }}',
-                                        id: ele.parents("tr").attr("data-id"),
-                                        Kuantity: ele.parents("tr").find(".Kuantity").val()
-                                    },
-                                    success: function(response) {
-                                        window.location.reload();
-                                    }
-                                });
-                            });
+                                <td data-th="Subtotal" class="text-center">RM
+                                    {{ $details['Harga'] * $details['Kuantiti'] }}</td>
+                                <td class="actions" data-th="">
+                                    <button class="btn btn-danger btn-sm remove-from-cart">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                            <path
+                                                d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                                        </svg></button>
+                                </td>
+                            </tr>
+                        @endforeach
+                    @endif
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="5" class="text-right">
+                            <h3><strong>Total </strong></h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="5" class="text-right">
+                            <a href="{{ url('/homebelibelah') }}" class="btn btn-warning"><i
+                                    class="fa fa-angle-left"></i> Continue Shopping</a>
+                            <button class="btn btn-success"> <a href="{{ url('/belibelah/membuatpesanan') }}">Checkout</button></a>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
 
-                            $(".remove-from-cart").click(function(e) {
-                                e.preventDefault();
+            @section('scripts')
+                <script type="text/javascript">
+                    $(".update-cart").change(function(e) {
+                        e.preventDefault();
 
-                                var ele = $(this);
+                        var ele = $(this);
 
-                                if (confirm("Are you sure want to remove?")) {
-                                    $.ajax({
-                                        url: '{{ route('remove.from.cart') }}',
-                                        method: "DELETE",
-                                        data: {
-                                            _token: '{{ csrf_token() }}',
-                                            id: ele.parents("tr").attr("data-id")
-                                        },
-                                        success: function(response) {
-                                            window.location.reload();
-                                        }
-                                    });
+                        $.ajax({
+                            url: '{{ route('update.cart') }}',
+                            method: "patch",
+                            data: {
+                                _token: '{{ csrf_token() }}',
+                                id: ele.parents("tr").attr("data-id"),
+                                quantity: ele.parents("tr").find(".Kuantiti").val()
+                            },
+                            success: function(response) {
+                                window.location.reload();
+                            }
+                        });
+                    });
+
+                    $(".remove-from-cart").click(function(e) {
+                        e.preventDefault();
+
+                        var ele = $(this);
+
+                        if (confirm("Are you sure want to remove?")) {
+                            $.ajax({
+                                url: '{{ route('remove.from.cart') }}',
+                                method: "DELETE",
+                                data: {
+                                    _token: '{{ csrf_token() }}',
+                                    id: ele.parents("tr").attr("data-id")
+                                },
+                                success: function(response) {
+                                    window.location.reload();
                                 }
                             });
-                        </script>
-                    @endsection
-                </body>
-            @endforeach
-        @endif
+                        }
+                    });
+                </script>
+            @endsection
 
 
     </header>

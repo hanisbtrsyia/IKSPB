@@ -39,12 +39,12 @@
                                         <input type="hidden" name="id_tempatMenarik" id="id" class="form-control">
                                     </div>
                                     <label for="NamaKategori">Nama Kategori:</label>
-                                    <select class="form-select" name="NamaKategori" id="NamaKategori" value="{{ $produk->NamaKategori }}"
-                                        aria-label="Default select example">
-                                        <option selected>{{ $produk->NamaKategori }}</option>
-                                        <option value="Kerepek">Kerepek</option>
-                                        <option value="Sambal">Sambal</option>
-                                        <option value="Makanan Sejuk Beku">Makanan Sejuk Beku</option>
+                                    <select class="form-select" name="NamaKategori" id="NamaKategori"
+                                        value="{{ $produk->NamaKategori }}" aria-label="Default select example">
+                                       
+                                        <option value="Kerepek" <?php if($produk->NamaKategori=="Kerepek") echo "selected"?>>Kerepek</option>
+                                        <option value="Sambal" <?php if($produk->NamaKategori=="Sambal") echo "selected"?>>Sambal</option>
+                                        <option value="Makanan Sejuk Beku" <?php if($produk->NamaKategori=="Makanan Sejuk Beku") echo "selected"?>>Makanan Sejuk Beku</option>
                                     </select>
                                     <div class="form-group">
                                         <label for="NamaProduk">Nama Produk:</label>
@@ -71,17 +71,20 @@
                                         <input type="text" name="penerangan" id="penerangan" class="form-control"
                                             placeholder="" value="{{ $produk->penerangan }}">
                                     </div>
+                                    
                                     <div>
                                         <label for="exampleInputFile">Gambar</label>
                                         <div class="text-center">
                                             <img class="img-fluid"
-                                                src="{{ asset('assets/images/produk/' . $produk->GambarProduk) }}"
+                                                src="{{ asset('assets/images/produk/' . $produk['GambarProduk'][0]) }}"
                                                 id='image_preview'>
                                         </div><br>
-                                        <div class="custom-file">
-                                            <input type="file" accept="image/*" name="GambarProduk" id="inputImage"
+                                        <div class="custom-file text-center" type="button"><input type="file"
+                                                accept="images/*" name="GambarProduk[]" multiple id="inputImage"
                                                 onchange="loadFile(event);" />
                                         </div>
+                                        
+
                                     </div>
                                     <div class="text-right">
                                         <input type="submit" value="Update" class="btn btn-warning">

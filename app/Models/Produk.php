@@ -54,11 +54,11 @@ class Produk extends Model
     }
 
 
-public function setPictureAttribute($value){
+public function setGambarProdukAttribute($value){
     $this->attributes['GambarProduk'] = json_encode($value);
 }
 
-public function getPictureAttribute($value){
+public function getGambarProdukAttribute($value){
     return json_decode($value);
 }
 

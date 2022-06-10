@@ -197,8 +197,9 @@
                         @foreach ($produk as $prod)
                             <div class="col-md-3">
                                 <div href="#" class="card card-product-grid">
+                                   
                                     <a href="{{ route('produk.edit', $prod->id_produk) }}" class="img-wrap"> <img
-                                            src="{{ asset('assets/images/produk/' . $prod->GambarProduk) }}"
+                                            src="{{ asset("assets/images/produk/".$prod['GambarProduk'][0]) }}"
                                             style="width:261px; height:200px;"> </a>
                                     <figcaption class="info-wrap">
                                         <a type="button" href="{{ route('produk.edit', $prod->id_produk) }}"
@@ -224,16 +225,16 @@
                                 </div>
                             </div> <!-- col.// -->
                         @endforeach
-                       
+
                     </div> <!-- row.// -->
                 </div> <!-- container .//  -->
             </section>
             <!-- ========================= SECTION CONTENT END// ========================= -->
             <!-- ========================= SECTION CONTENT ========================= -->
-           
+
             <!-- ========================= SECTION CONTENT END// ========================= -->
             <!-- ========================= SECTION CONTENT ========================= -->
-            
+
             <!-- ========================= SECTION  END// ========================= -->
             <!-- ========================= SECTION  ========================= -->
             <section class="section-name padding-y">
@@ -321,4 +322,5 @@
 
     </html>
     </div>
+   
 @endsection

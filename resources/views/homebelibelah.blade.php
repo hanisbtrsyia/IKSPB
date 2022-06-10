@@ -200,7 +200,7 @@
                 @foreach ($produk as $prod)
                     <div class="col-md-3">
                         <div href="#" class="card card-product-grid">
-                            <a href="{{ route('produk.details', $prod->id_produk) }}" class="img-wrap"> <img src="{{ asset('assets/images/produk/' . $prod->GambarProduk) }}"> </a>
+                            <a href="{{ route('produk.details', $prod->id_produk) }}" class="img-wrap"> <img src="{{ asset('assets/images/produk/' . $prod['GambarProduk'][0]) }}"> </a>
                             <figcaption class="info-wrap">
 
                                 <a type="button" href="{{ route('produk.details', $prod->id_produk) }}" class="title">{{$prod->NamaProduk}}</a>

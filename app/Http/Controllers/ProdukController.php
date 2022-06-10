@@ -36,7 +36,7 @@ class ProdukController extends Controller
     public function create()
     {
         $produk = Produk::all();
-        return view('belibelah.addproduk',compact('produk','produk'));
+        return view('pelancongan.peniaga.ListProduk',compact('produk','produk'));
 
     }
 
@@ -48,13 +48,12 @@ class ProdukController extends Controller
      */
     public function store(Request $request)
     {
-        $produk = new Produk();
+        //$produk = new Produk();
         $files = [];
 
         if ($request->hasFile('GambarProduk')) {
             $request->validate([
             'GambarProduk' => 'required|max:5',
-
         ]);
    
         foreach ($request->file('GambarProduk') as $file) {
@@ -74,17 +73,14 @@ class ProdukController extends Controller
             'NamaProduk' => $request->NamaProduk,
             'Harga' => $request->Harga,
             'penerangan' => $request->penerangan,
-            //'GambarProduk' => $files,
-            'GambarProduk' => json_encode($files),
+            'GambarProduk' => $files,
+            //'GambarProduk' => json_encode($files),
             'Unit' => $request->Unit,
             'Berat' => $request->Berat,
             'created_at' => now(),
-        ]);
+        ]);        
 
-        $produk->GambarProduk=$files;
-        
-
-        $produk->save();
+        //$produk->save();
         return redirect()->route('addproduk.create')->with('success','Produk sudah ditambah');
     }
 
@@ -124,15 +120,21 @@ class ProdukController extends Controller
     {
        
         $updateProduk = Produk::find($id);
+        $files = [];
         
         if ($request->hasFile('GambarProduk')) {
-            unlink("assets/images/produk/".$updateProduk->GambarProduk);
-            $file = $request->file('GambarProduk');
-            $img_name = time().rand(1,100).'.'.$file->getClientOriginalExtension();
-            $file->move('assets/images/produk',$img_name);
-            $updateProduk->GambarProduk = $img_name;
-        }
+            $request->validate([
+                'GambarProduk' => 'required|max:5',
+            ]);
+            foreach ($request->file('GambarProduk') as $file) {
+                $imgname = time() . rand(1, 100) . '.' . $file->getClientOriginalExtension();
+                $file->move('assets/images/produk', $imgname);
+                $files[] = $imgname;
+            //unlink("assets/images/produk/".$updateProduk->GambarProduk);
         
+        }
+        $updateProduk->GambarProduk = $files;
+    }
         $updateProduk->NamaKategori = $request->input('NamaKategori');
         $updateProduk->NamaProduk = $request->input('NamaProduk');
         $updateProduk->Harga = $request->input('Harga');
@@ -184,16 +186,16 @@ class ProdukController extends Controller
      *
      * @return response()
      */
-    public function addToCart($id)
+    public function addToCart($id_produk)
     {
-        $produk = Produk::findOrFail($id);
+        $produk = Produk::findOrFail($id_produk);
           
         $cart = session()->get('cart', []);
   
-        if(isset($cart[$id])) {
-            $cart[$id]['Kuantiti']++;
+        if(isset($cart[$id_produk])) {
+            $cart[$id_produk]['Kuantiti']++;
         } else {
-            $cart[$id] = [
+            $cart[$id_produk] = [
                 "NamaProduk" => $produk->NamaProduk,
                 "Kuantiti" => 1,
                 "Harga" => $produk->Harga
@@ -212,9 +214,9 @@ class ProdukController extends Controller
      */
     public function updateCart(Request $request)
     {
-        if($request->id && $request->Kuantiti){
+        if($request->id_produk && $request->Kuantiti){
             $cart = session()->get('cart');
-            $cart[$request->id]["Kuantiti"] = $request->Kuantiti;
+            $cart[$request->id_produk]["Kuantiti"] = $request->Kuantiti;
             session()->put('cart', $cart);
             session()->flash('success', 'Cart updated successfully');
         }
@@ -227,10 +229,10 @@ class ProdukController extends Controller
      */
     public function removeCart(Request $request)
     {
-        if($request->id) {
+        if($request->id_produk) {
             $cart = session()->get('cart');
-            if(isset($cart[$request->id])) {
-                unset($cart[$request->id]);
+            if(isset($cart[$request->id_produk])) {
+                unset($cart[$request->id_produk]);
                 session()->put('cart', $cart);
             }
             session()->flash('success', 'Product removed successfully');
