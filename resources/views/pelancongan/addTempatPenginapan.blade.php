@@ -45,7 +45,7 @@
                   </div>
                   <div class="form-group">
                     <label for="inputSkills" class="col-sm-3 col-form-label">Nombor Telefon</label>
-                      <input type="text" class="form-control" id="inputSkills" name="NoTel" value="" placeholder="+601-####-####">
+                      <input type="text" class="form-control" id="inputSkills" name="NoTel" value="" placeholder="">
                    
                   </div>
                 <div class="form-group">

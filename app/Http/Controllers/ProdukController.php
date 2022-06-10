@@ -53,13 +53,13 @@ class ProdukController extends Controller
 
         if ($request->hasFile('GambarProduk')) {
             $request->validate([
-            'GambarProduk' => 'required',
+            'GambarProduk' => 'required|max:5',
 
         ]);
    
         foreach ($request->file('GambarProduk') as $file) {
             $imgname = time() . rand(1, 100) . '.' . $file->getClientOriginalExtension();
-            $file->move('img', $imgname);
+            $file->move('assets/images/produk', $imgname);
             $files[] = $imgname;
     //if ($request->hasFile('GambarProduk')) {
     //    $file = $request->file('GambarProduk');
@@ -74,17 +74,15 @@ class ProdukController extends Controller
             'NamaProduk' => $request->NamaProduk,
             'Harga' => $request->Harga,
             'penerangan' => $request->penerangan,
-            //'GambarProduk' => $img_name,
+            //'GambarProduk' => $files,
+            'GambarProduk' => json_encode($files),
             'Unit' => $request->Unit,
             'Berat' => $request->Berat,
             'created_at' => now(),
         ]);
 
-        $request->validate([
-            'GambarProduk' => 'required|max:5',
-        ]);
-
         $produk->GambarProduk=$files;
+        
 
         $produk->save();
         return redirect()->route('addproduk.create')->with('success','Produk sudah ditambah');
@@ -174,5 +172,68 @@ class ProdukController extends Controller
         $produk = Produk::find($id_produk);
         $produk->delete();
         return redirect()->route('produk.list')->with('success', 'Produk has been deleted successfully');
+    }
+
+    public function cart()
+    {
+        return view('belibelah.addtocart');
+    }
+  
+    /**
+     * Write code on Method
+     *
+     * @return response()
+     */
+    public function addToCart($id)
+    {
+        $produk = Produk::findOrFail($id);
+          
+        $cart = session()->get('cart', []);
+  
+        if(isset($cart[$id])) {
+            $cart[$id]['Kuantiti']++;
+        } else {
+            $cart[$id] = [
+                "NamaProduk" => $produk->NamaProduk,
+                "Kuantiti" => 1,
+                "Harga" => $produk->Harga
+               
+            ];
+        }
+          
+        session()->put('cart', $cart);
+        return redirect()->back()->with('success', 'Product added to cart successfully!');
+    }
+  
+    /**
+     * Write code on Method
+     *
+     * @return response()
+     */
+    public function updateCart(Request $request)
+    {
+        if($request->id && $request->Kuantiti){
+            $cart = session()->get('cart');
+            $cart[$request->id]["Kuantiti"] = $request->Kuantiti;
+            session()->put('cart', $cart);
+            session()->flash('success', 'Cart updated successfully');
+        }
+    }
+  
+    /**
+     * Write code on Method
+     *
+     * @return response()
+     */
+    public function removeCart(Request $request)
+    {
+        if($request->id) {
+            $cart = session()->get('cart');
+            if(isset($cart[$request->id])) {
+                unset($cart[$request->id]);
+                session()->put('cart', $cart);
+            }
+            session()->flash('success', 'Product removed successfully');
+        }
     }
 }

@@ -36,6 +36,11 @@ Route::get('belibelah/updateproduk/{id_produk}', [ProdukController::class, 'edit
 Route::post('belibelah/editProduk/{id_produk}',[ProdukController::class, 'update'])->name('produk.update'); 
 Route::post('deleteProd', [ProdukController::class, 'deleteProd'])->name('produk.deleteProd');
 
+Route::get('cart', [ProdukController::class, 'cart'])->name('cart');
+Route::get('add-to-cart/{id}', [ProdukController::class, 'addToCart'])->name('add.to.cart');
+Route::patch('update-cart', [ProdukController::class, 'updateCart'])->name('update.cart');
+Route::delete('remove-from-cart', [ProdukController::class, 'removeCart'])->name('remove.from.cart');
+
 Route::resource('addTempatMenarik', TempatMenarikController::class)->except(['edit']);
 Route::get('pelancongan/pelanggan/infoTempatMenarik/{id_tempatMenarik}', [TempatMenarikController::class, 'index'])->name('TempatMenarik.info'); 
 Route::get('pelancongan/admin/ListTempatMenarik', [TempatMenarikController::class, 'AdminUpdate'])->name('TempatMenarik.list'); 
