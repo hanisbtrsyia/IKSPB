@@ -66,4 +66,6 @@ public function getRouteKeyName()
     {
         return 'id_produk';
     }
+
+    
 }
