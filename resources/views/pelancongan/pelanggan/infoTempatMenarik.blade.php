@@ -12,17 +12,35 @@
                 <header class="section-heading">
                     <h3 class="section-title">{{ $temMenarik->NamaTempat }}</h3>
                 </header><!-- sect-heading -->
-
+                
                 <section class="section-intro padding-y-sm">
-                    <div class="container">
-                        <div class="intro-banner-wrap">
-                            <img src="{{ asset('assets/images/attractions/' . $temMenarik->gambar) }}" class="img-fluid center"
-                                style="height:50%; width:70%;">
+                    <div class="container ">
+                        <div class="col-12">
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            </ol>
+                            <div class="carousel-inner" >
+                                @foreach ($temMenarik['gambar'] as $key => $item)
+                                    <div class="carousel-item {{ $key == 0 ? 'active' : '' }}" style="height:50%; width:70%;" >
+                                        <img src="{{ asset('assets/images/attractions/' . $item) }}"
+                                            class="d-block w-100" alt="...">
+                                    </div>
+                                @endforeach
+                            </div>
+                            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"> </span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
                         </div>
                     </div> <!-- container //  -->
                 </section>
-            </div> <!-- container .//  -->
-        </section>
+            
         <!-- ========================= SECTION CONTENT END// ========================= -->
         <!-- ========================= SECTION CONTENT ========================= -->
 

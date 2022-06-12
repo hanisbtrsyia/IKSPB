@@ -8,33 +8,29 @@
         <h3 style="text-align: center"><strong>{{ $temPenginapan->NamaTempat }}</strong></h3>
         <div class="container gallery-container">
 
-            <div id="carouselExampleIndicators" class="carousel slide" style="height:50%; width:70%;  margin: auto;"
-                data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
-
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="d-block w-100" src="../../../assets/images/infopenginapan/2.webp" alt="First slide">
+            <div class="col-12">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        @foreach ($temPenginapan['gambar'] as $key => $item)
+                            <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                                <img src="{{ asset('assets/images/infopenginapan/' . $item) }}"
+                                    class="d-block w-100" alt="...">
+                            </div>
+                        @endforeach
                     </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="../../../assets/images/infopenginapan/1.webp" alt="Second slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="../../../assets/images/infopenginapan/3.webp" alt="Third slide">
-                    </div>
+                    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"> </span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
+
             </div>
         </div>
         <section class="section-content">

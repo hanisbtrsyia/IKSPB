@@ -197,7 +197,6 @@
                         @foreach ($produk as $prod)
                             <div class="col-md-3">
                                 <div href="#" class="card card-product-grid">
-                                   
                                     <a href="{{ route('produk.edit', $prod->id_produk) }}" class="img-wrap"> <img
                                             src="{{ asset("assets/images/produk/".$prod['GambarProduk'][0]) }}"
                                             style="width:261px; height:200px;"> </a>

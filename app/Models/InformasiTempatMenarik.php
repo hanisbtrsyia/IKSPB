@@ -50,11 +50,16 @@ class InformasiTempatMenarik extends Model
     }
 
 
-public function setPictureAttribute($value){
+public function setgambarAttribute($value){
     $this->attributes['gambar'] = json_encode($value);
 }
 
-public function getPictureAttribute($value){
+public function getgambarAttribute($value){
     return json_decode($value);
 }
+
+public function getRouteKeyName()
+    {
+        return 'id_tempatMenarik';
+    }
 }

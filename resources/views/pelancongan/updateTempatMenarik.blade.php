@@ -55,13 +55,13 @@
                                 <label for="exampleInputFile">Gambar</label>
                                 <div class="text-center">
                                     <img class="img-fluid"
-                                        src="{{ asset('assets/images/attractions/' . $temMenarik->gambar) }}"
+                                        src="{{ asset('assets/images/attractions/' . $temMenarik['gambar'][0]) }}"
                                         id='image_preview'>
                                 </div><br>
-                                <div class="custom-file">
-                                    <input type="file" accept="image/*" name="gambar" id="inputImage"
-                                        onchange="loadFile(event);" />
-                                </div>
+                                <div class="custom-file text-center" type="button"><input type="file"
+                                    accept="images/*" name="gambar[]" multiple id="inputImage"
+                                    onchange="loadFile(event);" />
+                            </div>
                             </div>
                             <div class="text-center">
                                 <input type="submit" value="Update" class="btn btn-warning">

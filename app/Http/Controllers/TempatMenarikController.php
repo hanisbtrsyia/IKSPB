@@ -47,52 +47,34 @@ class TempatMenarikController extends Controller
      */
     public function store(Request $request)
     {
-        $temMenarik = new InformasiTempatMenarik();
+        //$temMenarik = new InformasiTempatMenarik();
         $files = [];
 
-       // if ($request->hasFile('GambarProduk')) {
+        if ($request->hasFile('gambar')) {
+            $request->validate([
+            'gambar' => 'required|max:5',
 
-    //     $request->validate([
-       //         'GambarProduk.*' => 'image'
-      //      ]);
-
-       //     foreach ($request->file('GambarProduk') as $file) {
-        //        $imgname = time() . rand(1, 100) . '.' . $file->getClientOriginalExtension();
-        //        $file->move('img', $imgname);
-         //       $files[] = $imgname;
-        //    }
-       // }
-
-      //  $request->validate([
-      //      'GambarProduk' => 'required|max:5',
-           
-      //  ]);
-
-       // $produk->GambarProduk = $request->file('GambarProduk');
-
-       $request->validate([
-        'gambar' => 'required',
-
-    ]);
+        ]);
    
-    if ($request->hasFile('gambar')) {
-        $file = $request->file('gambar');
-        $img_name = time().rand(1,100).'.'.$file->getClientOriginalExtension();
-        $file->move('assets/images/attractions',$img_name);
-        
+    foreach ($request->file('gambar') as $file) {
+        $imgname = time().rand(1,100).'.'.$file->getClientOriginalExtension();
+        $file->move('assets/images/attractions',$imgname);
+        $files[] = $imgname;
         //$path = $request->file('gambar')->store('public/assets/images');
         //$temMenarik->temMenarik_image = $path;
     }
-
+        }
     InformasiTempatMenarik::create([
             'NamaTempat' => $request->NamaTempat,
-            'gambar' => $img_name,
+            'gambar' => $files,
             'Lokasi' => $request->Lokasi,
             'penerangan' => $request->penerangan,
             'created_at' => now(),
         ]);
+
         return redirect()->route('addTempatMenarik.create')->with('success','Tempat Menarik sudah ditambah');
     }
+
 
     /**
      * Display the specified resource.
@@ -130,15 +112,21 @@ class TempatMenarikController extends Controller
     {
        
         $updateTemMen = InformasiTempatMenarik::find($id);
-        
+        $files = [];
+
         if ($request->hasFile('gambar')) {
-            unlink("assets/images/attractions/".$updateTemMen->gambar);
-            $file = $request->file('gambar');
-            $img_name = time().rand(1,100).'.'.$file->getClientOriginalExtension();
-            $file->move('assets/images/attractions',$img_name);
-            $updateTemMen->gambar = $img_name;
-        }
+            $request->validate([
+                'gambar' => 'required|max:5',
+            ]);
+            foreach ($request->file('gambar') as $file) {
+                $imgname = time() . rand(1, 100) . '.' . $file->getClientOriginalExtension();
+                $file->move('assets/images/attractions', $imgname);
+                $files[] = $imgname;
+            //unlink("assets/images/produk/".$updateProduk->GambarProduk);
         
+        }
+        $updateTemMen->gambar = $files;
+    }
         $updateTemMen->NamaTempat = $request->input('NamaTempat');
         $updateTemMen->Lokasi = $request->input('Lokasi');
         $updateTemMen->penerangan = $request->input('penerangan');
