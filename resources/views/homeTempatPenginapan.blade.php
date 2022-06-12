@@ -151,7 +151,7 @@
                         <div href="#" class="card card-product-grid">
                             <a href="{{ route('TempatPenginapan.info', $temPeng->id_tempatPenginapan) }}"
                                 class="img-wrap"> <img
-                                    src="{{ asset('assets/images/penginapan/' . $temPeng->gambar) }}"
+                                    src="{{ asset('assets/images/penginapan/' . $temPeng['gambar'][0])}}"
                                     style="width:278px; height:250px;"> </a>
                             <figcaption class="info-wrap">
                                 <a type="button"

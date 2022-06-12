@@ -64,14 +64,15 @@
                     <label for="Kemudahan">Kemudahan:</label>
                     <input type="text" name="Kemudahan" id="Kemudahan" class="form-control" placeholder="">
                   </div>
-                <div>
-                  <label for="exampleInputFile">Gambar</label>
-                  <div class="text-center">
-                    <img class="img-fluid" src="" id='image_preview'>
-                  </div><br>
-                  <div class="custom-file">
-                    <input type="file" accept="image/*" name="gambar" id="gambar" onchange="loadFile(event);" />
-                  </div>
+                  <div>
+                    <label for="exampleInputFile">Gambar</label>
+                    <div class="text-center">
+                        <img class="img-fluid" src="" id='image_preview'>
+                    </div>
+                    <div class="custom-file text-center" type="button"><input type="file"
+                            accept="images/*" name="gambar[]" multiple id="inputImage" />
+                    </div>
+
                 </div>
                 <div class="text-center">
                   <input type="submit" value="Submit" class="btn btn-warning">

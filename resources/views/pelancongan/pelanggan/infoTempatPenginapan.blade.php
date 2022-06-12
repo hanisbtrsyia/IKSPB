@@ -3,21 +3,24 @@
 @section('title', 'Maklumat Tempat Penginapan')
 @section('content')
 
+
     <div class="content-wrapper" style="min-height: 2646.44px;">
         <br>
         <h3 style="text-align: center"><strong>{{ $temPenginapan->NamaTempat }}</strong></h3>
-        <div class="container gallery-container">
+        <div class="container gallery-container center">
 
-            <div class="col-12">
+            <div class="col-12 col-sm-9">
+                <h3 class="d-inline-block d-sm-none"></h3>
+                <div class="col-12">
                 <div id="myCarousel" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                     </ol>
                     <div class="carousel-inner">
                         @foreach ($temPenginapan['gambar'] as $key => $item)
-                            <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
-                                <img src="{{ asset('assets/images/infopenginapan/' . $item) }}"
-                                    class="d-block w-100" alt="...">
+                            <div class="carousel-item {{ $key == 0 ? 'active' : '' }}" >
+                                <img src="{{ asset('assets/images/penginapan/' . $item) }}"
+                                    class="d-block w-100 " alt="...">
                             </div>
                         @endforeach
                     </div>
@@ -30,7 +33,7 @@
                         <span class="sr-only">Next</span>
                     </a>
                 </div>
-
+                </div>
             </div>
         </div>
         <section class="section-content">

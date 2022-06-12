@@ -47,54 +47,35 @@ class TempatPenginapanController extends Controller
      */
     public function store(Request $request)
     {
-        $temPenginapan = new InformasiTempatPenginapan();
+        //$temPenginapan = new InformasiTempatPenginapan();
         $files = [];
 
-       // if ($request->hasFile('GambarProduk')) {
+        if ($request->hasFile('gambar')) {
+        $request->validate([
+        'gambar' => 'required|max:5',
 
-    //     $request->validate([
-       //         'GambarProduk.*' => 'image'
-      //      ]);
-
-       //     foreach ($request->file('GambarProduk') as $file) {
-        //        $imgname = time() . rand(1, 100) . '.' . $file->getClientOriginalExtension();
-        //        $file->move('img', $imgname);
-         //       $files[] = $imgname;
-        //    }
-       // }
-
-      //  $request->validate([
-      //      'GambarProduk' => 'required|max:5',
-           
-      //  ]);
-
-       // $produk->GambarProduk = $request->file('GambarProduk');
-
-       $request->validate([
-        'gambar' => 'required',
-
-    ]);
+        ]);
    
-    if ($request->hasFile('gambar')) {
-        $file = $request->file('gambar');
-        $img_name = time().rand(1,100).'.'.$file->getClientOriginalExtension();
-        $file->move('assets/images/penginapan',$img_name);
-        //$path = $request->file('gambar')->store('public/assets/images/penginapan');
-        //$temPenginapan->temPenginapan_image = $path;
+    foreach ($request->file('gambar') as $file) {
+        $imgname = time().rand(1,100).'.'.$file->getClientOriginalExtension();
+        $file->move('assets/images/penginapan',$imgname);
+        $files[] = $imgname;
+        //$path = $request->file('gambar')->store('public/assets/images');
+        //$temMenarik->temMenarik_image = $path;
     }
-
+        }
     InformasiTempatPenginapan::create([
             'NamaTempat' => $request->NamaTempat,
             'NamaHos' => $request->NamaHos,
             'NoTel' => $request->NoTel,
             'Lokasi' => $request->Lokasi,
             'penerangan' => $request->penerangan,
-            'gambar' => $img_name,
+            'gambar' => $files,
             'HargaPerMalam' => $request->HargaPerMalam,
             'Kemudahan' => $request->Kemudahan,
             'created_at' => now(),
         ]);
-        return redirect()->route('addTempatPenginapan.create')->with('success','Tempat Penginapan sudah ditambah');
+        return redirect()->route('TempatPenginapan.list')->with('success','Tempat Penginapan sudah ditambah');
     }
 
     /**
@@ -130,16 +111,21 @@ class TempatPenginapanController extends Controller
     {
         
         $updateTemPen = InformasiTempatPenginapan::find($id);
-        
+        $files = [];
+
         if ($request->hasFile('gambar')) {
-            unlink("assets/images/penginapan/".$updateTemPen->gambar);
-            $file = $request->file('gambar');
-            $img_name = time().rand(1,100).'.'.$file->getClientOriginalExtension();
-            $file->move('assets/images/penginapan',$img_name);
-            //$path = $request->file('gambar')->store('public/assets/images/penginapan');
-            //$temPenginapan->temPenginapan_image = $path;
-            $updateTemPen->gambar = $img_name;
+            $request->validate([
+                'gambar' => 'required|max:5',
+            ]);
+            foreach ($request->file('gambar') as $file) {
+                $imgname = time() . rand(1, 100) . '.' . $file->getClientOriginalExtension();
+                $file->move('assets/images/penginapan', $imgname);
+                $files[] = $imgname;
+            //unlink("assets/images/produk/".$updateProduk->GambarProduk);
+        
         }
+        $updateTemPen->gambar = $files;
+    }
         
         $updateTemPen->NamaTempat = $request->input('NamaTempat');
         $updateTemPen->NamaHos = $request->input('NamaHos');
@@ -172,11 +158,7 @@ class TempatPenginapanController extends Controller
      */
     public function destroy($id_tempatPenginapan)
     {
-        //$temPenginapan = InformasiTempatPenginapan::find($id_tempatPenginapan);
-        //$temPenginapan->delete();
-        //return redirect()->route('TempatPenginapan.show',$temPenginapan)
-          //  ->with('success', 'Tempat Penginapan has been deleted successfully');
-   
+       
     }
 
     public function deleteTemPeng(Request $request)

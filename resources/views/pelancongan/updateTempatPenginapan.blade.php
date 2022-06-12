@@ -78,11 +78,11 @@
                                         <label for="exampleInputFile">Gambar</label>
                                         <div class="text-center">
                                             <img class="img-fluid"
-                                                src="{{ asset('assets/images/penginapan/' . $temPenginapan->gambar) }}"
+                                                src="{{ asset('assets/images/penginapan/' . $temPenginapan['gambar'][0]) }}"
                                                 id='image_preview'>
                                         </div><br>
-                                        <div class="custom-file">
-                                            <input type="file" accept="image/*" name="gambar" id="inputImage"
+                                        <div class="custom-file text-center" type="button"><input type="file"
+                                                accept="images/*" name="gambar[]" multiple id="inputImage"
                                                 onchange="loadFile(event);" />
                                         </div>
                                     </div>
@@ -98,7 +98,7 @@
                     <form method="POST" class="form-horizontal" action="{{ route('TempatPenginapan.deleteTemPeng') }}"
                         enctype="multipart/form-data">
                         @csrf
-                        <input type="hidden" value="{{$temPenginapan->id_tempatPenginapan}}" name="id_tempatPenginapan">
+                        <input type="hidden" value="{{ $temPenginapan->id_tempatPenginapan }}" name="id_tempatPenginapan">
                         <input type="submit" value="Delete" class="btn btn-danger">
                     </form>
                 </div>
