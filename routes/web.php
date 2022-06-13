@@ -61,9 +61,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/welcome', function () {
-    return view('/welcome');
-});
+//Route::get('/welcome', function () {
+//    return view('/welcome');
+//});
 
 Route::get('/layouts/homepage', function () {
     return view('/layouts/homepage');

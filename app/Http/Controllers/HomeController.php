@@ -33,5 +33,9 @@ class HomeController extends Controller
         {
             return view('dashboards.peniaga.homepeniaga');
         }
+        elseif($role=='pelanggan')
+        {
+            return view('welcome');
+        }
     }
 }

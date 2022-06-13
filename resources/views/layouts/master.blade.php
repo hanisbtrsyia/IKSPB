@@ -26,7 +26,7 @@
     @elseif ( Auth::user()->role == 'peniaga') 
     @include('dashboards.peniaga.peniagasidebar')
     @elseif ( Auth::user()->role == 'pelanggan')
-    @include('layouts.app')
+    @include('welcome')
     @endif
 
     <!-- Content Wrapper. Contains page content -->

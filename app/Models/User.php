@@ -59,7 +59,7 @@ class User extends Authenticatable
                         if ($latest != null && $latest->exists()) {
                             $uid = random_int(1001, 9999);
                         }
-                        $user->id = 'S'.$uid;
+                        $user->id = ($user->role !== 'pelanggan' ? 'S': 'C').$uid;
 
                         break;
 
@@ -70,7 +70,6 @@ class User extends Authenticatable
             }
         });
     }
-
 
     public function getPictureAttribute($value){
         if($value){

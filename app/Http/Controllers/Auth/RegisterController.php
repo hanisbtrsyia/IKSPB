@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use App\Models\Peniaga;
+use App\Models\Pelanggan;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -91,24 +92,52 @@ class RegisterController extends Controller
          $user->name = $request->NamaPengguna;
          $user->email = $request->Emel;
          $user->password = Hash::make($request->password);
-         $user->role = "peniaga";
-         $user->save();
-
-         $peniaga = new Peniaga();
-         $peniaga->id_peniaga = $user->id;
-         $peniaga->NamaPengguna = $request->NamaPengguna;
-         $peniaga->Emel = $request->Emel;
-        // $peniaga->role = 2;
         
-         //$user->picture = $picture; 
-         $peniaga->KataLaluan = Hash::make($request->password);
+         if($request->role=="peniaga"){
+            $user->role = "peniaga";
+            $user->save();
+            $peniaga = new Peniaga();
+            $peniaga->id_peniaga = $user->id;
+            $peniaga->NamaPengguna = $request->NamaPengguna;
+            $peniaga->Emel = $request->Emel;
+            // $peniaga->role = 2;
+            
+            //$user->picture = $picture; 
+            $peniaga->KataLaluan = Hash::make($request->password);
 
-         if( $peniaga->save() ){
+            if( $peniaga->save() ){
 
-            return redirect()->back()->with('success','You are now successfully registerd');
-         }else{
-             return redirect()->back()->with('error','Failed to register');
+                return redirect()->back()->with('success','You are now successfully registerd');
+             }else{
+                 return redirect()->back()->with('error','Failed to register');
+             }
          }
+
+         else if($request->role=="pelanggan"){
+            $user->role = "pelanggan";
+            $user->save();
+            $pelanggan = new Pelanggan();
+            $pelanggan->id_pelanggan = $user->id;
+            $pelanggan->NamaPelanggan = $request->NamaPengguna;
+            $pelanggan->Emel = $request->Emel;
+            
+            // $peniaga->role = 2;
+            
+            //$user->picture = $picture; 
+            //$pelanggan->KataLaluan = Hash::make($request->password);
+            
+            if( $pelanggan->save() ){
+
+                return redirect()->back()->with('success','You are now successfully registerd');
+             }else{
+                 return redirect()->back()->with('error','Failed to register');
+             }
+         }
+            
+
+         
+
+        
 
     }
 

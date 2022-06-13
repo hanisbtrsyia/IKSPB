@@ -9,14 +9,15 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="../assets/css/bootstrap.css" rel="stylesheet">
-    <link href="../assets/css/ui.css" rel="stylesheet">
-    <link href="../assets/css/responsive.css" rel="stylesheet">
-    <link href="../assets/css/addtocart.css" rel="stylesheet">
-    <link href="../assets/css/all.min.css" rel="stylesheet">
-    <script src="../assets/js/jquery.min.js" type="text/javascript"></script>
-    <script src="../assets/js/bootstrap.bundle.min.js" type="text/javascript"></script>
-    <script src="../assets/js/addtocart.js" type="text/javascript"></script>
+    <link href="../../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../../assets/css/ui.css" rel="stylesheet">
+    <link href="../../assets/css/responsive.css" rel="stylesheet">
+    <link href="../../assets/css/addtocart.css" rel="stylesheet">
+    <link href="../../assets/css/all.min.css" rel="stylesheet">
+    <script src="../../assets/js/jquery.min.js" type="text/javascript"></script>
+    <script src="../../assets/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+    <script src="../../assets/js/addtocart.js" type="text/javascript"></script>
+   
 </head>
 
 <body>
@@ -25,7 +26,7 @@
         <nav class="navbar navbar-dark navbar-expand p-0" style="background-color:#FFB923;">
             <div class="container">
                 <ul class="navbar-nav d-none d-md-flex mr-auto">
-                    <li class="nav-item"><a class="nav-link" href="/welcome" style="color:#000;">Laman
+                    <li class="nav-item"><a class="nav-link" href="/" style="color:#000;">Laman
                             Utama</a></li>
                     <li class="nav-item"><a class="nav-link" href="/homebelibelah"
                             style="color:#000;">Beli-Belah</a></li>
@@ -75,21 +76,74 @@
                     </div> <!-- col.// -->
                     <div class="col-lg-4 col-sm-6 col-12">
                         <div class="widgets-wrap float-md-right">
-                            <div class="widget-header  mr-3">
+                            <div class="dropdown">
+                                <button type="button" class="btn btn-info" data-toggle="dropdown">
+                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart <span class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <div class="row total-header-section">
+                                        <div class="col-lg-6 col-sm-6 col-6">
+                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
+                                        </div>
+                                        @php $total = 0 @endphp
+                                        @foreach((array) session('cart') as $id => $details)
+                                            @php $total += $details['Harga'] * $details['Kuantiti'] @endphp
+                                        @endforeach
+                                        <div class="col-lg-6 col-sm-6 col-6 total-section text-right">
+                                            <p>Total: <span class="text-info"></span></p>
+                                        </div>
+                                    </div>
+                                    @if(session('cart'))
+                                        @foreach(session('cart') as $id => $details)
+                                            <div class="row cart-detail">
+                                                <div class="col-lg-4 col-sm-4 col-4 cart-detail-img">
+                                                    <img src="" />
+                                                </div>
+                                                <div class="col-lg-8 col-sm-8 col-8 cart-detail-product">
+                                                    <p>{{ $details['NamaProduk'] }}</p>
+                                                    <span class="price text-info"> ${{ $details['Harga'] }}</span> <span class="count"> Quantity:{{ $details['Kuantiti'] }}</span>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    @endif
+                                    <div class="row">
+                                        <div class="col-lg-12 col-sm-12 col-12 text-center checkout">
+                                            <a href="{{ route('cart') }}" class="btn btn-primary btn-block">View all</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--<div class="widget-header  mr-3">
                                 <a href="#" class="icon icon-sm rounded-circle border"><i
                                         class="fa fa-shopping-cart"></i></a>
                                 <span class="badge badge-pill badge-danger notify">0</span>
-                            </div>
+                            </div>-->
                             <div class="widget-header icontext">
                                 <a href="#" class="icon icon-sm rounded-circle border"><i
                                         class="fa fa-user"></i></a>
-                                <div class="text">
-                                    <span class="text-muted">Selamat Datang!</span>
-                                    <div>
-                                        <a href="/login">Log Masuk</a> |
-                                        <a href="/register"> Daftar Masuk</a>
-                                    </div>
-                                </div>
+                                        <div class="text">
+                                            @auth
+                                                @if (Auth::user()->role == 'pelanggan')
+                                                    <span class="text-muted">{{Auth::user()->name}}</span>
+                                                    <div>
+                                                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                                     document.getElementById('logout-form').submit();">
+                                                            {{ __('Logout') }}
+                                                        </a>
+                                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                            class="d-none">
+                                                            @csrf
+        
+                                                        </form>
+                                                @endif
+                                            @else
+                                                <span class="text-muted">Anda seorang peniaga?</span>
+                                                <div>
+                                                    <a href="{{ route('login') }}">Log Masuk</a> |
+                                                    <a href="{{ route('register') }}"> Daftar Masuk</a>
+                                                @endauth
+                                            </div>
+                                        </div>
                             </div>
                         </div> <!-- widgets-wrap.// -->
                     </div> <!-- col.// -->
@@ -107,7 +161,7 @@
         </head>
 
         <body>
-            <main>
+            <!--<main>
                 <div class="basket">
                     <div class="basket-module">
                         <label for="promo-code">Enter a promotional code</label>
@@ -168,7 +222,7 @@
                         </div>
                     </div>
                 </div>
-                <!--<aside>
+                <aside>
                     <div class="summary">
                         <div class="summary-total-items"><span class="total-items"></span> Items in your Bag
                         </div>
@@ -198,16 +252,16 @@
                                     Checkout</button></a>
                         </div>
                     </div>
-                </aside>-->
-            </main>
+                </aside>
+            </main>-->
 
             <table id="cart" class="table table-hover table-condensed">
                 <thead>
                     <tr>
-                        <th style="width:50%">Product</th>
-                        <th style="width:10%">Price</th>
-                        <th style="width:8%">Quantity</th>
-                        <th style="width:22%" class="text-center">Subtotal</th>
+                        <th style="width:50%">Produk</th>
+                        <th style="width:10%">Harga</th>
+                        <th style="width:8%">Kuantiti</th>
+                        <th style="width:22%" class="text-center">Jumlah</th>
                         <th style="width:10%"></th>
                     </tr>
                 </thead>
@@ -217,7 +271,8 @@
                         @foreach (session('cart') as $id_produk => $details)
                             @php $total += $details['Harga'] * $details['Kuantiti'] @endphp
                             <tr data-id="{{ $id_produk }}">
-                                <td data-th="Product">
+                                <p>{{$id_produk}}</p>
+                                <td data-th="Produk">
                                     <div class="row">
                                         <div class="col-sm-3 hidden-xs"><img src="" width="100" height="100"
                                                 class="img-responsive" /></div>
@@ -227,13 +282,13 @@
                                     </div>
                                 </td>
                                 <td data-th="Harga">RM {{ $details['Harga'] }}</td>
-                                <td data-th="quantity">
+                                <td data-th="Kuantiti">
                                     <input type="number" value="{{ $details['Kuantiti'] }}" min="1" class="quantity-field">
                                    <!-- <input type="number" value="{{ $details['Kuantiti'] }}"
                                         class="form-control quantity update-cart" />-->
                                 </td>
 
-                                <td data-th="Subtotal" class="text-center">RM
+                                <td data-th="Jumlah" class="text-center">RM
                                     {{ $details['Harga'] * $details['Kuantiti'] }}</td>
                                 <td class="actions" data-th="">
                                     <button class="btn btn-danger btn-sm remove-from-cart">
@@ -241,7 +296,8 @@
                                             fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
                                             <path
                                                 d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
-                                        </svg></button>
+                                        </svg>
+                                    </button>
                                 </td>
                             </tr>
                         @endforeach
@@ -250,7 +306,7 @@
                 <tfoot>
                     <tr>
                         <td colspan="5" class="text-right">
-                            <h3><strong>Total </strong></h3>
+                            <h3><strong>Total RM{{ $total }}</strong></h3>
                         </td>
                     </tr>
                     <tr>
@@ -289,9 +345,9 @@
 
                         var ele = $(this);
 
-                        if (confirm("Are you sure want to remove?")) {
+                        if (confirm("Are you sure you want to remove?")) {
                             $.ajax({
-                                url: '{{ route('remove.from.cart') }}',
+                                url: '{{ route("remove.from.cart") }}',
                                 method: "DELETE",
                                 data: {
                                     _token: '{{ csrf_token() }}',
@@ -305,8 +361,6 @@
                     });
                 </script>
             @endsection
-
-
     </header>
 
 </body>
