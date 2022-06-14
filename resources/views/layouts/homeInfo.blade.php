@@ -23,7 +23,7 @@
 <nav class="navbar navbar-dark navbar-expand p-0" style="background-color:#FFB923;"> 
 <div class="container">
     <ul class="navbar-nav d-none d-md-flex mr-auto">
-    <li class="nav-item"><a class="nav-link" href="/welcome" style="color:#000;">Laman Utama</a></li>
+    <li class="nav-item"><a class="nav-link" href="/" style="color:#000;">Laman Utama</a></li>
     <li class="nav-item"><a class="nav-link" href="/homebelibelah" style="color:#000;">Beli-Belah</a></li>
     <li class="btn-group dropright">
       <a href="/homepelancongan" class="btn dropdown-toggle" data-toggle="dropdown" style="color:#000;"> Pelancongan </a>
@@ -73,60 +73,38 @@
         <span class="badge badge-pill badge-danger notify">0</span>
       </div>
       <div class="widget-header icontext">
-        <a href="#" class="icon icon-sm rounded-circle border"><i class="fa fa-user"></i></a>
+        <a href="#" class="icon icon-sm rounded-circle border"><i
+                class="fa fa-user"></i></a>
         <div class="text">
-          <span class="text-muted">Anda seorang peniaga?</span>
-          <div> 
-            <a href="/login">Log Masuk</a> |  
-            <a href="/register"> Daftar Masuk</a>
-          </div>
+            @auth
+                @if (Auth::user()->role == 'pelanggan')
+                    <span class="text-muted">{{ Auth::user()->name }}</span>
+                    <div>
+                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                            class="d-none">
+                            @csrf
+
+                        </form>
+                @endif
+            @else
+                <span class="text-muted">Anda seorang peniaga?</span>
+                <div>
+                    <a href="{{ route('login') }}">Log Masuk</a> |
+                    <a href="{{ route('register') }}"> Daftar Masuk</a>
+                @endauth
+            </div>
         </div>
-      </div>
+    </div>
     </div> <!-- widgets-wrap.// -->
   </div> <!-- col.// -->
 </div> <!-- row.// -->
   </div> <!-- container.// -->
 </section> <!-- header-main .// -->
-<nav class="navbar navbar-main navbar-expand-lg navbar-light border-bottom">
-  <div class="container">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav" aria-controls="main_nav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="main_nav">
-      <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-          <a class="nav-link pl-0" data-toggle="dropdown" href="#"><strong> <i class="fa fa-bars"></i>    Kategori</strong></a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Makanan Tradisional</a>
-            <a class="dropdown-item" href="#">Makanan Sejuk Beku</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Kerepek</a>
-            <a class="dropdown-item" href="#">Kuih Muih</a>
-            <a class="dropdown-item" href="#">Tempoyak</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Makanan Tradisional</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Makanan Sejuk Beku</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Kuih Muih</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Kerepek</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Tempoyak</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Sambal</a>
-        </li>
-      </ul>
-    </div> <!-- collapse .// -->
-  </div> <!-- container .// -->
-</nav>
+
 </header> <!-- section-header.// -->
 <!-- ========================= SECTION INTRO ========================= -->
 
