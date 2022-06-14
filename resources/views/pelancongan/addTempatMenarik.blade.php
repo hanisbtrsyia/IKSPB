@@ -16,8 +16,9 @@
                     </div>
                 </div>
             </div>
+            <br>
             <section class="content">
-                <div class="col-md-7 offset-md-2">
+                <div class="col-12">
                     @if ($errors->any())
                         <div class="alert alert-danger">
                             <h5><i class="icon fas fa-ban"></i> Error!</h5>
@@ -34,36 +35,41 @@
                                     <h3 class="card-title">Tambah Tempat Menarik</h3>
                                 </div>
                                 <div class="card-body">
-
-                                    <div class="form-group">
-                                        <label for="NamaTempat">Nama Tempat:</label>
-                                        <input type="text" name="NamaTempat" id="NamaTempat" class="form-control"
-                                            placeholder="">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="Lokasi">Lokasi:</label>
-                                        <input type="text" name="Lokasi" id="Lokasi" class="form-control" placeholder="">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="penerangan">Penerangan:</label>
-                                        <input type="text" name="penerangan" id="penerangan" class="form-control"
-                                            placeholder="">
-                                    </div>
-                                    <div>
-                                        <label for="exampleInputFile">Gambar</label>
-                                        <div class="text-center">
-                                            <img class="img-fluid" src="" id='image_preview'>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                                <label for="NamaTempat">Nama Tempat:</label>
+                                                <input type="text" name="NamaTempat" id="NamaTempat" class="form-control"
+                                                    placeholder="">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="Lokasi">Lokasi:</label>
+                                                <input type="text" name="Lokasi" id="Lokasi" class="form-control"
+                                                    placeholder="">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="penerangan">Penerangan:</label>
+                                                <input type="text" name="penerangan" id="penerangan" class="form-control"
+                                                    placeholder="">
+                                            </div>
                                         </div>
-                                        <div class="custom-file text-center" type="button"><input type="file"
-                                                accept="images/*" name="gambar[]" multiple id="inputImage" />
-                                        </div>
+                                        <div class="card-body">
+                                            <div class="col-6">
+                                                <label for="exampleInputFile">Gambar</label>
+                                                <div class="text">
+                                                    <img class="img-fluid" src="" id='image_preview'>
+                                                </div>
+                                                <div class="custom-file text" type="button"><input type="file"
+                                                        accept="images/*" name="gambar[]" multiple id="inputImage" />
+                                                </div>
 
-                                    </div>
-                                    <div class="text-center">
-                                        <input type="submit" value="Submit" class="btn btn-warning">
+                                            </div>
+                                            <div class="text-center">
+                                                <input type="submit" value="Submit" class="btn btn-warning">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
                         </fieldset>
                     </form>
                 </div>

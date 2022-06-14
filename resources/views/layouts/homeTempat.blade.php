@@ -24,7 +24,7 @@
         <nav class="navbar navbar-dark navbar-expand p-0" style="background-color:#FFB923;">
             <div class="container">
                 <ul class="navbar-nav d-none d-md-flex mr-auto">
-                    <li class="nav-item"><a class="nav-link" href="/welcome" style="color:#000;">Laman
+                    <li class="nav-item"><a class="nav-link" href="/" style="color:#000;">Laman
                             Utama</a></li>
                     <li class="nav-item"><a class="nav-link" href="/homebelibelah"
                             style="color:#000;">Beli-Belah</a></li>

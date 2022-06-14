@@ -27,6 +27,8 @@ class TempatMenarikController extends Controller
         //dd($produk);
         return view('homeTempatMenarik',compact('temMenarik'));
     }
+
+    
     /**
      * Show the form for creating a new resource.
      *

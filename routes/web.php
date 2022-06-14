@@ -77,8 +77,10 @@ Route::get('/homepelancongan', function () {
     return view('/homepelancongan');
 });
 
+
 Route::get('/', [ProdukController::class, 'welcome']); 
 Route::get('/homebelibelah', [ProdukController::class, 'homebelibelah']); 
+
 
 Route::get('/homeTempatMenarik', [TempatMenarikController::class, 'homeTempatMenarik']); 
 

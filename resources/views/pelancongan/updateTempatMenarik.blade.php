@@ -19,7 +19,7 @@
             </div><!-- /.container-fluid -->
         </div>
 
-        <div class="col-md-7 offset-md-2">
+        <div class="col-12">
             @if ($message = Session::get('success'))
                 <div class="alert alert-success">
                     <h5><i class="icon fas fa-check"></i> Success!</h5>
@@ -34,39 +34,43 @@
                         <h3 class="card-title card-header bg-warning">Kemaskini Tempat Menarik</h3>
                         <div class="card-body box-profile">
                             <div class="card-body">
-                                <div class="form-group">
-                                    <input type="hidden" name="id_tempatMenarik" id="id" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for="NamaTempat">Nama Tempat:</label>
-                                    <input type="text" name="NamaTempat" id="NamaTempat" class="form-control"
-                                        placeholder="" value="{{ $temMenarik->NamaTempat }}">
-                                </div>
-                                <div class="form-group">
-                                    <label for="Lokasi">Lokasi:</label>
-                                    <input type="text" name="Lokasi" id="Lokasi" class="form-control"
-                                        value="{{ $temMenarik->Lokasi }}" placeholder="">
-                                </div>
-                                <div class="form-group">
-                                    <label for="penerangan">Penerangan:</label>
-                                    <input type="text" name="penerangan" id="penerangan" class="form-control"
-                                        value="{{ $temMenarik->penerangan }}" placeholder="">
-                                </div>
-                                <label for="exampleInputFile">Gambar</label>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <input type="hidden" name="id_tempatMenarik" id="id" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="NamaTempat">Nama Tempat:</label>
+                                            <input type="text" name="NamaTempat" id="NamaTempat" class="form-control"
+                                                placeholder="" value="{{ $temMenarik->NamaTempat }}">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="Lokasi">Lokasi:</label>
+                                            <input type="text" name="Lokasi" id="Lokasi" class="form-control"
+                                                value="{{ $temMenarik->Lokasi }}" placeholder="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="penerangan">Penerangan:</label>
+                                            <input type="text" name="penerangan" id="penerangan" class="form-control"
+                                                value="{{ $temMenarik->penerangan }}" placeholder="">
+                                        </div>
+                                    </div>
+                                    <label for="exampleInputFile">Gambar</label>
+                                    <div class="text-center">
+                                        <img class="img-fluid"
+                                            src="{{ asset('assets/images/attractions/' . $temMenarik['gambar'][0]) }}"
+                                            id='image_preview' class="img-fluid">
+                                    </div><br>
+                                    <div class="custom-file text-center" type="button"><input type="file" accept="images/*"
+                                            name="gambar[]" multiple id="inputImage" onchange="loadFile(event);" />
+                                    </div>
+                                
                                 <div class="text-center">
-                                    <img class="img-fluid"
-                                        src="{{ asset('assets/images/attractions/' . $temMenarik['gambar'][0]) }}"
-                                        id='image_preview'>
-                                </div><br>
-                                <div class="custom-file text-center" type="button"><input type="file" accept="images/*"
-                                        name="gambar[]" multiple id="inputImage" onchange="loadFile(event);" />
+                                    <input type="submit" value="Update" class="btn btn-warning">
                                 </div>
-                            </div>
-                            <div class="text-center">
-                                <input type="submit" value="Update" class="btn btn-warning">
                             </div>
                         </div>
-                    </div>
+                        </div>
                 </fieldset>
             </form>
             <form method="POST" class="form-horizontal" action="{{ route('TempatMenarik.deleteTemMen') }}"
