@@ -28,6 +28,13 @@ class ProdukController extends Controller
         return view('homebelibelah',compact('produk'));
     }
 
+    public function welcome()
+    {
+        $produk = Produk::all();
+        //dd($produk);
+        return view('welcome',compact('produk'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *

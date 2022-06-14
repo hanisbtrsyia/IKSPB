@@ -59,106 +59,36 @@
                 </header><!-- sect-heading -->
 
                 <div class="row">
-                    <div class="col-md-3">
-                        <div href="#" class="card card-product-grid">
-                            <a href="#" class="img-wrap"> <img src="assets/images/produk/peria.jpg"> </a>
-                            <figcaption class="info-wrap">
-                                <a href="#" class="title">Kerepek Peria Wanz Bitez</a>
 
-                                <div class="rating-wrap">
-                                    <ul class="rating-stars">
-                                        <li style="width:80%" class="stars-active">
-                                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i>
-                                        </li>
-                                    </ul>
-                                    <span class="label-rating text-muted"> 34 reviws</span>
-                                </div>
-                                <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
-                            </figcaption>
-                        </div>
-                    </div> <!-- col.// -->
-                    <div class="col-md-3">
-                        <div href="#" class="card card-product-grid">
-                            <a href="#" class="img-wrap"> <img src="assets/images/produk/ubi.jfif"> </a>
-                            <figcaption class="info-wrap">
-                                <a href="#" class="title">Kerepek Ubi Kari Adrianna Anissa</a>
-
-                                <div class="rating-wrap">
-                                    <ul class="rating-stars">
-                                        <li style="width:80%" class="stars-active">
-                                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i>
-                                        </li>
-                                    </ul>
-                                    <span class="label-rating text-muted"> 34 reviws</span>
-                                </div>
-                                <div class="price mt-1">$280.00</div> <!-- price-wrap.// -->
-                            </figcaption>
-                        </div>
-                    </div> <!-- col.// -->
-                    <div class="col-md-3">
-                        <div href="#" class="card card-product-grid">
-                            <a href="#" class="img-wrap"> <img src="assets/images/produk/bwg.webp"> </a>
-                            <figcaption class="info-wrap">
-                                <a href="#" class="title">Kerepek Bawang SnekTown</a>
-
-                                <div class="rating-wrap">
-                                    <ul class="rating-stars">
-                                        <li style="width:80%" class="stars-active">
-                                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i>
-                                        </li>
-                                    </ul>
-                                    <span class="label-rating text-muted"> 34 reviws</span>
-                                </div>
-                                <div class="price mt-1">$56.00</div> <!-- price-wrap.// -->
-                            </figcaption>
-                        </div>
-                    </div> <!-- col.// -->
-                    <div class="col-md-3">
-                        <div href="#" class="card card-product-grid">
-                            <a href="#" class="img-wrap"> <img src="assets/images/produk/pisang.jpg"> </a>
-                            <figcaption class="info-wrap">
-                                <a href="#" class="title">Kerepek Pisang Rangup</a>
-
-                                <div class="rating-wrap">
-                                    <ul class="rating-stars">
-                                        <li style="width:80%" class="stars-active">
-                                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i>
-                                        </li>
-                                    </ul>
-                                    <span class="label-rating text-muted"> 34 reviws</span>
-                                </div>
-                                <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
-                            </figcaption>
-                        </div>
-                    </div> <!-- col.// -->
+                    @foreach ($produk as $prod)
+                        <div class="col-md-3">
+                            <div href="#" class="card card-product-grid">
+                                <a href="{{ route('produk.details', $prod->id_produk) }}" class="img-wrap"> <img src="{{ asset('assets/images/produk/' . $prod['GambarProduk'][0]) }}"> </a>
+                                <figcaption class="info-wrap">
+    
+                                    <a type="button" href="{{ route('produk.details', $prod->id_produk) }}" class="title">{{$prod->NamaProduk}}</a>
+    
+                                    <div class="rating-wrap">
+                                        <ul class="rating-stars">
+                                            <li style="width:80%" class="stars-active">
+                                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                                                    class="fa fa-star"></i><i class="fa fa-star"></i><i
+                                                    class="fa fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                                                    class="fa fa-star"></i><i class="fa fa-star"></i><i
+                                                    class="fa fa-star"></i>
+                                            </li>
+                                        </ul>
+                                        <span class="label-rating text-muted"> 34 reviews</span>
+                                    </div>
+                                    <div class="price mt-1"> RM {{$prod->Harga}}</div> <!-- price-wrap.// -->
+                                </figcaption>
+                            </div>
+                        </div> <!-- col.// -->
+                    @endforeach
+    
                 </div> <!-- row.// -->
             </div> <!-- container .//  -->
         </section>
