@@ -31,7 +31,7 @@
                 <div class="card-body box-profile">
                     <div class="text-center">
                         <img class="img-fluid img-circle" src="{{ asset('assets/images/profile/' . $profile->GambarProfil) }}" style="width: 180px; height:180px" id='image_preview'
-                            alt="User profile picture">
+                            alt="Gambar profil pengguna">
                     </div>
                     <br>
 
@@ -40,7 +40,7 @@
                         @csrf
                         <div class="form-group">
                             <div class="custom-file text-center">
-                                <input type="file" accept="image/*" name="GambarProfil" value="" id="inputImage"
+                                <input type="file" accept="image/*" name="GambarProfil" value="{{ $profile->GambarProfil }}" id="inputImage"
                                     onchange="loadFile(event)" />
                             </div>
                         </div>
@@ -52,7 +52,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="Emel" class="col-sm-3 col-form-label">Emel</label>
+                            <label for="Emel" class="col-sm-3 col-form-label">E-mel</label>
                             <div class="col-sm-9">
                                 <input type="Emel" class="form-control" name="Emel" value="{{ $profile->Emel }}"
                                     placeholder="">
@@ -88,7 +88,7 @@
                         </div>
 
                         <div class="text-center">
-                            <input type="submit" value="Update" class="btn btn-warning">
+                            <input type="submit" value="Kemaskini" class="btn btn-warning">
                         </div>
                     </form>
                 </div>
