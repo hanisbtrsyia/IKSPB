@@ -271,7 +271,7 @@
                         @foreach (session('cart') as $id_produk => $details)
                             @php $total += $details['Harga'] * $details['Kuantiti'] @endphp
                             <tr data-id="{{ $id_produk }}">
-                                <p>{{$id_produk}}</p>
+                              
                                 <td data-th="Produk">
                                     <div class="row">
                                         <div class="col-sm-3 hidden-xs"><img src="" width="100" height="100"

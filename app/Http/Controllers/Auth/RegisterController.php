@@ -107,7 +107,7 @@ class RegisterController extends Controller
 
             if( $peniaga->save() ){
 
-                return redirect()->back()->with('success','You are now successfully registerd');
+                return redirect()->route('login')->with('success','Anda sudah berjaya didaftarkan');
              }else{
                  return redirect()->back()->with('error','Failed to register');
              }
@@ -128,7 +128,8 @@ class RegisterController extends Controller
             
             if( $pelanggan->save() ){
 
-                return redirect()->back()->with('success','You are now successfully registerd');
+                //return redirect()->back()->with('success','Anda sudah berjaya didaftarkan');
+                return redirect()->route('login')->with('success','Anda sudah berjaya didaftarkan');
              }else{
                  return redirect()->back()->with('error','Failed to register');
              }

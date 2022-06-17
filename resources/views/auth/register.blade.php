@@ -40,7 +40,7 @@
                                 <div class="form-group">
                                     <label for="NamaPengguna">Nama Pengguna</label>
                                     <input id="NamaPengguna" type="text" class="form-control" name="NamaPengguna"
-                                        autofocus placeholder="Masukkan nama pengguna" required>
+                                        autofocus placeholder="Masukkan Nama Pengguna" required>
                                     <span class="text-danger">
                                         @error('NamaPengguna')
                                             {{ $message }}
@@ -49,9 +49,9 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="Emel">Emel</label>
+                                    <label for="Emel">E-mel</label>
                                     <input id="Emel" type="email" class="form-control" name="Emel"
-                                        placeholder="Masukkan emel" required>
+                                        placeholder="Masukkan E-mel" required>
                                     <span class="text-danger">
                                         @error('Emel')
                                             {{ $message }}
@@ -61,8 +61,8 @@
 
                                 <div class="form-group">
                                     <label for="KataLaluan">Kata Laluan</label>
-                                    <input id="KataLaluan" type="password" class="form-control" name="password"
-                                        data-eye placeholder="Masukkan kata laluan" required>
+                                    <input id="KataLaluan" type="password" class="form-control" name="password" data-eye
+                                        placeholder="Masukkan Kata Laluan" required>
                                     <span class="text-danger">
                                         @error('KataLaluan')
                                             {{ $message }}
@@ -74,7 +74,7 @@
                                     <label for="password-confirm">Sahkan Kata Laluan</label>
                                     <input id="password-confirm" type="password" class="form-control"
                                         name="password_confirmation" required data-eye
-                                        placeholder="Masukkan kata laluan yang sah">
+                                        placeholder="Masukkan Kata Laluan yang Sah">
                                     <span class="text-danger">
                                         @error('password_confirmation')
                                             {{ $message }}
@@ -83,18 +83,23 @@
 
                                 </div>
 
+                                Anda seorang:
                                 <div class="form-check">
-									<input type="radio" class="form-check-input" id="radio1" name="role" value="pelanggan" checked>Pelanggan
-									<label class="form-check-label" for="radio1"></label>
-								  </div>
-								  <div class="form-check">
-									<input type="radio" class="form-check-input" id="radio2" name="role" value="peniaga">Peniaga
-									<label class="form-check-label" for="radio2"></label>
-								  </div><br>
+                                    <input type="radio" class="form-check-input" id="radio1" name="role"
+                                        value="pelanggan" checked>Pelanggan
+                                    <label class="form-check-label" for="radio1"></label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input" id="radio2" name="role"
+                                        value="peniaga">Peniaga
+                                    <label class="form-check-label" for="radio2"></label>
+                                </div>
+                                <br>
 
 
 
-                                <div class="form-group">
+
+                                <!--<div class="form-group">
                                     <div class="custom-checkbox custom-control">
                                         <input type="checkbox" name="agree" id="agree" class="custom-control-input">
                                         <label for="agree" class="custom-control-label">Saya setuju dengan <a
@@ -103,7 +108,7 @@
                                             Anda perlu setuju dengan Terma dan Syarat
                                         </div>
                                     </div>
-                                </div>
+                                </div>-->
 
                                 <div class="form-group m-0">
                                     <button type="submit" class="btn btn-warning btn-block">
