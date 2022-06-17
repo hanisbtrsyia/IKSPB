@@ -62,6 +62,7 @@
                                                 <input type="text" name="Lokasi" id="Lokasi" class="form-control"
                                                     value="{{ $temPenginapan->Lokasi }}" placeholder="">
                                             </div>
+                                            
                                             <div class="form-group">
                                                 <label for="penerangan">Penerangan</label>
                                                 <input type="text" name="penerangan" id="penerangan" class="form-control"

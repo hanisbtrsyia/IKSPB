@@ -6,7 +6,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 style="color: black;" class="m-0">Tambah Tempat Menarik</h1>
+                        <h1 style="color: black;" class="m-0"></h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -38,17 +38,29 @@
                                     <div class="row">
                                         <div class="col-6">
                                             <div class="form-group">
-                                                <label for="NamaTempat">Nama Tempat:</label>
+                                                <label for="NamaTempat">Nama Tempat</label>
                                                 <input type="text" name="NamaTempat" id="NamaTempat" class="form-control"
                                                     placeholder="">
                                             </div>
                                             <div class="form-group">
-                                                <label for="Lokasi">Lokasi:</label>
-                                                <input type="text" name="Lokasi" id="Lokasi" class="form-control"
-                                                    placeholder="">
-                                            </div>
+                                                <label for="Lokasi">Lokasi</label><br>
+                                                <select class="form-select" name="Lokasi" id="Lokasi"
+                                                    aria-label="Default select example">
+                                                    <option selected>Pilih Lokasi</option>
+                                                    <option value="Bera">Bera</option>
+                                                    <option value="Cameron Highlands">Cameron Highlands</option>
+                                                    <option value="Janda Baik">Janda Baik</option>
+                                                    <option value="Jerantut">Jerantut</option>
+                                                    <option value="Kuantan">Kuantan</option>
+                                                    <option value="Lipis">Lipis</option>
+                                                    <option value="Maran">Maran</option>
+                                                    <option value="Pekan">Pekan</option>
+                                                    <option value="Raub">Raub</option>
+                                                    <option value="Rompin">Rompin</option>
+                                                </select>
+                                                </div>
                                             <div class="form-group">
-                                                <label for="penerangan">Penerangan:</label>
+                                                <label for="penerangan">Penerangan</label>
                                                 <input type="text" name="penerangan" id="penerangan" class="form-control"
                                                     placeholder="">
                                             </div>
@@ -65,7 +77,7 @@
 
                                             </div>
                                             <div class="text-center">
-                                                <input type="submit" value="Submit" class="btn btn-warning">
+                                                <input type="submit" value="Hantar" class="btn btn-warning"  style="position: absolute; right: 10px; bottom: 5px;">
                                             </div>
                                         </div>
                                     </div>

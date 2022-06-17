@@ -109,7 +109,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <li class="nav-item">
                             <a href="/pelancongan/admin/ListTempatMenarik" class="nav-link active"
                                 style="background-color: #ffb923">
-                                <i class="nav-icon fa fa-shopping-cart" aria-hidden="true"></i>
+                                <i class="nav-icon fa fa-map-signs" aria-hidden="true"></i>
                                 <p>
                                     Tempat Menarik
                                     <i class="right fas fa-angle-left"></i>
