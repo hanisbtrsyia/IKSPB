@@ -18,7 +18,7 @@ class TempatMenarikController extends Controller
     {
         $temMenarik = InformasiTempatMenarik::find($id_tempatMenarik);
         return view('pelancongan.pelanggan.infoTempatMenarik',compact('temMenarik'));
-       
+   
     }
 
     public function homeTempatMenarik()

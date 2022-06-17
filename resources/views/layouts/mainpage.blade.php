@@ -39,18 +39,10 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a href="#" class="nav-link" style="color:#000;"> Call:
+                    <li class="nav-item"><a href="#" class="nav-link" style="color:#000;"> Hubungi:
                             +0000000000
                         </a></li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" style="color:#000;">
-                            Bahasa
-                            Malaysia </a>
-                        <ul class="dropdown-menu dropdown-menu-right" style="max-width: 100px;">
-                            <li><a class="dropdown-item" href="#">English</a></li>
-                            <li><a class="dropdown-item" href="#">Russian </a></li>
-                        </ul>
-                    </li>
+                    
                 </ul> <!-- list-inline //  -->
 
             </div> <!-- container //  -->
@@ -121,38 +113,44 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="main_nav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link pl-0" data-toggle="dropdown" href="#"><strong> <i
-                                        class="fa fa-bars"></i> Kategori</strong></a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Makanan Tradisional</a>
-                                <a class="dropdown-item" href="#">Makanan Sejuk Beku</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Kerepek</a>
-                                <a class="dropdown-item" href="#">Kuih Muih</a>
-                                <a class="dropdown-item" href="#">Tempoyak</a>
+                    <div class="col-12">
+                        <div class="card card-warning card-outline card-outline-tabs">
+                            <div class="card-header p-0 border-bottom-0">
+                                <ul class="nav nav-tabs" id="custom-tabs-four-tab" role="tablist">
+                                 
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="custom-tabs-four-home-tab" data-toggle="pill"
+                                            href="#custom-tabs-four-home" role="tab"
+                                            aria-controls="custom-tabs-four-home" aria-selected="false">Makanan Sejuk Beku</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="custom-tabs-four-profile-tab" data-toggle="pill"
+                                            href="#custom-tabs-four-profile" role="tab"
+                                            aria-controls="custom-tabs-four-profile" aria-selected="false">Kerepek</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="custom-tabs-four-messages-tab" data-toggle="pill"
+                                            href="#custom-tabs-four-messages" role="tab"
+                                            aria-controls="custom-tabs-four-messages" aria-selected="false">Kuih Muih</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="custom-tabs-four-settings-tab"
+                                            data-toggle="pill" href="#custom-tabs-four-settings" role="tab"
+                                            aria-controls="custom-tabs-four-settings"
+                                            aria-selected="true">Tempoyak</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " id="custom-tabs-four-settings-tab"
+                                            data-toggle="pill" href="#custom-tabs-four-settings" role="tab"
+                                            aria-controls="custom-tabs-four-settings"
+                                            aria-selected="true">Sambal</a>
+                                    </li>
+                                </ul>
                             </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Makanan Tradisional</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Makanan Sejuk Beku</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Kuih Muih</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Kerepek</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Tempoyak</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Sambal</a>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
+
+                    
                 </div> <!-- collapse .// -->
             </div> <!-- container .// -->
         </nav>
