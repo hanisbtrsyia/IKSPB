@@ -65,7 +65,7 @@
                                                     placeholder="">
                                             </div>
                                         </div>
-                                        <div class="card-body">
+                                        
                                             <div class="col-6">
                                                 <label for="exampleInputFile">Gambar</label>
                                                 <div class="text">
@@ -79,7 +79,7 @@
                                             <div class="text-center">
                                                 <input type="submit" value="Hantar" class="btn btn-warning"  style="position: absolute; right: 10px; bottom: 5px;">
                                             </div>
-                                        </div>
+                                      
                                     </div>
                                 </div>
                         </fieldset>

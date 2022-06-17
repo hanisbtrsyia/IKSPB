@@ -87,7 +87,7 @@
 
                                             </div>
                                             <div class="text-center">
-                                                <input type="submit" value="Submit" class="btn btn-warning"
+                                                <input type="submit" value="Hantar" class="btn btn-warning"
                                                     style="position: absolute; right: 10px; bottom: 5px;">
                                             </div>
                                         </div>

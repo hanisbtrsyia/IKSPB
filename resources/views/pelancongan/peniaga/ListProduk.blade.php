@@ -25,7 +25,7 @@
     <body>
         <div class="content-wrapper">
             <header class="section-header">
-                <nav class="navbar navbar-dark navbar-expand p-0" style="background-color:#FFB923;">
+               <!-- <nav class="navbar navbar-dark navbar-expand p-0" style="background-color:#FFB923;">
                     <div class="container">
                         <ul class="navbar-nav d-none d-md-flex mr-auto">
                             <li class="nav-item"><a class="nav-link" href="/welcome" style="color:#000;">Laman
@@ -52,18 +52,18 @@
                                     <li><a class="dropdown-item" href="#">Russian </a></li>
                                 </ul>
                             </li>
-                        </ul> <!-- list-inline //  -->
+                        </ul> 
 
-                    </div> <!-- container //  -->
-                </nav> <!-- header-top-light.// -->
-                <br>
-                <section class="header-main border-bottom">
+                    </div> 
+                </nav>  -->
+               
+                <!--<section class="header-main border-bottom">
                     <div class="container">
                         <div class="row align-items-center">
                             <div class="col-lg-2 col-6">
                                 <a href="#" class="brand-wrap" style="font-family:verdana">
                                     e-Pasar IKS Pahang Barat
-                                </a> <!-- brand-wrap.// -->
+                                </a> 
                             </div>
                             <div class="col-lg-6 col-12 col-sm-12">
                                 <form action="#" class="search">
@@ -75,9 +75,9 @@
                                             </button>
                                         </div>
                                     </div>
-                                </form> <!-- search-wrap .end// -->
+                                </form> 
                                 <br>
-                            </div> <!-- col.// -->
+                            </div> 
                             <div class="col-lg-4 col-sm-6 col-12">
                                 <div class="widgets-wrap float-md-right">
                                     <div class="widget-header  mr-3">
@@ -89,11 +89,11 @@
 
                                         </div>
                                     </div>
-                                </div> <!-- widgets-wrap.// -->
-                            </div> <!-- col.// -->
-                        </div> <!-- row.// -->
-                    </div> <!-- container.// -->
-                </section> <!-- header-main .// -->
+                                </div>
+                            </div> 
+                        </div> 
+                    </div>
+                </section>  -->
                 <nav class="navbar navbar-main navbar-expand-lg navbar-light border-bottom">
                     <div class="container">
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav"
