@@ -17,7 +17,7 @@
                 </div>
             </div>
             <section class="content">
-                <div class="col-md-7 offset-md-2">
+                <div class="col-12">
                     @if ($errors->any())
                         <div class="alert alert-danger">
                             <h5><i class="icon fas fa-ban"></i> Error!</h5>
@@ -35,62 +35,75 @@
                                     <h3 class="card-title">Kemaskini Produk</h3>
                                 </div>
                                 <div class="card-body">
-                                    <div class="form-group">
-                                        <input type="hidden" name="id_tempatMenarik" id="id" class="form-control">
-                                    </div>
-                                    <label for="NamaKategori">Nama Kategori:</label>
-                                    <select class="form-select" name="NamaKategori" id="NamaKategori"
-                                        value="{{ $produk->NamaKategori }}" aria-label="Default select example">
-                                       
-                                        <option value="Kerepek" <?php if($produk->NamaKategori=="Kerepek") echo "selected"?>>Kerepek</option>
-                                        <option value="Sambal" <?php if($produk->NamaKategori=="Sambal") echo "selected"?>>Sambal</option>
-                                        <option value="Makanan Sejuk Beku" <?php if($produk->NamaKategori=="Makanan Sejuk Beku") echo "selected"?>>Makanan Sejuk Beku</option>
-                                    </select>
-                                    <div class="form-group">
-                                        <label for="NamaProduk">Nama Produk:</label>
-                                        <input type="text" name="NamaProduk" id="NamaProduk" class="form-control"
-                                            placeholder="" value="{{ $produk->NamaProduk }}">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="Harga">Harga:</label>
-                                        <input type="text" name="Harga" id="Harga" class="form-control" placeholder=""
-                                            value="{{ $produk->Harga }}">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="Unit">Unit:</label>
-                                        <input type="text" name="Unit" id="Unit" class="form-control" placeholder=""
-                                            value="{{ $produk->Unit }}">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="Berat">Berat:</label>
-                                        <input type="text" name="Berat" id="Berat" class="form-control" placeholder=""
-                                            value="{{ $produk->Berat }}">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="penerangan">Penerangan:</label>
-                                        <input type="text" name="penerangan" id="penerangan" class="form-control"
-                                            placeholder="" value="{{ $produk->penerangan }}">
-                                    </div>
-                                    
-                                    <div>
-                                        <label for="exampleInputFile">Gambar</label>
-                                        <div class="text-center">
-                                            <img class="img-fluid"
-                                                src="{{ asset('assets/images/produk/' . $produk['GambarProduk'][0]) }}"
-                                                id='image_preview'>
-                                        </div><br>
-                                        <div class="custom-file text-center" type="button"><input type="file"
-                                                accept="images/*" name="GambarProduk[]" multiple id="inputImage"
-                                                onchange="loadFile(event);" />
-                                        </div>
-                                        
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <!--<div class="form-group">
+                                            <input type="hidden" name="id_tempatMenarik" id="id" class="form-control">
+                                            </div>-->
+                                            <div class="form-group">
+                                            <label for="NamaKategori">Nama Kategori</label><br>
+                                            <select class="form-select" name="NamaKategori" id="NamaKategori"
+                                                value="{{ $produk->NamaKategori }}" aria-label="Default select example">
 
-                                    </div>
-                                    <div class="text-right">
-                                        <input type="submit" value="Update" class="btn btn-warning">
+                                                <option value="Kerepek" <?php if ($produk->NamaKategori == 'Kerepek') {
+                                                    echo 'selected';
+                                                } ?>>Kerepek</option>
+                                                <option value="Sambal" <?php if ($produk->NamaKategori == 'Sambal') {
+                                                    echo 'selected';
+                                                } ?>>Sambal</option>
+                                                <option value="Makanan Sejuk Beku" <?php if ($produk->NamaKategori == 'Makanan Sejuk Beku') {
+                                                    echo 'selected';
+                                                } ?>>Makanan Sejuk Beku
+                                                </option>
+                                            </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="NamaProduk">Nama Produk</label>
+                                                <input type="text" name="NamaProduk" id="NamaProduk" class="form-control"
+                                                    placeholder="" value="{{ $produk->NamaProduk }}">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="Harga">Harga</label>
+                                                <input type="text" name="Harga" id="Harga" class="form-control"
+                                                    placeholder="" value="{{ $produk->Harga }}">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="Unit">Unit</label>
+                                                <input type="text" name="Unit" id="Unit" class="form-control"
+                                                    placeholder="" value="{{ $produk->Unit }}">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="Berat">Berat</label>
+                                                <input type="text" name="Berat" id="Berat" class="form-control"
+                                                    placeholder="" value="{{ $produk->Berat }}">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="penerangan">Penerangan</label>
+                                                <input type="text" name="penerangan" id="penerangan" class="form-control"
+                                                    placeholder="" value="{{ $produk->penerangan }}">
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div>
+                                                <label for="exampleInputFile">Gambar</label>
+                                                <div class="text-center">
+                                                    <img class="img-fluid"
+                                                        src="{{ asset('assets/images/produk/' . $produk['GambarProduk'][0]) }}"
+                                                        id='image_preview'>
+                                                </div><br>
+                                                <div class="custom-file text-center" type="button"><input type="file"
+                                                        accept="images/*" name="GambarProduk[]" multiple id="inputImage"
+                                                        onchange="loadFile(event);" />
+                                                </div>
+
+
+                                            </div>
+                                            <div class="text-right">
+                                                <input type="submit" value="Kemaskini" class="btn btn-warning" style="position: absolute; right: 10px; bottom: 5px;">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
                         </fieldset>
                     </form>
                     <form method="POST" class="form-horizontal" action="{{ route('produk.deleteProd') }}"
