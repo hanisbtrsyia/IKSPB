@@ -43,32 +43,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
-                <!-- Navbar Search -->
-                <!-- <li class="nav-item">
-        <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-          <i class="fas fa-search"></i>
-        </a>
-        <div class="navbar-search-block">
-          <form class="form-inline">
-            <div class="input-group input-group-sm">
-              <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-              <div class="input-group-append">
-                <button class="btn btn-navbar" type="submit">
-                  <i class="fas fa-search"></i>
-                </button>
-                <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </li> -->
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
                         </a>
@@ -126,35 +107,35 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         <li class="nav-item">
-                            <a href="/pelancongan/admin/ListTempatMenarik">
-                                <p> <i class="nav-icon fas fa-bell"></i>
+                            <a href="/pelancongan/admin/ListTempatMenarik" class="nav-link active"
+                                style="background-color: #ffb923">
+                                <i class="nav-icon fa fa-shopping-cart" aria-hidden="true"></i>
+                                <p>
                                     Tempat Menarik
-                                    <span class="right badge badge-danger"></span>
+                                    <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
+                            <ul class="nav nav-treeview" style="display: none;">
+                                <li class="nav-item">
+                                    <a href="/pelancongan/addTempatMenarik" class="nav-link active">
+                                        <i class="nav-icon far fa-plus-square"></i>
+                                        <p>Tambah Tempat Menarik</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/pelancongan/admin/ListTempatMenarik" class="nav-link">
+                                        <i class="nav-icon fas fa-edit"></i>
+                                        <p>Kemaskini Tempat Menarik</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
-                        <li class="nav-item">
-                            <a href="/pelancongan/addTempatMenarik">
-                                <p><i class="nav-icon fas fa-th"></i>
-                                    Tambah Tempat Menarik
-                                    <span class="right badge badge-danger"></span>
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/pelancongan/admin/ListTempatMenarik">
 
-                                <p> <i class="nav-icon fas fa-book"></i>
-                                    Kemaskini Tempat Menarik
-                                    <span class="right badge badge-danger"></span>
-                                </p>
-                            </a>
-                        </li>
                     </ul>
-                
+
                 </nav>
                 <!-- /.sidebar-menu -->
-              
+
             </div>
             <!-- /.sidebar -->
         </aside>

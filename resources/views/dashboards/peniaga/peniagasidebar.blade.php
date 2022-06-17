@@ -48,7 +48,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
                         </a>
@@ -105,16 +106,74 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-
                         <li class="nav-item">
-                            <a href="{{route('profile.edit')}}">
+                            <a href="{{ route('profile.edit') }}" class="nav-link " style="background-color: #00000">
+                                <i class="nav-icon fa fa-user-circle" aria-hidden="true"></i>
+
+                                <p>
+                                    Profil
+                                </p>
+                            </a>
+                        </li>
+                        <!--<li class="nav-item">
+                            <a href="{{ route('profile.edit') }}">
                                 <p> <i class="nav-icon fas fa-bell"></i>
                                     Profile
                                     <span class="right badge badge-danger"></span>
                                 </p>
                             </a>
+                        </li>-->
+                        <li class="nav-item">
+                            <a href="/pelancongan/peniaga/homebelibelah" class="nav-link active"
+                                style="background-color: #ffb923">
+                                <i class="nav-icon fa fa-shopping-cart" aria-hidden="true"></i>
+                                <p>
+                                    Produk
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview" style="display: none;">
+                                <li class="nav-item">
+                                    <a href="/belibelah/addproduk" class="nav-link active">
+                                        <i class="nav-icon far fa-plus-square"></i>
+                                        <p>Tambah Produk</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/pelancongan/peniaga/ListProduk" class="nav-link">
+                                        <i class="nav-icon fas fa-edit"></i>
+                                        <p>Kemaskini Produk</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
-                        <li class="nav-item menu-is-opening menu-open">
+
+                        <li class="nav-item">
+                            <a href="/pelancongan/peniaga/homeTempatPenginapan" class="nav-link active"
+                                style="background-color: #ffb923">
+                                <i class="nav-icon fa fa-bed" aria-hidden="true"></i>
+                                <p>
+                                    Tempat Penginapan
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview" style="display: none;">
+                                <li class="nav-item">
+                                    <a href="/pelancongan/addTempatPenginapan" class="nav-link active">
+                                        <i class="nav-icon far fa-plus-square"></i>
+                                        <p>Tambah Tempat Penginapan</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/pelancongan/peniaga/ListTempatPenginapan" class="nav-link">
+                                        <i class="nav-icon fas fa-edit"></i>
+                                        <p>Kemaskini Tempat Penginapan</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!--<li class="nav-item menu-is-opening menu-open">
                         <li class="nav-item">
                             <a href="/pelancongan/peniaga/homeTempatPenginapan" class="nav-link active"
                                 style="background-color: #ffb923">
@@ -174,7 +233,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <span class="right badge badge-danger"></span>
                                 </p>
                             </a>
-                        </li>
+                        </li>-->
 
                     </ul>
                 </nav>
