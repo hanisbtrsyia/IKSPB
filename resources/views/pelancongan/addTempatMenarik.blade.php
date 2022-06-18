@@ -58,28 +58,29 @@
                                                     <option value="Raub">Raub</option>
                                                     <option value="Rompin">Rompin</option>
                                                 </select>
-                                                </div>
+                                            </div>
                                             <div class="form-group">
                                                 <label for="penerangan">Penerangan</label>
                                                 <input type="text" name="penerangan" id="penerangan" class="form-control"
                                                     placeholder="">
                                             </div>
                                         </div>
-                                        
-                                            <div class="col-6">
-                                                <label for="exampleInputFile">Gambar</label>
-                                                <div class="text">
-                                                    <img class="img-fluid" src="" id='image_preview'>
-                                                </div>
-                                                <div class="custom-file text" type="button"><input type="file"
-                                                        accept="images/*" name="gambar[]" multiple id="inputImage" />
-                                                </div>
 
+                                        <div class="col-6">
+                                            <label for="exampleInputFile">Gambar</label>
+                                            <div class="text">
+                                                <img class="img-fluid" src="" id='image_preview'>
                                             </div>
-                                            <div class="text-center">
-                                                <input type="submit" value="Hantar" class="btn btn-warning"  style="position: absolute; right: 10px; bottom: 5px;">
+                                            <div class="custom-file text" type="button"><input type="file"
+                                                    accept="images/*" name="gambar[]" multiple id="inputImage" />
                                             </div>
-                                      
+
+                                        </div>
+                                        <div class="text-center">
+                                            <input type="submit" value="Hantar" class="btn btn-warning"
+                                                style="position: absolute; right: 10px; bottom: 5px;">
+                                        </div>
+
                                     </div>
                                 </div>
                         </fieldset>

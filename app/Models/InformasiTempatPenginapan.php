@@ -61,8 +61,18 @@ public function setgambarAttribute($value){
 public function getgambarAttribute($value){
     return json_decode($value);
 }
+public function setKemudahanAttribute($value)
+    {
+        $this->attributes['Kemudahan'] = json_encode($value);
+    }
+
+public function getKemudahanAttribute($value)
+    {
+        return $this->attributes['Kemudahan'] = json_decode($value);
+    }
 public function getRouteKeyName()
     {
         return 'id_tempatPenginapan';
     }
+    
 }

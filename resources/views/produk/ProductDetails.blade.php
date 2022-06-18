@@ -67,16 +67,16 @@
                                 </div>
                                 <div class="mt-4">
                                     @auth
-                                        @if (Auth::user()->role == 'pelanggan')
-                                            <p class="btn-holder"><a href="{{ route('add.to.cart', $produk->id_produk) }}"
-                                                    class="btn btn-warning btn-lg btn-flat" role="button"><i
-                                                        class="fas fa-cart-plus fa-lg mr-2"></i>Add to cart</a></p>
-                                        @elseif (Auth::user()->role != 'pelanggan')
-                                        <p class="btn-holder"><a href="{{ route('login') }}"
-                                            class="btn btn-warning btn-lg btn-flat" role="button"><i
-                                                class="fas fa-cart-plus fa-lg mr-2"></i>Add to cart</a></p>
-                                        @endif
-                                    @endauth
+                                    @if (Auth::user()->role == 'pelanggan')
+                                        <p class="btn-holder"><a href="{{ route('add.to.cart', $produk->id_produk) }}"
+                                                class="btn btn-warning btn-lg btn-flat" role="button"><i
+                                                    class="fas fa-cart-plus fa-lg mr-2"></i>Add to cart</a></p>
+                                    @elseif (Auth::user()->role != 'pelanggan')
+                                    <p class="btn-holder"><a href="{{ route('login') }}"
+                                        class="btn btn-warning btn-lg btn-flat" role="button"><i
+                                            class="fas fa-cart-plus fa-lg mr-2"></i>Add to cart</a></p>
+                                    @endif
+                                @endauth
                                 </div>
                                 <div class="mt-4 product-share">
                                     <a href="#" class="text-gray">

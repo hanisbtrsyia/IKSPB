@@ -37,10 +37,10 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-6">
-                                           <!-- <div class="form-group">
-                                                <input type="hidden" name="id_tempatPenginapan" id="id"
-                                                    class="form-control">
-                                            </div>-->
+                                            <!-- <div class="form-group">
+                                                    <input type="hidden" name="id_tempatPenginapan" id="id"
+                                                        class="form-control">
+                                                </div>-->
                                             <div class="form-group">
                                                 <label for="NamaTempat">Nama Tempat</label>
                                                 <input type="text" name="NamaTempat" id="NamaTempat" class="form-control"
@@ -52,17 +52,55 @@
                                                     placeholder="" value="{{ $temPenginapan->NamaHos }}">
                                             </div>
                                             <div class="form-group">
-                                                <label for="NoTel" >Nombor Telefon</label>
+                                                <label for="NoTel">Nombor Telefon</label>
                                                 <input type="text" class="form-control" id="inputSkills" name="NoTel"
                                                     value="{{ $temPenginapan->NoTel }}" placeholder="">
 
                                             </div>
                                             <div class="form-group">
-                                                <label for="Lokasi">Lokasi</label>
-                                                <input type="text" name="Lokasi" id="Lokasi" class="form-control"
-                                                    value="{{ $temPenginapan->Lokasi }}" placeholder="">
+                                                <label for="Lokasi">Lokasi</label><br>
+                                                <select class="form-select" name="Lokasi" id="Lokasi"
+                                                    value="{{ $temPenginapan->Lokasi }}"
+                                                    aria-label="Default select example">
+
+                                                    <option value="Bera" <?php if ($temPenginapan->Lokasi == 'Bera') {
+                                                        echo 'selected';
+                                                    } ?>>Bera</option>
+                                                    <option value="Cameron Highlands" <?php if ($temPenginapan->Lokasi == 'Cameron Highlands') {
+                                                        echo 'selected';
+                                                    } ?>>Cameron
+                                                        Highlands</option>
+                                                    <option value="Janda Baik" <?php if ($temPenginapan->Lokasi == 'Janda Baik') {
+                                                        echo 'selected';
+                                                    } ?>>Janda Baik
+                                                    </option>
+                                                    <option value="Jerantut" <?php if ($temPenginapan->Lokasi == 'Jerantut') {
+                                                        echo 'selected';
+                                                    } ?>>Jerantut</option>
+                                                    <option value="Kuantan" <?php if ($temPenginapan->Lokasi == 'Kuantan') {
+                                                        echo 'selected';
+                                                    } ?>>Kuantan</option>
+                                                    <option value="Lipis" <?php if ($temPenginapan->Lokasi == 'Lipis') {
+                                                        echo 'selected';
+                                                    } ?>>Lipis
+                                                    </option>
+                                                    <option value="Maran" <?php if ($temPenginapan->Lokasi == 'Maran') {
+                                                        echo 'selected';
+                                                    } ?>>Maran
+                                                    </option>
+                                                    <option value="Pekan" <?php if ($temPenginapan->Lokasi == 'Pekan') {
+                                                        echo 'selected';
+                                                    } ?>>Pekan</option>
+                                                    <option value="Raub" <?php if ($temPenginapan->Lokasi == 'Raub') {
+                                                        echo 'selected';
+                                                    } ?>>Raub</option>
+                                                    <option value="Rompin" <?php if ($temPenginapan->Lokasi == 'Rompin') {
+                                                        echo 'selected';
+                                                    } ?>>Rompin
+                                                    </option>
+                                                </select>
                                             </div>
-                                            
+
                                             <div class="form-group">
                                                 <label for="penerangan">Penerangan</label>
                                                 <input type="text" name="penerangan" id="penerangan" class="form-control"
@@ -78,8 +116,14 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="Kemudahan">Kemudahan</label>
-                                                <input type="text" name="Kemudahan" id="Kemudahan" class="form-control"
-                                                    value="{{ $temPenginapan->Kemudahan }}" placeholder="">
+                                                <!--<div class="form-group">
+                                                    <label for="Kemudahan">Kemudahan</label>
+                                                    <input type="text" name="Kemudahan" id="Kemudahan" class="form-control"
+                                                        value="{{ $temPenginapan->Kemudahan }}" placeholder="">
+                                                </div>-->
+                                                <input type="checkbox" name="Kemudahan[]"
+                                                    value="{{ $temPenginapan->Kemudahan }}"
+                                                    @if ($temPenginapan->Kemudahan) checked @endif>
                                             </div>
                                             <div>
                                                 <label for="exampleInputFile">Gambar</label>

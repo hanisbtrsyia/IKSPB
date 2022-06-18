@@ -64,6 +64,7 @@ class TempatPenginapanController extends Controller
         //$temMenarik->temMenarik_image = $path;
     }
         }
+       
     InformasiTempatPenginapan::create([
             'NamaTempat' => $request->NamaTempat,
             'NamaHos' => $request->NamaHos,

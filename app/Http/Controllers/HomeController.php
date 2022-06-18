@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\InformasiTempatMenarik;
+use App\Models\InformasiTempatPenginapan;
 use App\Models\Produk;
 use Illuminate\Support\Facades\Auth;
 
@@ -29,6 +30,10 @@ class HomeController extends Controller
 
         if($role=='admin')
         {
+            //$produk = Produk::all();
+            //dd($produk);
+            //return view('pelancongan.peniaga.ListProduk',compact('produk'));
+            //return view('dashboards.peniaga.homepeniaga');
             $temMenarik = InformasiTempatMenarik::all();
             //dd($produk);
             return view('pelancongan.admin.ListTempatMenarik',compact('temMenarik'));
@@ -39,6 +44,9 @@ class HomeController extends Controller
             $produk = Produk::all();
             //dd($produk);
             return view('pelancongan.peniaga.ListProduk',compact('produk'));
+            //$temPenginapan = InformasiTempatPenginapan::all();
+            //dd($produk);
+            //return view('pelancongan.peniaga.ListTempatPenginapan',compact('temPenginapan'));
             //return view('dashboards.peniaga.homepeniaga');
         }
         elseif($role=='pelanggan')

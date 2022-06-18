@@ -109,20 +109,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <li class="nav-item">
                             <a href="{{ route('profile.edit') }}" class="nav-link " style="background-color: #00000">
                                 <i class="nav-icon fa fa-user-circle" aria-hidden="true"></i>
-
                                 <p>
                                     Profil
                                 </p>
                             </a>
                         </li>
-                        <!--<li class="nav-item">
-                            <a href="{{ route('profile.edit') }}">
-                                <p> <i class="nav-icon fas fa-bell"></i>
-                                    Profile
-                                    <span class="right badge badge-danger"></span>
-                                </p>
-                            </a>
-                        </li>-->
+                        
+                        
                         <li class="nav-item">
                             <a href="/pelancongan/peniaga/homebelibelah" class="nav-link active"
                                 style="background-color: #ffb923">
@@ -147,7 +140,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </li>
                             </ul>
                         </li>
-
                         <li class="nav-item">
                             <a href="/pelancongan/peniaga/homeTempatPenginapan" class="nav-link active"
                                 style="background-color: #ffb923">
@@ -172,6 +164,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </li>
                             </ul>
                         </li>
+                        
 
                         <!--<li class="nav-item menu-is-opening menu-open">
                         <li class="nav-item">

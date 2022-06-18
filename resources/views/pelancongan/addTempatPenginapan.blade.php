@@ -53,9 +53,21 @@
 
                                             </div>
                                             <div class="form-group">
-                                                <label for="Lokasi">Lokasi</label>
-                                                <input type="text" name="Lokasi" id="Lokasi" class="form-control"
-                                                    placeholder="">
+                                                <label for="Lokasi">Lokasi</label><br>
+                                                <select class="form-select" name="Lokasi" id="Lokasi"
+                                                    aria-label="Default select example">
+                                                    <option selected>Pilih Lokasi</option>
+                                                    <option value="Bera">Bera</option>
+                                                    <option value="Cameron Highlands">Cameron Highlands</option>
+                                                    <option value="Janda Baik">Janda Baik</option>
+                                                    <option value="Jerantut">Jerantut</option>
+                                                    <option value="Kuantan">Kuantan</option>
+                                                    <option value="Lipis">Lipis</option>
+                                                    <option value="Maran">Maran</option>
+                                                    <option value="Pekan">Pekan</option>
+                                                    <option value="Raub">Raub</option>
+                                                    <option value="Rompin">Rompin</option>
+                                                </select>
                                             </div>
                                             <div class="form-group">
                                                 <label for="penerangan">Penerangan</label>
@@ -70,11 +82,25 @@
                                                 <input type="text" name="HargaPerMalam" id="HargaPerMalam"
                                                     class="form-control" placeholder="">
                                             </div>
-                                            <div class="form-group">
+                                            <!--<div class="form-group">
                                                 <label for="Kemudahan">Kemudahan</label>
                                                 <input type="text" name="Kemudahan" id="Kemudahan" class="form-control"
                                                     placeholder="">
-                                            </div>
+                                            </div>-->
+                                            
+                                            <div class="form-group">
+                                                <label><strong>Kemudahan</strong></label><br>
+                                                <label><input type="checkbox" name="Kemudahan[]" value="Wi-Fi"> Wi-Fi</label><br>
+                                                <label><input type="checkbox" name="Kemudahan[]" value="Tempat Letak Kenderaan"> Tempat Letak Kenderaan</label><br>
+                                                <label><input type="checkbox" name="Kemudahan[]" value="TV"> TV</label><br>
+                                                <label><input type="checkbox" name="Kemudahan[]" value="Pengering Rambut"> Pengering Rambut</label><br>
+                                                <label><input type="checkbox" name="Kemudahan[]" value="Seterika"> Seterika</label><br>
+                                                <label><input type="checkbox" name="Kemudahan[]" value="Dapur"> Dapur</label><br>
+                                                <label><input type="checkbox" name="Kemudahan[]" value="Peti Sejuk"> Peti Sejuk</label><br>
+                                                <label><input type="checkbox" name="Kemudahan[]" value="Balkoni"> Balkoni</label><br>
+                                                <label><input type="checkbox" name="Kemudahan[]" value="Penghawa Dingin"> Penghawa Dingin</label><br>
+                                                <label><input type="checkbox" name="Kemudahan[]" value="Pemanas Air"> Pemanas Air</label><br>
+                                            </div>  
                                             <div>
                                                 <label for="exampleInputFile">Gambar</label>
                                                 <div class="text-center">
