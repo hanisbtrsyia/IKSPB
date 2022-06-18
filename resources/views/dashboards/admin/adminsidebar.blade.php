@@ -67,7 +67,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #000">
             <!-- Brand Logo -->
-            <a href="/welcome" class="brand-link">
+            <a href="" class="brand-link">
                 <div class="text-center">
                     <img src="{{ asset('assets/images/Pahang.png') }}" alt="AdminLTE Logo"
                         class="brand-image-center img-circle elevation-3" style="width:20%;"><br>
