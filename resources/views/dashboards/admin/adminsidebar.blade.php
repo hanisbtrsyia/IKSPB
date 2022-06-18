@@ -106,12 +106,56 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-               <li class="nav-item">
-                <a href="/pelancongan/admin/ListTempatMenarik" class="nav-link">
-                    <i class="nav-icon fas fa-home"></i>
-                    <p>Home</p>
-                </a>
-            </li>
+
+                        <li class="nav-item">
+                            <a href="/pelancongan/peniaga/homebelibelah" class="nav-link active"
+                                style="background-color: #ffb923">
+                                <i class="nav-icon fa fa-shopping-cart" aria-hidden="true"></i>
+                                <p>
+                                    Produk
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview" style="display: none;">
+                                <li class="nav-item">
+                                    <a href="/belibelah/addproduk" class="nav-link active">
+                                        <i class="nav-icon far fa-plus-square"></i>
+                                        <p>Tambah Produk</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/pelancongan/peniaga/ListProduk" class="nav-link">
+                                        <i class="nav-icon fas fa-edit"></i>
+                                        <p>Kemaskini Produk</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/pelancongan/peniaga/homeTempatPenginapan" class="nav-link active"
+                                style="background-color: #ffb923">
+                                <i class="nav-icon fa fa-bed" aria-hidden="true"></i>
+                                <p>
+                                    Tempat Penginapan
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview" style="display: none;">
+                                <li class="nav-item">
+                                    <a href="/pelancongan/addTempatPenginapan" class="nav-link active">
+                                        <i class="nav-icon far fa-plus-square"></i>
+                                        <p>Tambah Tempat Penginapan</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/pelancongan/peniaga/ListTempatPenginapan" class="nav-link">
+                                        <i class="nav-icon fas fa-edit"></i>
+                                        <p>Kemaskini Tempat Penginapan</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                         <li class="nav-item">
                             <a href="/pelancongan/admin/ListTempatMenarik" class="nav-link active"
                                 style="background-color: #ffb923">

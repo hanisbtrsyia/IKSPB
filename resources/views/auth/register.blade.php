@@ -19,7 +19,7 @@
 
                     <div class="cardx fat mt-4">
                         <div class="card-body">
-                            <h4 class="card-title">Daftar Masuk</h4>
+                            <h4 class="card-title">Daftar</h4>
                             <form method="POST" class="my-login-validation" autocomplete="off"
                                 action="{{ route('register') }}">
 

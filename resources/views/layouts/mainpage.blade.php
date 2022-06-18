@@ -100,7 +100,7 @@
                                         <span class="text-muted">Anda seorang peniaga?</span>
                                         <div>
                                             <a href="{{ route('login') }}">Log Masuk</a> |
-                                            <a href="{{ route('register') }}"> Daftar Masuk</a>
+                                            <a href="{{ route('register') }}"> Daftar</a>
                                         @endauth
                                     </div>
                                 </div>

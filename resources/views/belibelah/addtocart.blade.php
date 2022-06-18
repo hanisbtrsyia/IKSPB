@@ -286,6 +286,7 @@
                                     <input type="number" value="{{ $details['Kuantiti'] }}" min="1" class="quantity-field">
                                    <!-- <input type="number" value="{{ $details['Kuantiti'] }}"
                                         class="form-control quantity update-cart" />-->
+                                        
                                 </td>
 
                                 <td data-th="Jumlah" class="text-center">RM
