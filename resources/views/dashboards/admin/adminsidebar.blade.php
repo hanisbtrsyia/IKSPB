@@ -106,6 +106,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+               <li class="nav-item">
+                <a href="/pelancongan/admin/ListTempatMenarik" class="nav-link">
+                    <i class="nav-icon fas fa-home"></i>
+                    <p>Home</p>
+                </a>
+            </li>
                         <li class="nav-item">
                             <a href="/pelancongan/admin/ListTempatMenarik" class="nav-link active"
                                 style="background-color: #ffb923">

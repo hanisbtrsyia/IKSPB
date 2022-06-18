@@ -27,18 +27,23 @@
         <nav class="navbar navbar-dark navbar-expand p-0" style="background-color:#FFB923;">
             <div class="container">
                 <ul class="navbar-nav d-none d-md-flex mr-auto">
-                    <li class="nav-item"><a class="nav-link" href="/" style="color:#000;">Laman
-                            Utama</a></li>
+                    <!--<li class="nav-item"><a class="nav-link" href="/" style="color:#000;">Laman
+                            Utama</a></li>-->
                     <li class="nav-item"><a class="nav-link" href="/homebelibelah" style="color:#000;">Beli-Belah</a>
                     </li>
-                    <li class="btn-group dropright">
-                        <a href="/homepelancongan" class="btn dropdown-toggle" data-toggle="dropdown"
-                            style="color:#000;"> Pelancongan </a>
-                        <ul class="dropdown-menu dropdown-menu-right" style="max-width: 100px;">
-                            <li><a class="dropdown-item" href="/homeTempatMenarik">Tempat Menarik</a></li>
-                            <li><a class="dropdown-item" href="/homeTempatPenginapan">Tempat Penginapan</a></li>
-                        </ul>
+                    <li class="nav-item"><a class="nav-link" href="/homeTempatMenarik" style="color:#000;">Tempat
+                            Menarik</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/homeTempatPenginapan" style="color:#000;">Tempat
+                            Penginapan</a>
                     </li>
+                    <!--<li class="btn-group dropright">
+                                <a href="/homepelancongan" class="btn dropdown-toggle" data-toggle="dropdown"
+                                    style="color:#000;"> Pelancongan </a>
+                                <ul class="dropdown-menu dropdown-menu-right" style="max-width: 100px;">
+                                    <li><a class="dropdown-item" href="/homeTempatMenarik">Tempat Menarik</a></li>
+                                    <li><a class="dropdown-item" href="/homeTempatPenginapan">Tempat Penginapan</a></li>
+                                </ul>
+                            </li>-->
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item"><a href="#" class="nav-link" style="color:#000;"> Call: +0000000000
@@ -145,7 +150,7 @@
     <!-- ========================= SECTION INTRO ========================= -->
 
     @yield('content')
-  
+
 
     <section class="footer-bottom row">
         <div class="col-md-2">

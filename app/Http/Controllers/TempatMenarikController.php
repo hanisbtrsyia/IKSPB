@@ -37,7 +37,7 @@ class TempatMenarikController extends Controller
     public function create()
     {
         $temMenarik = InformasiTempatMenarik::all();
-        return view('pelancongan.addTempatMenarik',compact('temMenarik','temMenarik'));
+        return view('pelancongan.admin.ListTempatMenarik',compact('temMenarik','temMenarik'));
 
     }
 

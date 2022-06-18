@@ -25,24 +25,27 @@
         <nav class="navbar navbar-dark navbar-expand p-0" style="background-color:#FFB923;">
             <div class="container">
                 <ul class="navbar-nav d-none d-md-flex mr-auto">
-                    <li class="nav-item"><a class="nav-link" href="/" style="color:#000;">Laman
-                            Utama</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/homebelibelah"
-                            style="color:#000;">Beli-Belah</a></li>
-                    <li class="btn-group dropright">
+                    <!--<li class="nav-item"><a class="nav-link" href="/" style="color:#000;">Laman
+                            Utama</a></li>-->
+                    <li class="nav-item"><a class="nav-link" href="/homebelibelah" style="color:#000;">Beli-Belah</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/homeTempatMenarik" style="color:#000;">Tempat Menarik</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/homeTempatPenginapan" style="color:#000;">Tempat Penginapan</a>
+                    </li>
+                    <!--<li class="btn-group dropright">
                         <a href="/homepelancongan" class="btn dropdown-toggle" data-toggle="dropdown"
                             style="color:#000;"> Pelancongan </a>
                         <ul class="dropdown-menu dropdown-menu-right" style="max-width: 100px;">
                             <li><a class="dropdown-item" href="/homeTempatMenarik">Tempat Menarik</a></li>
                             <li><a class="dropdown-item" href="/homeTempatPenginapan">Tempat Penginapan</a></li>
                         </ul>
-                    </li>
+                    </li>-->
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item"><a href="#" class="nav-link" style="color:#000;"> Hubungi:
                             +0000000000
                         </a></li>
-                    
+
                 </ul> <!-- list-inline //  -->
 
             </div> <!-- container //  -->
@@ -82,7 +85,8 @@
                                         @if (Auth::user()->role == 'pelanggan')
                                             <span class="text-muted">{{ Auth::user()->name }}</span>
                                             <div>
-                                                <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                <a href="{{ route('logout') }}"
+                                                    onclick="event.preventDefault();
                                                                      document.getElementById('logout-form').submit();">
                                                     {{ __('Logout') }}
                                                 </a>
@@ -117,11 +121,12 @@
                         <div class="card card-warning card-outline card-outline-tabs">
                             <div class="card-header p-0 border-bottom-0">
                                 <ul class="nav nav-tabs" id="custom-tabs-four-tab" role="tablist">
-                                 
+
                                     <li class="nav-item">
                                         <a class="nav-link" id="custom-tabs-four-home-tab" data-toggle="pill"
                                             href="#custom-tabs-four-home" role="tab"
-                                            aria-controls="custom-tabs-four-home" aria-selected="false">Makanan Sejuk Beku</a>
+                                            aria-controls="custom-tabs-four-home" aria-selected="false">Makanan Sejuk
+                                            Beku</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" id="custom-tabs-four-profile-tab" data-toggle="pill"
@@ -131,7 +136,8 @@
                                     <li class="nav-item">
                                         <a class="nav-link" id="custom-tabs-four-messages-tab" data-toggle="pill"
                                             href="#custom-tabs-four-messages" role="tab"
-                                            aria-controls="custom-tabs-four-messages" aria-selected="false">Kuih Muih</a>
+                                            aria-controls="custom-tabs-four-messages" aria-selected="false">Kuih
+                                            Muih</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link active" id="custom-tabs-four-settings-tab"
@@ -140,17 +146,16 @@
                                             aria-selected="true">Tempoyak</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link " id="custom-tabs-four-settings-tab"
-                                            data-toggle="pill" href="#custom-tabs-four-settings" role="tab"
-                                            aria-controls="custom-tabs-four-settings"
-                                            aria-selected="true">Sambal</a>
+                                        <a class="nav-link " id="custom-tabs-four-settings-tab" data-toggle="pill"
+                                            href="#custom-tabs-four-settings" role="tab"
+                                            aria-controls="custom-tabs-four-settings" aria-selected="true">Sambal</a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
-                    
+
                 </div> <!-- collapse .// -->
             </div> <!-- container .// -->
         </nav>
