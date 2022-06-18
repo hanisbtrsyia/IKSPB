@@ -29,8 +29,8 @@
                 <ul class="navbar-nav d-none d-md-flex mr-auto">
                     <li class="nav-item"><a class="nav-link" href="/" style="color:#000;">Laman
                             Utama</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/homebelibelah"
-                            style="color:#000;">Beli-Belah</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/homebelibelah" style="color:#000;">Beli-Belah</a>
+                    </li>
                     <li class="btn-group dropright">
                         <a href="/homepelancongan" class="btn dropdown-toggle" data-toggle="dropdown"
                             style="color:#000;"> Pelancongan </a>
@@ -44,7 +44,8 @@
                     <li class="nav-item"><a href="#" class="nav-link" style="color:#000;"> Call: +0000000000
                         </a></li>
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" style="color:#000;"> Bahasa
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" style="color:#000;">
+                            Bahasa
                             Malaysia </a>
                         <ul class="dropdown-menu dropdown-menu-right" style="max-width: 100px;">
                             <li><a class="dropdown-item" href="#">English</a></li>
@@ -144,6 +145,7 @@
     <!-- ========================= SECTION INTRO ========================= -->
 
     @yield('content')
+  
 
     <section class="footer-bottom row">
         <div class="col-md-2">

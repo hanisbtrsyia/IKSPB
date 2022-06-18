@@ -11,7 +11,7 @@
     <body>
         <div class="content-wrapper" style="min-height: 2646.44px;">
 
-            <section class="content">
+            <div class="content-header">
 
                 <div class="card card-solid">
                     <div class="card-body">
@@ -197,11 +197,12 @@
                     </section> <!-- footer-top.// -->
 
                 </div><!-- //container -->
-        </div>
+            </div>
+        
         </footer>
         <!-- ========================= FOOTER END // ========================= -->
 
-
+    </div>
     </body>
 
     </html>
