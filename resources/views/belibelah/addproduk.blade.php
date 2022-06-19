@@ -26,6 +26,9 @@
                             @endforeach
                         </div>
                     @endif
+                    
+                    
+
                     <form action="{{ route('addproduk.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <fieldset>
@@ -33,6 +36,7 @@
                                 <div class="card-header bg-warning">
                                     <h3 class="card-title">Tambah Produk</h3>
                                 </div>
+                                
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-6">

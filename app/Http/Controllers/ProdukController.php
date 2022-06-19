@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Produk;
+use App\Models\Peniaga;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -55,7 +56,7 @@ class ProdukController extends Controller
      */
     public function store(Request $request)
     {
-        //$produk = new Produk();
+       
         $files = [];
 
         if ($request->hasFile('GambarProduk')) {
@@ -67,14 +68,11 @@ class ProdukController extends Controller
             $imgname = time() . rand(1, 100) . '.' . $file->getClientOriginalExtension();
             $file->move('assets/images/produk', $imgname);
             $files[] = $imgname;
-    //if ($request->hasFile('GambarProduk')) {
-    //    $file = $request->file('GambarProduk');
-    //    $img_name = time().rand(1,100).'.'.$file->getClientOriginalExtension();
-    //    $file->move('assets/images/produk',$img_name);
-       
+   
         }
         }
-
+        //(Auth::user()->id);
+        //Auth::user()->id;
         Produk::create([
             'NamaKategori' => $request->NamaKategori,
             'NamaProduk' => $request->NamaProduk,
@@ -85,6 +83,7 @@ class ProdukController extends Controller
             'Unit' => $request->Unit,
             'Berat' => $request->Berat,
             'created_at' => now(),
+            'id_peniaga'=>Auth::user()->id, 
         ]);        
 
         //$produk->save();
@@ -117,6 +116,14 @@ class ProdukController extends Controller
     }
 
     public function PeniagaUpdate()
+    {
+        $produk = Produk::where('id_peniaga', Auth::user()->id)->get();
+        //$produk = Produk::all();
+        //dd($produk);
+        return view('pelancongan.peniaga.ListProduk',compact('produk'));
+    }
+
+    public function AdminUpdate()
     {
         $produk = Produk::all();
         //dd($produk);

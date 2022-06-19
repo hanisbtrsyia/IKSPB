@@ -33,6 +33,7 @@ Route::post('dashboards/peniaga/profile_update', [ProfileController::class, 'upd
 Route::resource('addproduk', ProdukController::class)->except(['edit']); //Produk
 Route::get('produk/ProductDetails/{id_produk}', [ProdukController::class, 'index'])->name('produk.details'); 
 Route::get('pelancongan/peniaga/ListProduk', [ProdukController::class, 'PeniagaUpdate'])->name('produk.list'); 
+Route::get('pelancongan/admin/ListProduk', [ProdukController::class, 'AdminUpdate'])->name('produk.Adminlist'); 
 Route::get('belibelah/updateproduk/{id_produk}', [ProdukController::class, 'edit'])->name('produk.edit'); 
 Route::post('belibelah/editProduk/{id_produk}',[ProdukController::class, 'update'])->name('produk.update'); 
 Route::post('deleteProd', [ProdukController::class, 'deleteProd'])->name('produk.deleteProd');

@@ -124,7 +124,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/pelancongan/peniaga/ListProduk" class="nav-link">
+                                    <a href="{{route('produk.Adminlist')}}" class="nav-link">
                                         <i class="nav-icon fas fa-edit"></i>
                                         <p>Kemaskini Produk</p>
                                     </a>
