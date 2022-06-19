@@ -41,7 +41,7 @@ class HomeController extends Controller
         }
         elseif($role=='peniaga') //seller
         {
-            $produk = Produk::all();
+            $produk = Produk::where('id_peniaga', Auth::user()->id)->get();
             //dd($produk);
             return view('pelancongan.peniaga.ListProduk',compact('produk'));
             //$temPenginapan = InformasiTempatPenginapan::all();
