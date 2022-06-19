@@ -121,9 +121,13 @@
                                                     <input type="text" name="Kemudahan" id="Kemudahan" class="form-control"
                                                         value="{{ $temPenginapan->Kemudahan }}" placeholder="">
                                                 </div>-->
-                                                <input type="checkbox" name="Kemudahan[]"
-                                                    value="{{ $temPenginapan->Kemudahan }}"
-                                                    @if ($temPenginapan->Kemudahan) checked @endif>
+                                              
+                                                @foreach($temPenginapan as $kem)
+                                                <input type="checkbox" name="Kemudahan[]" value="{{ $kem->Kemudahan }}"
+                                                <?php if( in_array($kem->Kemudahan)){ echo 'checked="checked"'; } ?>/>
+                                               {{ $kem->Kemudahan }}
+                                                @if($loop->iteration % 3 == 0 ) <br> @else @endif
+                                                @endforeach
                                             </div>
                                             <div>
                                                 <label for="exampleInputFile">Gambar</label>

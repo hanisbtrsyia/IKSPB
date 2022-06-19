@@ -83,38 +83,54 @@
                                                     class="form-control" placeholder="">
                                             </div>
                                             <!--<div class="form-group">
-                                                <label for="Kemudahan">Kemudahan</label>
-                                                <input type="text" name="Kemudahan" id="Kemudahan" class="form-control"
-                                                    placeholder="">
-                                            </div>-->
-                                            
-                                            <div class="form-group">
-                                                <label><strong>Kemudahan</strong></label><br>
-                                                <label><input type="checkbox" name="Kemudahan[]" value="Wi-Fi"> Wi-Fi</label><br>
-                                                <label><input type="checkbox" name="Kemudahan[]" value="Tempat Letak Kenderaan"> Tempat Letak Kenderaan</label><br>
-                                                <label><input type="checkbox" name="Kemudahan[]" value="TV"> TV</label><br>
-                                                <label><input type="checkbox" name="Kemudahan[]" value="Pengering Rambut"> Pengering Rambut</label><br>
-                                                <label><input type="checkbox" name="Kemudahan[]" value="Seterika"> Seterika</label><br>
-                                                <label><input type="checkbox" name="Kemudahan[]" value="Dapur"> Dapur</label><br>
-                                                <label><input type="checkbox" name="Kemudahan[]" value="Peti Sejuk"> Peti Sejuk</label><br>
-                                                <label><input type="checkbox" name="Kemudahan[]" value="Balkoni"> Balkoni</label><br>
-                                                <label><input type="checkbox" name="Kemudahan[]" value="Penghawa Dingin"> Penghawa Dingin</label><br>
-                                                <label><input type="checkbox" name="Kemudahan[]" value="Pemanas Air"> Pemanas Air</label><br>
-                                            </div>  
-                                            <div>
-                                                <label for="exampleInputFile">Gambar</label>
-                                                <div class="text-center">
-                                                    <img class="img-fluid img-circle" src="" id='image_preview'
-                                                        alt="Gambar tempat penginapan">
-                                                </div><br>
-                                                <div class="custom-file text" type="button"><input type="file"
-                                                        accept="images/*" name="gambar[]" multiple id="inputImage" />
+                                                    <label for="Kemudahan">Kemudahan</label>
+                                                    <input type="text" name="Kemudahan" id="Kemudahan" class="form-control"
+                                                        placeholder="">
+                                                </div>-->
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label><strong>Kemudahan</strong></label><br>
+                                                        <label><input type="checkbox" name="Kemudahan[]" value="Wi-Fi">
+                                                            Wi-Fi</label><br>
+                                                        <label><input type="checkbox" name="Kemudahan[]"
+                                                                value="Tempat Letak Kenderaan"> Tempat Letak
+                                                            Kenderaan</label><br>
+                                                        <label><input type="checkbox" name="Kemudahan[]" value="TV">
+                                                            TV</label><br>
+                                                        <label><input type="checkbox" name="Kemudahan[]"
+                                                                value="Pengering Rambut"> Pengering Rambut</label><br>
+                                                        <label><input type="checkbox" name="Kemudahan[]"
+                                                                value="Seterika"> Seterika</label><br>
+                                                                <div class="col">
+                                                                <label><input type="checkbox" name="Kemudahan[]" value="Dapur">
+                                                            Dapur</label><br>
+                                                        <label><input type="checkbox" name="Kemudahan[]"
+                                                                value="Peti Sejuk"> Peti Sejuk</label><br>
+                                                        <label><input type="checkbox" name="Kemudahan[]" value="Balkoni">
+                                                            Balkoni</label><br>
+                                                        <label><input type="checkbox" name="Kemudahan[]"
+                                                                value="Penghawa Dingin"> Penghawa Dingin</label><br>
+                                                        <label><input type="checkbox" name="Kemudahan[]"
+                                                                value="Pemanas Air"> Pemanas Air</label><br>
+                                                    </div>
+                                                    </div>
                                                 </div>
+                                                <div>
+                                                    <label for="exampleInputFile">Gambar</label>
+                                                    <div class="text-center">
+                                                        <img class="img-fluid img-circle" src=""
+                                                            id='image_preview' alt="Gambar tempat penginapan">
+                                                    </div><br>
+                                                    <div class="custom-file text" type="button"><input type="file"
+                                                            accept="images/*" name="gambar[]" multiple id="inputImage" />
+                                                    </div>
 
-                                            </div>
-                                            <div class="text-center">
-                                                <input type="submit" value="Hantar" class="btn btn-warning"
-                                                    style="position: absolute; right: 10px; bottom: 5px;">
+                                                </div>
+                                                <div class="text-center">
+                                                    <input type="submit" value="Hantar" class="btn btn-warning"
+                                                        style="position: absolute; right: 10px; bottom: 5px;">
+                                                </div>
                                             </div>
                                         </div>
 

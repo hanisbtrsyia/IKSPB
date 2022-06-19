@@ -39,7 +39,7 @@ class HomeController extends Controller
             return view('pelancongan.admin.ListTempatMenarik',compact('temMenarik'));
             //return view('pelancongan.admin.ListTempatMenarik');
         }
-        elseif($role=='peniaga')
+        elseif($role=='peniaga') //seller
         {
             $produk = Produk::all();
             //dd($produk);
@@ -49,13 +49,14 @@ class HomeController extends Controller
             //return view('pelancongan.peniaga.ListTempatPenginapan',compact('temPenginapan'));
             //return view('dashboards.peniaga.homepeniaga');
         }
-        elseif($role=='pelanggan')
+        elseif($role=='pelanggan') //customer
         {
             $produk = Produk::all();
             //dd($produk);
             return view('welcome',compact('produk'));
             //return view('welcome');
         }
+       
     }
     
 }
