@@ -82,7 +82,8 @@
                                             <input type="hidden" value="{{ $produk->Harga }}" name="Harga">
                                     
                                             <input type="hidden" value="1" name="Kuantiti">
-                                            <button class="px-4 py-2 text-white bg-blue-800 rounded">Add To Cart</button>
+                                            <button class="btn btn-warning btn-lg btn-flat" role="button"><i
+                                                class="fas fa-cart-plus fa-lg mr-2"></i>Add To Cart</button>
                                         </form>
                                             <!--<p class="btn-holder"><a href="{{ route('cart.list') }}"
                                                     class="btn btn-warning btn-lg btn-flat" role="button"><i
