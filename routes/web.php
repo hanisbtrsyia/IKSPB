@@ -7,6 +7,7 @@ use App\Http\Controllers\TempatPenginapanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -36,11 +37,11 @@ Route::get('belibelah/updateproduk/{id_produk}', [ProdukController::class, 'edit
 Route::post('belibelah/editProduk/{id_produk}',[ProdukController::class, 'update'])->name('produk.update'); 
 Route::post('deleteProd', [ProdukController::class, 'deleteProd'])->name('produk.deleteProd');
 
-Route::get('cart', [ProdukController::class, 'cart'])->name('cart');
-Route::get('add-to-cart/{id_produk}', [ProdukController::class, 'addToCart'])->name('add.to.cart');
-Route::patch('update-cart', [ProdukController::class, 'updateCart'])->name('update.cart');
-Route::delete('remove-from-cart', [ProdukController::class, 'removeCart'])->name('remove.from.cart');
-
+Route::get('cart', [CartController::class, 'cartList'])->name('cart.list');
+Route::post('cart', [CartController::class, 'addToCart'])->name('cart.store');
+Route::post('update-cart', [CartController::class, 'updateCart'])->name('cart.update');
+Route::post('remove', [CartController::class, 'removeCart'])->name('cart.remove');
+Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear');
 
 Route::resource('addTempatMenarik', TempatMenarikController::class)->except(['edit']);
 Route::get('pelancongan/pelanggan/infoTempatMenarik/{id_tempatMenarik}', [TempatMenarikController::class, 'index'])->name('TempatMenarik.info'); 

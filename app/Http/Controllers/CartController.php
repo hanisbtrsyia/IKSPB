@@ -7,114 +7,61 @@ use App\Models\ItemDalamTroli;
 
 class CartController extends Controller
 {
-    public function index($id_troli)
+    public function cartList()
     {
-        $cart = ItemDalamTroli::find($id_troli);
-        return view('belibelah.addtocart',compact('cart'));
-       
-    }
-    
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        $cart = ItemDalamTroli::all();
-        return view('belibelah.membuatpesanan',compact('cart','cart'));
-
+        $cartItems = \Cart::getContent();
+        // dd($cartItems);
+        return view('belibelah.addtocart', compact('cartItems'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+
+    public function addToCart(Request $request)
     {
-        //$temMenarik = new InformasiTempatMenarik();
-        //$files = [];
-
-       // if ($request->hasFile('gambar')) {
-       //     $request->validate([
-       //     'gambar' => 'required|max:5',
-
-       // ]);
-   
-    //foreach ($request->file('gambar') as $file) {
-    //    $imgname = time().rand(1,100).'.'.$file->getClientOriginalExtension();
-    //    $file->move('assets/images/attractions',$imgname);
-    //    $files[] = $imgname;
-        //$path = $request->file('gambar')->store('public/assets/images');
-        //$temMenarik->temMenarik_image = $path;
-    //}
-        //}
-        ItemDalamTroli::create([
-            'Kuantiti' => $request->Kuantiti,
-            //'gambar' => $files,
-            'Harga' => $request->Harga,
-            'JumlahBayaranItem' => $request->JumlahBayaranItem,
-            'created_at' => now(),
+        \Cart::add([
+            'id' => $request->id_produk,          
+            'name' => $request->NamaProduk,
+            'price' => $request->Harga,                    
+            'quantity' => $request->Kuantiti,
+            //'attributes' => array(
+            //    'GambarProduk' => $request->GambarProduk[0],
+            //)
         ]);
+        session()->flash('success', 'Product is Added to Cart Successfully !');
 
-        return redirect()->route('addcart.create')->with('success','Item has been added to cart');
+        return redirect()->route('cart.list');
     }
 
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function updateCart(Request $request)
     {
-       
-        
+        \Cart::update(
+            $request->id,
+            [
+                'quantity' => [
+                    'relative' => false,
+                    'value' => $request->quantity
+                ],
+            ]
+        );
+
+        session()->flash('success', 'Item Cart is Updated Successfully !');
+
+        return redirect()->route('cart.list');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function removeCart(Request $request)
     {
-       
+        \Cart::remove($request->id);
+        session()->flash('success', 'Item Cart Remove Successfully !');
+
+        return redirect()->route('cart.list');
     }
 
-    
-    public function update(Request $request, $id)
+    public function clearAllCart()
     {
-       
-       
-    }
+        \Cart::clear();
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    
+        session()->flash('success', 'All Item Cart Clear Successfully !');
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
-
-    public function deletecart(Request $request)
-    {
-       
+        return redirect()->route('cart.list');
     }
 }

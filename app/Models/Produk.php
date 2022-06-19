@@ -13,14 +13,14 @@ class Produk extends Model
     protected $table = 'produks';
 
     protected $fillable = [
-        'id_produk',
-        'NamaKategori',
-        'NamaProduk',
-        'Harga',
-        'penerangan',
-        'GambarProduk',
-        'Unit',
-        'Berat',
+        'id_produk', //id
+        'NamaKategori', //categoryname
+        'NamaProduk', //productname
+        'Harga', //price
+        'penerangan', //description
+        'GambarProduk', //picture
+        'Unit', //unit
+        'Berat', //weight
     ];
 
     protected $primaryKey = 'id_produk';

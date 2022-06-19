@@ -75,9 +75,18 @@
                                     @auth
                                         {{ Log::info(Auth::user()) }}
                                         @if (Auth::user()->role == 'pelanggan')
-                                            <p class="btn-holder"><a href="{{ route('add.to.cart', $produk->id_produk) }}"
+                                        <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
+                                            @csrf
+                                            <input type="hidden" value="{{ $produk->id_produk }}" name="id_produk">
+                                            <input type="hidden" value="{{ $produk->NamaProduk }}" name="NamaProduk">
+                                            <input type="hidden" value="{{ $produk->Harga }}" name="Harga">
+                                    
+                                            <input type="hidden" value="1" name="Kuantiti">
+                                            <button class="px-4 py-2 text-white bg-blue-800 rounded">Add To Cart</button>
+                                        </form>
+                                            <!--<p class="btn-holder"><a href="{{ route('cart.list') }}"
                                                     class="btn btn-warning btn-lg btn-flat" role="button"><i
-                                                        class="fas fa-cart-plus fa-lg mr-2"></i>Add to cart</a></p>
+                                                        class="fas fa-cart-plus fa-lg mr-2"></i>Add to cart</a></p>-->
                                         @endif
                                     @endauth
                                 </div>
