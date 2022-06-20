@@ -38,7 +38,9 @@ Route::get('belibelah/updateproduk/{id_produk}', [ProdukController::class, 'edit
 Route::post('belibelah/editProduk/{id_produk}',[ProdukController::class, 'update'])->name('produk.update'); 
 Route::post('deleteProd', [ProdukController::class, 'deleteProd'])->name('produk.deleteProd');
 
+Route::get('belibelah/thankyou/{$id_order}', [CartController::class, 'thankyouPage'])->name('cart.thankyou');
 //Route::get('cartPic', [CartController::class, 'cartPic'])->name('cart.cartpic');
+//Route::get('thank', [CartController::class, 'thankyouPage'])->name('cart.thankyou');
 Route::post('makeorder', [CartController::class, 'makeorder'])->name('cart.makeorder');
 Route::get('order-cart', [CartController::class, 'orderCart'])->name('cart.orderCart');
 Route::get('cart', [CartController::class, 'cartList'])->name('cart.list');

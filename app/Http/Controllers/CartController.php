@@ -24,7 +24,14 @@ class CartController extends Controller
         return view('belibelah.membuatpesanan', compact('orderItems'));
     }
 
-    
+    public function thankyouPage($id_order)
+    {
+
+        $thanku = Order::find($id_order);
+        //dd($produk);
+        return view('belibelah.thankyou',compact('thanku'));
+    }
+
 
     public function addToCart(Request $request)
     {
@@ -35,7 +42,7 @@ class CartController extends Controller
             'name' => $request->NamaProduk,
             'price' => $request->Harga,                    
             'quantity' => $request->Kuantiti,
-            'GambarProduk' => $request-> Produk->GambarProduk[0],
+            //'GambarProduk' => $request-> Produk->GambarProduk[0],
         ]);
         session()->flash('success', 'Product is Added to Cart Successfully !');
 
@@ -94,8 +101,8 @@ class CartController extends Controller
             
         ]);
         session()->flash('success', 'Order success! Please confirm payment.');
-
-        return redirect()->route('cart.list');
+        return redirect()->route('cart.thankyou', $request->id_order);
+        //return redirect()->route('cart.list');
     }
 
 

@@ -12,13 +12,14 @@
     <link href="../../assets/css/bootstrap.css" rel="stylesheet">
     <link href="../../assets/css/ui.css" rel="stylesheet">
     <link href="../../assets/css/responsive.css" rel="stylesheet">
-
+    <link href="../../assets/css/membuatpesanan.css" rel="stylesheet">
     <link href="../../assets/css/all.min.css" rel="stylesheet">
     <script src="../../assets/js/jquery.min.js" type="text/javascript"></script>
     <script src="../../assets/js/bootstrap.bundle.min.js" type="text/javascript"></script>
     <link type="text/css" rel="stylesheet" href="../../node_modules/lightslider/dist/css/lightslider.css" />
     <script src="../..///ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="../../node_modules/lightslider/dist/js/lightslider.js"></script>
+    
 </head>
 
 <body>
