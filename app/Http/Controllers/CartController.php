@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\ItemDalamTroli;
+use App\Models\Order;
+use App\Models\OrderItems;
+use App\Models\Produk;
+use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
@@ -14,17 +17,25 @@ class CartController extends Controller
         return view('belibelah.addtocart', compact('cartItems'));
     }
 
+    public function orderCart()
+    {
+        $orderItems = \Cart::getContent();
+        // dd($cartItems);
+        return view('belibelah.membuatpesanan', compact('orderItems'));
+    }
+
+    
 
     public function addToCart(Request $request)
     {
+        //$prodpic = Produk::find($GambarProduk);
+        
         \Cart::add([
             'id' => $request->id_produk,          
             'name' => $request->NamaProduk,
             'price' => $request->Harga,                    
             'quantity' => $request->Kuantiti,
-            //'attributes' => array(
-            //    'GambarProduk' => $request->GambarProduk[0],
-            //)
+            'GambarProduk' => $request-> Produk->GambarProduk[0],
         ]);
         session()->flash('success', 'Product is Added to Cart Successfully !');
 
@@ -64,4 +75,28 @@ class CartController extends Controller
 
         return redirect()->route('cart.list');
     }
+
+    public function makeorder(Request $request)
+    {
+     
+        Order::create([
+            'id_order' => $request->id_order,          
+            'id_pelanggan'=>Auth::user()->id,  //customer id
+            'subtotal' => $request->subtotal,                    
+            'Emel' => $request->Emel, 
+            'NamaPelanggan' => $request->NamaPelanggan,          
+            'NoTel' => $request->NoTel, 
+            'Address' => $request->Address,                    
+            'Postcode' => $request->Postcode, 
+            'City' => $request->City, //customer id
+            'District' => $request->District,                    
+            'State' => $request->State, //total
+            
+        ]);
+        session()->flash('success', 'Order success! Please confirm payment.');
+
+        return redirect()->route('cart.list');
+    }
+
+
 }

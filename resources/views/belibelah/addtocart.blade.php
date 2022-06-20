@@ -40,7 +40,7 @@
                                             <tr>
                                                 <td class="hidden pb-4 md:table-cell">
                                                     <a href="#">
-                                                        <img src="{{ $item->attributes->image }}" class="w-20 rounded"
+                                                       <img src="{{ asset('assets/images/produk/' . $item->GambarProduk) }}" class="w-20 rounded"
                                                             alt="Thumbnail">
                                                     </a>
                                                 </td>
@@ -106,7 +106,7 @@
                                     <a href="{{ url('/homebelibelah') }}" class="btn btn-warning"><i
                                             class="fa fa-angle-left"></i> Continue Shopping</a>
                                     <button class="btn btn-success"> <a
-                                            href="{{ url('/belibelah/membuatpesanan') }}">Checkout</button></a>
+                                            href="{{ route('cart.orderCart') }}">Checkout</button></a>
                                 </td>
                             </tr>
                             

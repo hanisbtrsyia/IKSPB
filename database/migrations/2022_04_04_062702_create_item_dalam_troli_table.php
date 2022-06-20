@@ -13,13 +13,16 @@ class CreateItemDalamTroliTable extends Migration
      */
     public function up()
     {
-        Schema::create('item_dalam_troli', function (Blueprint $table) {
-            $table->string('id_ItemTroli')->primary();
-            $table->string('id_produk');
-            $table->integer('Kuantiti');
-            $table->float('Harga');
-            $table->float('JumlahBayaranItem');
+        Schema::create('item_dalam_troli', function (Blueprint $table) { //order details
+            $table->string('id_ItemTroli')->primary(); //trolley_id
+            $table->string('id_order'); //order id
+            $table->foreign('id_order')->references('id_order')->on('troli_pembelian')->onDelete('cascade');
+            $table->string('id_produk'); //product id
             $table->foreign('id_produk')->references('id_produk')->on('produk')->onDelete('cascade');
+            $table->string('NamaProduk'); //prod name
+            $table->string('Harga'); //price
+            $table->string('Kuantiti'); //quantity
+            $table->string('Jumlah'); //total
             $table->timestamps();
         });
     }

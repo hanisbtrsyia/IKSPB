@@ -13,14 +13,19 @@ class CreateTroliPembelianTable extends Migration
      */
     public function up()
     {
-        Schema::create('troli_pembelian', function (Blueprint $table) {
-            $table->string('id_troli')->primary();
-            $table->string('id_ItemTroli');
-            $table->string('id_pelanggan');
-            $table->float('JumlahBayaran');
-            
-            $table->foreign('id_ItemTroli')->references('id_ItemTroli')->on('item_dalam_troli')->onDelete('cascade');
+        Schema::create('troli_pembelian', function (Blueprint $table) { //order 
+            $table->string('id_order')->primary(); //order id
+            $table->string('id_pelanggan'); //customer id
             $table->foreign('id_pelanggan')->references('id_pelanggan')->on('pelanggan')->onDelete('cascade');
+            $table->string('subtotal'); 
+            $table->string('Emel'); 
+            $table->string('NamaPelanggan'); //name
+            $table->string('NoTel'); 
+            $table->string('Address'); 
+            $table->string('Postcode'); 
+            $table->string('City'); 
+            $table->string('District'); 
+            $table->string('State'); 
             $table->timestamps();
         });
     }
