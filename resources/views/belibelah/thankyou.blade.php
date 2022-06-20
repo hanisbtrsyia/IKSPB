@@ -9,18 +9,23 @@
           <div class="card border-top border-bottom border-3" style="border-color: #f37a27 !important;">
             <div class="card-body p-5">
   
-              <p class="lead fw-bold mb-5" style="color: #f37a27;">Terima kasih kerana membeli dengan kami</p>
+              <p class="lead fw-bold mb-5" style="color: #f37a27;">Terima kasih kerana membeli dengan kami, {{ $thanku->NamaPelanggan }}</p>
          
               <div class="row">
              
                 <div class="col mb-3">
-                  <p class="small text-muted mb-1">Date</p>
-                  <p>{{ $thanku->State }}</p>
+                  <p class="small text-muted mb-1">Tarikh</p>
+                  <p>{{ $thanku->created_at }}</p>
                 </div>
                 
                 <div class="col mb-3">
                   <p class="small text-muted mb-1">Order No.</p>
-                  <p>012j1gvs356c</p>
+                  <p>{{ $thanku->id_order }}</p>
+                </div>
+
+                <div class="col mb-3">
+                  <p class="small text-muted mb-1">Alamat Penghantaran</p>
+                  <p>{{ $thanku->Address }}, {{ $thanku->Postcode }} {{ $thanku->City }}, {{ $thanku->District }} {{ $thanku->State }}</p>
                 </div>
               </div>
              
@@ -30,22 +35,15 @@
                     <p>BEATS Solo 3 Wireless Headphones</p>
                   </div>
                   <div class="col-md-4 col-lg-3">
-                    <p>£299.99</p>
+                    <p>RM {{ $thanku->subtotal }}</p>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-md-8 col-lg-9">
-                    <p class="mb-0">Shipping</p>
-                  </div>
-                  <div class="col-md-4 col-lg-3">
-                    <p class="mb-0">£33.00</p>
-                  </div>
-                </div>
+                
               </div>
   
               <div class="row my-4">
                 <div class="col-md-4 offset-md-8 col-lg-3 offset-lg-9">
-                  <p class="lead fw-bold mb-0" style="color: #f37a27;">£262.99</p>
+                  <p class="lead fw-bold mb-0" style="color: #f37a27;">RM {{ $thanku->subtotal }}</p>
                 </div>
               </div>
              
@@ -56,23 +54,7 @@
   
                   <div class="horizontal-timeline">
   
-                    <ul class="list-inline items d-flex justify-content-between">
-                      <li class="list-inline-item items-list">
-                        <p class="py-1 px-2 rounded text-white" style="background-color: #f37a27;">Ordered</p
-                          class="py-1 px-2 rounded text-white" style="background-color: #f37a27;">
-                      </li>
-                      <li class="list-inline-item items-list">
-                        <p class="py-1 px-2 rounded text-white" style="background-color: #f37a27;">Shipped</p
-                          class="py-1 px-2 rounded text-white" style="background-color: #f37a27;">
-                      </li>
-                      <li class="list-inline-item items-list">
-                        <p class="py-1 px-2 rounded text-white" style="background-color: #f37a27;">On the way
-                        </p>
-                      </li>
-                      <li class="list-inline-item items-list text-end" style="margin-right: 8px;">
-                        <p style="margin-right: -8px;">Delivered</p>
-                      </li>
-                    </ul>
+                    
   
                   </div>
   

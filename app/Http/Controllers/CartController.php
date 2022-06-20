@@ -28,7 +28,7 @@ class CartController extends Controller
     {
 
         $thanku = Order::find($id_order);
-        //dd($produk);
+        //dd($id_order);
         return view('belibelah.thankyou',compact('thanku'));
     }
 
