@@ -48,14 +48,14 @@
                             <label for="NamaPengguna" class="col-sm-3 col-form-label">Nama Pengguna</label>
                             <div class="col-sm-9">
                                 <input type="NamaPengguna" class="form-control" name="NamaPengguna" id="NamaPengguna"
-                                    value="{{ $profile->NamaPengguna }}" placeholder="">
+                                    value="{{ $profile->NamaPengguna }}" placeholder="" readonly>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="Emel" class="col-sm-3 col-form-label">E-mel</label>
                             <div class="col-sm-9">
                                 <input type="Emel" class="form-control" name="Emel" value="{{ $profile->Emel }}"
-                                    placeholder="">
+                                    placeholder="" readonly>
                             </div>
                         </div>
                         <div class="form-group row">

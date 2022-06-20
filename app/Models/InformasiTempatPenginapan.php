@@ -13,6 +13,7 @@ class InformasiTempatPenginapan extends Model
 
     protected $fillable = [
         'id_tempatPenginapan',
+        'id_peniaga',
         'NamaTempat',
         'NamaHos',
         'NoTel',

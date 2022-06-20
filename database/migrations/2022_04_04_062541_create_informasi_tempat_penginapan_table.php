@@ -15,6 +15,7 @@ class CreateInformasiTempatPenginapanTable extends Migration
     {
         Schema::create('informasi_tempat_penginapan', function (Blueprint $table) {
             $table->string('id_tempatPenginapan')->primary();
+            $table->string('id_peniaga');
             $table->string('NamaTempat');
             $table->string('NamaHos');
             $table->string('NoTel');

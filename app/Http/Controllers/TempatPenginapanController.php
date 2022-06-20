@@ -75,6 +75,7 @@ class TempatPenginapanController extends Controller
             'HargaPerMalam' => $request->HargaPerMalam,
             'Kemudahan' => $request->Kemudahan,
             'created_at' => now(),
+            'id_peniaga'=>Auth::user()->id,
         ]);
         return redirect()->route('TempatPenginapan.list')->with('success','Tempat Penginapan sudah ditambah');
     }
@@ -98,9 +99,17 @@ class TempatPenginapanController extends Controller
 
     public function PeniagaUpdate()
     {
-        $temPenginapan = InformasiTempatPenginapan::all();
+        $temPenginapan = InformasiTempatPenginapan::where('id_peniaga', Auth::user()->id)->get();
+        //$temPenginapan = InformasiTempatPenginapan::all();
         //dd($produk);
         return view('pelancongan.peniaga.ListTempatPenginapan',compact('temPenginapan'));
+    }
+
+    public function AdminUpdate()
+    {
+        $temPenginapan = InformasiTempatPenginapan::all();
+        //dd($produk);
+        return view('pelancongan.admin.ListTempatPenginapan',compact('temPenginapan'));
     }
     /**
      * Show the form for editing the specified resource.

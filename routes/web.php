@@ -54,7 +54,8 @@ Route::post('deleteTemMen', [TempatMenarikController::class, 'deleteTemMen'])->n
 
 Route::resource('addTempatPenginapan', TempatPenginapanController::class)->except(['edit']);
 Route::get('pelancongan/pelanggan/infoTempatPenginapan/{id_tempatPenginapan}', [TempatPenginapanController::class, 'index'])->name('TempatPenginapan.info'); 
-Route::get('pelancongan/peniaga/ListTempatPenginapan', [TempatPenginapanController::class, 'PeniagaUpdate'])->name('TempatPenginapan.list'); 
+Route::get('pelancongan/peniaga/ListTempatPenginapan', [TempatPenginapanController::class, 'PeniagaUpdate'])->name('TempatPenginapan.list');
+Route::get('pelancongan/admin/ListTempatPenginapan', [TempatPenginapanController::class, 'AdminUpdate'])->name('TempatPenginapan.Adminlist');  
 Route::get('pelancongan/updateTempatPenginapan/{id_tempatPenginapan}', [TempatPenginapanController::class, 'edit'])->name('TempatPenginapan.edit'); 
 Route::post('pelancongan/editTempatPenginapan/{id_tempatPenginapan}',[TempatPenginapanController::class, 'update'])->name('TempatPenginapan.update'); 
 
