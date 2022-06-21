@@ -38,9 +38,9 @@
                                     <div class="row">
                                         <div class="col-6">
                                             <!-- <div class="form-group">
-                                                    <input type="hidden" name="id_tempatPenginapan" id="id"
-                                                        class="form-control">
-                                                </div>-->
+                                                        <input type="hidden" name="id_tempatPenginapan" id="id"
+                                                            class="form-control">
+                                                    </div>-->
                                             <div class="form-group">
                                                 <label for="NamaTempat">Nama Tempat</label>
                                                 <input type="text" name="NamaTempat" id="NamaTempat" class="form-control"
@@ -117,16 +117,19 @@
                                             <div class="form-group">
                                                 <label for="Kemudahan">Kemudahan</label>
                                                 <!--<div class="form-group">
-                                                    <label for="Kemudahan">Kemudahan</label>
-                                                    <input type="text" name="Kemudahan" id="Kemudahan" class="form-control"
-                                                        value="{{ $temPenginapan->Kemudahan }}" placeholder="">
-                                                </div>-->
-                                              
-                                                @foreach($temPenginapan as $kem)
-                                                <input type="checkbox" name="Kemudahan[]" value="{{ $kem->Kemudahan }}"
-                                                <?php if( in_array($kem->Kemudahan)){ echo 'checked="checked"'; } ?>/>
-                                               {{ $kem->Kemudahan }}
-                                                @if($loop->iteration % 3 == 0 ) <br> @else @endif
+                                                        <label for="Kemudahan">Kemudahan</label>
+                                                        <input type="text" name="Kemudahan" id="Kemudahan" class="form-control"
+                                                            value="{{ $temPenginapan->Kemudahan }}" placeholder="">
+                                                    </div>-->
+                                                
+                                                @foreach ($temPenginapan as $kem =>$json)
+                                                @php
+                                                    $obj=(array)$json
+                                                @endphp
+                                                 @foreach
+                                                 <input class="form-check-input" type="checkbox" name="Kemudahan[]" value="3" @if(in_array(3, old('Kemudahan'))) checked @endif>
+                                                    {{ $obj->Kemudahan }}
+                                                    @endforeach
                                                 @endforeach
                                             </div>
                                             <div>

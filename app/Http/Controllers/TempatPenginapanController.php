@@ -94,6 +94,7 @@ class TempatPenginapanController extends Controller
     public function edit($id_tempatPenginapan)
     {
         $temPenginapan = InformasiTempatPenginapan::find($id_tempatPenginapan);
+        //dd($temPenginapan);
         return view('pelancongan.updateTempatPenginapan',compact('temPenginapan'));
     }
 
@@ -101,7 +102,7 @@ class TempatPenginapanController extends Controller
     {
         $temPenginapan = InformasiTempatPenginapan::where('id_peniaga', Auth::user()->id)->get();
         //$temPenginapan = InformasiTempatPenginapan::all();
-        //dd($produk);
+        //dd($temPenginapan);
         return view('pelancongan.peniaga.ListTempatPenginapan',compact('temPenginapan'));
     }
 
@@ -143,7 +144,7 @@ class TempatPenginapanController extends Controller
         $updateTemPen->Lokasi = $request->input('Lokasi');
         $updateTemPen->penerangan = $request->input('penerangan');
         $updateTemPen->HargaPerMalam = $request->input('HargaPerMalam');
-        $updateTemPen->Kemudahan = $request->input('Kemudahan');
+        $updateTemPen->Kemudahan = $request->Kemudahan;
        
         $updateTemPen->update();
 

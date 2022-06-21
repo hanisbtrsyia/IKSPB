@@ -89,7 +89,7 @@
                                                 </div>-->
                                             <div class="row">
                                                 <div class="col">
-                                                    <div class="form-group">
+                                                   <div class="form-group">
                                                         <label><strong>Kemudahan</strong></label><br>
                                                         <label><input type="checkbox" name="Kemudahan[]" value="Wi-Fi">
                                                             Wi-Fi</label><br>
