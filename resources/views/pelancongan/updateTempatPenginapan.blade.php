@@ -106,14 +106,15 @@
                                                 <input type="text" name="penerangan" id="penerangan" class="form-control"
                                                     value="{{ $temPenginapan->penerangan }}" placeholder="">
                                             </div>
-                                        </div>
-                                        <div class="col-6">
+                                       
                                             <div class="form-group">
                                                 <label for="HargaPerMalam">Harga per malam</label>
                                                 <input type="text" name="HargaPerMalam" id="HargaPerMalam"
                                                     class="form-control" value="{{ $temPenginapan->HargaPerMalam }}"
                                                     placeholder="">
                                             </div>
+                                        </div>
+                                        <div class="col-6">
                                             <div class="form-group">
                                                 <label for="Kemudahan">Kemudahan</label>
                                                 
@@ -132,6 +133,7 @@
                                                  <div class="checkbox">
                                                     <label><input type="checkbox" value="Seterika" name="Kemudahan[]" @if(in_array("Seterika",  $temPenginapan->Kemudahan)) checked @endif> Seterika</label>
                                                  </div>
+                                                 <div class="col-6">
                                                  <div class="checkbox">
                                                     <label><input type="checkbox" value="Dapur" name="Kemudahan[]" @if(in_array("Dapur",  $temPenginapan->Kemudahan)) checked @endif> Dapur</label>
                                                  </div>
@@ -147,6 +149,7 @@
                                                  <div class="checkbox">
                                                     <label><input type="checkbox" value="Pemanas Air" name="Kemudahan[]" @if(in_array("Pemanas Air",  $temPenginapan->Kemudahan)) checked @endif> Pemanas Air</label>
                                                  </div>
+                                                 </div>
                                             </div>
                                             <div>
                                                 <label for="exampleInputFile">Gambar</label>
@@ -161,24 +164,28 @@
                                                 </div>
                                             </div>
                                             <br><br>
-                                            <div class="text-center">
-                                                <input type="submit" value="Kemaskini"
-                                                    style="position: absolute; right: 10px; bottom: 5px;"
-                                                    class="btn btn-warning">
-
-                                            </div>
+                                            
                                         </div>
                                     </div>
                                 </div>
                         </fieldset>
+                        <div class="text-center">
+                            <input type="submit" value="Kemaskini"
+                                style="position: absolute; right: 10px; bottom: 5px;"
+                                class="btn btn-warning">
+
+                        </div>
                     </form>
+                    <div class="col-11 text-right" style="position: relative;
+                    left: -9px; top: -5px;">
                     <form method="POST" class="form-horizontal"
                         action="{{ route('TempatPenginapan.deleteTemPeng') }}" enctype="multipart/form-data">
                         @csrf
                         <input type="hidden" value="{{ $temPenginapan->id_tempatPenginapan }}"
                             name="id_tempatPenginapan">
-                        <input type="submit" value="Delete" class="btn btn-danger">
+                        <input type="submit" value="Hapus" class="btn btn-danger">
                     </form>
+                    </div>
                 </div>
             </section>
         </div>

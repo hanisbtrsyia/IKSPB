@@ -105,16 +105,17 @@
                                     </div>
                                 </div>
                         </fieldset>
-                        <div class="text-right">
+                        <div class="text-right" >
                             <input type="submit" value="Kemaskini" class="btn btn-warning" style="position: absolute; right: 10px; bottom: 5px;">
                         </div>
                     </form>
-                    <div class="col-11 text-right">
+                    <div class="col-11 text-right" style="position: relative;
+                    left: -9px; top: -5px;">
                     <form method="POST" class="form-horizontal" action="{{ route('produk.deleteProd') }}"
                         enctype="multipart/form-data">
                         @csrf
                         <input type="hidden" value="{{ $produk->id_produk }}" name="id_produk">
-                        <input type="submit" value="Delete" class="btn btn-danger">
+                        <input type="submit" value="Hapus" class="btn btn-danger">
                     </form>
                     </div>
                 </div>
