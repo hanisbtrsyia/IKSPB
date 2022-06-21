@@ -13,14 +13,14 @@ class CartController extends Controller
     public function cartList()
     {
         $cartItems = \Cart::getContent();
-        // dd($cartItems);
+        //dd($cartItems);
         return view('belibelah.addtocart', compact('cartItems'));
     }
 
     public function orderCart()
     {
         $orderItems = \Cart::getContent();
-        // dd($cartItems);
+        //dd($cartItems);
         return view('belibelah.membuatpesanan', compact('orderItems'));
     }
 
@@ -35,19 +35,29 @@ class CartController extends Controller
 
     public function addToCart(Request $request)
     {
-        //$prodpic = Produk::find($GambarProduk);
         
         \Cart::add([
             'id' => $request->id_produk,          
             'name' => $request->NamaProduk,
             'price' => $request->Harga,                    
             'quantity' => $request->Kuantiti,
-            //'GambarProduk' => $request-> Produk->GambarProduk[0],
+            'attributes' => array(
+                'image' => $request->GambarProduk,
+            )
         ]);
         session()->flash('success', 'Product is Added to Cart Successfully !');
 
         return redirect()->route('cart.list');
     }
+
+    //public function showHeaderCart()
+    //{
+    //    $cartItems = \Cart::getContent();
+    //    $ids = $cartItems->pluck('id_produk');
+    //    $images = Produk::findMany($ids);
+        
+    //    return view('.header', compact('cartItems', 'images'));
+    //}
 
     public function updateCart(Request $request)
     {

@@ -80,6 +80,7 @@
                                             <input type="hidden" value="{{ $produk->id_produk }}" name="id_produk">
                                             <input type="hidden" value="{{ $produk->NamaProduk }}" name="NamaProduk">
                                             <input type="hidden" value="{{ $produk->Harga }}" name="Harga">
+                                            <input type="hidden" value="{{ $produk->GambarProduk[0]}}" name="GambarProduk">
                                     
                                             <input type="hidden" value="1" name="Kuantiti">
                                             <button class="btn btn-warning btn-lg btn-flat" role="button"><i

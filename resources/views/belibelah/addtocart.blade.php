@@ -36,17 +36,20 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                       
                                         @foreach ($cartItems as $item)
+                                        
                                             <tr>
                                                 <td class="hidden pb-4 md:table-cell">
                                                     <a href="#">
-                                                       <img src="{{ asset('assets/images/produk/' . $item->GambarProduk) }}" class="w-20 rounded"
-                                                            alt="Thumbnail">
-                                                    </a>
+                                                       <img src="{{ asset('assets/images/produk/' . $item->attributes->image) }}" class="w-20 rounded"
+                                                            alt="Thumbnail" height="100px" >
+                                                    </a> 
                                                 </td>
                                                 <td>
                                                     <a href="#">
                                                         <p class="mb-2 md:ml-4">{{ $item->name }}</p>
+        
 
                                                     </a>
                                                 </td>
