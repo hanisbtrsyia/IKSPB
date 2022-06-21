@@ -120,6 +120,33 @@
                                                  <div class="checkbox">
                                                     <label><input type="checkbox" value="Wi-Fi" name="Kemudahan[]" @if(in_array("Wi-Fi",  $temPenginapan->Kemudahan)) checked @endif> Wi-Fi</label>
                                                  </div>
+                                                 <div class="checkbox">
+                                                    <label><input type="checkbox" value="Tempat Letak Kenderaan" name="Kemudahan[]" @if(in_array("Tempat Letak Kenderaan",  $temPenginapan->Kemudahan)) checked @endif> Tempat Letak Kenderaan</label>
+                                                 </div>
+                                                 <div class="checkbox">
+                                                    <label><input type="checkbox" value="TV" name="Kemudahan[]" @if(in_array("TV",  $temPenginapan->Kemudahan)) checked @endif> TV</label>
+                                                 </div>
+                                                 <div class="checkbox">
+                                                    <label><input type="checkbox" value="Pengering Rambut" name="Kemudahan[]" @if(in_array("Pengering Rambut",  $temPenginapan->Kemudahan)) checked @endif> Pengering Rambut</label>
+                                                 </div>
+                                                 <div class="checkbox">
+                                                    <label><input type="checkbox" value="Seterika" name="Kemudahan[]" @if(in_array("Seterika",  $temPenginapan->Kemudahan)) checked @endif> Seterika</label>
+                                                 </div>
+                                                 <div class="checkbox">
+                                                    <label><input type="checkbox" value="Dapur" name="Kemudahan[]" @if(in_array("Dapur",  $temPenginapan->Kemudahan)) checked @endif> Dapur</label>
+                                                 </div>
+                                                 <div class="checkbox">
+                                                    <label><input type="checkbox" value="Peti Sejuk" name="Kemudahan[]" @if(in_array("Peti Sejuk",  $temPenginapan->Kemudahan)) checked @endif> Peti Sejuk</label>
+                                                 </div>
+                                                 <div class="checkbox">
+                                                    <label><input type="checkbox" value="Balkoni" name="Kemudahan[]" @if(in_array("Balkoni",  $temPenginapan->Kemudahan)) checked @endif> Balkoni</label>
+                                                 </div>
+                                                 <div class="checkbox">
+                                                    <label><input type="checkbox" value="Penghawa Dingin" name="Kemudahan[]" @if(in_array("Penghawa Dingin",  $temPenginapan->Kemudahan)) checked @endif>  Penghawa Dingin</label>
+                                                 </div>
+                                                 <div class="checkbox">
+                                                    <label><input type="checkbox" value="Pemanas Air" name="Kemudahan[]" @if(in_array("Pemanas Air",  $temPenginapan->Kemudahan)) checked @endif> Pemanas Air</label>
+                                                 </div>
                                             </div>
                                             <div>
                                                 <label for="exampleInputFile">Gambar</label>

@@ -69,7 +69,7 @@ public function setKemudahanAttribute($value)
 
 public function getKemudahanAttribute($value)
     {
-        return $this->attributes['Kemudahan'] = json_decode($value);
+        return json_decode($value);
     }
 public function getRouteKeyName()
     {

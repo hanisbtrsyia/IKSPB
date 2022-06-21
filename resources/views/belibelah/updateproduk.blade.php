@@ -86,32 +86,37 @@
                                         <div class="col-6">
                                             <div>
                                                 <label for="exampleInputFile">Gambar</label>
-                                                <div class="text-center">
+                                                <div class="text-left">
                                                     <img class="img-fluid"
                                                         src="{{ asset('assets/images/produk/' . $produk['GambarProduk'][0]) }}"
                                                         id='image_preview'>
                                                 </div><br>
-                                                <div class="custom-file text-center" type="button"><input type="file"
+                                                <div class="custom-file text-left" type="button"><input type="file"
                                                         accept="images/*" name="GambarProduk[]" multiple id="inputImage"
                                                         onchange="loadFile(event);" />
                                                 </div>
 
 
                                             </div>
-                                            <div class="text-right">
+                                            <!--<div class="text-right">
                                                 <input type="submit" value="Kemaskini" class="btn btn-warning" style="position: absolute; right: 10px; bottom: 5px;">
-                                            </div>
+                                            </div>-->
                                         </div>
                                     </div>
                                 </div>
                         </fieldset>
+                        <div class="text-right">
+                            <input type="submit" value="Kemaskini" class="btn btn-warning" style="position: absolute; right: 10px; bottom: 5px;">
+                        </div>
                     </form>
+                    <div class="col-11 text-right">
                     <form method="POST" class="form-horizontal" action="{{ route('produk.deleteProd') }}"
                         enctype="multipart/form-data">
                         @csrf
                         <input type="hidden" value="{{ $produk->id_produk }}" name="id_produk">
                         <input type="submit" value="Delete" class="btn btn-danger">
                     </form>
+                    </div>
                 </div>
             </section>
         </div>
