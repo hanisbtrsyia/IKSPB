@@ -44,7 +44,7 @@
         </div> <!-- container .// -->
     </nav>
     </header> <!-- section-header.// -->
-    <div class="content-wrapper" style="min-height: 2646.44px;">
+    <div class="content-wrapper" >
         <br>
         <h3 style="text-align: center"><strong>{{ $temPenginapan->NamaTempat }}</strong></h3>
         <div class="container gallery-container center">
@@ -76,6 +76,8 @@
                 </div>
             </div>
         </div>
+    </div>
+    <br>
         <section class="section-content">
             <div class="container">
                 <br>
@@ -207,7 +209,7 @@
             </div><!-- //container -->
 
         </footer>
-    </div>
+   
     <!-- ========================= FOOTER END // ========================= -->
     </body>
 

@@ -116,21 +116,10 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="Kemudahan">Kemudahan</label>
-                                                <!--<div class="form-group">
-                                                        <label for="Kemudahan">Kemudahan</label>
-                                                        <input type="text" name="Kemudahan" id="Kemudahan" class="form-control"
-                                                            value="{{ $temPenginapan->Kemudahan }}" placeholder="">
-                                                    </div>-->
                                                 
-                                                @foreach ($temPenginapan as $kem =>$json)
-                                                @php
-                                                    $obj=(array)$json
-                                                @endphp
-                                                 @foreach
-                                                 <input class="form-check-input" type="checkbox" name="Kemudahan[]" value="3" @if(in_array(3, old('Kemudahan'))) checked @endif>
-                                                    {{ $obj->Kemudahan }}
-                                                    @endforeach
-                                                @endforeach
+                                                 <div class="checkbox">
+                                                    <label><input type="checkbox" value="Wi-Fi" name="Kemudahan[]" @if(in_array("Wi-Fi",  $temPenginapan->Kemudahan)) checked @endif> Wi-Fi</label>
+                                                 </div>
                                             </div>
                                             <div>
                                                 <label for="exampleInputFile">Gambar</label>

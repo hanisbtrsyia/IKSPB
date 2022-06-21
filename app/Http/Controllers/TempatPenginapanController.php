@@ -144,8 +144,9 @@ class TempatPenginapanController extends Controller
         $updateTemPen->Lokasi = $request->input('Lokasi');
         $updateTemPen->penerangan = $request->input('penerangan');
         $updateTemPen->HargaPerMalam = $request->input('HargaPerMalam');
-        $updateTemPen->Kemudahan = $request->Kemudahan;
-       
+        $Kemudahan= implode(",", $request->get('option'));
+        $updateTemPen->Kemudahan = $Kemudahan;
+        
         $updateTemPen->update();
 
         return redirect()->route('TempatPenginapan.list')->with('success', 'Tempat Penginapan sudah dikemaskini.');

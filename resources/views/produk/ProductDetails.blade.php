@@ -9,7 +9,7 @@
     </head>
 
     <body>
-        <div class="content-wrapper" style="min-height: 2646.44px;">
+        <div class="content-wrapper">
 
             <div class="content-header">
 
@@ -75,20 +75,22 @@
                                     @auth
                                         {{ Log::info(Auth::user()) }}
                                         @if (Auth::user()->role == 'pelanggan')
-                                        <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
-                                            @csrf
-                                            <input type="hidden" value="{{ $produk->id_produk }}" name="id_produk">
-                                            <input type="hidden" value="{{ $produk->NamaProduk }}" name="NamaProduk">
-                                            <input type="hidden" value="{{ $produk->Harga }}" name="Harga">
-                                            <input type="hidden" value="{{ $produk->GambarProduk[0]}}" name="GambarProduk">
-                                    
-                                            <input type="hidden" value="1" name="Kuantiti">
-                                            <button class="btn btn-warning btn-lg btn-flat" role="button"><i
-                                                class="fas fa-cart-plus fa-lg mr-2"></i>Add To Cart</button>
-                                        </form>
+                                            <form action="{{ route('cart.store') }}" method="POST"
+                                                enctype="multipart/form-data">
+                                                @csrf
+                                                <input type="hidden" value="{{ $produk->id_produk }}" name="id_produk">
+                                                <input type="hidden" value="{{ $produk->NamaProduk }}" name="NamaProduk">
+                                                <input type="hidden" value="{{ $produk->Harga }}" name="Harga">
+                                                <input type="hidden" value="{{ $produk->GambarProduk[0] }}"
+                                                    name="GambarProduk">
+
+                                                <input type="hidden" value="1" name="Kuantiti">
+                                                <button class="btn btn-warning btn-lg btn-flat" role="button"><i
+                                                        class="fas fa-cart-plus fa-lg mr-2"></i>Add To Cart</button>
+                                            </form>
                                             <!--<p class="btn-holder"><a href="{{ route('cart.list') }}"
-                                                    class="btn btn-warning btn-lg btn-flat" role="button"><i
-                                                        class="fas fa-cart-plus fa-lg mr-2"></i>Add to cart</a></p>-->
+                                                                    class="btn btn-warning btn-lg btn-flat" role="button"><i
+                                                                        class="fas fa-cart-plus fa-lg mr-2"></i>Add to cart</a></p>-->
                                         @endif
                                     @endauth
                                 </div>
@@ -159,8 +161,9 @@
                     </div>
 
                 </div>
+            </div>
+        </div>
 
-                </section>
 
                 <!-- ========================= SECTION  END// ======================= -->
                 <!-- ========================= FOOTER ========================= -->
@@ -219,12 +222,10 @@
                         </section> <!-- footer-top.// -->
 
                     </div><!-- //container -->
-            </div>
+                </footer>
+                <!-- ========================= FOOTER END // ========================= -->
 
-            </footer>
-            <!-- ========================= FOOTER END // ========================= -->
 
-        </div>
     </body>
 
     </html>

@@ -5,14 +5,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>IKSPB</title>
-    <link rel="icon" href="assets/images/Pahang.png" type="image/x-icon" />
+    <link rel="icon" href="../../../assets/images/Pahang.png" type="image/x-icon" />
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="../../../assets/css/bootstrap.css" rel="stylesheet">
     <link href="../../../assets/css/ui.css" rel="stylesheet">
     <link href="../../../assets/css/responsive.css" rel="stylesheet">
-
     <link href="../../../assets/css/all.min.css" rel="stylesheet">
     <script src="../../../assets/js/jquery.min.js" type="text/javascript"></script>
     <script src="../../../assets/js/bootstrap.bundle.min.js" type="text/javascript"></script>
@@ -96,7 +95,7 @@
                                             <div>
                                                 <a href="{{ route('logout') }}"
                                                     onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
+                                                                         document.getElementById('logout-form').submit();">
                                                     {{ __('Logout') }}
                                                 </a>
                                                 <form id="logout-form" action="{{ route('logout') }}" method="POST"
@@ -119,30 +118,8 @@
                 </div> <!-- row.// -->
             </div> <!-- container.// -->
         </section> <!-- header-main .// -->
-
-    </header> <!-- section-header.// -->
-    <!-- ========================= SECTION INTRO ========================= -->
-
-    @yield('content')
-
-    <section class="footer-bottom row">
-        <div class="col-md-2">
-            <p class="text-muted"> 2021 Company name </p>
-        </div>
-        <div class="col-md-8 text-md-center">
-            <span class="px-2">info@com</span>
-            <span class="px-2">+000-000-0000</span>
-            <span class="px-2">Street name 123, ABC</span>
-        </div>
-        <div class="col-md-2 text-md-right text-muted">
-            <i class="fab fa-lg fa-cc-visa"></i>
-            <i class="fab fa-lg fa-cc-paypal"></i>
-            <i class="fab fa-lg fa-cc-mastercard"></i>
-        </div>
-    </section>
-    </div><!-- //container -->
-    </footer>
-    <!-- ========================= FOOTER END // ========================= -->
+        <p></p>
+        @yield('content')
 
 </body>
 
