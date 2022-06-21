@@ -37,27 +37,32 @@
         </div> <!-- container .// -->
     </nav>
     </header> <!-- section-header.// -->
-    <div class="content-wrapper" style="min-height: 2646.44px;">
+    <div class="content-wrapper">
 
         <!-- ========================= SECTION FEATURE END// ========================= -->
         <!-- ========================= SECTION CONTENT ========================= -->
         <section class="section-content">
             <div class="container">
-                <header class="section-heading">
-                    <h3 class="section-title">{{ $temMenarik->NamaTempat }}</h3>
-                </header><!-- sect-heading -->
+  <br>
+                    <h4 class="section-title" style="text-align: center">{{ $temMenarik->NamaTempat }}</h4>
+               
 
                 <section class="section-intro padding-y-sm">
                     <div class="container ">
                         <div class="col-12">
+                            <div class="d-flex justify-content-center w-100 h-100">
                             <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                               
                                 <ol class="carousel-indicators">
                                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                                 </ol>
                                 <div class="carousel-inner">
                                     @foreach ($temMenarik['gambar'] as $key => $item)
                                         <div class="carousel-item {{ $key == 0 ? 'active' : '' }}"
-                                            style="height:50%; width:70%;">
+                                       style="width: 100%;
+                                       height: 100%;
+                                       
+                                       margin: auto;">
                                             <img src="{{ asset('assets/images/attractions/' . $item) }}"
                                                 class="d-block w-100" alt="...">
                                         </div>
@@ -71,6 +76,7 @@
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span class="sr-only">Next</span>
                                 </a>
+                                </div>
                             </div>
                         </div>
                     </div> <!-- container //  -->
@@ -94,6 +100,8 @@
                     </div>
                 </div>
                 <br>
+            </div><!-- //container -->
+        </div>
                 <!-- ========================= FOOTER ========================= -->
                 <footer class="section-footer border-top bg">
                     <div class="container">
@@ -149,8 +157,8 @@
                             </div> <!-- row.// -->
                         </section> <!-- footer-top.// -->
 
-                    </div><!-- //container -->
-            </div>
+                   
+ 
             </footer>
             <!-- ========================= FOOTER END // ========================= -->
             </body>

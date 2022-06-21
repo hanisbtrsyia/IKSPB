@@ -11,13 +11,13 @@
         <div class="content-wrapper">
             <div class="content-header">
                 <br>
-                <main class="my-8">
+                <main class="my-6">
                     <div class="container px-12 mx-auto">
                         <div class="flex justify-center my-12">
                             <div
                                 class="flex flex-col w-full p-8 text-gray-800 bg-white shadow-lg pin-r pin-y md:w-4/5 lg:w-4/5">
                                 @if ($message = Session::get('success'))
-                                    <div class="p-4 mb-3 bg-green-400 rounded">
+                                    <div class="p-4 mb-9 rounded" style="background-color: #4BB543; color:white;">
                                         <p class="text-green-800">{{ $message }}</p>
                                     </div>
                                 @endif
@@ -25,9 +25,9 @@
                                 <table class="table table-hover table-condensed" cellspacing="1">
                                     <thead>
                                         <tr class="h-12 uppercase">
-                                            <th class="hidden md:table-cell"></th>
                                             <th class="text-left">Produk</th>
-                                            <th class="pl-5 text-left lg:text-right lg:pl-0">
+                                            <th class="hidden md:table-cell"></th>
+                                            <th class="pl-5 text-left lg:text-right ">
                                                 <span class="lg:hidden" title="Quantity"> &nbsp &nbsp &nbsp &nbsp</span>
                                                 <span class="hidden lg:inline">Kuantiti</span>
                                             </th>
@@ -54,8 +54,8 @@
                                                     </a>
                                                 </td>
                                                 <td class="justify-center mt-6 md:justify-end md:flex">
-                                                    <div class="h-10 w-28">
-                                                        <div class="relative flex flex-row w-full h-8">
+                                                  
+                                                        
 
                                                             <form action="{{ route('cart.update') }}" method="POST">
                                                                 @csrf
@@ -63,12 +63,12 @@
                                                                     value="{{ $item->id }}">
                                                                 <input type="number" name="quantity"
                                                                     value="{{ $item->quantity }}"
-                                                                    class="w-6 text-center bg-gray-300" />
+                                                                    class=" text-center" />
                                                                 <button type="submit"
                                                                     class="btn btn-warning btn-flat">Kemaskini</button>
                                                             </form>
-                                                        </div>
-                                                    </div>
+                                                       
+                                                    
                                                 </td>
                                                 <td class="hidden text-right md:table-cell">
                                                     <span class="text-sm font-medium lg:text-base">
@@ -105,25 +105,26 @@
                             </div>
                             
                             <tr>
-                                <td colspan="5" class="text-right">
-                                    <a href="{{ url('/homebelibelah') }}" class="btn btn-warning"><i
-                                            class="fa fa-angle-left"></i> Continue Shopping</a>
-                                    <button class="btn btn-success"> <a
-                                            href="{{ route('cart.orderCart') }}">Checkout</button></a>
-                                </td>
-                            </tr>
-                            
-                            </tfoot>
-                            </table>
-                            <tr>
-                                <div class="col-3">
+                                <td class="text-left">
                                     <form action="{{ route('cart.clear') }}" method="POST">
                                         @csrf
                                         <button class="btn btn-danger btn-flat">Remove All Cart</button>
                                     </form>
-                                </div>
+                                </td>
+                                <td colspan="5" class="text-right">
+                                   
+                                    <a href="{{ url('/homebelibelah') }}" class="btn btn-warning"><i
+                                            class="fa fa-angle-left"></i> Continue Shopping</a>
+                                    <button class="btn btn-success"> <a
+                                            href="{{ route('cart.orderCart') }}">Checkout</button></a>
+                                            
+                                </td>
+                                
                             </tr>
-                            <br><br>
+                            
+                            </tfoot>
+                            </table>
+                           
                             <div>
                             </div>
                         </div>
