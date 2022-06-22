@@ -69,47 +69,163 @@
 
                     <div class="row">
                         <br>
+                        @if(in_array("Wi-Fi",  $temPenginapan->Kemudahan))
                         <div class="col-3">
                             <!-- small box -->
                             <div class="card text" style="max-width: 15rem; background-color:#E5E5E5;">
-                                <div class="card-header">Parking</div>
+                                <div class="card-header">Wi-Fi</div>
+                               
                                 <div class="card-body">
                                     <h5 class="card-title">Primary card title</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the
                                         bulk of the card's content.</p>
                                 </div>
                             </div>
+                            <br>
                         </div>
+                        
+                     @endif
+                    
+                     @if(in_array("Tempat Letak Kenderaan",  $temPenginapan->Kemudahan))
                         <div class="col-3">
                             <div class="card text" style="max-width: 15rem; background-color:#FFB338;">
-                                <div class="card-header">Wi-Fi</div>
+                                <div class="card-header">Tempat Letak Kenderaan</div>
+                                
                                 <div class="card-body">
                                     <h5 class="card-title">Secondary card title</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the
                                         bulk of the card's content.</p>
                                 </div>
                             </div>
+                            <br>
                         </div>
+                       
+                        @endif
+                        <br>
+                        @if(in_array("TV",  $temPenginapan->Kemudahan))
                         <div class="col-3">
                             <div class="card text" style="max-width: 15rem; background-color:#E5E5E5;">
-                                <div class="card-header">Header</div>
+                                <div class="card-header">TV</div>
+                               
                                 <div class="card-body">
                                     <h5 class="card-title">Success card title</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the
                                         bulk of the card's content.</p>
                                 </div>
                             </div>
+                            <br>
                         </div>
+                        
+                        @endif
+                        <br>
+                        @if(in_array("Pengering Rambut",  $temPenginapan->Kemudahan))
                         <div class="col-3">
                             <div class="card text" style="max-width: 15rem; background-color:#FFB338;">
-                                <div class="card-header">Header</div>
+                                <div class="card-header">Pengering Rambut</div>
+                               
                                 <div class="card-body">
                                     <h5 class="card-title">Secondary card title</h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the
                                         bulk of the card's content.</p>
                                 </div>
                             </div>
+                            <br>
                         </div>
+                      
+                        @endif
+                        <br>
+                        @if(in_array("Seterika",  $temPenginapan->Kemudahan))
+                        <div class="col-3">
+                            <div class="card text" style="max-width: 15rem; background-color:#FFB338;">
+                                <div class="card-header">Seterika</div>
+                                
+                                <div class="card-body">
+                                    <h5 class="card-title">Secondary card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the
+                                        bulk of the card's content.</p>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                    
+                        @endif
+                        <br>
+                        @if(in_array("Dapur",  $temPenginapan->Kemudahan))
+                        <div class="col-3">
+                            <div class="card text" style="max-width: 15rem; background-color:#FFB338;">
+                                <div class="card-header">Dapur</div>
+                                
+                                <div class="card-body">
+                                    <h5 class="card-title">Secondary card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the
+                                        bulk of the card's content.</p>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                      
+                        @endif
+                        <br>
+                        @if(in_array("Peti Sejuk",  $temPenginapan->Kemudahan))
+                        <div class="col-3">
+                            <div class="card text" style="max-width: 15rem; background-color:#FFB338;">
+                                <div class="card-header">Peti Sejuk</div>
+                                
+                                <div class="card-body">
+                                    <h5 class="card-title">Secondary card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the
+                                        bulk of the card's content.</p>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                    
+                        @endif
+                        <br>
+                        @if(in_array("Balkoni",  $temPenginapan->Kemudahan))
+                        <div class="col-3">
+                            <div class="card text" style="max-width: 15rem; background-color:#FFB338;">
+                                <div class="card-header">Balkoni</div>
+                                
+                                <div class="card-body">
+                                    <h5 class="card-title">Secondary card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the
+                                        bulk of the card's content.</p>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                        
+                        @endif
+                        @if(in_array("Penghawa Dingin",  $temPenginapan->Kemudahan))
+                        <div class="col-3">
+                            <div class="card text" style="max-width: 15rem; background-color:#FFB338;">
+                                <div class="card-header">Penghawa Dingin</div>
+                                
+                                <div class="card-body">
+                                    <h5 class="card-title">Secondary card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the
+                                        bulk of the card's content.</p>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                        @endif
+                        <br>
+                        @if(in_array("Pemanas Air",  $temPenginapan->Kemudahan))
+                        <div class="col-3">
+                            <div class="card text" style="max-width: 15rem; background-color:#FFB338;">
+                                <div class="card-header">Pemanas Air</div>
+                               
+                                <div class="card-body">
+                                    <h5 class="card-title">Secondary card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the
+                                        bulk of the card's content.</p>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                        @endif
                     </div>
                 </div>
                 </div>
