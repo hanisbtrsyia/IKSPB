@@ -5,6 +5,7 @@ use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\TempatMenarikController;
 use App\Http\Controllers\TempatPenginapanController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CustomerProfileController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CartController;
@@ -28,6 +29,9 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('dashboards/peniaga/profile', [ProfileController::class, 'edit'])->name('profile.edit'); 
 Route::post('dashboards/peniaga/profile_update', [ProfileController::class, 'update'])->name('profile.update'); 
+
+Route::get('dashboards/pelanggan/profile', [CustomerProfileController::class, 'edit'])->name('profil.Custedit'); 
+Route::post('dashboards/pelanggan/profile_update', [CustomerProfileController::class, 'update'])->name('profil.Custupdate'); 
 
 
 Route::resource('addproduk', ProdukController::class)->except(['edit']); //Produk
@@ -72,6 +76,9 @@ Route::get('/', function () {
 
 //Route::get('/welcome', function () {
 //    return view('/welcome');
+//});
+//Route::get('/dashboards/pelanggan/profile', function () {
+//    return view('/dashboards/pelanggan/profile');
 //});
 
 Route::get('/layouts/homepage', function () {

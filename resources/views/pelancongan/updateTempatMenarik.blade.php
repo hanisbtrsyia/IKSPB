@@ -105,23 +105,27 @@
                                                         accept="images/*" name="gambar[]" multiple id="inputImage"
                                                         onchange="loadFile(event);" />
                                                 </div>
-                                                <br><br><br>
-                                                <div class="text-center">
-                                                    <input type="submit" value="Kemaskini" class="btn btn-warning"
-                                                        style="position: absolute; right: 10px; bottom: 5px;">
-                                                </div>
+                                                
+                                               
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                         </fieldset>
+                        <div class="text-center">
+                            <input type="submit" value="Kemaskini" class="btn btn-warning"
+                                style="position: absolute; right: 10px; bottom: 5px;">
+                        </div>
                     </form>
+                    <div class="col-11 text-right" style="position: relative;
+                    left: -9px; top: -5px;">
                     <form method="POST" class="form-horizontal" action="{{ route('TempatMenarik.deleteTemMen') }}"
                         enctype="multipart/form-data">
                         @csrf
                         <input type="hidden" value="{{ $temMenarik->id_tempatMenarik }}" name="id_tempatMenarik">
                         <input type="submit" value="Hapus" class="btn btn-danger">
                     </form>
+                    </div>
                 </div>
             </section>
         </div>

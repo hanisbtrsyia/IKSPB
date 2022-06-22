@@ -90,7 +90,7 @@
                                 <span class="badge badge-pill badge-danger notify">0</span>
                             </div>
                             <div class="widget-header icontext">
-                                <a href="#" class="icon icon-sm rounded-circle border"><i
+                                <a href="{{route('profil.Custedit')}}" class="icon icon-sm rounded-circle border"><i
                                         class="fa fa-user"></i></a>
                                 <div class="text">
                                     @auth

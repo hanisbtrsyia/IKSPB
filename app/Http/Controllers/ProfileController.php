@@ -71,7 +71,7 @@ class ProfileController extends Controller
             'NoAkaun' => $request->NoAkaun,
             'created_at' => now(),
         ]);
-        return redirect()->route('profile.create')->with('success','Profil sudah dikemaskini');
+        return redirect()->route('profile.create')->with('success','Profil sudah ditambah');
     }
 
 
