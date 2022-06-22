@@ -29,8 +29,10 @@
                             Utama</a></li>-->
                     <li class="nav-item"><a class="nav-link" href="/homebelibelah" style="color:#000;">Beli-Belah</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="/homeTempatMenarik" style="color:#000;">Tempat Menarik</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/homeTempatPenginapan" style="color:#000;">Tempat Penginapan</a>
+                    <li class="nav-item"><a class="nav-link" href="/homeTempatMenarik" style="color:#000;">Tempat
+                            Menarik</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/homeTempatPenginapan" style="color:#000;">Tempat
+                            Penginapan</a>
                     </li>
                     <!--<li class="btn-group dropright">
                         <a href="/homepelancongan" class="btn dropdown-toggle" data-toggle="dropdown"
@@ -73,13 +75,33 @@
                     <div class="col-lg-4 col-sm-6 col-12">
                         <div class="widgets-wrap float-md-right">
                             <div class="widget-header  mr-3">
-                                <a href="{{ route('cart.list') }}" class="icon icon-sm rounded-circle border"><i
+                                @guest
+                                    {{ Log::info(Auth::check()) }}
+
+                                @endguest
+                                @auth
+                                    {{ Log::info(Auth::user()) }}
+                                    @if (Auth::user()->role == 'pelanggan')
+                                    <a href="{{ route('cart.list') }}" class="icon icon-sm rounded-circle border"><i
                                         class="fa fa-shopping-cart"></i></a>
                                 <span class="badge badge-pill badge-danger notify">0</span>
+                                    @endif
+                                @endauth
+                               
                             </div>
                             <div class="widget-header icontext">
-                                <a href="{{route('profil.Custedit')}}" class="icon icon-sm rounded-circle border"><i
-                                        class="fa fa-user"></i></a>
+                                @guest
+                                    {{ Log::info(Auth::check()) }}
+
+                                @endguest
+                                @auth
+                                    {{ Log::info(Auth::user()) }}
+                                    @if (Auth::user()->role == 'pelanggan')
+                                        <a href="{{ route('profil.Custedit') }}"
+                                            class="icon icon-sm rounded-circle border"><i class="fa fa-user"></i></a>
+                                    @endif
+                                @endauth
+                               
                                 <div class="text">
                                     @auth
                                         @if (Auth::user()->role == 'pelanggan')

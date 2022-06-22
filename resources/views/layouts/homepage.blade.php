@@ -85,13 +85,32 @@
                     <div class="col-lg-4 col-sm-6 col-12">
                         <div class="widgets-wrap float-md-right">
                             <div class="widget-header  mr-3">
+                                @guest
+                                {{ Log::info(Auth::check()) }}
+
+                            @endguest
+                            @auth
+                                {{ Log::info(Auth::user()) }}
+                                @if (Auth::user()->role == 'pelanggan')
                                 <a href="{{ route('cart.list') }}" class="icon icon-sm rounded-circle border"><i
-                                        class="fa fa-shopping-cart"></i></a>
-                                <span class="badge badge-pill badge-danger notify">0</span>
+                                    class="fa fa-shopping-cart"></i></a>
+                            <span class="badge badge-pill badge-danger notify">0</span>
+                                @endif
+                            @endauth
                             </div>
                             <div class="widget-header icontext">
-                                <a href="{{route('profil.Custedit')}}" class="icon icon-sm rounded-circle border"><i
-                                        class="fa fa-user"></i></a>
+                                @guest
+                                {{ Log::info(Auth::check()) }}
+
+                            @endguest
+                            @auth
+                                {{ Log::info(Auth::user()) }}
+                                @if (Auth::user()->role == 'pelanggan')
+                                    <a href="{{ route('profil.Custedit') }}"
+                                        class="icon icon-sm rounded-circle border"><i class="fa fa-user"></i></a>
+                                @endif
+                            @endauth
+                           
                                 <div class="text">
                                     @auth
                                         @if (Auth::user()->role == 'pelanggan')
