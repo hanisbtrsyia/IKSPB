@@ -19,11 +19,14 @@
                                 <a class="dropdown-item" href="/homeTempatPenginapan">Tempat Penginapan</a>
                             </div>
                         </li>
+                       
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Tempat Perkhemahan</a>
+                            <a class="nav-link" href="">Bera</a>
+                    
                         </li>
+                      
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Tempat Bersejarah</a>
+                            <a class="nav-link" href="#">Cameron Highlands</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Hijau-Hijauan</a>
