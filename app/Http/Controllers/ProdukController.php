@@ -47,9 +47,17 @@ class ProdukController extends Controller
      */
     public function create()
     {
-        $produk = Produk::all();
+        //$produk = Produk::all();
         //return view('pelancongan.peniaga.ListProduk',compact('produk','produk'));
-        return response()-> view('pelancongan.peniaga.ListProduk',compact('produk','produk'));
+        //return response()-> view('pelancongan.peniaga.ListProduk',compact('produk','produk'));
+        if (Auth::user()->role == 'peniaga'){
+            $produk = Produk::where('id_peniaga', Auth::user()->id)->get();
+        return view('pelancongan.peniaga.ListProduk',compact('produk','produk'));
+        }
+        elseif (Auth::user()->role == 'admin'){
+        $produk = Produk::all();
+        return view('pelancongan.admin.ListProduk',compact('produk','produk'));
+        }
     }
 
     /**
@@ -124,10 +132,19 @@ class ProdukController extends Controller
 
     public function PeniagaUpdate()
     {
-        $produk = Produk::where('id_peniaga', Auth::user()->id)->get();
+        //$produk = Produk::where('id_peniaga', Auth::user()->id)->get();
         //$produk = Produk::all();
         //dd($produk);
+        //return view('pelancongan.peniaga.ListProduk',compact('produk'));
+
+        if (Auth::user()->role == 'peniaga'){
+        $produk = Produk::where('id_peniaga', Auth::user()->id)->get();
         return view('pelancongan.peniaga.ListProduk',compact('produk'));
+        }
+        elseif (Auth::user()->role == 'admin'){
+        $produk = Produk::all();
+        return view('pelancongan.admin.ListProduk',compact('produk'));
+        }
     }
 
     public function AdminUpdate()

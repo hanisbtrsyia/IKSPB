@@ -35,9 +35,16 @@ class TempatPenginapanController extends Controller
      */
     public function create()
     {
-        $temPenginapan = InformasiTempatPenginapan::all();
+        //$temPenginapan = InformasiTempatPenginapan::all();
+        //return view('pelancongan.peniaga.ListTempatPenginapan',compact('temPenginapan','temPenginapan'));
+        if (Auth::user()->role == 'peniaga'){
+            $temPenginapan = InformasiTempatPenginapan::where('id_peniaga', Auth::user()->id)->get();
         return view('pelancongan.peniaga.ListTempatPenginapan',compact('temPenginapan','temPenginapan'));
-
+        }
+        elseif (Auth::user()->role == 'admin'){
+        $temPenginapan = InformasiTempatPenginapan::all();
+        return view('pelancongan.admin.ListTempatPenginapan',compact('temPenginapan','temPenginapan'));
+        }
     }
 
     /**
@@ -101,10 +108,19 @@ class TempatPenginapanController extends Controller
 
     public function PeniagaUpdate()
     {
-        $temPenginapan = InformasiTempatPenginapan::where('id_peniaga', Auth::user()->id)->get();
+        //$temPenginapan = InformasiTempatPenginapan::where('id_peniaga', Auth::user()->id)->get();
         //$temPenginapan = InformasiTempatPenginapan::all();
         //dd($temPenginapan);
+        //return view('pelancongan.peniaga.ListTempatPenginapan',compact('temPenginapan'));
+
+        if (Auth::user()->role == 'peniaga'){
+        $temPenginapan = InformasiTempatPenginapan::where('id_peniaga', Auth::user()->id)->get();
         return view('pelancongan.peniaga.ListTempatPenginapan',compact('temPenginapan'));
+        }
+        elseif (Auth::user()->role == 'admin'){
+        $temPenginapan = InformasiTempatPenginapan::all();
+        return view('pelancongan.admin.ListTempatPenginapan',compact('temPenginapan'));
+        }
     }
 
     public function AdminUpdate()
