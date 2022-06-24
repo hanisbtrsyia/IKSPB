@@ -44,9 +44,19 @@
                     </li>-->
                 </ul>
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a href="#" class="nav-link" style="color:#000;"> Hubungi:
+                    @guest
+                    {{ Log::info(Auth::check()) }}
+                @endguest
+                @auth
+                    {{ Log::info(Auth::user()) }}
+                    @if (Auth::user()->role == 'pelanggan')
+                    <li class="nav-item"><a href="{{ route('profil.Custedit') }}" class="nav-link" style="color:#000;"> Profil
+                    </a></li>   
+                    @endif
+                @endauth
+                    <!--<li class="nav-item"><a href="#" class="nav-link" style="color:#000;"> Hubungi:
                             +0000000000
-                        </a></li>
+                        </a></li>-->
 
                 </ul> <!-- list-inline //  -->
 
@@ -55,24 +65,17 @@
         <section class="header-main border-bottom">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-2 col-6">
+                    <!--<div class="col-lg-2 col-6">
                         <a href="#" class="brand-wrap" style="font-family:verdana">
                             e-Pasar IKS Pahang Barat
-                        </a> <!-- brand-wrap.// -->
-                    </div>
-                    <div class="col-lg-6 col-12 col-sm-12">
-                        <form action="#" class="search">
-                            <div class="input-group w-100">
-                                <input type="text" class="form-control" placeholder="Cari">
-                                <div class="input-group-append">
-                                    <button class="btn" style="background-color:#FFB923;" type="submit">
-                                        <i class="fa fa-search"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </form> <!-- search-wrap .end// -->
-                    </div> <!-- col.// -->
-                    <div class="col-lg-4 col-sm-6 col-12">
+                        </a> 
+                    </div>-->
+                    <div class="col-lg-6 col-12 ">
+                        <h3><a href="#" class="brand-wrap" style="font-family:verdana">
+                            e-Pasar IKS Pahang Barat
+                        </a> </h3>
+                    </div> 
+                    <div class=" col-sm-6 col-12">
                         <div class="widgets-wrap float-md-right">
                             <div class="widget-header  mr-3">
                                 @guest
@@ -99,6 +102,7 @@
                                     @if (Auth::user()->role == 'pelanggan')
                                         <a href="{{ route('profil.Custedit') }}"
                                             class="icon icon-sm rounded-circle border"><i class="fa fa-user"></i></a>
+                                            
                                     @endif
                                 @endauth
                                

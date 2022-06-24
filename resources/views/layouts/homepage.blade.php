@@ -47,7 +47,17 @@
                             </li>-->
                 </ul>
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a href="#" class="nav-link" style="color:#000;"> Call: +0000000000
+                    @guest
+                    {{ Log::info(Auth::check()) }}
+                @endguest
+                @auth
+                    {{ Log::info(Auth::user()) }}
+                    @if (Auth::user()->role == 'pelanggan')
+                    <li class="nav-item"><a href="{{ route('profil.Custedit') }}" class="nav-link" style="color:#000;"> Profil
+                    </a></li>   
+                    @endif
+                @endauth
+                   <!-- <li class="nav-item"><a href="#" class="nav-link" style="color:#000;"> Call: +0000000000
                         </a></li>
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" style="color:#000;">
@@ -57,7 +67,7 @@
                             <li><a class="dropdown-item" href="#">English</a></li>
                             <li><a class="dropdown-item" href="#">Russian </a></li>
                         </ul>
-                    </li>
+                    </li>-->
                 </ul> <!-- list-inline //  -->
 
             </div> <!-- container //  -->

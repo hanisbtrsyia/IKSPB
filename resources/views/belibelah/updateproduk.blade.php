@@ -26,6 +26,7 @@
                             @endforeach
                         </div>
                     @endif
+                   
                     <form action="{{ route('produk.update', $produk->id_produk) }}" method="post"
                         enctype="multipart/form-data">
                         @csrf
