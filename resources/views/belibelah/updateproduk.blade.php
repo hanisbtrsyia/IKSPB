@@ -61,27 +61,27 @@
                                             <div class="form-group">
                                                 <label for="NamaProduk">Nama Produk</label>
                                                 <input type="text" name="NamaProduk" id="NamaProduk" class="form-control"
-                                                    placeholder="" value="{{ $produk->NamaProduk }}">
+                                                    placeholder="" value="{{ $produk->NamaProduk }}" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="Harga">Harga</label>
                                                 <input type="text" name="Harga" id="Harga" class="form-control"
-                                                    placeholder="" value="{{ $produk->Harga }}">
+                                                    placeholder="" value="{{ $produk->Harga }}" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="Unit">Unit</label>
                                                 <input type="text" name="Unit" id="Unit" class="form-control"
-                                                    placeholder="" value="{{ $produk->Unit }}">
+                                                    placeholder="" value="{{ $produk->Unit }}" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="Berat">Berat</label>
                                                 <input type="text" name="Berat" id="Berat" class="form-control"
-                                                    placeholder="" value="{{ $produk->Berat }}">
+                                                    placeholder="" value="{{ $produk->Berat }}" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="penerangan">Penerangan</label>
                                                 <input type="text" name="penerangan" id="penerangan" class="form-control"
-                                                    placeholder="" value="{{ $produk->penerangan }}">
+                                                    placeholder="" value="{{ $produk->penerangan }}" required>
                                             </div>
                                         </div>
                                         <div class="col-6">
@@ -94,7 +94,7 @@
                                                 </div><br>
                                                 <div class="custom-file text-left" type="button"><input type="file"
                                                         accept="images/*" name="GambarProduk[]" multiple id="inputImage"
-                                                        onchange="loadFile(event);" />
+                                                        onchange="loadFile(event);"/>
                                                 </div>
 
 

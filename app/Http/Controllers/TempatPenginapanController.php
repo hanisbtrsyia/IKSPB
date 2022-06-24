@@ -6,6 +6,7 @@ use App\Models\InformasiTempatPenginapan;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\addTemPenginapanFormRequest;
 
 class TempatPenginapanController extends Controller
 {
@@ -35,7 +36,7 @@ class TempatPenginapanController extends Controller
     public function create()
     {
         $temPenginapan = InformasiTempatPenginapan::all();
-        return view('pelancongan.addTempatPenginapan',compact('temPenginapan','temPenginapan'));
+        return view('pelancongan.peniaga.ListTempatPenginapan',compact('temPenginapan','temPenginapan'));
 
     }
 
@@ -45,7 +46,7 @@ class TempatPenginapanController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(addTemPenginapanFormRequest $request)
     {
         //$temPenginapan = new InformasiTempatPenginapan();
         $files = [];
@@ -77,7 +78,7 @@ class TempatPenginapanController extends Controller
             'created_at' => now(),
             'id_peniaga'=>Auth::user()->id,
         ]);
-        return redirect()->route('TempatPenginapan.list')->with('success','Tempat Penginapan sudah ditambah');
+        return redirect()->route('addTempatPenginapan.create')->with('success','Tempat Penginapan sudah ditambah');
     }
 
     /**
@@ -118,7 +119,7 @@ class TempatPenginapanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(addTemPenginapanFormRequest $request, $id)
     {
         
         $updateTemPen = InformasiTempatPenginapan::find($id);
@@ -151,7 +152,7 @@ class TempatPenginapanController extends Controller
         $updateTemPen->update();
 
         return redirect()->route('TempatPenginapan.list')->with('success', 'Tempat Penginapan sudah dikemaskini.');
-       
+        //return redirect()->route('TempatPenginapan.addPenginapan')->with('success', 'Tempat Penginapan sudah dikemaskini.');
     }
 
     /**

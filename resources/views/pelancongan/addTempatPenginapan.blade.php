@@ -39,17 +39,17 @@
                                             <div class="form-group">
                                                 <label for="NamaTempat">Nama Tempat</label>
                                                 <input type="text" name="NamaTempat" id="NamaTempat" class="form-control"
-                                                    placeholder="">
+                                                    placeholder="" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="Lokasi">Nama Hos</label>
                                                 <input type="text" name="NamaHos" id="NamaHos" class="form-control"
-                                                    placeholder="">
+                                                    placeholder="" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="NoTel">Nombor Telefon</label>
                                                 <input type="text" class="form-control" id="inputSkills" name="NoTel"
-                                                    value="" placeholder="">
+                                                    value="" placeholder="" required>
 
                                             </div>
                                             <div class="form-group">
@@ -72,7 +72,7 @@
                                             <div class="form-group">
                                                 <label for="penerangan">Penerangan</label>
                                                 <input type="text" name="penerangan" id="penerangan" class="form-control"
-                                                    placeholder="">
+                                                    placeholder="" required>
                                             </div>
                                         </div>
 
@@ -80,7 +80,7 @@
                                             <div class="form-group">
                                                 <label for="HargaPerMalam">Harga per malam</label>
                                                 <input type="text" name="HargaPerMalam" id="HargaPerMalam"
-                                                    class="form-control" placeholder="">
+                                                    class="form-control" placeholder="" required>
                                             </div>
                                             <!--<div class="form-group">
                                                     <label for="Kemudahan">Kemudahan</label>
@@ -123,7 +123,7 @@
                                                             id='image_preview' alt="Gambar tempat penginapan">
                                                     </div><br>
                                                     <div class="custom-file text" type="button"><input type="file"
-                                                            accept="images/*" name="gambar[]" multiple id="inputImage" />
+                                                            accept="images/*" name="gambar[]" multiple id="inputImage" required/>
                                                     </div>
 
                                                 </div>

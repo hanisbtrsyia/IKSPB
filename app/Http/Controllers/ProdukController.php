@@ -7,6 +7,10 @@ use App\Models\Peniaga;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\RedirectResponse;
+use App\Http\Requests\addProductFormRequest;
+use Illuminate\Contracts\Support\ValidatedData;
+use Illuminate\Http\Response;
 
 class ProdukController extends Controller
 {
@@ -44,8 +48,8 @@ class ProdukController extends Controller
     public function create()
     {
         $produk = Produk::all();
-        return view('pelancongan.peniaga.ListProduk',compact('produk','produk'));
-
+        //return view('pelancongan.peniaga.ListProduk',compact('produk','produk'));
+        return response()-> view('pelancongan.peniaga.ListProduk',compact('produk','produk'));
     }
 
     /**
@@ -54,9 +58,9 @@ class ProdukController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(addProductFormRequest $request)
     {
-       
+       // $validateData = $request->validated();
         $files = [];
 
         if ($request->hasFile('GambarProduk')) {
@@ -88,6 +92,9 @@ class ProdukController extends Controller
 
         //$produk->save();
         return redirect()->route('addproduk.create')->with('success','Produk sudah ditambah');
+        //return response()->route('addproduk.create')
+        //->withErrors($request)
+        //->withInput();
     }
 
     /**
@@ -127,10 +134,10 @@ class ProdukController extends Controller
     {
         $produk = Produk::all();
         //dd($produk);
-        return view('pelancongan.peniaga.ListProduk',compact('produk'));
+        return view('pelancongan.admin.ListProduk',compact('produk'));
     }
 
-    public function update(Request $request, $id)
+    public function update(addProductFormRequest $request, $id)
     {
        
         $updateProduk = Produk::find($id);
@@ -191,4 +198,6 @@ class ProdukController extends Controller
     }
 
     
+
+     
 }

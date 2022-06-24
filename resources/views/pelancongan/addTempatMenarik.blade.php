@@ -40,7 +40,7 @@
                                             <div class="form-group">
                                                 <label for="NamaTempat">Nama Tempat</label>
                                                 <input type="text" name="NamaTempat" id="NamaTempat" class="form-control"
-                                                    placeholder="">
+                                                    placeholder="" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="Lokasi">Lokasi</label><br>
@@ -62,7 +62,7 @@
                                             <div class="form-group">
                                                 <label for="penerangan">Penerangan</label>
                                                 <input type="text" name="penerangan" id="penerangan" class="form-control"
-                                                    placeholder="">
+                                                    placeholder="" required>
                                             </div>
                                         </div>
 
@@ -72,7 +72,7 @@
                                                 <img class="img-fluid" src="" id='image_preview'>
                                             </div>
                                             <div class="custom-file text" type="button"><input type="file"
-                                                    accept="images/*" name="gambar[]" multiple id="inputImage" />
+                                                    accept="images/*" name="gambar[]" multiple id="inputImage" required />
                                             </div>
 
                                         </div>

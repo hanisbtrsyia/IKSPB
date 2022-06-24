@@ -26,8 +26,6 @@
                             @endforeach
                         </div>
                     @endif
-                    
-                    
 
                     <form action="{{ route('addproduk.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
@@ -53,27 +51,27 @@
                                             <div class="form-group">
                                                 <label for="NamaProduk">Nama Produk</label>
                                                 <input type="text" name="NamaProduk" id="NamaProduk" class="form-control"
-                                                    placeholder="">
+                                                    placeholder="" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="Harga">Harga</label>
                                                 <input type="text" name="Harga" id="Harga" class="form-control"
-                                                    placeholder="">
+                                                    placeholder="" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="Unit">Unit</label>
                                                 <input type="text" name="Unit" id="Unit" class="form-control"
-                                                    placeholder="">
+                                                    placeholder="" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="Berat">Berat</label>
                                                 <input type="text" name="Berat" id="Berat" class="form-control"
-                                                    placeholder="">
+                                                    placeholder="" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="penerangan">Penerangan</label>
                                                 <input type="text" name="penerangan" id="penerangan" class="form-control"
-                                                    placeholder="">
+                                                    placeholder="" required>
                                             </div>
                                         </div>
                                                 <!-- <label for="exampleInputFile">Gambar</label>
@@ -91,7 +89,7 @@
                                                     </div><br>
                                                     <div class="custom-file text-center" type="button"><input
                                                             type="file" accept="images/*" name="GambarProduk[]" multiple
-                                                            id="inputImage" />
+                                                            id="inputImage" required/>
                                                     </div>
 
                                                     <div class="text-center">

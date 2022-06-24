@@ -33,9 +33,9 @@ Route::post('dashboards/peniaga/profile_update', [ProfileController::class, 'upd
 Route::get('dashboards/pelanggan/profile', [CustomerProfileController::class, 'edit'])->name('profil.Custedit'); 
 Route::post('dashboards/pelanggan/profile_update', [CustomerProfileController::class, 'update'])->name('profil.Custupdate'); 
 
-Route::get('belibelah/addproduk', [ProdukController::class, 'create'])->name('produk.addProduct'); 
-Route::post('belibelah/addproduk', [ProdukController::class, 'store'])->name('produk.addProduct'); 
-//Route::resource('addproduk', ProdukController::class)->except(['edit']); //Produk
+//Route::get('belibelah/addproduk', [ProdukController::class, 'create'])->name('produk.addProduct'); 
+//Route::post('belibelah/addproduk', [ProdukController::class, 'store'])->name('produk.addProduct'); 
+Route::resource('addproduk', ProdukController::class)->except(['edit']); //Produk
 Route::get('produk/ProductDetails/{id_produk}', [ProdukController::class, 'index'])->name('produk.details'); 
 Route::get('pelancongan/peniaga/ListProduk', [ProdukController::class, 'PeniagaUpdate'])->name('produk.list'); 
 Route::get('pelancongan/admin/ListProduk', [ProdukController::class, 'AdminUpdate'])->name('produk.Adminlist'); 
@@ -61,9 +61,9 @@ Route::get('pelancongan/updateTempatMenarik/{id_tempatMenarik}', [TempatMenarikC
 Route::post('pelancongan/editTempatMenarik/{id_tempatMenarik}',[TempatMenarikController::class, 'update'])->name('TempatMenarik.update'); 
 Route::post('deleteTemMen', [TempatMenarikController::class, 'deleteTemMen'])->name('TempatMenarik.deleteTemMen');
 
-Route::get('pelancongan/addTempatPenginapan', [TempatPenginapanController::class, 'create'])->name('TempatPenginapan.addPenginapan'); 
-Route::post('pelancongan/addTempatPenginapan', [TempatPenginapanController::class, 'store'])->name('TempatPenginapan.addPenginapan'); 
-//Route::resource('addTempatPenginapan', TempatPenginapanController::class)->except(['edit']);
+//Route::get('pelancongan/addTempatPenginapan', [TempatPenginapanController::class, 'create'])->name('TempatPenginapan.addPenginapan'); 
+//Route::post('pelancongan/addTempatPenginapan', [TempatPenginapanController::class, 'store'])->name('TempatPenginapan.addPenginapan'); 
+Route::resource('addTempatPenginapan', TempatPenginapanController::class)->except(['edit']);
 Route::get('pelancongan/pelanggan/infoTempatPenginapan/{id_tempatPenginapan}', [TempatPenginapanController::class, 'index'])->name('TempatPenginapan.info'); 
 Route::get('pelancongan/peniaga/ListTempatPenginapan', [TempatPenginapanController::class, 'PeniagaUpdate'])->name('TempatPenginapan.list');
 Route::get('pelancongan/admin/ListTempatPenginapan', [TempatPenginapanController::class, 'AdminUpdate'])->name('TempatPenginapan.Adminlist');  

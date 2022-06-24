@@ -41,14 +41,14 @@
                                                     <label for="NamaTempat">Nama Tempat</label>
                                                     <input type="text" name="NamaTempat" id="NamaTempat"
                                                         class="form-control" placeholder=""
-                                                        value="{{ $temMenarik->NamaTempat }}">
+                                                        value="{{ $temMenarik->NamaTempat }}" required>
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label for="Lokasi">Lokasi</label><br>
                                                     <select class="form-select" name="Lokasi" id="Lokasi"
                                                         value="{{ $temMenarik->Lokasi }}"
-                                                        aria-label="Default select example">
+                                                        aria-label="Default select example" required>
 
                                                         <option value="Bera" <?php if ($temMenarik->Lokasi == 'Bera') {
                                                             echo 'selected';
@@ -91,7 +91,7 @@
                                                     <label for="penerangan">Penerangan</label>
                                                     <input type="text" name="penerangan" id="penerangan"
                                                         class="form-control" value="{{ $temMenarik->penerangan }}"
-                                                        placeholder="">
+                                                        placeholder="" required>
                                                 </div>
                                             </div>
                                             <div class="col-6">
@@ -103,7 +103,7 @@
                                                 </div><br>
                                                 <div class="custom-file text-center" type="button"><input type="file"
                                                         accept="images/*" name="gambar[]" multiple id="inputImage"
-                                                        onchange="loadFile(event);" />
+                                                        onchange="loadFile(event);"/>
                                                 </div>
                                                 
                                                

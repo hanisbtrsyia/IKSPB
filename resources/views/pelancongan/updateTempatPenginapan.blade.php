@@ -44,17 +44,17 @@
                                             <div class="form-group">
                                                 <label for="NamaTempat">Nama Tempat</label>
                                                 <input type="text" name="NamaTempat" id="NamaTempat" class="form-control"
-                                                    placeholder="" value="{{ $temPenginapan->NamaTempat }}">
+                                                    placeholder="" value="{{ $temPenginapan->NamaTempat }}" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="NamaHos">Nama Hos</label>
                                                 <input type="text" name="NamaHos" id="NamaHos" class="form-control"
-                                                    placeholder="" value="{{ $temPenginapan->NamaHos }}">
+                                                    placeholder="" value="{{ $temPenginapan->NamaHos }}" required>
                                             </div>
                                             <div class="form-group">
                                                 <label for="NoTel">Nombor Telefon</label>
                                                 <input type="text" class="form-control" id="inputSkills" name="NoTel"
-                                                    value="{{ $temPenginapan->NoTel }}" placeholder="">
+                                                    value="{{ $temPenginapan->NoTel }}" placeholder="" required>
 
                                             </div>
                                             <div class="form-group">
@@ -104,14 +104,14 @@
                                             <div class="form-group">
                                                 <label for="penerangan">Penerangan</label>
                                                 <input type="text" name="penerangan" id="penerangan" class="form-control"
-                                                    value="{{ $temPenginapan->penerangan }}" placeholder="">
+                                                    value="{{ $temPenginapan->penerangan }}" placeholder="" required> 
                                             </div>
                                        
                                             <div class="form-group">
                                                 <label for="HargaPerMalam">Harga per malam</label>
                                                 <input type="text" name="HargaPerMalam" id="HargaPerMalam"
                                                     class="form-control" value="{{ $temPenginapan->HargaPerMalam }}"
-                                                    placeholder="">
+                                                    placeholder="" required>
                                             </div>
                                         </div>
                                         <div class="col-6">
