@@ -81,12 +81,23 @@ class RegisterController extends Controller
 
     function register(Request $request){
 
+        if($request->role=="peniaga"){
          $request->validate([
             'NamaPengguna' => ['required', 'string', 'max:255'],
-            'Emel' => ['required', 'string', 'email', 'max:255'],
+            'Emel' => ['required', 'string', 'email', 'max:255', 'unique:peniaga'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             
          ]);
+        }
+
+        else if($request->role=="pelanggan"){
+            $request->validate([
+               'NamaPengguna' => ['required', 'string', 'max:255'],
+               'Emel' => ['required', 'string', 'email', 'max:255', 'unique:pelanggan'],
+               'password' => ['required', 'string', 'min:8', 'confirmed'],
+               
+            ]);
+           }
 
          $user = new User();
          $user->name = $request->NamaPengguna;
@@ -108,9 +119,10 @@ class RegisterController extends Controller
             if( $peniaga->save() ){
 
                 return redirect()->route('login')->with('success','Anda sudah berjaya didaftarkan');
-             }else{
-                 return redirect()->back()->with('error','Failed to register');
              }
+             else{
+                return redirect()->back()->with('error','Failed to register');
+            }
          }
 
          else if($request->role=="pelanggan"){
@@ -130,8 +142,10 @@ class RegisterController extends Controller
 
                 //return redirect()->back()->with('success','Anda sudah berjaya didaftarkan');
                 return redirect()->route('login')->with('success','Anda sudah berjaya didaftarkan');
-             }else{
-                 return redirect()->back()->with('error','Failed to register');
+               
+             }
+            else{
+                return redirect()->back()->with('error','Failed to register');
              }
          }
             
