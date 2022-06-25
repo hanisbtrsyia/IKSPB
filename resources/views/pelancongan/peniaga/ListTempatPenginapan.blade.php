@@ -198,7 +198,7 @@
                                             href="{{ route('TempatPenginapan.edit', $temPeng->id_tempatPenginapan) }}"
                                             class="title" style="color: black; ">{{ $temPeng->NamaTempat }}</a>
                                         
-                                        <div class="price mt-1">RM 179.00</div> <!-- price-wrap.// -->
+                                        <div class="price mt-1">RM {{ $temPeng->HargaPerMalam }}</div> <!-- price-wrap.// -->
 
 
                                     </figcaption>

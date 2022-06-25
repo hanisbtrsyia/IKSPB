@@ -60,7 +60,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="KataLaluan">Kata Laluan</label>
+                                    <label for="KataLaluan">Kata Laluan (Sekurang-kurangnya 6 aksara)</label>
                                     <input id="KataLaluan" type="password" class="form-control" name="password" data-eye
                                         placeholder="Masukkan Kata Laluan" required>
                                     <span class="text-danger">

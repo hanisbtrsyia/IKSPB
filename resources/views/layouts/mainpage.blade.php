@@ -71,9 +71,9 @@
                         </a> 
                     </div>-->
                     <div class="col-lg-6 col-12 ">
-                        <h3><a href="#" class="brand-wrap" style="font-family:verdana">
+                        <!--<h3><a href="#" class="brand-wrap" style="font-family:verdana">
                             e-Pasar IKS Pahang Barat
-                        </a> </h3>
+                        </a> </h3>-->
                     </div> 
                     <div class=" col-sm-6 col-12">
                         <div class="widgets-wrap float-md-right">
@@ -136,13 +136,13 @@
                 </div> <!-- row.// -->
             </div> <!-- container.// -->
         </section> <!-- header-main .// -->
-        <nav class="navbar navbar-main navbar-expand-lg navbar-light border-bottom">
+        <!-- <nav class="navbar navbar-main navbar-expand-lg navbar-light border-bottom">
             <div class="container">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav"
                     aria-controls="main_nav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="main_nav">
+               <div class="collapse navbar-collapse" id="main_nav">
                     <div class="col-12">
                         <div class="card card-warning card-outline card-outline-tabs">
                             <div class="card-header p-0 border-bottom-0">
@@ -182,9 +182,9 @@
                     </div>
 
 
-                </div> <!-- collapse .// -->
-            </div> <!-- container .// -->
-        </nav>
+                </div> 
+            </div> 
+        </nav>-->
     </header> <!-- section-header.// -->
     @yield('content')
 

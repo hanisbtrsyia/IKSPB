@@ -68,6 +68,7 @@
                                     @enderror
                                 </span>
                             </div>
+                            
                             <!-- Password input -->
                             <div class="form-outline mb-4">
                                 <label for="password">Kata Laluan

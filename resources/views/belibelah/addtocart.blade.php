@@ -115,8 +115,7 @@
                                    
                                     <a href="{{ url('/homebelibelah') }}" class="btn btn-warning"><i
                                             class="fa fa-angle-left"></i> Continue Shopping</a>
-                                    <button class="btn btn-success"> <a
-                                            href="{{ route('cart.orderCart') }}">Checkout</button></a>
+                                    <a href="{{ route('cart.orderCart') }}" class="btn btn-success">Checkout</a>
                                             
                                 </td>
                                 

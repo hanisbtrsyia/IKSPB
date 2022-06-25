@@ -59,7 +59,7 @@
                                         <small>Kategori: {{ $produk->NamaKategori }}</small>
                                     </h4>
                                     <h4 class="mt-0">
-                                        <small>Berat: {{ $produk->Berat }}</small>
+                                        <small>Berat: {{ $produk->Berat }} g</small>
                                     </h4>
                                     <h4 class="mt-0">
                                         <small>Unit: {{ $produk->Unit }}</small>

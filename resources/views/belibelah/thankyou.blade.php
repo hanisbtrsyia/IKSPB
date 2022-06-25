@@ -25,9 +25,7 @@
                                             <h1 class="display-3">Terima Kasih!</h1>
                                             <p class="lead"><strong></strong> Terima kasih atas pesanan anda, {{ $thanku->NamaPelanggan }}. Kami berharap dapat menjalankan perniagaan dengan anda lagi.</p>
                                             <hr>
-                                            <p>
-                                                Menghadapi masalah? <a href="">Hubungi Kami</a>
-                                            </p>
+                                            
                                             <p class="lead">
                                                 <a class="btn btn-warning btn-sm" href="{{ url('/homebelibelah') }}"
                                                     role="button">Kembali ke laman utama</a>

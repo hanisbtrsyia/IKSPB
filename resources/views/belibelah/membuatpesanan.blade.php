@@ -24,7 +24,7 @@
                                             style="border-color: #000000 !important;">
                                             <div class="card-header px-2 py-3">
                                                 <h5 class="text-muted mb-0">&nbsp Terima kasih kerana membuat pesanan dengan
-                                                    kami, <span style="color: #f37a27;">Anna</span>!</h5>
+                                                    kami<span style="color: #f37a27;"></span>!</h5>
                                             </div>
                                             <div class="card-body p-4">
                                                 <div class="d-flex justify-content-between align-items-center mb-4">
@@ -83,18 +83,33 @@
                                                         <div class="form-group">
                                                             <input type="text" name="Emel" id="Emel"
                                                                 class="form-control" placeholder="E-mel">
+                                                                <span class="text-danger">
+                                                                    @error('Emel')
+                                                                        {{ $message }}
+                                                                    @enderror
+                                                                </span>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <input type="text" name="NamaPelanggan" id="NamaPelanggan"
                                                                 class="form-control" placeholder="Nama">
+                                                                <span class="text-danger">
+                                                                    @error('NamaPelanggan')
+                                                                        {{ $message }}
+                                                                    @enderror
+                                                                </span>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <input type="text" name="NoTel" id="NoTel"
                                                                 class="form-control" placeholder="No Telefon">
+                                                                <span class="text-danger">
+                                                                    @error('NoTel')
+                                                                        {{ $message }}
+                                                                    @enderror
+                                                                </span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -105,18 +120,33 @@
                                                         <div class="form-group">
                                                             <input type="text" name="Address" id="Address" class="form-control"
                                                                 placeholder="Alamat">
+                                                                <span class="text-danger">
+                                                                    @error('Address')
+                                                                        {{ $message }}
+                                                                    @enderror
+                                                                </span>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <input type="text" name="Postcode" id="Postcode"
                                                                 class="form-control" placeholder="Poskod/Zip">
+                                                                <span class="text-danger">
+                                                                    @error('Postcode')
+                                                                        {{ $message }}
+                                                                    @enderror
+                                                                </span>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <input type="text" name="City" id="City" class="form-control"
                                                                 placeholder="Bandar">
+                                                                <span class="text-danger">
+                                                                    @error('City')
+                                                                        {{ $message }}
+                                                                    @enderror
+                                                                </span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -137,6 +167,7 @@
                                                         <div class="summary-delivery">
                                                             <select class="form-select" name="State" id="State"
                                                                 aria-label="Default select example">
+                                                                <option value="0" selected="selected">Negeri</option>
                                                                 <option value="Selangor">Selangor</option>
                                                                 <option value="Johor">Johor</option>
                                                                 <option value="Kelantan">Kelantan</option>

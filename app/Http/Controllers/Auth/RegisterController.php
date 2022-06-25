@@ -85,8 +85,8 @@ class RegisterController extends Controller
          $request->validate([
             'NamaPengguna' => ['required', 'string', 'max:255'],
             'Emel' => ['required', 'string', 'email', 'max:255', 'unique:peniaga'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-            
+            'password' => ['required', 'string', 'min:6', 'confirmed'],
+            'password_confirmation' => 'required_with:password|same:password|min:6'
          ]);
         }
 
@@ -94,8 +94,8 @@ class RegisterController extends Controller
             $request->validate([
                'NamaPengguna' => ['required', 'string', 'max:255'],
                'Emel' => ['required', 'string', 'email', 'max:255', 'unique:pelanggan'],
-               'password' => ['required', 'string', 'min:8', 'confirmed'],
-               
+               'password' => ['required', 'string', 'min:6', 'confirmed'],
+               'password_confirmation' => 'required_with:password|same:password|min:6'
             ]);
            }
 

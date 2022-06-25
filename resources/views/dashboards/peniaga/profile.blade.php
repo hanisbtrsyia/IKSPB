@@ -79,13 +79,13 @@
                                     placeholder="">
                             </div>
                         </div>
-                        <div class="form-group row">
+                        <!--<div class="form-group row">
                             <label for="NoAkaun" class="col-sm-3 col-form-label">No Akaun</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" name="NoAkaun" value="{{ $profile->NoAkaun }}"
                                     placeholder="">
                             </div>
-                        </div>
+                        </div>-->
 
                         <div class="text-center">
                             <input type="submit" value="Kemaskini" class="btn btn-warning">

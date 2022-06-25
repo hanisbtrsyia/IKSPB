@@ -95,7 +95,16 @@ class CartController extends Controller
 
     public function makeorder(Request $request)
     {
-     
+        $request->validate([
+            'Emel' => ['required', 'string', 'email', 'max:40'],
+            'NoTel' => ['required', 'string', 'max:15'],
+            'Postcode' => ['required', 'string', 'min:5' , 'max:5'],
+            'NamaPelanggan' => ['required'],
+            'Address' => ['required'],
+            'City' => ['required'],
+       
+         ]);
+
         Order::create([
             'id_order' => $request->id_order,          
             'id_pelanggan'=>Auth::user()->id,  //customer id
