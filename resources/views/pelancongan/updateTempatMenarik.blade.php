@@ -87,11 +87,16 @@
                                                         </option>
                                                     </select>
                                                 </div>
-                                                <div class="form-group">
+                                                <!--<div class="form-group">
                                                     <label for="penerangan">Penerangan</label>
                                                     <input type="text" name="penerangan" id="penerangan"
                                                         class="form-control" value="{{ $temMenarik->penerangan }}"
                                                         placeholder="" required>
+                                                </div>-->
+                                                <div class="form-group">
+                                                    <label for="penerangan">Penerangan</label>
+                                                    <textarea type="text" name="penerangan" id="penerangan"
+                                                        class="form-control" placeholder="" required rows="10">{{ $temMenarik->penerangan }}</textarea>
                                                 </div>
                                             </div>
                                             <div class="col-6">

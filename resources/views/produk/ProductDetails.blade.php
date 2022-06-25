@@ -55,15 +55,16 @@
                                     <h2 class="mb-0">
                                         RM {{ $produk->Harga }}
                                     </h2>
+                                    <br>
                                     <h4 class="mt-0">
                                         <small>Kategori: {{ $produk->NamaKategori }}</small>
                                     </h4>
                                     <h4 class="mt-0">
                                         <small>Berat: {{ $produk->Berat }} g</small>
                                     </h4>
-                                    <h4 class="mt-0">
+                                    <!--<h4 class="mt-0">
                                         <small>Unit: {{ $produk->Unit }}</small>
-                                    </h4>
+                                    </h4>-->
                                 </div>
                                 <div class="mt-4">
                                     @guest

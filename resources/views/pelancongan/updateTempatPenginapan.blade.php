@@ -103,8 +103,8 @@
 
                                             <div class="form-group">
                                                 <label for="penerangan">Penerangan</label>
-                                                <input type="text" name="penerangan" id="penerangan" class="form-control"
-                                                    value="{{ $temPenginapan->penerangan }}" placeholder="" required> 
+                                                <textarea type="text" name="penerangan" id="penerangan"
+                                                class="form-control" placeholder="" required rows="10">{{ $temPenginapan->penerangan }}</textarea>
                                             </div>
                                        
                                             <div class="form-group">

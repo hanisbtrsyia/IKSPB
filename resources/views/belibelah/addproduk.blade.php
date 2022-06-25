@@ -58,31 +58,25 @@
                                                 <input type="text" name="Harga" id="Harga" class="form-control"
                                                     placeholder="" required>
                                             </div>
-                                            <div class="form-group">
+                                            <!--<div class="form-group">
                                                 <label for="Unit">Unit</label>
                                                 <input type="text" name="Unit" id="Unit" class="form-control"
                                                     placeholder="" required>
-                                            </div>
+                                            </div>-->
                                             <div class="form-group">
                                                 <label for="Berat">Berat</label>
                                                 <input type="text" name="Berat" id="Berat" class="form-control"
                                                     placeholder="" required>
                                             </div>
+                                        </div>
+                                               
+                                        <div class="col-6">
                                             <div class="form-group">
                                                 <label for="penerangan">Penerangan</label>
-                                                <input type="text" name="penerangan" id="penerangan" class="form-control"
-                                                    placeholder="" required>
+                                                <textarea name="penerangan" id="penerangan" class="form-control"
+                                                    placeholder="" required rows="7"></textarea>
                                             </div>
-                                        </div>
-                                                <!-- <label for="exampleInputFile">Gambar</label>
-                                                  <div class="text-center">
-                                                    <img class="img-fluid" src="" id='image_preview'>
-                                                  </div><br>
-                                                  <div class="custom-file">
-                                                    <input type="file" accept="image/*" name="GambarProduk" id="GambarProduk" onchange="loadFile(event);" />
-                                                  </div>
-                                                </div>-->
-                                                <div class="col-6">
+                                        
                                                     <label for="exampleInputFile">Gambar</label>
                                                     <div class="text-center">
                                                         <img class="img-fluid" src="" id='image_preview' alt="Gambar produk">

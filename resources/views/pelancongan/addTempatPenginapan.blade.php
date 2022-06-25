@@ -71,8 +71,8 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="penerangan">Penerangan</label>
-                                                <input type="text" name="penerangan" id="penerangan" class="form-control"
-                                                    placeholder="" required>
+                                                <textarea name="penerangan" id="penerangan" class="form-control"
+                                                placeholder="" required rows="10"></textarea>
                                             </div>
                                         </div>
 
