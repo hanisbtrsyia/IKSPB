@@ -43,39 +43,33 @@
                         </ul>
                     </li>-->
                 </ul>
-                <ul class="navbar-nav">
-                    @guest
-                    {{ Log::info(Auth::check()) }}
-                @endguest
                 @auth
-                    {{ Log::info(Auth::user()) }}
-                    @if (Auth::user()->role == 'pelanggan')
-                    <li class="nav-item"><a href="{{ route('profil.Custedit') }}" class="nav-link" style="color:#000;"> Profil
-                    </a></li>   
-                    @endif
+                @if (Auth::user()->role == 'pelanggan')
+                    
+                @endif
+            @else
+                
+                <div>
+                    <a href="{{ route('login') }}">Log Masuk</a> |
+                    <a href="{{ route('register') }}"> Daftar</a>
                 @endauth
-                    <!--<li class="nav-item"><a href="#" class="nav-link" style="color:#000;"> Hubungi:
-                            +0000000000
-                        </a></li>-->
-
-                </ul> <!-- list-inline //  -->
-
+            </div>
             </div> <!-- container //  -->
         </nav> <!-- header-top-light.// -->
         <section class="header-main border-bottom">
             <div class="container">
                 <div class="row align-items-center">
-                    <!--<div class="col-lg-2 col-6">
-                        <a href="#" class="brand-wrap" style="font-family:verdana">
+                    <div class="col-lg-8 col-12">
+                        <h3 class="brand-wrap">
+                            e-Pasar Industri Kecil Sederhana Pahang Barat
+                        </h3> 
+                    </div>
+                    <!--<div class="col-lg-6 col-12 ">
+                        <h3><a href="#" class="brand-wrap" style="font-family:verdana">
                             e-Pasar IKS Pahang Barat
-                        </a> 
-                    </div>-->
-                    <div class="col-lg-6 col-12 ">
-                        <!--<h3><a href="#" class="brand-wrap" style="font-family:verdana">
-                            e-Pasar IKS Pahang Barat
-                        </a> </h3>-->
-                    </div> 
-                    <div class=" col-sm-6 col-12">
+                        </a> </h3>
+                    </div> -->
+                    <div class=" col-sm-4 col-12">
                         <div class="widgets-wrap float-md-right">
                             <div class="widget-header  mr-3">
                                 @guest
@@ -106,7 +100,7 @@
                                     @endif
                                 @endauth
                                
-                                <div class="text">
+                               <div class="text">
                                     @auth
                                         @if (Auth::user()->role == 'pelanggan')
                                             <span class="text-muted">{{ Auth::user()->name }}</span>
@@ -119,14 +113,11 @@
                                                 <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                                     class="d-none">
                                                     @csrf
-
                                                 </form>
                                         @endif
                                     @else
-                                        <span class="text-muted">Anda seorang peniaga?</span>
-                                        <div>
-                                            <a href="{{ route('login') }}">Log Masuk</a> |
-                                            <a href="{{ route('register') }}"> Daftar</a>
+                                        
+                                        
                                         @endauth
                                     </div>
                                 </div>

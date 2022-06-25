@@ -3,42 +3,7 @@
 @section('content')
 <h1 style="text-align: center"> Tempat Penginapan di Pahang Barat</h1>
 
-        <nav class="navbar navbar-main navbar-expand-lg navbar-light border-bottom">
-            <div class="container">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav"
-                    aria-controls="main_nav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="main_nav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link pl-0" data-toggle="dropdown" href="#"><strong> <i
-                                        class="fa fa-bars"></i> Kategori</strong></a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="/homeTempatMenarik">Tempat Menarik</a>
-                                <a class="dropdown-item" href="/homeTempatPenginapan">Tempat Penginapan</a>
-                            </div>
-                        </li>
-                       
-                        <li class="nav-item">
-                            <a class="nav-link" href="">Bera</a>
-                    
-                        </li>
-                      
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Cameron Highlands</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Hijau-Hijauan</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Pantai</a>
-                        </li>
-                    </ul>
-                </div> <!-- collapse .// -->
-            </div> <!-- container .// -->
-        </nav>
-    </header> <!-- section-header.// -->
+        <hr>
     <section class="section-content">
         <div class="container">
             <p></p>
@@ -55,22 +20,8 @@
                                     href="{{ route('TempatPenginapan.info', $temPeng->id_tempatPenginapan) }}"
                                     class="title">{{ $temPeng->NamaTempat }}</a>
 
-                                <div class="rating-wrap">
-                                    <ul class="rating-stars">
-                                        <li style="width:80%" class="stars-active">
-                                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i>
-                                        </li>
-                                    </ul>
-                                    <span class="label-rating text-muted"> 34 reviws</span>
-                                </div>
-                                <div class="price mt-1">RM 179.00</div> <!-- price-wrap.// -->
+                                
+                                <div class="price mt-1">RM {{ $temPeng->HargaPerMalam }}</div> <!-- price-wrap.// -->
                             </figcaption>
                         </div>
                     </div> <!-- col.// -->

@@ -42,53 +42,20 @@
                                         </ul>
                                     </li>-->
                 </ul>
-                <ul class="navbar-nav">
-                    @guest
-                    {{ Log::info(Auth::check()) }}
-                @endguest
-                @auth
-                    {{ Log::info(Auth::user()) }}
-                    @if (Auth::user()->role == 'pelanggan')
-                    <li class="nav-item"><a href="{{ route('profil.Custedit') }}" class="nav-link" style="color:#000;"> Profil
-                    </a></li>   
-                    @endif
-                @endauth
-                   <!-- <li class="nav-item"><a href="#" class="nav-link" style="color:#000;"> Call: +0000000000
-                        </a></li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" style="color:#000;">
-                            Bahasa
-                            Malaysia </a>
-                        <ul class="dropdown-menu dropdown-menu-right" style="max-width: 100px;">
-                            <li><a class="dropdown-item" href="#">English</a></li>
-                            <li><a class="dropdown-item" href="#">Russian </a></li>
-                        </ul>
-                    </li>-->
-                </ul> <!-- list-inline //  -->
+               
 
             </div> <!-- container //  -->
         </nav> <!-- header-top-light.// -->
         <section class="header-main border-bottom">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-2 col-6">
-                        <a href="#" class="brand-wrap" style="font-family:verdana">
-                            e-Pasar IKS Pahang Barat
-                        </a> <!-- brand-wrap.// -->
+                    <div class="col-lg-8 col-12">
+                        <h3 class="brand-wrap" style="font-family:verdana">
+                            e-Pasar Industri Kecil Sederhana Pahang Barat
+                        </h3> <!-- brand-wrap.// -->
                     </div>
-                    <div class="col-lg-6 col-12 col-sm-12">
-                        <form action="#" class="search">
-                            <div class="input-group w-100">
-                                <input type="text" class="form-control" placeholder="Cari">
-                                <div class="input-group-append">
-                                    <button class="btn" style="background-color:#FFB923;" type="submit">
-                                        <i class="fa fa-search"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </form> <!-- search-wrap .end// -->
-                    </div> <!-- col.// -->
-                    <div class="col-lg-4 col-sm-6 col-12">
+                    
+                    <div class="col-sm-4 col-12">
                         <div class="widgets-wrap float-md-right">
                             <div class="widget-header  mr-3">
                                 @guest
@@ -134,7 +101,7 @@
                                                 </form>
                                         @endif
                                     @else
-                                        <span class="text-muted">Anda seorang peniaga?</span>
+                                        
                                         <div>
                                             <a href="{{ route('login') }}">Log Masuk</a> |
                                             <a href="{{ route('register') }}"> Daftar Masuk</a>

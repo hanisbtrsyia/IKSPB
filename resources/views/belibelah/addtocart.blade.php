@@ -2,11 +2,6 @@
 @section('title', 'Troli')
 @section('content')
 
-    <head>
-
-        <!--<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">-->
-    </head>
-
     <body>
         <div class="content-wrapper">
             <div class="content-header">
@@ -28,7 +23,7 @@
                                             <th class="text-left">Produk</th>
                                             <th class="hidden md:table-cell"></th>
                                             <th class="pl-5 text-left lg:text-right ">
-                                                <span class="lg:hidden" title="Quantity"> &nbsp &nbsp &nbsp &nbsp</span>
+                                                <span class="lg:hidden" title="Quantity"></span>
                                                 <span class="hidden lg:inline">Kuantiti</span>
                                             </th>
                                             <th class="hidden text-right md:table-cell"> Harga</th>
@@ -36,46 +31,36 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                       
+
                                         @foreach ($cartItems as $item)
-                                        
                                             <tr>
                                                 <td class="hidden pb-4 md:table-cell">
                                                     <a href="#">
-                                                       <img src="{{ asset('assets/images/produk/' . $item->attributes->image) }}" class="w-20 rounded"
-                                                            alt="Thumbnail" height="100px" >
-                                                    </a> 
+                                                        <img src="{{ asset('assets/images/produk/' . $item->attributes->image) }}"
+                                                            class="w-20 rounded" alt="Thumbnail" height="100px">
+                                                    </a>
                                                 </td>
                                                 <td>
                                                     <a href="#">
                                                         <p class="mb-2 md:ml-4">{{ $item->name }}</p>
-        
-
                                                     </a>
                                                 </td>
                                                 <td class="justify-center mt-6 md:justify-end md:flex">
-                                                  
-                                                        
+                                                    <form action="{{ route('cart.update') }}" method="POST">
+                                                        @csrf
+                                                        <input type="hidden" name="id" value="{{ $item->id }}">
+                                                        <input type="number" name="quantity"
+                                                            value="{{ $item->quantity }}" class="text-center" style="width: 50px;" min="0" />
 
-                                                            <form action="{{ route('cart.update') }}" method="POST">
-                                                                @csrf
-                                                                <input type="hidden" name="id"
-                                                                    value="{{ $item->id }}">
-                                                                <input type="number" name="quantity"
-                                                                    value="{{ $item->quantity }}"
-                                                                    class=" text-center" />
-                                                                <button type="submit"
-                                                                    class="btn btn-warning btn-flat">Kemaskini</button>
-                                                            </form>
-                                                       
-                                                    
+                                                        <button type="submit" class="btn btn-warning btn-sm"> &nbsp Kemaskini &nbsp</button>
+                                                    </form>
                                                 </td>
                                                 <td class="hidden text-right md:table-cell">
                                                     <span class="text-sm font-medium lg:text-base">
                                                         RM {{ $item->price }}
                                                     </span>
                                                 </td>
-                                                
+
                                                 <td class="hidden text-right md:table-cell">
                                                     <form action="{{ route('cart.remove') }}" method="POST">
                                                         @csrf
@@ -91,7 +76,7 @@
                                                     </form>
 
                                                 </td>
-                                            
+
                                             </tr>
                                         @endforeach
 
@@ -103,7 +88,7 @@
                                             </td>
                                         </tr>
                             </div>
-                            
+
                             <tr>
                                 <td class="text-left">
                                     <form action="{{ route('cart.clear') }}" method="POST">
@@ -112,18 +97,18 @@
                                     </form>
                                 </td>
                                 <td colspan="5" class="text-right">
-                                   
+
                                     <a href="{{ url('/homebelibelah') }}" class="btn btn-warning"><i
                                             class="fa fa-angle-left"></i> Continue Shopping</a>
                                     <a href="{{ route('cart.orderCart') }}" class="btn btn-success">Checkout</a>
-                                            
+
                                 </td>
-                                
+
                             </tr>
-                            
+
                             </tfoot>
                             </table>
-                           
+
                             <div>
                             </div>
                         </div>

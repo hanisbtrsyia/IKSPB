@@ -26,189 +26,111 @@
         <div class="content-wrapper">
             <header class="section-header">
                 <!-- <nav class="navbar navbar-dark navbar-expand p-0" style="background-color:#FFB923;">
-                        <div class="container">
-                            <ul class="navbar-nav d-none d-md-flex mr-auto">
-                                <li class="nav-item"><a class="nav-link" href="/welcome" style="color:#000;">Laman
-                                        Utama</a></li>
-                                <li class="nav-item"><a class="nav-link" href="/homebelibelah"
-                                        style="color:#000;">Beli-Belah</a></li>
-                                <li class="btn-group dropright">
-                                    <a href="/homepelancongan" class="btn dropdown-toggle" data-toggle="dropdown"
-                                        style="color:#000;"> Pelancongan </a>
-                                    <ul class="dropdown-menu dropdown-menu-right" style="max-width: 100px;">
-                                        <li><a class="dropdown-item" href="/homeTempatMenarik">Tempat Menarik</a></li>
-                                        <li><a class="dropdown-item" href="/homeTempatPenginapan">Tempat Penginapan</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <ul class="navbar-nav">
-                                <li class="nav-item"><a href="#" class="nav-link" style="color:#000;"> Call:
-                                        +0000000000 </a></li>
-                                <li class="nav-item dropdown">
-                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" style="color:#000;">
-                                        Bahasa Malaysia </a>
-                                    <ul class="dropdown-menu dropdown-menu-right" style="max-width: 100px;">
-                                        <li><a class="dropdown-item" href="#">English</a></li>
-                                        <li><a class="dropdown-item" href="#">Russian </a></li>
-                                    </ul>
-                                </li>
-                            </ul>
+                            <div class="container">
+                                <ul class="navbar-nav d-none d-md-flex mr-auto">
+                                    <li class="nav-item"><a class="nav-link" href="/welcome" style="color:#000;">Laman
+                                            Utama</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="/homebelibelah"
+                                            style="color:#000;">Beli-Belah</a></li>
+                                    <li class="btn-group dropright">
+                                        <a href="/homepelancongan" class="btn dropdown-toggle" data-toggle="dropdown"
+                                            style="color:#000;"> Pelancongan </a>
+                                        <ul class="dropdown-menu dropdown-menu-right" style="max-width: 100px;">
+                                            <li><a class="dropdown-item" href="/homeTempatMenarik">Tempat Menarik</a></li>
+                                            <li><a class="dropdown-item" href="/homeTempatPenginapan">Tempat Penginapan</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ul class="navbar-nav">
+                                    <li class="nav-item"><a href="#" class="nav-link" style="color:#000;"> Call:
+                                            +0000000000 </a></li>
+                                    <li class="nav-item dropdown">
+                                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" style="color:#000;">
+                                            Bahasa Malaysia </a>
+                                        <ul class="dropdown-menu dropdown-menu-right" style="max-width: 100px;">
+                                            <li><a class="dropdown-item" href="#">English</a></li>
+                                            <li><a class="dropdown-item" href="#">Russian </a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
 
-                        </div>
-                    </nav>
-                    <br>
-                    <section class="header-main border-bottom">
-                        <div class="container">
-                            <div class="row align-items-center">
-                                <div class="col-lg-2 col-6">
-                                    <a href="#" class="brand-wrap" style="font-family:verdana">
-                                        e-Pasar IKS Pahang Barat
-                                    </a>
-                                </div>
-                                <div class="col-lg-6 col-12 col-sm-12">
-                                    <form action="#" class="search">
-                                        <div class="input-group w-100">
-                                            <input type="text" class="form-control" placeholder="Cari">
-                                            <div class="input-group-append">
-                                                <button class="btn" style="background-color:#FFB923;" type="submit">
-                                                    <i class="fa fa-search"></i>
-                                                </button>
+                            </div>
+                        </nav>
+                        <br>
+                        <section class="header-main border-bottom">
+                            <div class="container">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-2 col-6">
+                                        <a href="#" class="brand-wrap" style="font-family:verdana">
+                                            e-Pasar IKS Pahang Barat
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-6 col-12 col-sm-12">
+                                        <form action="#" class="search">
+                                            <div class="input-group w-100">
+                                                <input type="text" class="form-control" placeholder="Cari">
+                                                <div class="input-group-append">
+                                                    <button class="btn" style="background-color:#FFB923;" type="submit">
+                                                        <i class="fa fa-search"></i>
+                                                    </button>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </form>
-                                    <br>
-                                </div>
-                                <div class="col-lg-4 col-sm-6 col-12">
-                                    <div class="widgets-wrap float-md-right">
-                                        <div class="widget-header  mr-3">
-
-                                        </div>
-                                        <div class="widget-header icontext">
-
-                                            <div class="text">
-
+                                        </form>
+                                        <br>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-6 col-12">
+                                        <div class="widgets-wrap float-md-right">
+                                            <div class="widget-header  mr-3">
 
                                             </div>
-                                            <br>
+                                            <div class="widget-header icontext">
+
+                                                <div class="text">
+
+
+                                                </div>
+                                                <br>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </section>-->
+                        </section>-->
                 <br>
                 <h1 style="text-align: center"> Tempat Menginap di Pahang Barat</h1>
+                <hr>
 
-                <nav class="navbar navbar-main navbar-expand-lg navbar-light border-bottom">
+
+                <!-- ========================= SECTION FEATURE END// ========================= -->
+                <!-- ========================= SECTION CONTENT ========================= -->
+                <section class="section-content">
                     <div class="container">
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav"
-                            aria-controls="main_nav" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="main_nav">
-                            <div class="col-12">
-                                <div class="card card-warning card-outline card-outline-tabs">
-                                    <div class="card-header p-0 border-bottom-0">
-                                        <ul class="nav nav-tabs" id="custom-tabs-four-tab" role="tablist">
+                        <p></p>
+                        <div class="row">
+                            @foreach ($temPenginapan as $temPeng)
+                                <div class="col-md-3">
+                                    <div href="#" class="card card-product-grid">
+                                        <a href="{{ route('TempatPenginapan.edit', $temPeng->id_tempatPenginapan) }}"
+                                            class="img-wrap"> <img
+                                                src="{{ asset('assets/images/penginapan/' . $temPeng['gambar'][0]) }}"
+                                                style="width:264px; height:200px;"> </a>
+                                        <figcaption class="info-wrap" style="text-align: center;">
+                                            <a type="button"
+                                                href="{{ route('TempatPenginapan.edit', $temPeng->id_tempatPenginapan) }}"
+                                                class="title" style="color: black; ">{{ $temPeng->NamaTempat }}</a>
 
-                                            <li class="nav-item">
-                                                <a class="nav-link" id="custom-tabs-four-home-tab" data-toggle="pill"
-                                                    href="#custom-tabs-four-home" role="tab"
-                                                    aria-controls="custom-tabs-four-home" aria-selected="false">Bera</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" id="custom-tabs-four-profile-tab" data-toggle="pill"
-                                                    href="#custom-tabs-four-profile" role="tab"
-                                                    aria-controls="custom-tabs-four-profile" aria-selected="false">Cameron
-                                                    Highlands</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" id="custom-tabs-four-messages-tab" data-toggle="pill"
-                                                    href="#custom-tabs-four-messages" role="tab"
-                                                    aria-controls="custom-tabs-four-messages" aria-selected="false">Janda
-                                                    Baik</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link active" id="custom-tabs-four-settings-tab"
-                                                    data-toggle="pill" href="#custom-tabs-four-settings" role="tab"
-                                                    aria-controls="custom-tabs-four-settings"
-                                                    aria-selected="true">Jerantut</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" id="custom-tabs-four-home-tab" data-toggle="pill"
-                                                    href="#custom-tabs-four-home" role="tab"
-                                                    aria-controls="custom-tabs-four-home"
-                                                    aria-selected="false">Kuantan</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" id="custom-tabs-four-profile-tab" data-toggle="pill"
-                                                    href="#custom-tabs-four-profile" role="tab"
-                                                    aria-controls="custom-tabs-four-profile"
-                                                    aria-selected="false">Lipis</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" id="custom-tabs-four-messages-tab" data-toggle="pill"
-                                                    href="#custom-tabs-four-messages" role="tab"
-                                                    aria-controls="custom-tabs-four-messages"
-                                                    aria-selected="false">Maran</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link " id="custom-tabs-four-settings-tab"
-                                                    data-toggle="pill" href="#custom-tabs-four-settings" role="tab"
-                                                    aria-controls="custom-tabs-four-settings"
-                                                    aria-selected="true">Pekan</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link " id="custom-tabs-four-settings-tab"
-                                                    data-toggle="pill" href="#custom-tabs-four-settings" role="tab"
-                                                    aria-controls="custom-tabs-four-settings"
-                                                    aria-selected="true">Raub</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link " id="custom-tabs-four-settings-tab"
-                                                    data-toggle="pill" href="#custom-tabs-four-settings" role="tab"
-                                                    aria-controls="custom-tabs-four-settings"
-                                                    aria-selected="true">Rompin</a>
-                                            </li>
-                                        </ul>
+                                            <div class="price mt-1">RM {{ $temPeng->HargaPerMalam }}</div>
+                                            <!-- price-wrap.// -->
+
+
+                                        </figcaption>
                                     </div>
-                                </div>
-                            </div>
-                        </div> <!-- collapse .// -->
-                    </div> <!-- container .// -->
-                </nav>
-            </header> <!-- section-header.// -->
-            <!-- ========================= SECTION INTRO ========================= -->
+                                </div> <!-- col.// -->
+                            @endforeach
 
-            <!-- ========================= SECTION FEATURE END// ========================= -->
-            <!-- ========================= SECTION CONTENT ========================= -->
-            <section class="section-content">
-                <div class="container">
-                    <p></p>
-                    <div class="row">
-                        @foreach ($temPenginapan as $temPeng)
-                            <div class="col-md-3">
-                                <div href="#" class="card card-product-grid">
-                                    <a href="{{ route('TempatPenginapan.edit', $temPeng->id_tempatPenginapan) }}"
-                                        class="img-wrap"> <img
-                                            src="{{ asset('assets/images/penginapan/' . $temPeng['gambar'][0]) }}"
-                                            style="width:264px; height:200px;"> </a>
-                                    <figcaption class="info-wrap" style="text-align: center;">
-                                        <a type="button"
-                                            href="{{ route('TempatPenginapan.edit', $temPeng->id_tempatPenginapan) }}"
-                                            class="title" style="color: black; ">{{ $temPeng->NamaTempat }}</a>
-                                        
-                                        <div class="price mt-1">RM {{ $temPeng->HargaPerMalam }}</div> <!-- price-wrap.// -->
-
-
-                                    </figcaption>
-                                </div>
-                            </div> <!-- col.// -->
-                        @endforeach
-
-                    </div> <!-- row.// -->
-                </div> <!-- container .//  -->
-            </section>
+                        </div> <!-- row.// -->
+                    </div> <!-- container .//  -->
+                </section>
 
 
     </body>

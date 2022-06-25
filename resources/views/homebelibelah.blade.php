@@ -55,7 +55,7 @@
     <section class="section-content">
         <div class="container">
             <header class="section-heading">
-                <h3 class="section-title">Produk popular</h3>
+                <h3 class="section-title">Produk</h3>
             </header><!-- sect-heading -->
 
             <div class="row">
@@ -68,21 +68,7 @@
 
                                 <a type="button" href="{{ route('produk.details', $prod->id_produk) }}" class="title">{{$prod->NamaProduk}}</a>
 
-                                <div class="rating-wrap">
-                                    <ul class="rating-stars">
-                                        <li style="width:80%" class="stars-active">
-                                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                class="fa fa-star"></i>
-                                        </li>
-                                    </ul>
-                                    <span class="label-rating text-muted"> 34 reviews</span>
-                                </div>
+                                
                                 <div class="price mt-1"> RM {{$prod->Harga}}</div> <!-- price-wrap.// -->
                             </figcaption>
                         </div>

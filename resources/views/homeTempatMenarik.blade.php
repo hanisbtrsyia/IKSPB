@@ -2,49 +2,15 @@
 @section('title', 'Tempat Menarik')
 @section('content')
 
-        <h1 style="text-align: center"> Tempat Menarik di Pahang Barat</h1>
+        <!--<h1 style="text-align: center"> Tempat Menarik di Pahang Barat</h1>-->
 
-        <nav class="navbar navbar-main navbar-expand-lg navbar-light border-bottom">
-            <div class="container">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav"
-                    aria-controls="main_nav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="main_nav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link pl-0" data-toggle="dropdown" href="#"><strong> <i
-                                        class="fa fa-bars"></i> Kategori</strong></a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="/homeTempatMenarik">Tempat Menarik</a>
-                                <a class="dropdown-item" href="/homeTempatPenginapan">Tempat Penginapan</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Tempat Perkhemahan</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Tempat Bersejarah</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Hijau-Hijauan</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Pantai</a>
-                        </li>
-                    </ul>
-                </div> <!-- collapse .// -->
-            </div> <!-- container .// -->
-        </nav>
-    </header> <!-- section-header.// -->
-    <!-- ========================= SECTION INTRO ========================= -->
-
+        
     <!-- ========================= SECTION FEATURE END// ========================= -->
     <!-- ========================= SECTION CONTENT ========================= -->
     <section class="section-content">
         <div class="container">
             <header class="section-heading">
-                <h3 class="section-title">Tempat popular</h3>
+                <h3 class="section-title">Tempat menarik di Pahang Barat</h3>
             </header><!-- sect-heading -->
 
             <div class="row">
@@ -56,13 +22,10 @@
                             <figcaption class="info-wrap">
                                 <a type="button" href="{{ route('TempatMenarik.info', $temMen->id_tempatMenarik) }}"
                                     class="title">{{ $temMen->NamaTempat }}</a>
-
-
                             </figcaption>
                         </div>
                     </div> <!-- col.// -->
                 @endforeach
-
             </div>
         </div> <!-- col.// -->
         </div> <!-- row.// -->
