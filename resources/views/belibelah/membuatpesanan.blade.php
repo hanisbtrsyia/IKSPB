@@ -38,7 +38,7 @@
                                                         <div class="row">
                                                            
                                                                 <div class="col-md-2">
-                                                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/13.webp"
+                                                                    <img src="{{ asset('assets/images/produk/' . $item->attributes->image) }}"
                                                                         class="img-fluid" alt="Phone">
                                                                 </div>
                                                                 <div
