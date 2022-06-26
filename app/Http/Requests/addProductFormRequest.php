@@ -12,7 +12,7 @@ class addProductFormRequest extends FormRequest{
 
     public function rules (){
         return [
-            'Harga' => 'integer',
+            'Harga' => 'numeric',
             'Unit' => 'integer',
             'Berat' => 'integer'
         ];
