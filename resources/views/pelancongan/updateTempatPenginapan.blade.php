@@ -151,7 +151,12 @@
                                                  <div class="checkbox">
                                                     <label><input type="checkbox" value="Pemanas Air" name="Kemudahan[]" @if(in_array("Pemanas Air",  $temPenginapan->Kemudahan)) checked @endif> Pemanas Air</label>
                                                  </div>
-                                                
+                                                 <div class="checkbox">
+                                                    <label><input type="checkbox" value="Mesin Basuh" name="Kemudahan[]" @if(in_array("Mesin Basuh",  $temPenginapan->Kemudahan)) checked @endif>  Mesin Basuh</label>
+                                                 </div>
+                                                 <div class="checkbox">
+                                                    <label><input type="checkbox" value="Mesin Pengering" name="Kemudahan[]" @if(in_array("Mesin Pengering",  $temPenginapan->Kemudahan)) checked @endif> Mesin Pengering</label>
+                                                 </div>
                                             </div>
                                             <div>
                                                 <label for="exampleInputFile">Gambar</label>

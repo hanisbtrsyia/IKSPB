@@ -43,9 +43,11 @@
                                             <select class="form-select" name="NamaKategori" id="NamaKategori"
                                                 aria-label="Default select example">
                                                 <option selected>Pilih Kategori</option>
+                                                <option value="Kuih-Muih">Kuih-Muih</option>
                                                 <option value="Kerepek">Kerepek</option>
                                                 <option value="Sambal">Sambal</option>
                                                 <option value="Makanan Sejuk Beku">Makanan Sejuk Beku</option>
+                                               
                                             </select>
                                             </div>
                                             <div class="form-group">

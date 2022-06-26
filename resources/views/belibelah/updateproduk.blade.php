@@ -45,7 +45,9 @@
                                             <label for="NamaKategori">Nama Kategori</label><br>
                                             <select class="form-select" name="NamaKategori" id="NamaKategori"
                                                 value="{{ $produk->NamaKategori }}" aria-label="Default select example">
-
+                                                <option value="Kuih-Muih" <?php if ($produk->NamaKategori == 'Kuih-Muih') {
+                                                    echo 'selected';
+                                                } ?>>Kuih-Muih</option>
                                                 <option value="Kerepek" <?php if ($produk->NamaKategori == 'Kerepek') {
                                                     echo 'selected';
                                                 } ?>>Kerepek</option>

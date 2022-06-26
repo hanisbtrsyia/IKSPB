@@ -20,9 +20,8 @@
                         <figure class="item-feature">
                             <span class="text-warning"><i class="fa fa-2x fa-truck"></i></span>
                             <figcaption class="pt-3">
-                                <h5 class="title">Fast delivery</h5>
-                                <p>Dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                    tempor incididunt ut labore </p>
+                                <h5 class="title">Produk Asli</h5>
+                                <p>Produk tradisional yang dibuat daripada sumber asli</p>
                             </figcaption>
                         </figure> <!-- iconbox // -->
                     </div><!-- col // -->
@@ -30,8 +29,8 @@
                         <figure class="item-feature">
                             <span class="text-warning"><i class="fa fa-2x fa-landmark"></i></span>
                             <figcaption class="pt-3">
-                                <h5 class="title">Creative Strategy</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                <h5 class="title">Produk Halal</h5>
+                                <p>Semua produk adalah diyakini halal dan bersih untuk dimakan
                                 </p>
                             </figcaption>
                         </figure> <!-- iconbox // -->
@@ -40,8 +39,8 @@
                         <figure class="item-feature">
                             <span class="text-warning"><i class="fa fa-2x fa-lock"></i></span>
                             <figcaption class="pt-3">
-                                <h5 class="title">High secured </h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                <h5 class="title">Produk selamat </h5>
+                                <p>Produk akan selamat seperti baharu ketika sampai di rumah anda 
                                 </p>
                             </figcaption>
                         </figure> <!-- iconbox // -->

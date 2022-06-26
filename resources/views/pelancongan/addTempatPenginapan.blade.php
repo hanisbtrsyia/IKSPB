@@ -71,8 +71,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="penerangan">Penerangan</label>
-                                                <textarea name="penerangan" id="penerangan" class="form-control"
-                                                placeholder="" required rows="10"></textarea>
+                                                <textarea name="penerangan" id="penerangan" class="form-control" placeholder="" required rows="10"></textarea>
                                             </div>
                                         </div>
 
@@ -83,13 +82,13 @@
                                                     class="form-control" placeholder="" required>
                                             </div>
                                             <!--<div class="form-group">
-                                                    <label for="Kemudahan">Kemudahan</label>
-                                                    <input type="text" name="Kemudahan" id="Kemudahan" class="form-control"
-                                                        placeholder="">
-                                                </div>-->
+                                                        <label for="Kemudahan">Kemudahan</label>
+                                                        <input type="text" name="Kemudahan" id="Kemudahan" class="form-control"
+                                                            placeholder="">
+                                                    </div>-->
                                             <div class="row">
                                                 <div class="col">
-                                                   <div class="form-group">
+                                                    <div class="form-group">
                                                         <label><strong>Kemudahan</strong></label><br>
                                                         <label><input type="checkbox" name="Kemudahan[]" value="Tiada">
                                                             Tiada</label><br>
@@ -104,7 +103,7 @@
                                                                 value="Pengering Rambut"> Pengering Rambut</label><br>
                                                         <label><input type="checkbox" name="Kemudahan[]"
                                                                 value="Seterika"> Seterika</label><br>
-                                                            
+
                                                         <label><input type="checkbox" name="Kemudahan[]" value="Dapur">
                                                             Dapur</label><br>
                                                         <label><input type="checkbox" name="Kemudahan[]"
@@ -115,7 +114,10 @@
                                                                 value="Penghawa Dingin"> Penghawa Dingin</label><br>
                                                         <label><input type="checkbox" name="Kemudahan[]"
                                                                 value="Pemanas Air"> Pemanas Air</label><br>
-                                                    
+                                                        <label><input type="checkbox" name="Kemudahan[]"
+                                                                value="Mesin Basuh"> Mesin Basuh</label><br>
+                                                        <label><input type="checkbox" name="Kemudahan[]"
+                                                                value="Mesin Pengering"> Mesin Pengering</label><br>
                                                     </div>
                                                 </div>
                                                 <div>
@@ -125,7 +127,8 @@
                                                             id='image_preview' alt="Gambar tempat penginapan">
                                                     </div><br>
                                                     <div class="custom-file text" type="button"><input type="file"
-                                                            accept="images/*" name="gambar[]" multiple id="inputImage" required/>
+                                                            accept="images/*" name="gambar[]" multiple id="inputImage"
+                                                            required />
                                                     </div>
 
                                                 </div>
