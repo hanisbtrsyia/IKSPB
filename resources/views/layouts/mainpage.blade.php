@@ -22,7 +22,7 @@
 <body>
     <!--  -->
     <header class="section-header">
-        <nav class="navbar navbar-dark navbar-expand p-0" style="background-color:#FFB923;">
+        <nav class="navbar navbar-dark navbar-expand p-0" style="background-color:#ffb923;">
             <div class="container">
                 <ul class="navbar-nav d-none d-md-flex mr-auto">
                     <!--<li class="nav-item"><a class="nav-link" href="/" style="color:#000;">Laman
@@ -61,7 +61,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-8 col-12">
                         <h3 class="brand-wrap">
-                            e-Pasar Industri Kecil Sederhana Pahang Barat
+                            
                         </h3> 
                     </div>
                     <!--<div class="col-lg-6 col-12 ">
@@ -80,7 +80,7 @@
                                     {{ Log::info(Auth::user()) }}
                                     @if (Auth::user()->role == 'pelanggan')
                                     <a href="{{ route('cart.list') }}" class="icon icon-sm rounded-circle border"><i
-                                        class="fa fa-shopping-cart"></i></a>
+                                        class="fa fa-shopping-cart" style="color:#000"></i></a>
                                 
                                     @endif
                                 @endauth
@@ -95,7 +95,7 @@
                                     {{ Log::info(Auth::user()) }}
                                     @if (Auth::user()->role == 'pelanggan')
                                         <a href="{{ route('profil.Custedit') }}"
-                                            class="icon icon-sm rounded-circle border"><i class="fa fa-user"></i></a>
+                                            class="icon icon-sm rounded-circle border"><i class="fa fa-user" style="color:#000"></i></a>
                                             
                                     @endif
                                 @endauth

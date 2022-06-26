@@ -12,8 +12,9 @@
                     <p>{{ $message }}</p>
                 </div>
             @endif
-            <div class="card  card-outline">
-                <h3 class="card-title card-header bg-warning">Profil</h3>
+            <div class="col-12">
+            <div class="card card-outline">
+                <h5 class="card-title card-header" style="background-color: #ffb923; color: black;">Profil</h5>
                 <div class="card-body box-profile">
 
                     <form class="form-horizontal" action="{{ route('profil.Custupdate') }}" method="post"
@@ -47,6 +48,7 @@
                         </div>
                     </form>
                 </div>
+            </div>
             </div>
             <br>
         </div>

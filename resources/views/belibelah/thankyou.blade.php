@@ -8,7 +8,7 @@
                 <div class=" container py-3 h-60">
                     <div class="row d-flex justify-content-center align-items-center h-80">
                         <div class="col-lg-5 col-xl-6">
-                            <div class="card border-top border-bottom border-3" style="border-color: #f37a27 !important;">
+                            <div class="card border-top border-bottom border-3" style="border-color: #000 !important;">
                                 <div class="card-body p-5">
 
                                     <h4 class="lead fw-bold mb-5 text-center" style="color: #f37a27;">IKSPB

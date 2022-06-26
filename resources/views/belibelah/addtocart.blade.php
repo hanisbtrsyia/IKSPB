@@ -50,7 +50,7 @@
                                                         @csrf
                                                         <input type="hidden" name="id" value="{{ $item->id }}">
                                                         <input type="number" name="quantity"
-                                                            value="{{ $item->quantity }}" class="text-center" style="width: 50px;" min="0" />
+                                                            value="{{ $item->quantity }}" class="text-center" style="width: 50px;" min="1" />
 
                                                         <button type="submit" class="btn btn-warning btn-sm"> &nbsp Kemaskini &nbsp</button>
                                                     </form>

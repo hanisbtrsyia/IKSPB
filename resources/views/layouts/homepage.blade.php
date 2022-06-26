@@ -46,6 +46,16 @@
                                 </ul>
                             </li>-->
                 </ul>
+                @auth
+                @if (Auth::user()->role == 'pelanggan')
+                    
+                @endif
+            @else
+                
+                <div>
+                    <a href="{{ route('login') }}">Log Masuk</a> |
+                    <a href="{{ route('register') }}"> Daftar</a>
+                @endauth
                 <!--<ul class="navbar-nav">
                     @guest
                     {{ Log::info(Auth::check()) }}
@@ -75,24 +85,13 @@
         <section class="header-main border-bottom">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-2 col-6">
+                    <div class="col-lg-8 col-12">
                         <a href="#" class="brand-wrap" style="font-family:verdana">
-                            e-Pasar IKS Pahang Barat
+                           
                         </a> <!-- brand-wrap.// -->
                     </div>
-                    <div class="col-lg-6 col-12 col-sm-12">
-                        <form action="#" class="search">
-                            <div class="input-group w-100">
-                                <input type="text" class="form-control" placeholder="Cari">
-                                <div class="input-group-append">
-                                    <button class="btn" style="background-color:#FFB923;" type="submit">
-                                        <i class="fa fa-search"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </form> <!-- search-wrap .end// -->
-                    </div> <!-- col.// -->
-                    <div class="col-lg-4 col-sm-6 col-12">
+                    
+                    <div class="col-sm-4 col-12">
                         <div class="widgets-wrap float-md-right">
                             <div class="widget-header  mr-3">
                                 @guest
@@ -103,7 +102,7 @@
                                 {{ Log::info(Auth::user()) }}
                                 @if (Auth::user()->role == 'pelanggan')
                                 <a href="{{ route('cart.list') }}" class="icon icon-sm rounded-circle border"><i
-                                    class="fa fa-shopping-cart"></i></a>
+                                    class="fa fa-shopping-cart" style="color:#000;"></i></a>
                            
                                 @endif
                             @endauth
@@ -117,7 +116,7 @@
                                 {{ Log::info(Auth::user()) }}
                                 @if (Auth::user()->role == 'pelanggan')
                                     <a href="{{ route('profil.Custedit') }}"
-                                        class="icon icon-sm rounded-circle border"><i class="fa fa-user"></i></a>
+                                        class="icon icon-sm rounded-circle border"><i class="fa fa-user" style="color:#000;"></i></a>
                                 @endif
                             @endauth
                            
@@ -138,10 +137,8 @@
                                                 </form>
                                         @endif
                                     @else
-                                        <span class="text-muted">Anda seorang peniaga?</span>
-                                        <div>
-                                            <a href="{{ route('login') }}">Log Masuk</a> |
-                                            <a href="{{ route('register') }}"> Daftar</a>
+                                       
+                                        
                                         @endauth
                                     </div>
                                 </div>
@@ -152,28 +149,8 @@
             </div> <!-- container.// -->
         </section> <!-- header-main .// -->
         
-
+    </header> 
     @yield('content')
-
-
-    <section class="footer-bottom row">
-        <div class="col-md-2">
-            <p class="text-muted"> 2021 Company name </p>
-        </div>
-        <div class="col-md-8 text-md-center">
-            <span class="px-2">info@com</span>
-            <span class="px-2">+000-000-0000</span>
-            <span class="px-2">Street name 123, ABC</span>
-        </div>
-        <div class="col-md-2 text-md-right text-muted">
-            <i class="fab fa-lg fa-cc-visa"></i>
-            <i class="fab fa-lg fa-cc-paypal"></i>
-            <i class="fab fa-lg fa-cc-mastercard"></i>
-        </div>
-    </section>
- 
-    <!--</footer>-->
-    <!-- ========================= FOOTER END // ========================= -->
 
 </body>
 

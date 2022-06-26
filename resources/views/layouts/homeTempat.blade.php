@@ -42,7 +42,16 @@
                                         </ul>
                                     </li>-->
                 </ul>
-               
+                @auth
+                @if (Auth::user()->role == 'pelanggan')
+                    
+                @endif
+            @else
+                
+                <div>
+                    <a href="{{ route('login') }}">Log Masuk</a> |
+                    <a href="{{ route('register') }}"> Daftar</a>
+                @endauth
 
             </div> <!-- container //  -->
         </nav> <!-- header-top-light.// -->
@@ -51,7 +60,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-8 col-12">
                         <h3 class="brand-wrap" style="font-family:verdana">
-                            e-Pasar Industri Kecil Sederhana Pahang Barat
+                          
                         </h3> <!-- brand-wrap.// -->
                     </div>
                     
@@ -66,7 +75,7 @@
                                 {{ Log::info(Auth::user()) }}
                                 @if (Auth::user()->role == 'pelanggan')
                                 <a href="{{ route('cart.list') }}" class="icon icon-sm rounded-circle border"><i
-                                    class="fa fa-shopping-cart"></i></a>
+                                    class="fa fa-shopping-cart" style="color:#000;"></i></a>
                             
                                 @endif
                             @endauth
@@ -80,7 +89,7 @@
                                 {{ Log::info(Auth::user()) }}
                                 @if (Auth::user()->role == 'pelanggan')
                                     <a href="{{ route('profil.Custedit') }}"
-                                        class="icon icon-sm rounded-circle border"><i class="fa fa-user"></i></a>
+                                        class="icon icon-sm rounded-circle border"><i class="fa fa-user" style="color:#000;"></i></a>
                                 @endif
                             @endauth
                            
@@ -102,9 +111,7 @@
                                         @endif
                                     @else
                                         
-                                        <div>
-                                            <a href="{{ route('login') }}">Log Masuk</a> |
-                                            <a href="{{ route('register') }}"> Daftar Masuk</a>
+                                        
                                         @endauth
                                     </div>
                                 </div>

@@ -18,7 +18,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <figure class="item-feature">
-                            <span class="text-warning"><i class="fa fa-2x fa-truck"></i></span>
+                            <span class="text-warning"><i class="fa fa-2x fa-check-circle"></i></span>
                             <figcaption class="pt-3">
                                 <h5 class="title">Produk Asli</h5>
                                 <p>Produk tradisional yang dibuat daripada sumber asli</p>
@@ -27,9 +27,9 @@
                     </div><!-- col // -->
                     <div class="col-md-4">
                         <figure class="item-feature">
-                            <span class="text-warning"><i class="fa fa-2x fa-landmark"></i></span>
+                            <span class="text-warning"><i class="fa fa-2x fa-check-circle"></i></span>
                             <figcaption class="pt-3">
-                                <h5 class="title">Produk Halal</h5>
+                                <h5 class="title"> Produk Halal</h5>
                                 <p>Semua produk adalah diyakini halal dan bersih untuk dimakan
                                 </p>
                             </figcaption>
@@ -37,7 +37,7 @@
                     </div><!-- col // -->
                     <div class="col-md-4">
                         <figure class="item-feature">
-                            <span class="text-warning"><i class="fa fa-2x fa-lock"></i></span>
+                            <span class="text-warning"><i class="fa fa-2x fa-check-circle"></i></span>
                             <figcaption class="pt-3">
                                 <h5 class="title">Produk selamat </h5>
                                 <p>Produk akan selamat seperti baharu ketika sampai di rumah anda 
@@ -85,55 +85,23 @@
    
     
     <!-- ========================= FOOTER ========================= -->
-    <footer class="section-footer border-top bg">
+    <footer class="section-footer border-top bg" style="background-color: #1b1b1b;">
         <div class="container">
-            <section class="footer-top  padding-y">
-                <div class="row">
-                    <aside class="col-md col-4">
-                        <h6 class="title">Hubungi Kami</h6>
-                        <ul class="list-unstyled">
-                            <li> <a href="#">Industri Kecil Sederhana Pahang Barat (IKSPB)</a></li>
-                            <li> <a href="#">Pahang Barat</a></li>
-                            <li> <a href="#">ikspb@iks.my</a></li>
-                            <li> <a href="#">+60193883178</a></li>
-                        </ul>
-                    </aside>
-                   
-                    <aside class="col-md col-6 ">
-                        <h6 class="title">Disediakan oleh</h6>
-                        <ul class="list-unstyled">
-                            <li> <a href="#">Hanis Batrisyia</a></li>
-                            <li> <a href="#">Universiti Kebangsaan Malaysia</a></li>
-                            <li> <a href="#">hanisbtrsyia@gmail.com</a></li>
-                        </ul>
-                    </aside>
-                    
-                    <aside class="col-md col-6 ">
-                        <h6 class="title">Social</h6>
-                        <ul class="list-unstyled">
-                            <li><a href="#"> <i class="fab fa-facebook"></i> Facebook </a></li>
-                            <li><a href="#"> <i class="fab fa-twitter"></i> Twitter </a></li>
-                            <li><a href="#"> <i class="fab fa-instagram"></i> Instagram </a></li>
-                            <li><a href="#"> <i class="fab fa-youtube"></i> Youtube </a></li>
-                        </ul>
-                    </aside>
-                </div> <!-- row.// -->
-            </section> <!-- footer-top.// -->
+            
+           
+            
             <section class="footer-bottom row">
                 <div class="col-md-2">
-                    <p class="text-muted"> 2022 IKSPB </p>
+                    <p class="text" style="color: #eeeeee;"> 2022 IKSPB </p>
                 </div>
-                <div class="col-md-8 text-md-center">
-                    <span class="px-2">ikspb@iks.my</span>
-                    <span class="px-2">+000-000-0000</span>
-                    <span class="px-2">Pahang Barat</span>
+                <div class="col-md-10 text-md-right">
+                    <span class="px-2" style="color: #eeeeee;">ikspb@iks.my</span>
+                    <span class="px-2" style="color: #eeeeee;">+60193883178</span>
+                    <span class="px-2" style="color: #eeeeee;">Pahang Barat</span>
                 </div>
-                <div class="col-md-2 text-md-right text-muted">
-                    <i class="fab fa-lg fa-cc-visa"></i>
-                    <i class="fab fa-lg fa-cc-paypal"></i>
-                    <i class="fab fa-lg fa-cc-mastercard"></i>
-                </div>
+                
             </section>
+           
         </div><!-- //container -->
     </footer>
     <!-- ========================= FOOTER END // ========================= -->

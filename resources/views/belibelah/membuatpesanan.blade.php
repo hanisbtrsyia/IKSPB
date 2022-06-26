@@ -23,14 +23,14 @@
                                         <div class="card border-top border-bottom border-3"
                                             style="border-color: #000000 !important;">
                                             <div class="card-header px-2 py-3">
-                                                <h5 class="text-muted mb-0">&nbsp Terima kasih kerana membuat pesanan dengan
-                                                    kami<span style="color: #f37a27;"></span>!</h5>
+                                                <h5 class="text mb-0">&nbsp Terima kasih kerana membuat pesanan dengan
+                                                    kami!</h5>
                                             </div>
                                             <div class="card-body p-4">
                                                 <div class="d-flex justify-content-between align-items-center mb-4">
                                                     <p class="lead fw-normal mb-0" style="color: #f37a27;">Ringkasan Pesanan
                                                     </p>
-                                                    <p class="small text-muted mb-0">Order ID : @php echo sprintf("%06d",mt_rand(100000,999999)); @endphp</p>
+                                                    <p class="small text mb-0">Order ID : @php echo sprintf("%06d",mt_rand(100000,999999)); @endphp</p>
                                                 </div>
                                                 @foreach ($orderItems as $item)
                                                 <div class="card shadow-0 border mb-4">
@@ -42,17 +42,17 @@
                                                                         class="img-fluid" alt="Phone">
                                                                 </div>
                                                                 <div
-                                                                    class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                                                                    <p class="text-muted mb-0">{{ $item->name }}</p>
+                                                                    class="col-md-6 text-center d-flex justify-content-center align-items-center">
+                                                                    <p class="text mb-0">{{ $item->name }}</p>
                                                                 </div>
                                                                 <div
                                                                     class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                                                                    <p class="text-muted mb-0 small">Kuantiti:
+                                                                    <p class="text mb-0 small">Kuantiti:
                                                                         {{ $item->quantity }}</p>
                                                                 </div>
                                                                 <div
                                                                     class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                                                                    <p class="text-muted mb-0 small">RM {{ $item->price }}
+                                                                    <p class="text mb-0 small">RM {{ $item->price }}
                                                                     </p>
                                                                 </div>
                                                             
@@ -156,10 +156,168 @@
                                                             <select class="form-select" name="District" id="District"
                                                                 aria-label="Default select example">
                                                                 <option value="0" selected="selected">Daerah</option>
-                                                                <option value="Gombak">Gombak</option>
-                                                                <option value="Klang">Klang</option>
-                                                                <option value="Sepang">Sepang</option>
+                                                                <option value="Johor Bahru">Johor Bahru</option>
+                                                                <option value="Batu Pahat">Batu Pahat</option>
+                                                                <option value="Kluang">Kluang</option>
+                                                                <option value="Kulai">Kulai</option>
+                                                                <option value="Muar">Muar</option>
+                                                                <option value="Kota Tinggi">Kota Tinggi</option>
+                                                                <option value="Segamat">Segamat</option>
+                                                                <option value="Pontian">Pontian</option>
+                                                                <option value="Tangkak">Tangkak</option>
+                                                                <option value="Mersing">Mersing</option>
+                                                                <option value="Sungai Petani">Sungai Petani</option>
+                                                                <option value="Alor Setar">Alor Setar</option>
+                                                                <option value="Kulim">Kulim</option>
+                                                                <option value="Kubang Pasu">Kubang Pasu</option>
+                                                                <option value="Baling">Baling</option>
+                                                                <option value="Pendang">Pendang</option>
+                                                                <option value="Langkawi">Langkawi</option>
+                                                                <option value="Yan">Yan</option>
+                                                                <option value="Sik">Sik</option>
+                                                                <option value="Padang Terap">Padang Terap</option>
+                                                                <option value="Pokok Sena">Pokok Sena</option>
+                                                                <option value="Bandar Baharu">Bandar Baharu</option>
+                                                                <option value="Kota Bharu">Kota Bharu</option>
+                                                                <option value="Pasir Mas">Pasir Mas</option>
+                                                                <option value="Tumpat">Tumpat</option>
+                                                                <option value="Bachok">Bachok</option>
+                                                                <option value="Tanah Merah">Tanah Merah</option>
+                                                                <option value="Pasir Puteh">Pasir Puteh</option>
+                                                                <option value="Kuala Krai">Kuala Krai</option>
+                                                                <option value="Machang">Machang</option>
+                                                                <option value="Gua Musang">Gua Musang</option>
+                                                                <option value="Jeli">Jeli</option>
+                                                                <option value="Lojing">Lojing</option>
+                                                                <option value="Melaka Tengah">Melaka Tengah</option>
+                                                                <option value="Alor Gajah">Alor Gajah</option>
+                                                                <option value="Jasin">Jasin</option>
+                                                                <option value="Seremban">Seremban</option>
+                                                                <option value="Jempol">Jempol</option>
+                                                                <option value="Port Dickson">Port Dickson</option>
+                                                                <option value="Tampin">Tampin</option>
+                                                                <option value="Kuala Pilah">Kuala Pilah</option>
+                                                                <option value="Rembau">Rembau</option>
+                                                                <option value="Jelebu">Jelebu</option>
+                                                                <option value="Kuantan">Kuantan</option>
+                                                                <option value="Temerloh">Temerloh</option>
+                                                                <option value="Bentong">Bentong</option>
+                                                                <option value="Maran">Maran</option>
+                                                                <option value="Rompin">Rompin</option>
+                                                                <option value="Pekan">Pekan</option>
+                                                                <option value="Bera">Bera</option>
+                                                                <option value="Raub">Raub</option>
+                                                                <option value="Jerantut">Jerantut</option>
+                                                                <option value="Lipis">Lipis</option>
+                                                                <option value="Cameron Highlands">Cameron Highlands</option>
+                                                                <option value="Kinta">Kinta</option>
+                                                                <option value="Larut, Matang dan Selama">Larut, Matang dan Selama</option>
+                                                                <option value="Manjung">Manjung</option>
+                                                                <option value="Hilir Perak">Hilir Perak</option>
+                                                                <option value="Kerian">Kerian</option>
+                                                                <option value="Batang Padang">Batang Padang</option>
+                                                                <option value="Kuala Kangsar">Kuala Kangsar</option>
+                                                                <option value="Perak Tengah">Perak Tengah</option>
+                                                                <option value="Hulu Perak">Hulu Perak</option>
+                                                                <option value="Kampar">Kampar</option>
+                                                                <option value="Muallim">Muallim</option>
+                                                                <option value="Bagan Datuk">Bagan Datuk</option>
+                                                                <option value="Perlis">Perlis</option>
+                                                                <option value="Timur Laut Pulau Pinang">Timur Laut Pulau Pinang</option>
+                                                                <option value="Seberang Perai Tengah">Seberang Perai Tengah</option>
+                                                                <option value="Seberang Perai Utara">Seberang Perai Utara</option>
+                                                                <option value="Barat Daya Pulau Pinang">Barat Daya Pulau Pinang</option>
+                                                                <option value="Seberang Perai Selatan">Seberang Perai Selatan</option>
+                                                                <option value="Kota Kinabalu">Kota Kinabalu</option>
+                                                                <option value="Tawau">Tawau</option>
+                                                                <option value="Sandakan">Sandakan</option>
+                                                                <option value="Lahad Datu">Lahad Datu</option>
+                                                                <option value="Keningau">Keningau</option>
+                                                                <option value="Kinabatangan">Kinabatangan</option>
+                                                                <option value="Semporna">Semporna</option>
+                                                                <option value="Papar">Papar</option>
+                                                                <option value="Penampang">Penampang</option>
+                                                                <option value="Beluran">Beluran</option>
+                                                                <option value="Tuaran">Tuaran</option>
+                                                                <option value="Ranau">Ranau</option>
+                                                                <option value="Kota Belud">Kota Belud</option>
+                                                                <option value="Kudat">Kudat</option>
+                                                                <option value="Kota Marudu">Kota Marudu</option>
+                                                                <option value="Beaufort">Beaufort</option>
+                                                                <option value="Kunak">Kunak</option>
+                                                                <option value="Tenom">Tenom</option>
+                                                                <option value="Putatan">Putatan</option>
+                                                                <option value="Pitas">Pitas</option>
+                                                                <option value="Tambunan">Tambunan</option>
+                                                                <option value="Tongod">Tongod</option>
+                                                                <option value="Sipitang">Sipitang</option>
+                                                                <option value="Nabawan">Nabawan</option>
+                                                                <option value="Kuala Penyu">Kuala Penyu</option>
+                                                                <option value="Kuching">Kuching</option>
+                                                                <option value="Miri">Miri</option>
+                                                                <option value="Sibu">Sibu</option>
+                                                                <option value="Bintulu">Bintulu</option>
+                                                                <option value="Serian">Serian</option>
+                                                                <option value="Kota Samarahan">Kota Samarahan</option>
+                                                                <option value="Sri Aman">Sri Aman</option>
+                                                                <option value="Marudi">Marudi</option>
+                                                                <option value="Betong">Betong</option>
+                                                                <option value="Sarikei">Sarikei</option>
+                                                                <option value="Kapit">Kapit</option>
+                                                                <option value="Bau">Bau</option>
+                                                                <option value="Limbang">Limbang</option>
+                                                                <option value="Saratok">Saratok</option>
+                                                                <option value="Mukah">Mukah</option>
+                                                                <option value="Simunjan">Simunjan</option>
+                                                                <option value="Lawas">Lawas</option>
+                                                                <option value="Belaga">Belaga</option>
+                                                                <option value="Lundu">Lundu</option>
+                                                                <option value="Asajaya">Asajaya</option>
+                                                                <option value="Daro">Daro</option>
+                                                                <option value="Tatau">Tatau</option>
+                                                                <option value="Maradong">Maradong</option>
+                                                                <option value="Kanowit">Kanowit</option>
+                                                                <option value="Lubok Antu">Lubok Antu</option>
+                                                                <option value="Selangau">Selangau</option>
+                                                                <option value="Song">Song</option>
+                                                                <option value="Dalat">Dalat</option>
+                                                                <option value="Matu">Matu</option>
+                                                                <option value="Julau">Julau</option>
+                                                                <option value="Pakan">Pakan</option>
+                                                                <option value="Tanjung Manis">Tanjung Manis</option>
+                                                                <option value="Bukit Mabong">Bukit Mabong</option>
+                                                                <option value="Telang Usan">Telang Usan</option>
+                                                                <option value="Tebedu">Tebedu</option>
+                                                                <option value="Subis">Subis</option>
+                                                                <option value="Sebauh">Sebauh</option>
+                                                                <option value="Marudi">Marudi</option>
+                                                                <option value="Beluru">Beluru</option>
+                                                                <option value="Kabong">Kabong</option>
+                                                                <option value="Gedong">Gedong</option>
+                                                                <option value="Siburan">Siburan</option>
+                                                                <option value="Pantu">Pantu</option>
+                                                                <option value="Lingga">Lingga</option>
+                                                                <option value="Sebuyau">Sebuyau</option>
+                                                                <option value="Petaling">Petaling</option>
                                                                 <option value="Hulu Langat">Hulu Langat</option>
+                                                                <option value="Klang">Klang</option>
+                                                                <option value="Gombak">Gombak</option>
+                                                                <option value="Kuala Langat">Kuala Langat</option>
+                                                                <option value="Sepang">Sepang</option>
+                                                                <option value="Kuala Selangor">Kuala Selangor</option>
+                                                                <option value="Hulu Selangor">Hulu Selangor</option>
+                                                                <option value="Sabak Bernam">Sabak Bernam</option>
+                                                                <option value="Kuala Terengganu">Kuala Terengganu</option>
+                                                                <option value="Kemaman">Kemaman</option>
+                                                                <option value="Dungun">Dungun</option>
+                                                                <option value="Besut">Besut</option>
+                                                                <option value="Marang">Marang</option>
+                                                                <option value="Hulu Terengganu">Hulu Terengganu</option>
+                                                                <option value="Setiu">Setiu</option>
+                                                                <option value="Kuala Nerus">Kuala Nerus</option>
+                                                                <option value="Kuala Lumpur">Kuala Lumpur</option>
+                                                                <option value="Labuan">Labuan</option>
+                                                                <option value="Putrajaya">Putrajaya</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -172,6 +330,15 @@
                                                                 <option value="Johor">Johor</option>
                                                                 <option value="Kelantan">Kelantan</option>
                                                                 <option value="Melaka">Melaka</option>
+                                                                <option value="Kedah">Kedah</option>
+                                                                <option value="Negeri Sembilan">Negeri Sembilan</option>
+                                                                <option value="Kelantan">Pahang</option>
+                                                                <option value="Pulau Pinang">Pulau Pinang</option>
+                                                                <option value="Perak">Perak</option>
+                                                                <option value="Perlis">Perlis</option>
+                                                                <option value="Terengganu">Terengganu</option>
+                                                                <option value="Sabah">Sabah</option>
+                                                                <option value="Sarawak">Sarawak</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -180,22 +347,20 @@
                                                <hr>
                                                     <div class="text-center">
                                                         <input type="submit" value="Confirm" class="btn"
-                                                            style="background-color:#000; color:#eee; position: absolute; right: 10px; bottom: 5px;">
+                                                            style="background-color:#000; color:#eee; position: absolute; right: 10px; bottom: 25px;">
                                                     </div>
                                            
                                                 <div class="d-flex justify-content-between pt-2">
-                                                    <p class="fw-bold mb-0">Order Details</p>
-                                                    <p class="text-muted mb-0"><span class="fw-bold me-4">Total RM </span>
-                                                        {{ Cart::getTotal() }}</p>
+                                                    <strong><p class="fw-bold mb-0">Order Details</p></strong>
+                                                    <strong><p class="text mb-0"><span class="fw-bold me-6">Total RM </span>
+                                                        {{ Cart::getTotal() }}</p></strong>
                                                 </div>
                                              
                                                
                                             </div>
-                                            <div class="card-footer border-0 px-4 py-5"
-                                                style="background-color: #f37a27; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
-                                                <h5
-                                                    class="d-flex align-items-center justify-content-end text-white texT mb-0">
-                                                    Jumlah bayaran: &nbsp <span class="h2 mb-0 ms-2"> RM {{ Cart::getTotal() }}</span></h5>
+                                            <div class="card-footer border-0 px-2 py-5"
+                                                style="background-color: #f37a27; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px;">
+                                               
                                             </div>
                                         </div>
                                     </div>
