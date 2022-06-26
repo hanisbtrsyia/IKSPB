@@ -10,30 +10,7 @@
                 aria-controls="main_nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="main_nav">
-                <ul class="navbar-nav">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link pl-0" data-toggle="dropdown" href="#"><strong> <i class="fa fa-bars"></i>
-                                Kategori</strong></a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="/homeTempatMenarik">Tempat Menarik</a>
-                            <a class="dropdown-item" href="/homeTempatPenginapan">Tempat Penginapan</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Tempat Perkhemahan</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Tempat Bersejarah</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Hijau-Hijauan</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pantai</a>
-                    </li>
-                </ul>
-            </div> <!-- collapse .// -->
+            
         </div> <!-- container .// -->
     </nav>
     </header> <!-- section-header.// -->

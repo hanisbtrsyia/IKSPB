@@ -91,6 +91,8 @@
                                                 <div class="col">
                                                    <div class="form-group">
                                                         <label><strong>Kemudahan</strong></label><br>
+                                                        <label><input type="checkbox" name="Kemudahan[]" value="Tiada">
+                                                            Tiada</label><br>
                                                         <label><input type="checkbox" name="Kemudahan[]" value="Wi-Fi">
                                                             Wi-Fi</label><br>
                                                         <label><input type="checkbox" name="Kemudahan[]"
@@ -102,8 +104,8 @@
                                                                 value="Pengering Rambut"> Pengering Rambut</label><br>
                                                         <label><input type="checkbox" name="Kemudahan[]"
                                                                 value="Seterika"> Seterika</label><br>
-                                                                <div class="col">
-                                                                <label><input type="checkbox" name="Kemudahan[]" value="Dapur">
+                                                            
+                                                        <label><input type="checkbox" name="Kemudahan[]" value="Dapur">
                                                             Dapur</label><br>
                                                         <label><input type="checkbox" name="Kemudahan[]"
                                                                 value="Peti Sejuk"> Peti Sejuk</label><br>
@@ -113,7 +115,7 @@
                                                                 value="Penghawa Dingin"> Penghawa Dingin</label><br>
                                                         <label><input type="checkbox" name="Kemudahan[]"
                                                                 value="Pemanas Air"> Pemanas Air</label><br>
-                                                    </div>
+                                                    
                                                     </div>
                                                 </div>
                                                 <div>

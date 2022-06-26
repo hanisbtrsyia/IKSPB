@@ -117,7 +117,9 @@
                                         <div class="col-6">
                                             <div class="form-group">
                                                 <label for="Kemudahan">Kemudahan</label>
-                                                
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox" value="Tiada" name="Kemudahan[]" @if(in_array("Tiada",  $temPenginapan->Kemudahan)) checked @endif> Tiada</label>
+                                                 </div>
                                                  <div class="checkbox">
                                                     <label><input type="checkbox" value="Wi-Fi" name="Kemudahan[]" @if(in_array("Wi-Fi",  $temPenginapan->Kemudahan)) checked @endif> Wi-Fi</label>
                                                  </div>
@@ -133,7 +135,7 @@
                                                  <div class="checkbox">
                                                     <label><input type="checkbox" value="Seterika" name="Kemudahan[]" @if(in_array("Seterika",  $temPenginapan->Kemudahan)) checked @endif> Seterika</label>
                                                  </div>
-                                                 <div class="col-6">
+                                                 
                                                  <div class="checkbox">
                                                     <label><input type="checkbox" value="Dapur" name="Kemudahan[]" @if(in_array("Dapur",  $temPenginapan->Kemudahan)) checked @endif> Dapur</label>
                                                  </div>
@@ -149,7 +151,7 @@
                                                  <div class="checkbox">
                                                     <label><input type="checkbox" value="Pemanas Air" name="Kemudahan[]" @if(in_array("Pemanas Air",  $temPenginapan->Kemudahan)) checked @endif> Pemanas Air</label>
                                                  </div>
-                                                 </div>
+                                                
                                             </div>
                                             <div>
                                                 <label for="exampleInputFile">Gambar</label>

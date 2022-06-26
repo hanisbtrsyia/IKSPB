@@ -46,7 +46,7 @@
                                 </ul>
                             </li>-->
                 </ul>
-                <ul class="navbar-nav">
+                <!--<ul class="navbar-nav">
                     @guest
                     {{ Log::info(Auth::check()) }}
                 @endguest
@@ -57,7 +57,7 @@
                     </a></li>   
                     @endif
                 @endauth
-                   <!-- <li class="nav-item"><a href="#" class="nav-link" style="color:#000;"> Call: +0000000000
+                    <li class="nav-item"><a href="#" class="nav-link" style="color:#000;"> Call: +0000000000
                         </a></li>
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" style="color:#000;">
@@ -67,8 +67,8 @@
                             <li><a class="dropdown-item" href="#">English</a></li>
                             <li><a class="dropdown-item" href="#">Russian </a></li>
                         </ul>
-                    </li>-->
-                </ul> <!-- list-inline //  -->
+                    </li>
+                </ul>-->
 
             </div> <!-- container //  -->
         </nav> <!-- header-top-light.// -->
@@ -104,7 +104,7 @@
                                 @if (Auth::user()->role == 'pelanggan')
                                 <a href="{{ route('cart.list') }}" class="icon icon-sm rounded-circle border"><i
                                     class="fa fa-shopping-cart"></i></a>
-                            <span class="badge badge-pill badge-danger notify">0</span>
+                           
                                 @endif
                             @endauth
                             </div>

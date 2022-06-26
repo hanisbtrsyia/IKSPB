@@ -42,7 +42,7 @@
                                         </ul>
                                     </li>-->
                 </ul>
-                <ul class="navbar-nav">
+                <!--<ul class="navbar-nav">
                     @guest
                     {{ Log::info(Auth::check()) }}
                 @endguest
@@ -53,7 +53,7 @@
                     </a></li>   
                     @endif
                 @endauth
-                    <!--<li class="nav-item"><a href="#" class="nav-link" style="color:#000;"> Call: +0000000000
+                   <li class="nav-item"><a href="#" class="nav-link" style="color:#000;"> Call: +0000000000
                         </a></li>
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" style="color:#000;">
@@ -63,32 +63,21 @@
                             <li><a class="dropdown-item" href="#">English</a></li>
                             <li><a class="dropdown-item" href="#">Russian </a></li>
                         </ul>
-                    </li>-->
-                </ul> <!-- list-inline //  -->
+                    </li>
+                </ul>-->
 
             </div> <!-- container //  -->
         </nav> <!-- header-top-light.// -->
         <section class="header-main border-bottom">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-2 col-6">
+                    <div class="col-lg-8 col-12">
                         <a href="#" class="brand-wrap" style="font-family:verdana">
                             e-Pasar IKS Pahang Barat
                         </a> <!-- brand-wrap.// -->
                     </div>
-                    <div class="col-lg-6 col-12 col-sm-12">
-                        <form action="#" class="search">
-                            <div class="input-group w-100">
-                                <input type="text" class="form-control" placeholder="Cari">
-                                <div class="input-group-append">
-                                    <button class="btn" style="background-color:#FFB923;" type="submit">
-                                        <i class="fa fa-search"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </form> <!-- search-wrap .end// -->
-                    </div> <!-- col.// -->
-                    <div class="col-lg-4 col-sm-6 col-12">
+                   
+                    <div class="col-sm-4 col-12">
                         <div class="widgets-wrap float-md-right">
                             <div class="widget-header  mr-3">
                                 @guest
@@ -100,7 +89,7 @@
                                 @if (Auth::user()->role == 'pelanggan')
                                 <a href="{{ route('cart.list') }}" class="icon icon-sm rounded-circle border"><i
                                     class="fa fa-shopping-cart"></i></a>
-                            <span class="badge badge-pill badge-danger notify">0</span>
+                           
                                 @endif
                             @endauth
                             </div>

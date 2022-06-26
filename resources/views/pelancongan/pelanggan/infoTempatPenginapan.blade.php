@@ -66,11 +66,28 @@
                         </div>
                         <br>
                         <h4><strong> Kemudahan di penginapan ini</strong></h4>
-                        <br>
+                        <hr>
                         <!-- ./col -->
 
                         <div class="row">
                             <br>
+                            @if (in_array('Tiada', $temPenginapan->Kemudahan))
+                            <div class="col-3">
+                                <!-- small box -->
+                                <div class="card text" style="max-width: 15rem; background-color:#eeeeee;">
+                                    <div class="card-body">
+                                        
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 640 512"><!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M176 256c44.11 0 80-35.89 80-80s-35.89-80-80-80-80 35.89-80 80 35.89 80 80 80zm352-128H304c-8.84 0-16 7.16-16 16v144H64V80c0-8.84-7.16-16-16-16H16C7.16 64 0 71.16 0 80v352c0 8.84 7.16 16 16 16h32c8.84 0 16-7.16 16-16v-48h512v48c0 8.84 7.16 16 16 16h32c8.84 0 16-7.16 16-16V240c0-61.86-50.14-112-112-112z"/></svg>
+                                    </div>
+                                    <div class="card-body" style="min-height: 165px;">
+                                        <h5 class="card-title">Keselesaan</h5>
+                                        <p class="card-text">Kami menyediakan tempat penginapan yang selesa untuk semua.</p>
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                        @endif
+
                             @if (in_array('Wi-Fi', $temPenginapan->Kemudahan))
                                 <div class="col-3">
                                     <!-- small box -->

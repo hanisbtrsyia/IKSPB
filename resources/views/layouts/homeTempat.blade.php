@@ -67,7 +67,7 @@
                                 @if (Auth::user()->role == 'pelanggan')
                                 <a href="{{ route('cart.list') }}" class="icon icon-sm rounded-circle border"><i
                                     class="fa fa-shopping-cart"></i></a>
-                            <span class="badge badge-pill badge-danger notify">0</span>
+                            
                                 @endif
                             @endauth
                             </div>
