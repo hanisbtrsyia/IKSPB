@@ -84,7 +84,7 @@
                                     <tfoot>
                                         <tr>
                                             <td colspan="5" class="text-right">
-                                                <h3><strong>Total RM{{ Cart::getTotal() }}</strong></h3>
+                                                <h3><strong>Jumlah RM{{ Cart::getTotal() }}</strong></h3>
                                             </td>
                                         </tr>
                             </div>
@@ -93,14 +93,14 @@
                                 <td class="text-left">
                                     <form action="{{ route('cart.clear') }}" method="POST">
                                         @csrf
-                                        <button class="btn btn-danger btn-flat">Remove All Cart</button>
+                                        <button class="btn btn-danger btn-flat">Buang semua dalam troli</button>
                                     </form>
                                 </td>
                                 <td colspan="5" class="text-right">
 
                                     <a href="{{ url('/homebelibelah') }}" class="btn btn-warning"><i
-                                            class="fa fa-angle-left"></i> Continue Shopping</a>
-                                    <a href="{{ route('cart.orderCart') }}" class="btn btn-success">Checkout</a>
+                                            class="fa fa-angle-left"></i> Kembali membeli-belah</a>
+                                    <a href="{{ route('cart.orderCart') }}" class="btn btn-success">Teruskan</a>
 
                                 </td>
 

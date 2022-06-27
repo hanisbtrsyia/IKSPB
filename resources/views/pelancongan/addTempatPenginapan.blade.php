@@ -77,7 +77,7 @@
 
                                         <div class="col-6">
                                             <div class="form-group">
-                                                <label for="HargaPerMalam">Harga per malam</label>
+                                                <label for="HargaPerMalam">Harga per malam (RM)</label>
                                                 <input type="text" name="HargaPerMalam" id="HargaPerMalam"
                                                     class="form-control" placeholder="" required>
                                             </div>

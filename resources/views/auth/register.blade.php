@@ -10,16 +10,45 @@
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/my-login.css">
 </head>
+<section class="background-radial-gradient overflow-hidden">
+    <style>
+        .background-radial-gradient {
+            
+            background-image: url("assets/images/bg3.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: bottom;
+        }
 
-<body class="my-login-page">
-    <section class="h-100">
-        <div class="container h-100">
-            <div class="row justify-content-md-center h-100">
-                <div class="card-wrapper">
+        .bg-glass {
+            backdrop-filter: saturate(200%) blur(25px);
+            opacity: 85%;
+            height: 670px;
+            width: 450px;
+        }
 
-                    <div class="cardx fat mt-4">
-                        <div class="card-body">
-                            <h4 class="card-title">Daftar</h4>
+        label {
+            float: left;
+        }
+    </style>
+    <div class="container py-5 px-md-5 text-lg-start ">
+        <div class="row gx-lg-5 align-items-center mb-5">
+            <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+                <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
+                    e-Pasar IKS Pahang Barat <br />
+                    <span style="color:#E48700">untuk semua</span>
+                </h1>
+
+            </div>
+
+            <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+
+                <div class="card bg-glass">
+                    <div class="card-body px-md-5">
+
+                        <h2 style="color: black; ">
+                            Daftar</h2>
                             <form method="POST" class="my-login-validation" autocomplete="off"
                                 action="{{ route('register') }}">
 
@@ -34,10 +63,10 @@
                                     </div>
                                 @endif
                                 @csrf
-                                <div class="form-group">
+                                <div class="form-outline mb-4">
                                     <input type="hidden" name="id_peniaga" id="id_peniaga" class="form-control">
                                 </div>
-                                <div class="form-group">
+                                <div class="form-outline mb-4">
                                     <label for="NamaPengguna">Nama Pengguna</label>
                                     <input id="NamaPengguna" type="text" class="form-control" name="NamaPengguna"
                                         autofocus placeholder="Masukkan Nama Pengguna" required>
@@ -48,7 +77,7 @@
                                     </span>
                                 </div>
 
-                                <div class="form-group">
+                                <div class="form-outline mb-4">
                                     <label for="Emel">E-mel</label>
                                     <input id="Emel" type="email" class="form-control" name="Emel"
                                         placeholder="Masukkan E-mel" required>
@@ -59,7 +88,7 @@
                                     </span>
                                 </div>
 
-                                <div class="form-group">
+                                <div class="form-outline mb-4">
                                     <label for="KataLaluan">Kata Laluan (Sekurang-kurangnya 6 aksara)</label>
                                     <input id="KataLaluan" type="password" class="form-control" name="password" data-eye
                                         placeholder="Masukkan Kata Laluan" required>
@@ -70,7 +99,7 @@
                                     </span>
                                 </div>
 
-                                <div class="form-group">
+                                <div class="form-outline mb-4">
                                     <label for="password-confirm">Sahkan Kata Laluan</label>
                                     <input id="password-confirm" type="password" class="form-control"
                                         name="password_confirmation" required data-eye
@@ -95,28 +124,13 @@
                                     <label class="form-check-label" for="radio2"></label>
                                 </div>
                                 <br>
-
-
-
-
-                                <!--<div class="form-group">
-                                    <div class="custom-checkbox custom-control">
-                                        <input type="checkbox" name="agree" id="agree" class="custom-control-input">
-                                        <label for="agree" class="custom-control-label">Saya setuju dengan <a
-                                                href="#">Terma dan Syarat</a></label>
-                                        <div class="invalid-feedback">
-                                            Anda perlu setuju dengan Terma dan Syarat
-                                        </div>
-                                    </div>
-                                </div>-->
-
                                 <div class="form-group m-0">
                                     <button type="submit" class="btn btn-warning btn-block">
                                         Daftar
                                     </button>
                                 </div>
-                                <div class="mt-4 text-center">
-                                    Sudah ada akaun? <a href="{{ route('login') }}">Log Masuk</a>
+                                <div class="mt-3 text-center">
+                                    Sudah ada akaun? <a href="{{ route('login') }}" >Log Masuk</a>
                                 </div>
                             </form>
                         </div>
@@ -132,5 +146,7 @@
     <script src="bootstrap/js/bootstrap.js"></script>
     <script src="js/my-login.js"></script>
 </body>
+
+
 
 </html>

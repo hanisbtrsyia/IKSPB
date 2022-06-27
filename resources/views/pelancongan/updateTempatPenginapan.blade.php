@@ -108,7 +108,7 @@
                                             </div>
                                        
                                             <div class="form-group">
-                                                <label for="HargaPerMalam">Harga per malam</label>
+                                                <label for="HargaPerMalam">Harga per malam (RM)</label>
                                                 <input type="text" name="HargaPerMalam" id="HargaPerMalam"
                                                     class="form-control" value="{{ $temPenginapan->HargaPerMalam }}"
                                                     placeholder="" required>

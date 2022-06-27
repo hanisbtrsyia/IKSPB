@@ -66,7 +66,7 @@
                                                     placeholder="" value="{{ $produk->NamaProduk }}" required>
                                             </div>
                                             <div class="form-group">
-                                                <label for="Harga">Harga</label>
+                                                <label for="Harga">Harga (RM)</label>
                                                 <input type="text" name="Harga" id="Harga" class="form-control"
                                                     placeholder="" value="{{ $produk->Harga }}" required>
                                             </div>
@@ -76,7 +76,7 @@
                                                     placeholder="" value="{{ $produk->Unit }}" required>
                                             </div>-->
                                             <div class="form-group">
-                                                <label for="Berat">Berat</label>
+                                                <label for="Berat">Berat (g)</label>
                                                 <input type="text" name="Berat" id="Berat" class="form-control"
                                                     placeholder="" value="{{ $produk->Berat }}" required>
                                             </div>

@@ -56,7 +56,7 @@
                                                     placeholder="" required>
                                             </div>
                                             <div class="form-group">
-                                                <label for="Harga">Harga</label>
+                                                <label for="Harga">Harga (RM)</label>
                                                 <input type="text" name="Harga" id="Harga" class="form-control"
                                                     placeholder="" required>
                                             </div>
@@ -66,7 +66,7 @@
                                                     placeholder="" required>
                                             </div>-->
                                             <div class="form-group">
-                                                <label for="Berat">Berat</label>
+                                                <label for="Berat">Berat (g)</label>
                                                 <input type="text" name="Berat" id="Berat" class="form-control"
                                                     placeholder="" required>
                                             </div>
@@ -79,7 +79,7 @@
                                                     placeholder="" required rows="7"></textarea>
                                             </div>
                                         
-                                                    <label for="exampleInputFile">Gambar</label>
+                                                    <label for="exampleInputFile">Gambar</label> 
                                                     <div class="text-center">
                                                         <img class="img-fluid" src="" id='image_preview' alt="Gambar produk">
                                                     </div><br>

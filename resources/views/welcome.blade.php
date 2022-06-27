@@ -18,7 +18,7 @@
                     <div class="row">
                         <div class="col-md-4">
                             <figure class="item-feature">
-                                <span class="text-dark"><i class="fa fa-2x fa-check-circle"></i></span>
+                                <span class="text-warning"><i class="fa fa-2x fa-check-circle"></i></span>
                                 <figcaption class="pt-3">
                                     <h5 class="title">Produk Asli</h5>
                                 <p>Produk tradisional yang dibuat daripada sumber asli</p>
@@ -27,7 +27,7 @@
                         </div><!-- col // -->
                         <div class="col-md-4">
                             <figure class="item-feature">
-                                <span class="text-dark"><i class="fa fa-2x fa-check-circle"></i></span>
+                                <span class="text-warning"><i class="fa fa-2x fa-check-circle"></i></span>
                                 <figcaption class="pt-3">
                                     <h5 class="title">Produk Halal</h5>
                                     <p>Semua produk adalah diyakini halal dan bersih untuk dimakan
@@ -37,7 +37,7 @@
                         </div><!-- col // -->
                         <div class="col-md-4">
                             <figure class="item-feature">
-                                <span class="text-dark"><i class="fa fa-2x fa-check-circle"></i></span>
+                                <span class="text-warning"><i class="fa fa-2x fa-check-circle"></i></span>
                                 <figcaption class="pt-3">
                                     <h5 class="title">Produk selamat </h5>
                                     <p>Produk akan selamat seperti baharu ketika sampai di rumah anda 

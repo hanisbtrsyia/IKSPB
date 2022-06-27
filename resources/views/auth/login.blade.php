@@ -14,7 +14,7 @@
 <section class="background-radial-gradient overflow-hidden">
     <style>
         .background-radial-gradient {
-            background-color: hsl(218, 41%, 15%);
+           
             background-image: url("assets/images/bg3.jpg");
             background-position: center;
             background-repeat: no-repeat;
@@ -34,10 +34,10 @@
         }
     </style>
 
-    <div class="container py-5 px-md-5 text-center text-lg-start ">
+    <div class="container py-5 px-md-5 text-lg-start ">
         <div class="row gx-lg-5 align-items-center mb-5">
             <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
-                <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
+                <h1 class="my-5 display-5 fw-bold ls-tight text-center" style="color: hsl(218, 81%, 95%)">
                     e-Pasar IKS Pahang Barat <br />
                     <span style="color:#E48700">untuk semua</span>
                 </h1>
@@ -48,9 +48,9 @@
 
                 <div class="card bg-glass">
                     <div class="card-body px-md-5">
-
-                        <h1 class="my-5 display-5 fw-bold ls-tight" style="color: black; ">
-                            Log Masuk</h1>
+<br><br><br>
+                        <h2 style="color: black; ">
+                            Log Masuk</h2><br>
 
                         <form method="POST" class="my-login-validation" autocomplete="off"
                             action="{{ route('login') }}">
