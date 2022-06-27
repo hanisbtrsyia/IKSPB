@@ -43,78 +43,52 @@
                                     </li>-->
                 </ul>
                 @auth
-                @if (Auth::user()->role == 'pelanggan')
-                    
-                @endif
-            @else
-                
-                <div>
-                    <a href="{{ route('login') }}">Log Masuk</a> |
-                    <a href="{{ route('register') }}"> Daftar</a>
-                @endauth
-                <!--<ul class="navbar-nav">
-                    @guest
-                    {{ Log::info(Auth::check()) }}
-                @endguest
-                @auth
-                    {{ Log::info(Auth::user()) }}
                     @if (Auth::user()->role == 'pelanggan')
-                    <li class="nav-item"><a href="{{ route('profil.Custedit') }}" class="nav-link" style="color:#000;"> Profil
-                    </a></li>   
                     @endif
-                @endauth
-                   <li class="nav-item"><a href="#" class="nav-link" style="color:#000;"> Call: +0000000000
-                        </a></li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" style="color:#000;">
-                            Bahasa
-                            Malaysia </a>
-                        <ul class="dropdown-menu dropdown-menu-right" style="max-width: 100px;">
-                            <li><a class="dropdown-item" href="#">English</a></li>
-                            <li><a class="dropdown-item" href="#">Russian </a></li>
-                        </ul>
-                    </li>
-                </ul>-->
+                @else
+                    <div>
+                        <a href="{{ route('login') }}">Log Masuk</a> |
+                        <a href="{{ route('register') }}"> Daftar</a>
+                    @endauth
 
+                </div>
             </div> <!-- container //  -->
         </nav> <!-- header-top-light.// -->
         <section class="header-main border-bottom">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-8 col-12">
-                        <a href="#" class="brand-wrap" style="font-family:verdana">
-                           
-                        </a> <!-- brand-wrap.// -->
+
                     </div>
-                   
+
                     <div class="col-sm-4 col-12">
                         <div class="widgets-wrap float-md-right">
                             <div class="widget-header  mr-3">
                                 @guest
-                                {{ Log::info(Auth::check()) }}
+                                    {{ Log::info(Auth::check()) }}
 
-                            @endguest
-                            @auth
-                                {{ Log::info(Auth::user()) }}
-                                @if (Auth::user()->role == 'pelanggan')
-                                <a href="{{ route('cart.list') }}" class="icon icon-sm rounded-circle border"><i
-                                    class="fa fa-shopping-cart" style="color:#000;"></i></a>
-                           
-                                @endif
-                            @endauth
+                                @endguest
+                                @auth
+                                    {{ Log::info(Auth::user()) }}
+                                    @if (Auth::user()->role == 'pelanggan')
+                                        <a href="{{ route('cart.list') }}" class="icon icon-sm rounded-circle border"><i
+                                                class="fa fa-shopping-cart" style="color:#000;"></i></a>
+                                    @endif
+                                @endauth
                             </div>
                             <div class="widget-header icontext">
                                 @guest
-                                {{ Log::info(Auth::check()) }}
+                                    {{ Log::info(Auth::check()) }}
 
-                            @endguest
-                            @auth
-                                {{ Log::info(Auth::user()) }}
-                                @if (Auth::user()->role == 'pelanggan')
-                                    <a href="{{ route('profil.Custedit') }}"
-                                        class="icon icon-sm rounded-circle border"><i class="fa fa-user" style="color:#000;"></i></a>
-                                @endif
-                            @endauth
+                                @endguest
+                                @auth
+                                    {{ Log::info(Auth::user()) }}
+                                    @if (Auth::user()->role == 'pelanggan')
+                                        <a href="{{ route('profil.Custedit') }}"
+                                            class="icon icon-sm rounded-circle border"><i class="fa fa-user"
+                                                style="color:#000;"></i></a>
+                                    @endif
+                                @endauth
                                 <div class="text">
                                     @auth
                                         @if (Auth::user()->role == 'pelanggan')
@@ -132,18 +106,19 @@
                                                 </form>
                                         @endif
                                     @else
-                                       
-                                        @endauth
-                                    </div>
+                                    @endauth
                                 </div>
                             </div>
-                        </div> <!-- widgets-wrap.// -->
-                    </div> <!-- col.// -->
-                </div> <!-- row.// -->
+                        </div>
+                    </div> <!-- widgets-wrap.// -->
+                </div> <!-- col.// -->
+            </div> <!-- row.// -->
             </div> <!-- container.// -->
         </section> <!-- header-main .// -->
-        <p></p>
-        @yield('content')
+
+    </header>
+    <p></p>
+    @yield('content')
 
 </body>
 

@@ -60,10 +60,10 @@
 
         <footer class="main-footer">
             <div class="float-right d-none d-sm-block">
-                <b>Version</b> 3.2.0
+                
             </div>
             <strong>Copyright &copy; 2022 <a href="https://ikspb.dev" style="color: #ffb923">e-Pasar IKSPB</a>.</strong>
-            All rights reserved.
+            Hak Cipta Terpelihara.
         </footer>
 
         <!-- Control Sidebar -->

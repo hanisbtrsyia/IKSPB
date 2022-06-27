@@ -40,7 +40,7 @@
                             <span class="text-warning"><i class="fa fa-2x fa-check-circle"></i></span>
                             <figcaption class="pt-3">
                                 <h5 class="title">Produk selamat </h5>
-                                <p>Produk akan selamat seperti baharu ketika sampai di rumah anda 
+                                <p>Produk seperti baharu ketika sampai di rumah anda 
                                 </p>
                             </figcaption>
                         </figure> <!-- iconbox // -->

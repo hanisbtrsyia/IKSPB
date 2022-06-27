@@ -5,7 +5,8 @@
 
     <h1 style="text-align: center">Tempat Menginap di Pahang Barat</h1>
     <hr>
-   
+
+    <div class="content-wrapper">
         <section class="section-content">
             <div class="container ">
                 <br>
@@ -413,11 +414,13 @@
                         </div><!-- //container -->
                     </footer>
                     <!-- ========================= FOOTER END // ========================= -->
-                
-                @endsection
+
+
                 </section>
+           
             </div>
-        </section>
+        
+        </section> 
     </div>
 
-    
+    @endsection
