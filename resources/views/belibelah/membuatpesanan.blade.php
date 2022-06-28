@@ -346,13 +346,13 @@
                                                
                                                <hr>
                                                     <div class="text-center">
-                                                        <input type="submit" value="Confirm" class="btn"
+                                                        <input type="submit" value="Teruskan" class="btn"
                                                             style="background-color:#000; color:#eee; position: absolute; right: 10px; bottom: 25px;">
                                                     </div>
                                            
                                                 <div class="d-flex justify-content-between pt-2">
-                                                    <strong><p class="fw-bold mb-0">Order Details</p></strong>
-                                                    <strong><p class="text mb-0"><span class="fw-bold me-6">Total RM </span>
+                                                    <strong><p class="fw-bold mb-0">Butiran Pesanan</p></strong>
+                                                    <strong><p class="text mb-0"><span class="fw-bold me-6">Jumlah RM </span>
                                                         {{ Cart::getTotal() }}</p></strong>
                                                 </div>
                                              
