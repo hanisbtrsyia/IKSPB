@@ -71,7 +71,7 @@
                                         {{ Log::info(Auth::check()) }}
                                         <p class="btn-holder"><a href="{{ route('login') }}"
                                                 class="btn btn-warning btn-lg btn-flat" role="button"><i
-                                                    class="fas fa-cart-plus fa-lg mr-2"></i>Add to cart</a></p>
+                                                    class="fas fa-cart-plus fa-lg mr-2"></i>Tambah dalam troli</a></p>
                                     @endguest
                                     @auth
                                         {{ Log::info(Auth::user()) }}
